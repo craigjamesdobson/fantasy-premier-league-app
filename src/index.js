@@ -1,4 +1,6 @@
-import './scss/styles.scss'
+import $ from "jquery";
+import 'bootstrap';
+import './scss/styles.scss';
 
 // function getComponent() {
 
@@ -16,4 +18,4 @@ import './scss/styles.scss'
 //     document.body.appendChild(component);
 // })
 
-alert('Hello World!');
+console.log('This is the index page!');

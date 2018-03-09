@@ -6,7 +6,8 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
-        index: './src/index.js'
+        index: './src/index.js',
+        players: './src/players.js'
     },
     module: {
         rules: [{
@@ -18,15 +19,24 @@ module.exports = {
         }]
     },
     plugins: [
-        new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            title: 'Code Splitting'
+            Title: 'Fantasy Premier League App',
+            filename: 'index.html',
+            template: 'src/index.html',
+            excludeChunks: ['players']
         }),
+        new HtmlWebpackPlugin({
+            title: 'Fantasy Premier League App - Players',
+            chunks: ['index','players'],
+            filename: 'players.html',
+            template: 'src/players.html',
+        }),
+        new CleanWebpackPlugin(['dist']),
         new ExtractTextPlugin("styles.css")
     ],
     output: {
         filename: '[name].bundle.js',
         chunkFilename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'docs')
     }
 };
