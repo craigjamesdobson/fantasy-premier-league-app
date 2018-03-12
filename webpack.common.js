@@ -6,9 +6,10 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
-        index: './src/index.js',
-        players: './src/players.js'
+        index: './src/js/index.js',
+        players: './src/js/players.js'
     },
+    devtool: 'inline-source-map',
     module: {
         rules: [{
             test: /\.scss$/,
@@ -16,7 +17,16 @@ module.exports = {
                 fallback: "style-loader",
                 use: ['css-loader', 'sass-loader']
             })
-        }]
+        },
+        {
+            test: /\.tsx?$/,
+            use: 'ts-loader',
+            exclude: /node_modules/
+        }
+        ]
+    },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js']
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -27,7 +37,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             title: 'Fantasy Premier League App - Players',
-            chunks: ['index','players'],
+            chunks: ['index', 'players'],
             filename: 'players.html',
             template: 'src/players.html',
         }),
