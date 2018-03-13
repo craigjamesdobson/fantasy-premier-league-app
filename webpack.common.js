@@ -6,7 +6,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
-        index: './src/js/index.js',
+        index: './src/js/index.ts',
         players: './src/js/players.js'
     },
     devtool: 'inline-source-map',
