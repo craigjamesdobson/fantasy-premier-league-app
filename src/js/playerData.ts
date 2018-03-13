@@ -1,4 +1,7 @@
+import * as $ from "jquery";
+
 export module PlayerData {
+
 
     enum PlayerType {
         Goalkeeper = 1,
@@ -8,33 +11,32 @@ export module PlayerData {
     }
 
     class Player {
+        private id: number;
         private name: string;
-        private price: number;
+        private price: string;
         private playerType: PlayerType;
 
-        constructor(name: string, price: number, playerType: PlayerType) {
+        constructor(id: number, name: string, price: string, playerType: PlayerType) {
+            this.id = id;
             this.price = price;
-            this.setName(name);
+            this.name = name;
+            this.playerType = playerType;
         }
 
-        public getCalculatedPrice(): number {
-            return this.price - 10;
-        }
-
-        public setName(name:string): void {
-            if(name == "") {
-                this.name == "no name";
-            } else {
-                this.name == name;
-            }
-        }
+        // public setName(name:string): void {
+        //     if(name == "") {
+        //         this.name == "no name";
+        //     } else {
+        //         this.name == name;
+        //     }
+        // }
 
     }
 
     export function callPlayerData() {
         $.getJSON("https://jokecamp.github.io/epl-fantasy-geek/js/static-data.json", function(data: any) {
 
-            let players: Player[] = data.elements.map((player: any) => new Player(data.web_name, data.now_cost, data.element_type));
+            let players: Player[] = data.elements.map((player: any) => new Player(player.id, player.web_name, ((player.now_cost + player.cost_change_start_fall) / 10).toFixed(1), player.element_type))
 
             console.log(players);
 

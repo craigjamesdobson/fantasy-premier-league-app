@@ -1,5 +1,10 @@
 {
     "css.remoteStyleSheets": [
         "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      ]
+      ],
+    //"typescript.check.tscVersion": false,
+    "explorer.confirmDelete": false,
+    "window.menuBarVisibility": "default",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme":"One Dark Pro"
 }
