@@ -6,16 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fantasy Premier League App - Players</title>
-<link href="styles.css" rel="stylesheet"></head>
+<link href="styles.css, playerList.css" rel="stylesheet"></head>
 
 <body>
 
     <script id="handlebars-demo" type="text/x-handlebars-template">
-        <div>
-            <table>
-                {{#each this}}
+        <div class="col-xs-6">
+            <table class="table table-striped text-center">
+                <thead class="thead-dark">
+                    <th>ID</th>
+                    <th>Position</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                </thead>
+                {{#each goalkeepers}}
                 <tr>
-                    <td>My name is {{name}} and my id is {{id}}.</td>
+                    <td>{{id}}</td>
+                    <td>{{playerType}}</td>
+                    <td>{{name}}</td>
+                    <td>{{price}}</td>
                 </tr>
                 {{/each}}
             </table>
