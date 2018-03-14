@@ -11,7 +11,8 @@ module.exports = {
     },
     devtool: 'source-map',
     module: {
-        rules: [{
+        rules: [
+            {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
@@ -22,6 +23,27 @@ module.exports = {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
                 exclude: /node_modules/
+            },
+            {
+                test: /\.(html)$/,
+                use: {
+                    loader: 'html-loader',
+                }
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'img',
+                            publicPath: 'img'
+                        }
+                    }
+
+
+                ]
             }
         ]
     },
