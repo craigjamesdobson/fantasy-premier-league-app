@@ -9,7 +9,7 @@ module.exports = {
         index: './src/js/index.ts',
         playerList: './src/js/playerList.ts'
     },
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     module: {
         rules: [{
                 test: /\.scss$/,
@@ -36,15 +36,15 @@ module.exports = {
             Title: 'Fantasy Premier League App',
             filename: 'index.html',
             template: 'src/index.html',
-            excludeChunks: ['playerList']
+            excludeChunks: ['playerList', 'playerData']
         }),
         new HtmlWebpackPlugin({
             title: 'Fantasy Premier League App - Players',
-            chunks: ['index', 'playerList'],
+            chunks: ['index', 'playerData', 'playerList'],
             filename: 'players.html',
             template: 'src/players.html',
         }),
-        new CleanWebpackPlugin(['dist']),
+        new CleanWebpackPlugin(['docs']),
         new ExtractTextPlugin("styles.css, playerList.css")
     ],
     output: {
