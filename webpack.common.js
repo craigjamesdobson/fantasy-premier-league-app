@@ -7,42 +7,45 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
     entry: {
         index: './src/js/index.ts',
-        players: './src/js/players.js'
+        playerList: './src/js/playerList.ts'
     },
     devtool: 'inline-source-map',
     module: {
         rules: [{
-            test: /\.scss$/,
-            use: ExtractTextPlugin.extract({
-                fallback: "style-loader",
-                use: ['css-loader', 'sass-loader']
-            })
-        },
-        {
-            test: /\.tsx?$/,
-            use: 'ts-loader',
-            exclude: /node_modules/
-        }
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: ['css-loader', 'sass-loader']
+                })
+            },
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
+            }
         ]
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js']
+    },
+    node: {
+        fs: 'empty'
     },
     plugins: [
         new HtmlWebpackPlugin({
             Title: 'Fantasy Premier League App',
             filename: 'index.html',
             template: 'src/index.html',
-            excludeChunks: ['players']
+            excludeChunks: ['playerList']
         }),
         new HtmlWebpackPlugin({
             title: 'Fantasy Premier League App - Players',
-            chunks: ['index', 'players'],
+            chunks: ['index', 'playerList'],
             filename: 'players.html',
             template: 'src/players.html',
         }),
         new CleanWebpackPlugin(['dist']),
-        new ExtractTextPlugin("styles.css")
+        new ExtractTextPlugin("styles.css, playerList.css")
     ],
     output: {
         filename: '[name].bundle.js',

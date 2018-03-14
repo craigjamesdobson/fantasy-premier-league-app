@@ -1,44 +1,76 @@
+/// <reference types="jquery" />
+
 import * as $ from "jquery";
 
 export module PlayerData {
 
+    let loaded = false;
+    let url = "https://jokecamp.github.io/epl-fantasy-geek/js/static-data.json";
 
-    enum PlayerType {
+    enum PlayerPosition {
         Goalkeeper = 1,
         Defender = 2,
         Midfielder = 3,
         Forward = 4
     }
 
-    class Player {
-        private id: number;
-        private name: string;
-        private price: string;
-        private playerType: PlayerType;
+    // API Elements
+    interface IPlayerData {
+        elements: IPlayerDataElements[];
+    }
 
-        constructor(id: number, name: string, price: string, playerType: PlayerType) {
-            this.id = id;
-            this.price = price;
-            this.name = name;
-            this.playerType = playerType;
+    // API Players
+    interface IPlayerDataElements {
+        id: number;
+        now_cost: number;
+        cost_change_start_fall: number;
+        web_name: string;
+        element_type: PlayerPosition;
+    }
+
+    // Custom JSON
+    interface IPlayer {
+        id: number;
+        name: string;
+        price: string;
+        playerType: PlayerPosition;
+    }
+
+    class Player implements IPlayer {
+        id: number;
+        name: string;
+        price: string;
+        playerType: PlayerPosition;
+
+        constructor(player: IPlayerDataElements) {
+            this.id = player.id;
+            this.price = this.getPlayerCost(player.now_cost, player.cost_change_start_fall);
+            this.name = player.web_name;
+            this.playerType = player.element_type;
         }
 
-        // public setName(name:string): void {
-        //     if(name == "") {
-        //         this.name == "no name";
-        //     } else {
-        //         this.name == name;
-        //     }
-        // }
+        private getPlayerCost(now: number, change: number): string {
+            return ((now + change) / 10).toFixed(1);
+        }
 
     }
 
-    export function callPlayerData() {
-        $.getJSON("https://jokecamp.github.io/epl-fantasy-geek/js/static-data.json", function(data: any) {
+    export function getPlayerData(callback: Function) {
 
-            let players: Player[] = data.elements.map((player: any) => new Player(player.id, player.web_name, ((player.now_cost + player.cost_change_start_fall) / 10).toFixed(1), player.element_type))
+        $.getJSON(url, function (data: IPlayerData) {
 
-            console.log(players);
+            let players: Player[] = data.elements.map(player => new Player(player))
+
+            let playerList = {
+                goalkeepers: players.filter(p => p.playerType == 1),
+                defenders: players.filter(p => p.playerType == 2),
+                midfielders: players.filter(p => p.playerType == 3),
+                forwards: players.filter(p => p.playerType == 4)
+            }
+
+            console.log(playerList);
+
+            callback(playerList)
 
         });
     }
