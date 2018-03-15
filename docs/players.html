@@ -9,10 +9,10 @@
 <link href="styles.css, playerList.css" rel="stylesheet"></head>
 
 <body>
-
-    <script id="handlebars-demo" type="text/x-handlebars-template">
+    <script id="players-template" type="text/x-handlebars-template">
         <div class="row">
-            <div class="col">
+            <div class="col-12"><h2>Goalkeepers</h2></div>
+            <div class="col-12 col-md-6">
                 <table class="table table-striped table-sm text-center">
                     <thead class="thead-dark">
                         <th>ID</th>
@@ -20,7 +20,7 @@
                         <th>Name</th>
                         <th>Price</th>
                     </thead>
-                    {{#each goalkeepers}}
+                    {{#each gkLeft}}
                     <tr>
                         <td>{{id}}</td>
                         <td>{{team}}</td>
@@ -30,7 +30,7 @@
                     {{/each}}
                 </table>
             </div>
-            <div class="col">
+            <div class="col-12 col-md-6">
                 <table class="table table-striped table-sm text-center">
                     <thead class="thead-dark">
                         <th>ID</th>
@@ -38,7 +38,44 @@
                         <th>Name</th>
                         <th>Price</th>
                     </thead>
-                    {{#each defenders}}
+                    {{#each gkRight}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{team}}</td>
+                        <td>{{name}}</td>
+                        <td>{{price}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+            <div class="col-12"><h2>Defenders</h2></div>
+            <div class="col-6">
+                <table class="table table-striped table-sm text-center">
+                    <thead class="thead-dark">
+                        <th>ID</th>
+                        <th>Position</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </thead>
+                    {{#each dfLeft}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{team}}</td>
+                        <td>{{name}}</td>
+                        <td>{{price}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+            <div class="col-6">
+                <table class="table table-striped table-sm text-center">
+                    <thead class="thead-dark">
+                        <th>ID</th>
+                        <th>Position</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </thead>
+                    {{#each dfRight}}
                     <tr>
                         <td>{{id}}</td>
                         <td>{{team}}</td>
@@ -74,8 +111,7 @@
     </nav>
     <!-- END Navigation -->
     <div class="container">
-        <div class="player-container col-xs-12 py-2">
-            <h1>Players Page</h1>
+        <div class="player-container col-xs-12 py-3">
             <div class="loading">
                 <img src="img/loading.gif" alt="loading">
             </div>
