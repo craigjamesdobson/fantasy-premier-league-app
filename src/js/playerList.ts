@@ -1,17 +1,21 @@
 /// <reference types="jquery" />
+/// <reference types="bootstrap" />
 /// <reference types="handlebars" />
 
 // Imports
 import * as $ from "jquery";
-import { PlayerData } from "./playerData";
+import {
+    PlayerData
+} from "./playerData";
 import './../scss/playerList.scss';
 import * as Handlebars from 'handlebars';
 
-let playerContainer: JQuery;
-let playersTemplate: JQuery;
-
-
 namespace PlayerList {
+
+    // Define variables
+    let playerContainer: JQuery;
+    let playersTemplate: JQuery;
+    let playerImage: JQuery;
 
     // Call in player data and slice them into column data
     function setUpPlayers() {
@@ -52,10 +56,10 @@ namespace PlayerList {
         // Declare Variables
         playerContainer = $('.player-container');
         playersTemplate = $('#players-template');
+        playerImage = $('img')
 
         // Initialise functions
         setUpPlayers();
-
     };
 
 }

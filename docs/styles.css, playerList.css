@@ -12067,10 +12067,29 @@ footer {
   background-color: #dedede; }
 
 body {
-  color: #2c2c2c; }
+  color: #2c2c2c;
+  font-size: 14px;
+  font-family: 'Roboto Condensed', sans-serif; }
 
-table {
-  width: 100%; }
+.player-table {
+  text-align: center; }
+  .player-table colgroup .id {
+    width: 10%; }
+  .player-table colgroup .team {
+    width: 20%; }
+  .player-table colgroup .name {
+    width: 40%; }
+  .player-table colgroup .price {
+    width: 20%; }
+  .player-table.table {
+    width: 100%; }
+    .player-table.table td,
+    .player-table.table th {
+      padding: 5px 10px; }
+      .player-table.table td img,
+      .player-table.table th img {
+        height: 25px;
+        margin-right: 10px; }
 
 .loading {
   display: block;
