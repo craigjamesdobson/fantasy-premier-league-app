@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fantasy Premier League App - Players</title>
+<link href="styles.css, playerList.css" rel="stylesheet"></head>
+
+<body>
+    <script id="players-template" type="text/x-handlebars-template">
+        <div class="row">
+
+            <!-- Goalkeepers -->
+            <div class="col-12">
+                <h2>Goalkeepers</h2>
+            </div>
+            <div class="col-12 col-md-6">
+                <table class="table table-striped table-sm text-center">
+                    <thead class="thead-dark">
+                        <th>ID</th>
+                        <th>Position</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </thead>
+                    {{#each gkLeft}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{teamShort}}</td>
+                        <td>{{name}}</td>
+                        <td>{{price}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+            <div class="col-12 col-md-6">
+                <table class="table table-striped table-sm text-center">
+                    <thead class="thead-dark">
+                        <th>ID</th>
+                        <th>Position</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </thead>
+                    {{#each gkRight}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{teamShort}}</td>
+                        <td>{{name}}</td>
+                        <td>{{price}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+            <!-- END Goalkeepers -->
+
+            <!-- Defenders -->
+            <div class="col-12">
+                <h2>Defenders</h2>
+            </div>
+            <div class="col-12 col-md-6">
+                <table class="table table-striped table-sm text-center">
+                    <thead class="thead-dark">
+                        <th>ID</th>
+                        <th>Position</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </thead>
+                    {{#each dfLeft}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{teamShort}}</td>
+                        <td>{{name}}</td>
+                        <td>{{price}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+            <div class="col-12 col-md-6">
+                <table class="table table-striped table-sm text-center">
+                    <thead class="thead-dark">
+                        <th>ID</th>
+                        <th>Position</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </thead>
+                    {{#each dfRight}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{teamShort}}</td>
+                        <td>{{name}}</td>
+                        <td>{{price}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+            <!-- END Defenders -->
+
+            <!-- Midfielders -->
+            <div class="col-12">
+                <h2>Midfielders</h2>
+            </div>
+            <div class="col-12 col-md-6">
+                <table class="table table-striped table-sm text-center">
+                    <thead class="thead-dark">
+                        <th>ID</th>
+                        <th>Position</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </thead>
+                    {{#each mfLeft}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{teamShort}}</td>
+                        <td>{{name}}</td>
+                        <td>{{price}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+            <div class="col-12 col-md-6">
+                <table class="table table-striped table-sm text-center">
+                    <thead class="thead-dark">
+                        <th>ID</th>
+                        <th>Position</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </thead>
+                    {{#each mfRight}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{teamShort}}</td>
+                        <td>{{name}}</td>
+                        <td>{{price}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+            <!-- END Midfielders -->
+
+            <!-- Forwards -->
+            <div class="col-12">
+                <h2>Forwards</h2>
+            </div>
+            <div class="col-12 col-md-6">
+                <table class="table table-striped table-sm text-center">
+                    <thead class="thead-dark">
+                        <th>ID</th>
+                        <th>Position</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </thead>
+                    {{#each fwLeft}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{teamShort}}</td>
+                        <td>{{name}}</td>
+                        <td>{{price}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+            <div class="col-12 col-md-6">
+                <table class="table table-striped table-sm text-center">
+                    <thead class="thead-dark">
+                        <th>ID</th>
+                        <th>Position</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </thead>
+                    {{#each fwRight}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{teamShort}}</td>
+                        <td>{{name}}</td>
+                        <td>{{price}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+            <!-- END Forwards -->
+        </div>
+    </script>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">FPL App</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="players.html">Players</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="calculator.html">Calculator</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END Navigation -->
+    <div class="container">
+        <div class="player-container col-xs-12 py-3">
+            <div class="loading">
+                <img src="img/loading.gif" alt="loading">
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="playerList.bundle.js"></script><script type="text/javascript" src="index.bundle.js"></script></body>
+
+</html>
