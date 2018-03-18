@@ -66,6 +66,12 @@ module.exports = {
             filename: 'players.html',
             template: 'src/players.html',
         }),
+        new HtmlWebpackPlugin({
+            title: 'Fantasy Premier League App - Calculator',
+            chunks: ['index', 'playerData'],
+            filename: 'calculator.html',
+            template: 'src/calculator.html',
+        }),
         new CleanWebpackPlugin(['docs']),
         new ExtractTextPlugin("styles.css, playerList.css")
     ],
