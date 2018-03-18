@@ -31,6 +31,9 @@ body {
                 height: 25px;
                 margin-right: 10px;
             }
+            &:nth-child(4n) {
+                text-align: left;
+            }
         }
         tr {
             position: relative;
@@ -50,8 +53,21 @@ body {
                 margin-top: -5px;
                 text-align: center;
                 z-index: 99;
-                &.show-inline {
+            }
+            &:hover {
+                .player-status {
                     display: inline;
+                    transition: all 3s ease;
+                }
+                &.u {
+                    .fa-exclamation-triangle {
+                        color: #fff;
+                    }
+                }
+                &.i {
+                    .fa-exclamation-triangle {
+                        color: #333;
+                    }
                 }
             }
         }
@@ -63,14 +79,6 @@ body {
             .player-status {
                 background-color: #DB0100;
             }
-            &.show-data {
-                .fa-exclamation-triangle {
-                    color: #fff;
-                }
-                .player-status {
-                    display: inline-block;
-                }
-            }
         }
         tr.i {
             cursor: pointer;
@@ -80,14 +88,6 @@ body {
             .player-status {
                 background-color: #FFCC00;
                 color: #333;
-            }
-            &.show-data {
-                .fa-exclamation-triangle {
-                    color: #333;
-                }
-                .player-status {
-                    display: inline-block;
-                }
             }
         }
     }
