@@ -12090,6 +12090,46 @@ body {
       .player-table.table th img {
         height: 25px;
         margin-right: 10px; }
+    .player-table.table tr {
+      position: relative; }
+      .player-table.table tr .fa-exclamation-triangle {
+        position: relative;
+        float: right;
+        margin-top: 3px;
+        z-index: 100; }
+      .player-table.table tr .player-status {
+        display: none;
+        position: absolute;
+        color: #fff;
+        right: 15px;
+        left: 15px;
+        padding: 5px;
+        margin-top: -5px;
+        text-align: center;
+        z-index: 99; }
+        .player-table.table tr .player-status.show-inline {
+          display: inline; }
+    .player-table.table tr.u {
+      cursor: pointer; }
+      .player-table.table tr.u .fa-exclamation-triangle {
+        color: #DB0100; }
+      .player-table.table tr.u .player-status {
+        background-color: #DB0100; }
+      .player-table.table tr.u.show-data .fa-exclamation-triangle {
+        color: #fff; }
+      .player-table.table tr.u.show-data .player-status {
+        display: inline-block; }
+    .player-table.table tr.i {
+      cursor: pointer; }
+      .player-table.table tr.i .fa-exclamation-triangle {
+        color: #FFCC00; }
+      .player-table.table tr.i .player-status {
+        background-color: #FFCC00;
+        color: #333; }
+      .player-table.table tr.i.show-data .fa-exclamation-triangle {
+        color: #333; }
+      .player-table.table tr.i.show-data .player-status {
+        display: inline-block; }
 
 .loading {
   display: block;

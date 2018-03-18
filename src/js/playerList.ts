@@ -60,6 +60,12 @@ namespace PlayerList {
 
         // Initialise functions
         setUpPlayers();
+
+        $(document).on('mouseenter', '.player-row', function () {
+            $(this).addClass('show-data');
+        }).on('mouseleave', '.player-row', function () {
+            $(this).removeClass('show-data');
+        });
     };
 
 }

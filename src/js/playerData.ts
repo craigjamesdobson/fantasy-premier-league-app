@@ -40,8 +40,9 @@ export module PlayerData {
     interface IPlayer {
         id: number;
         image: string;
-        injuryStatus: string;
-        injuryNews: string;
+        isUnavailable: boolean;
+        availabilityType: string;
+        availabilityNews: string;
         teamID: number;
         teamName: string;
         teamShort: string;
@@ -54,8 +55,9 @@ export module PlayerData {
     class Player implements IPlayer {
         id: number;
         image: string;
-        injuryStatus: string;
-        injuryNews: string;
+        isUnavailable: boolean;
+        availabilityType: string;
+        availabilityNews: string;
         teamID: number;
         teamName: string;
         teamShort: string;
@@ -72,8 +74,7 @@ export module PlayerData {
         constructor(player: IPlayerDataElements) {
             this.id = player.id;
             this.image = `${imageUrl + player.code}.png`;
-            this.injuryStatus = player.status;
-            this.injuryNews = player.news;
+            this.availabilityType = player.status;
             this.teamID = player.team;
             this.price = this.getPlayerCost(player.now_cost, player.cost_change_start_fall);
             this.name = player.web_name;
@@ -161,6 +162,16 @@ export module PlayerData {
                     this.teamName = "West Ham United";
                     this.teamShort = "WHU";
                     break;
+            }
+
+            // Create availability objects
+            switch (true) {
+                case (this.availabilityType == "u" || this.availabilityType == "i"):
+                    this.isUnavailable = true;
+                    this.availabilityNews = player.news;
+                    break;
+                default:
+                    this.isUnavailable = false;
             }
         }
     }

@@ -32,6 +32,64 @@ body {
                 margin-right: 10px;
             }
         }
+        tr {
+            position: relative;
+            .fa-exclamation-triangle {
+                position: relative;
+                float: right;
+                margin-top: 3px;
+                z-index: 100;
+            }
+            .player-status {
+                display: none;
+                position: absolute;
+                color: #fff;
+                right: 15px;
+                left: 15px;
+                padding: 5px;
+                margin-top: -5px;
+                text-align: center;
+                z-index: 99;
+                &.show-inline {
+                    display: inline;
+                }
+            }
+        }
+        tr.u {
+            cursor: pointer;
+            .fa-exclamation-triangle {
+                color: #DB0100;
+            }
+            .player-status {
+                background-color: #DB0100;
+            }
+            &.show-data {
+                .fa-exclamation-triangle {
+                    color: #fff;
+                }
+                .player-status {
+                    display: inline-block;
+                }
+            }
+        }
+        tr.i {
+            cursor: pointer;
+            .fa-exclamation-triangle {
+                color: #FFCC00;
+            }
+            .player-status {
+                background-color: #FFCC00;
+                color: #333;
+            }
+            &.show-data {
+                .fa-exclamation-triangle {
+                    color: #333;
+                }
+                .player-status {
+                    display: inline-block;
+                }
+            }
+        }
     }
 }
 
