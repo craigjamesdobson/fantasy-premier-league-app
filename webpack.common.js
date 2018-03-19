@@ -6,8 +6,8 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
-        index: './src/js/index.ts',
-        playerList: './src/js/playerList.ts'
+        Index: './src/js/Shared/index.ts',
+        PlayerList: './src/js/Players/playerList.ts'
     },
     devtool: 'source-map',
     module: {
@@ -58,17 +58,17 @@ module.exports = {
             Title: 'Fantasy Premier League App',
             filename: 'index.html',
             template: 'src/index.html',
-            excludeChunks: ['playerList', 'playerData']
+            excludeChunks: ['PlayerData', 'PlayerList']
         }),
         new HtmlWebpackPlugin({
             title: 'Fantasy Premier League App - Players',
-            chunks: ['index', 'playerData', 'playerList'],
+            chunks: ['Index', 'PlayerData', 'PlayerList'],
             filename: 'players.html',
             template: 'src/players.html',
         }),
         new HtmlWebpackPlugin({
             title: 'Fantasy Premier League App - Calculator',
-            chunks: ['index', 'playerData'],
+            chunks: ['Index', 'PlayerData', 'TeamCalculations'],
             filename: 'calculator.html',
             template: 'src/calculator.html',
         }),

@@ -1,0 +1,63 @@
+{
+    "FantasyTeams": [{
+            "TeamName": "Lacking Creativity",
+            "Goalkeeper": 1,
+            "DefenderOne": 2,
+            "DefenderTwo": 3,
+            "DefenderThree": 4,
+            "DefenderFour": 5,
+            "MidfielderOne": 6,
+            "MidfielderTwo": 7,
+            "MidfielderThree": 8,
+            "ForwardOne": 9,
+            "ForwardTwo": 10,
+            "ForwardThree": 11,
+            "transfersAllowed": true,
+            "transferOne": {
+                "id": 12,
+                "week": 7,
+                "replace": "DefenderOne"
+            },
+            "transferTwo": {
+                "id": 14,
+                "week": 14,
+                "replace": "ForwardThree"
+            },
+            "transferThree": {
+                "id": 89,
+                "week": 18,
+                "replace": "MidfielderOne"
+            }
+        },
+        {
+            "TeamName": "Diggers FC",
+            "Goalkeeper": 1,
+            "DefenderOne": 2,
+            "DefenderTwo": 3,
+            "DefenderThree": 4,
+            "DefenderFour": 5,
+            "MidfielderOne": 6,
+            "MidfielderTwo": 7,
+            "MidfielderThree": 8,
+            "ForwardOne": 9,
+            "ForwardTwo": 10,
+            "ForwardThree": 11,
+            "transferOne": {
+                "id": 12,
+                "week": 7,
+                "replace": "DefenderOne"
+            },
+            "transferTwo": {
+                "id": null,
+                "week": null,
+                "replace": ""
+            },
+            "transferThree": {
+                "id": null,
+                "week": null,
+                "replace": ""
+            }
+        }
+
+    ]
+}

@@ -3,11 +3,9 @@
 /// <reference types="handlebars" />
 
 // Imports
-import * as $ from "jquery";
-import {
-    PlayerData
-} from "./playerData";
-import './../scss/playerList.scss';
+import * as $ from 'jquery';
+import { PlayerData } from '../Shared/PlayerData';
+import '../../scss/playerList.scss';
 import * as Handlebars from 'handlebars';
 
 namespace PlayerList {
@@ -60,12 +58,7 @@ namespace PlayerList {
 
         // Initialise functions
         setUpPlayers();
-
-        // $(document).on('mouseenter', '.player-row', function () {
-        //     $(this).addClass('show-data');
-        // }).on('mouseleave', '.player-row', function () {
-        //     $(this).removeClass('show-data');
-        // });
+        
     };
 
 }

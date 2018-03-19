@@ -5,9 +5,10 @@ import * as $ from "jquery";
 export module PlayerData {
 
     // Declare variables
-    let loadingState: boolean;
+    let players = [];
     let playerDataUrl: string;
     let imageUrl: string;
+    let loadingState: boolean;
     let loadingOverlay: JQuery;
 
     // Create enumarable list for player position
@@ -199,7 +200,7 @@ export module PlayerData {
                         // Hide the loading overlay
                         loadingOverlay.hide();
 
-                        let players: Player[] = data.elements.map(player => new Player(player))
+                        players = data.elements.map(player => new Player(player))
 
                         let playerList = {
                             settings: {
@@ -213,7 +214,7 @@ export module PlayerData {
 
                         console.log(playerList)
 
-                        // Create callback with 
+                        // Create callback with player data
                         playerListCallback(playerList)
                     });
                 }
