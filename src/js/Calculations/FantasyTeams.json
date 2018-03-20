@@ -1,63 +1,113 @@
 {
-    "FantasyTeams": [{
+    "FantasyTeams": [
+        {
+            "TeamID": 1,
             "TeamName": "Lacking Creativity",
-            "Goalkeeper": 1,
-            "DefenderOne": 2,
-            "DefenderTwo": 3,
-            "DefenderThree": 4,
-            "DefenderFour": 5,
-            "MidfielderOne": 6,
-            "MidfielderTwo": 7,
-            "MidfielderThree": 8,
-            "ForwardOne": 9,
-            "ForwardTwo": 10,
-            "ForwardThree": 11,
-            "transfersAllowed": true,
-            "transferOne": {
-                "id": 12,
-                "week": 7,
-                "replace": "DefenderOne"
-            },
-            "transferTwo": {
-                "id": 14,
-                "week": 14,
-                "replace": "ForwardThree"
-            },
-            "transferThree": {
-                "id": 89,
-                "week": 18,
-                "replace": "MidfielderOne"
-            }
+            "Players": [
+                {
+                    "id": 1,
+                    "transfers": [
+                        {
+                            "playerID": 10,
+                            "week": 7
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "transfers": []
+                },
+                {
+                    "id": 3,
+                    "transfers": []
+                },
+                {
+                    "id": 4,
+                    "transfers": []
+                },                {
+                    "id": 5,
+                    "transfers": []
+                },
+                {
+                    "id": 6,
+                    "transfers": []
+                },
+                {
+                    "id": 7,
+                    "transfers": []
+                },
+                {
+                    "id": 8,
+                    "transfers": []
+                },
+                {
+                    "id": 9,
+                    "transfers": []
+                },
+                {
+                    "id": 10,
+                    "transfers": []
+                },
+                {
+                    "id": 11,
+                    "transfers": []
+                }
+            ]
         },
         {
+            "TeamID": 1,
             "TeamName": "Diggers FC",
-            "Goalkeeper": 1,
-            "DefenderOne": 2,
-            "DefenderTwo": 3,
-            "DefenderThree": 4,
-            "DefenderFour": 5,
-            "MidfielderOne": 6,
-            "MidfielderTwo": 7,
-            "MidfielderThree": 8,
-            "ForwardOne": 9,
-            "ForwardTwo": 10,
-            "ForwardThree": 11,
-            "transferOne": {
-                "id": 12,
-                "week": 7,
-                "replace": "DefenderOne"
-            },
-            "transferTwo": {
-                "id": null,
-                "week": null,
-                "replace": ""
-            },
-            "transferThree": {
-                "id": null,
-                "week": null,
-                "replace": ""
-            }
+            "Players": [
+                {
+                    "id": 12,
+                    "transfers": [
+                        {
+                            "playerID": 78,
+                            "week": 21
+                        }
+                    ]
+                },
+                {
+                    "id": 13,
+                    "transfers": []
+                },
+                {
+                    "id": 14,
+                    "transfers": []
+                },
+                {
+                    "id": 15,
+                    "transfers": []
+                },                
+                {
+                    "id": 16,
+                    "transfers": []
+                },
+                {
+                    "id": 17,
+                    "transfers": []
+                },
+                {
+                    "id": 18,
+                    "transfers": []
+                },
+                {
+                    "id": 19,
+                    "transfers": []
+                },
+                {
+                    "id": 20,
+                    "transfers": []
+                },
+                {
+                    "id": 21,
+                    "transfers": []
+                },
+                {
+                    "id": 22,
+                    "transfers": []
+                }
+            ]
         }
-
     ]
 }

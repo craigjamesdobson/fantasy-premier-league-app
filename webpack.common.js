@@ -6,13 +6,13 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
-        Index: './src/js/Shared/index.ts',
-        PlayerList: './src/js/Players/playerList.ts'
+        Index: './src/js/Shared/Index.ts',
+        PlayerList: './src/js/Players/PlayerList.ts',
+        ScoreCalculations: './src/js/Calculations/ScoreCalculations.ts'
     },
     devtool: 'source-map',
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
@@ -32,8 +32,7 @@ module.exports = {
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
-                use: [
-                    {
+                use: [{
                         loader: 'file-loader',
                         options: {
                             name: '[name].[ext]',
@@ -58,7 +57,7 @@ module.exports = {
             Title: 'Fantasy Premier League App',
             filename: 'index.html',
             template: 'src/index.html',
-            excludeChunks: ['PlayerData', 'PlayerList']
+            excludeChunks: ['PlayerData', 'PlayerList', 'ScoreCalculations']
         }),
         new HtmlWebpackPlugin({
             title: 'Fantasy Premier League App - Players',
@@ -68,7 +67,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             title: 'Fantasy Premier League App - Calculator',
-            chunks: ['Index', 'PlayerData', 'TeamCalculations'],
+            chunks: ['Index', 'PlayerData', 'ScoreCalculations'],
             filename: 'calculator.html',
             template: 'src/calculator.html',
         }),

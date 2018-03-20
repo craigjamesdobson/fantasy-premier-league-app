@@ -82,84 +82,84 @@ export module PlayerData {
             this.playerType = player.element_type;
 
             // Create team name and team abbrevation objects depending on team ID
-            switch (true) {
-                case (this.teamID == 1):
+            switch (this.teamID) {
+                case 1:
                     this.teamName = "Arsenal";
                     this.teamShort = "ARS";
                     break;
-                case (this.teamID == 2):
+                case 2:
                     this.teamName = "Bournemouth";
                     this.teamShort = "BOU";
                     break;
-                case (this.teamID == 3):
+                case 3:
                     this.teamName = "Brighton and Hove Albion";
                     this.teamShort = "BHA";
                     break;
-                case (this.teamID == 4):
+                case 4:
                     this.teamName = "Burnley";
                     this.teamShort = "BUR";
                     break;
-                case (this.teamID == 5):
+                case 5:
                     this.teamName = "Chelsea";
                     this.teamShort = "CHE";
                     break;
-                case (this.teamID == 6):
+                case 6:
                     this.teamName = "Crystal Palace";
                     this.teamShort = "CRY";
                     break;
-                case (this.teamID == 7):
+                case 6:
                     this.teamName = "Everton";
                     this.teamShort = "EVE";
                     break;
-                case (this.teamID == 8):
+                case 8:
                     this.teamName = "Huddersfield Town";
                     this.teamShort = "HUD";
                     break;
-                case (this.teamID == 9):
+                case 9:
                     this.teamName = "Leicester City";
                     this.teamShort = "LEI";
                     break;
-                case (this.teamID == 10):
+                case 10:
                     this.teamName = "Liverpool";
                     this.teamShort = "LIV";
                     break;
-                case (this.teamID == 11):
+                case 11:
                     this.teamName = "Manchester City";
                     this.teamShort = "MNC";
                     break;
-                case (this.teamID == 12):
+                case 12:
                     this.teamName = "Manchester United";
                     this.teamShort = "MNU";
                     break;
-                case (this.teamID == 13):
+                case 13:
                     this.teamName = "Newcastle United";
                     this.teamShort = "NEW";
                     break;
-                case (this.teamID == 14):
+                case 14:
                     this.teamName = "Southampton";
                     this.teamShort = "SOU";
                     break;
-                case (this.teamID == 15):
+                case 15:
                     this.teamName = "Stoke City";
                     this.teamShort = "STO";
                     break;
-                case (this.teamID == 16):
+                case 16:
                     this.teamName = "Swansea City";
                     this.teamShort = "SWA";
                     break;
-                case (this.teamID == 17):
+                case 17:
                     this.teamName = "Tottenham Hotspur";
                     this.teamShort = "TOT";
                     break;
-                case (this.teamID == 18):
+                case 18:
                     this.teamName = "Watford";
                     this.teamShort = "WAT";
                     break;
-                case (this.teamID == 19):
+                case 19:
                     this.teamName = "West Bromwich Albion";
                     this.teamShort = "WBA";
                     break;
-                case (this.teamID == 20):
+                case 20:
                     this.teamName = "West Ham United";
                     this.teamShort = "WHU";
                     break;
