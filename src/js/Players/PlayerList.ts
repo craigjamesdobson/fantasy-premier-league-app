@@ -18,6 +18,7 @@ namespace PlayerList {
     // Call in player data and slice them into column data
     function setUpPlayers() {
 
+
         PlayerData.getPlayerData(function (playerData: any) {
 
             var dividedPlayerData = {

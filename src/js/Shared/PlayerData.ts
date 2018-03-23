@@ -107,7 +107,7 @@ export module PlayerData {
                     this.teamName = "Crystal Palace";
                     this.teamShort = "CRY";
                     break;
-                case 6:
+                case 7:
                     this.teamName = "Everton";
                     this.teamShort = "EVE";
                     break;
@@ -211,8 +211,6 @@ export module PlayerData {
                             midfielders: players.filter(p => p.playerType == 3),
                             forwards: players.filter(p => p.playerType == 4)
                         }
-
-                        console.log(playerList)
 
                         // Create callback with player data
                         playerListCallback(playerList)

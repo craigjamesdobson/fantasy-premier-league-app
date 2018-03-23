@@ -1,110 +1,109 @@
 {
-    "FantasyTeams": [
+    "fantasy_teams": [
         {
-            "TeamID": 1,
-            "TeamName": "Lacking Creativity",
-            "Players": [
+            "team_id": 1,
+            "team_name": "Fantasy Team 1",
+            "team_players": [
                 {
-                    "id": 1,
+                    "player_id": 1,
                     "transfers": [
                         {
-                            "playerID": 10,
-                            "week": 7
+                            "transfer_id": 10,
+                            "transfer_week": 7
                         }
                     ]
                 },
                 {
-                    "id": 2,
+                    "player_id": 2,
                     "transfers": []
                 },
                 {
-                    "id": 3,
+                    "player_id": 3,
                     "transfers": []
                 },
                 {
-                    "id": 4,
+                    "player_id": 4,
                     "transfers": []
                 },                {
-                    "id": 5,
+                    "player_id": 5,
                     "transfers": []
                 },
                 {
-                    "id": 6,
+                    "player_id": 6,
                     "transfers": []
                 },
                 {
-                    "id": 7,
+                    "player_id": 7,
                     "transfers": []
                 },
                 {
-                    "id": 8,
+                    "player_id": 8,
                     "transfers": []
                 },
                 {
-                    "id": 9,
+                    "player_id": 9,
                     "transfers": []
                 },
                 {
-                    "id": 10,
+                    "player_id": 10,
                     "transfers": []
                 },
                 {
-                    "id": 11,
+                    "player_id": 11,
                     "transfers": []
                 }
             ]
         },
         {
-            "TeamID": 1,
-            "TeamName": "Diggers FC",
-            "Players": [
+            "team_id": 2,
+            "team_name": "Fantasy Team 2",
+            "team_players": [
                 {
-                    "id": 12,
+                    "player_id": 12,
                     "transfers": [
                         {
-                            "playerID": 78,
-                            "week": 21
+                            "transfer_id": 42,
+                            "transfer_week": 12
                         }
                     ]
                 },
                 {
-                    "id": 13,
+                    "player_id": 13,
                     "transfers": []
                 },
                 {
-                    "id": 14,
+                    "player_id": 14,
                     "transfers": []
                 },
                 {
-                    "id": 15,
+                    "player_id": 15,
                     "transfers": []
-                },                
-                {
-                    "id": 16,
-                    "transfers": []
-                },
-                {
-                    "id": 17,
+                },                {
+                    "player_id": 16,
                     "transfers": []
                 },
                 {
-                    "id": 18,
+                    "player_id": 17,
                     "transfers": []
                 },
                 {
-                    "id": 19,
+                    "player_id": 18,
                     "transfers": []
                 },
                 {
-                    "id": 20,
+                    "player_id": 19,
                     "transfers": []
                 },
                 {
-                    "id": 21,
+                    "player_id": 20,
                     "transfers": []
                 },
                 {
-                    "id": 22,
+                    "player_id": 21,
+                    "transfers": []
+                },
+                {
+                    "player_id": 22,
                     "transfers": []
                 }
             ]
