@@ -72,7 +72,7 @@ module.exports = {
             template: 'src/calculator.html',
         }),
         new CleanWebpackPlugin(['docs']),
-        new ExtractTextPlugin("styles.css, playerList.css")
+        new ExtractTextPlugin("[name].css")
     ],
     output: {
         filename: '[name].bundle.js',

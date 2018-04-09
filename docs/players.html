@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fantasy Premier League App - Players</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+<link href="PlayerList.css" rel="stylesheet"><link href="Index.css" rel="stylesheet"></head>
+
+<body>
+    <script id="players-template" type="text/x-handlebars-template">
+        <div class="row">
+
+            <!-- Goalkeepers -->
+            <div class="col-12">
+                <h3 class="mb-3">Goalkeepers</h2>
+            </div>
+            <div class="col-12 col-md-6">
+                <table class="table table-striped table-sm player-table">
+                    <colgroup>
+                        <col class="id">
+                        <col class="team">
+                        <col class="name">
+                        <col class="price">
+                    </colgroup>
+                    <thead class="thead-dark">
+                        <th>ID</th>
+                        <th>Team</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </thead>
+                    {{#each gkLeft}}
+                    <tr class="player-row {{availabilityType}}">
+                        <td>{{id}}</td>
+                        <td class="{{teamName}}">{{teamShort}}</td>
+                        <td>
+                            <!-- <img src="{{image}}" alt={{name}} onerror="this.src = 'https://platform-static-files.s3.amazonaws.com/premierleague/photos/players/40x40/Photo-Missing.png'"/> -->
+                            {{name}}
+                        </td>
+                        <td>
+                            {{price}} {{#if isUnavailable}}
+                            <i class='fas fa-exclamation-triangle'></i>
+                            <span class='player-status'>{{availabilityNews}}</span>
+                            {{/if}}
+                        </td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+            <div class="col-12 col-md-6">
+                <table class="table table-striped table-sm player-table">
+                    <colgroup>
+                        <col class="id">
+                        <col class="team">
+                        <col class="name">
+                        <col class="price">
+                    </colgroup>
+                    <thead class="thead-dark">
+                        <th>ID</th>
+                        <th>Position</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </thead>
+                    {{#each gkRight}}
+                    <tr class="player-row {{availabilityType}}">
+                        <td>{{id}}</td>
+                        <td class="{{teamName}}">{{teamShort}}</td>
+                        <td>
+                            <!-- <img src="{{image}}" alt={{name}} onerror="this.src = 'https://platform-static-files.s3.amazonaws.com/premierleague/photos/players/40x40/Photo-Missing.png'"> -->
+                            {{name}}
+                        </td>
+                        <td>
+                            {{price}} {{#if isUnavailable}}
+                            <i class='fas fa-exclamation-triangle'></i>
+                            <span class='player-status'>{{availabilityNews}}</span>
+                            {{/if}}
+                        </td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+            <!-- END Goalkeepers -->
+
+            <!-- Defenders -->
+            <div class="col-12">
+                <h3>Defenders</h2>
+            </div>
+            <div class="col-12 col-md-6">
+                <table class="table table-striped table-sm player-table">
+                    <colgroup>
+                        <col class="id">
+                        <col class="team">
+                        <col class="name">
+                        <col class="price">
+                    </colgroup>
+                    <thead class="thead-dark">
+                        <th>ID</th>
+                        <th>Position</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </thead>
+                    {{#each dfLeft}}
+                    <tr class="player-row {{availabilityType}}">
+                        <td>{{id}}</td>
+                        <td class="{{teamName}}">{{teamShort}}</td>
+                        <td>
+                            <!-- <img src="{{image}}" alt={{name}} onerror="this.src = 'https://platform-static-files.s3.amazonaws.com/premierleague/photos/players/40x40/Photo-Missing.png'"> -->
+                            {{name}}
+                        </td>
+                        <td> {{price}} {{#if isUnavailable}}
+                            <i class='fas fa-exclamation-triangle'></i>
+                            <span class='player-status'>{{availabilityNews}}</span>
+                            {{/if}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+            <div class="col-12 col-md-6">
+                <table class="table table-striped table-sm player-table">
+                    <colgroup>
+                        <col class="id">
+                        <col class="team">
+                        <col class="name">
+                        <col class="price">
+                    </colgroup>
+                    <thead class="thead-dark">
+                        <th>ID</th>
+                        <th>Position</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </thead>
+                    {{#each dfRight}}
+                    <tr class="player-row {{availabilityType}}">
+                        <td>{{id}}</td>
+                        <td class="{{teamName}}">{{teamShort}}</td>
+                        <td>
+                            <!-- <img src="{{image}}" alt={{name}} onerror="this.src = 'https://platform-static-files.s3.amazonaws.com/premierleague/photos/players/40x40/Photo-Missing.png'"> -->
+                            {{name}}
+                        </td>
+                        <td> {{price}} {{#if isUnavailable}}
+                            <i class='fas fa-exclamation-triangle'></i>
+                            <span class='player-status'>{{availabilityNews}}</span>
+                            {{/if}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+            <!-- END Defenders -->
+
+            <!-- Midfielders -->
+            <div class="col-12">
+                <h3>Midfielders</h2>
+            </div>
+            <div class="col-12 col-md-6">
+                <table class="table table-striped table-sm player-table">
+                    <colgroup>
+                        <col class="id">
+                        <col class="team">
+                        <col class="name">
+                        <col class="price">
+                    </colgroup>
+                    <thead class="thead-dark">
+                        <th>ID</th>
+                        <th>Position</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </thead>
+                    {{#each mfLeft}}
+                    <tr class="player-row {{availabilityType}}">
+                        <td>{{id}}</td>
+                        <td class="{{teamName}}">{{teamShort}}</td>
+                        <td>
+                            <!-- <img src="{{image}}" alt={{name}} onerror="this.src = 'https://platform-static-files.s3.amazonaws.com/premierleague/photos/players/40x40/Photo-Missing.png'"> -->
+                            {{name}}
+                        </td>
+                        <td> {{price}} {{#if isUnavailable}}
+                            <i class='fas fa-exclamation-triangle'></i>
+                            <span class='player-status'>{{availabilityNews}}</span>
+                            {{/if}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+            <div class="col-12 col-md-6">
+                <table class="table table-striped table-sm player-table">
+                    <colgroup>
+                        <col class="id">
+                        <col class="team">
+                        <col class="name">
+                        <col class="price">
+                    </colgroup>
+                    <thead class="thead-dark">
+                        <th>ID</th>
+                        <th>Position</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </thead>
+                    {{#each mfRight}}
+                    <tr class="player-row {{availabilityType}}">
+                        <td>{{id}}</td>
+                        <td class="{{teamName}}">{{teamShort}}</td>
+                        <td>
+                            <!-- <img src="{{image}}" alt={{name}} onerror="this.src = 'https://platform-static-files.s3.amazonaws.com/premierleague/photos/players/40x40/Photo-Missing.png'"> -->
+                            {{name}}
+                        </td>
+                        <td> {{price}} {{#if isUnavailable}}
+                            <i class='fas fa-exclamation-triangle'></i>
+                            <span class='player-status'>{{availabilityNews}}</span>
+                            {{/if}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+            <!-- END Midfielders -->
+
+            <!-- Forwards -->
+            <div class="col-12">
+                <h3>Forwards</h2>
+            </div>
+            <div class="col-12 col-md-6">
+                <table class="table table-striped table-sm player-table">
+                    <colgroup>
+                        <col class="id">
+                        <col class="team">
+                        <col class="name">
+                        <col class="price">
+                    </colgroup>
+                    <thead class="thead-dark">
+                        <th>ID</th>
+                        <th>Position</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </thead>
+                    {{#each fwLeft}}
+                    <tr class="player-row {{availabilityType}}">
+                        <td>{{id}}</td>
+                        <td class="{{teamName}}">{{teamShort}}</td>
+                        <td>
+                            <!-- <img src="{{image}}" alt={{name}} onerror="this.src = 'https://platform-static-files.s3.amazonaws.com/premierleague/photos/players/40x40/Photo-Missing.png'"> -->
+                            {{name}}
+                        </td>
+                        <td> {{price}} {{#if isUnavailable}}
+                            <i class='fas fa-exclamation-triangle'></i>
+                            <span class='player-status'>{{availabilityNews}}</span>
+                            {{/if}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+            <div class="col-12 col-md-6">
+                <table class="table table-striped table-sm player-table">
+                    <colgroup>
+                        <col class="id">
+                        <col class="team">
+                        <col class="name">
+                        <col class="price">
+                    </colgroup>
+                    <thead class="thead-dark">
+                        <th>ID</th>
+                        <th>Position</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </thead>
+                    {{#each fwRight}}
+                    <tr class="player-row {{availabilityType}}">
+                        <td>{{id}}</td>
+                        <td class="{{teamName}}">{{teamShort}}</td>
+                        <td>
+                            <!-- <img src="{{image}}" alt={{name}} onerror="this.src = 'https://platform-static-files.s3.amazonaws.com/premierleague/photos/players/40x40/Photo-Missing.png'"> -->
+                            {{name}}
+                        </td>
+                        <td> {{price}} {{#if isUnavailable}}
+                            <i class='fas fa-exclamation-triangle'></i>
+                            <span class='player-status'>{{availabilityNews}}</span>
+                            {{/if}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+            <!-- END Forwards -->
+        </div>
+    </script>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">FPL App</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="players.html">Players</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="calculator.html">Calculator</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END Navigation -->
+
+    <div class="container">
+        <div class="player-container col-xs-12 py-3">
+            <div class="loading">
+                <img src="img/loading.gif" alt="loading">
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="PlayerList.bundle.js"></script><script type="text/javascript" src="Index.bundle.js"></script></body>
+
+</html>
