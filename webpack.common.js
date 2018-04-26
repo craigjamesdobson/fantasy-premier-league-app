@@ -84,4 +84,7 @@ module.exports = {
             chunkFilename: "[id].css"
           })
     ],
+    externals: {
+        jquery: 'jQuery'
+      }
 };

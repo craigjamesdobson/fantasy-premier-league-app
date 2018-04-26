@@ -1,5 +1,3 @@
-/// <reference types="bootstrap" />
-
 // imports
 import * as Handlebars from "handlebars";
 import * as $ from "jquery";
