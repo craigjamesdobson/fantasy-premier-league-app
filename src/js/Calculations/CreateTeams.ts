@@ -1,49 +1,47 @@
-/// <reference types="jquery" />
-
 import * as $ from "jquery";
-import { PlayerData } from '../Shared/PlayerData';
-import FantasyTeams from '../Calculations/FantasyTeams.json';
+import FantasyTeams from "../Calculations/FantasyTeams.json";
+import { PlayerData } from "../Shared/PlayerData";
 
-const fantasyTeams = (<any>FantasyTeams).fantasy_teams;
+const fantasyTeams = (FantasyTeams as any).fantasy_teams;
 
-export module CreateTeams {
+export namespace CreateTeams {
 
     // Interface for Team elements
     interface ITeamData {
         fantasy_teams: ITeamDataElements[];
     }
 
-        // Interface for team data
-        interface ITeamDataElements {
-            team_id: number;
-            team_name: string;
-            team_players: Array<ITeamPlayers>;
-        }
+    // Interface for team data
+    interface ITeamDataElements {
+        team_id: number;
+        team_name: string;
+        team_players: ITeamPlayers[];
+    }
 
-        // Interface for team players data
-        interface ITeamPlayers {
-            player_id: number;
-            transfers: Array<ITransferData>
-        }
+    // Interface for team players data
+    interface ITeamPlayers {
+        player_id: number;
+        transfers: ITransferData[];
+    }
 
-        // Interface for team players transfer data
-        interface ITransferData {
-            transfer_id: number;
-            transfer_week: number;
-        }
+    // Interface for team players transfer data
+    interface ITransferData {
+        transfer_id: number;
+        transfer_week: number;
+    }
 
     export function CreateTeam() {
 
-        PlayerData.getPlayerData(function (playerData: any) { 
+        PlayerData.getPlayerData((playerData: any) => {
+            // tslint:disable-next-line
             console.log(playerData);
         });
 
+        // tslint:disable-next-line
         console.log(fantasyTeams);
 
-        for (var t = 0; t < fantasyTeams.length; t++) {
-
-            $('.teams-container').append('<h3>' + fantasyTeams[t].team_name + '</p>');
-
+        for (const team of fantasyTeams) {
+            $(".teams-container").append(`<h3>${team.team_name}</h3>`);
         }
     }
 }

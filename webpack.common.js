@@ -2,7 +2,7 @@ const path = require('path');
 //const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     entry: {
@@ -10,14 +10,19 @@ module.exports = {
         PlayerList: './src/js/Players/PlayerList.ts',
         ScoreCalculations: './src/js/Calculations/ScoreCalculations.ts'
     },
+    output: {
+        filename: '[name].bundle.js',
+        chunkFilename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'docs')
+    },
     devtool: 'source-map',
     module: {
         rules: [{
-                test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: ['css-loader', 'sass-loader']
-                })
+                test: /\.css$/,
+                use: [
+                MiniCssExtractPlugin.loader,
+                "css-loader"
+                ]
             },
             {
                 test: /\.tsx?$/,
@@ -72,11 +77,11 @@ module.exports = {
             template: 'src/calculator.html',
         }),
         new CleanWebpackPlugin(['docs']),
-        new ExtractTextPlugin("[name].css")
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // both options are optional
+            filename: "[name].css",
+            chunkFilename: "[id].css"
+          })
     ],
-    output: {
-        filename: '[name].bundle.js',
-        chunkFilename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'docs')
-    }
 };

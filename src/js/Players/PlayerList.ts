@@ -1,27 +1,24 @@
-/// <reference types="jquery" />
 /// <reference types="bootstrap" />
-/// <reference types="handlebars" />
 
-// Imports
-import * as $ from 'jquery';
-import { PlayerData } from '../Shared/PlayerData';
-import '../../scss/playerList.scss';
-import * as Handlebars from 'handlebars';
+// imports
+import * as Handlebars from "handlebars";
+import * as $ from "jquery";
+import "../../scss/playerList.scss";
+import { PlayerData } from "../Shared/PlayerData";
 
 namespace PlayerList {
 
-    // Define variables
+    // define variables
     let playerContainer: JQuery;
     let playersTemplate: JQuery;
     let playerImage: JQuery;
 
-    // Call in player data and slice them into column data
-    function setUpPlayers() {
+    // call in player data and slice them into column data
+    function setUpPlayers(): any {
 
+        PlayerData.getPlayerData((playerData: any) => {
 
-        PlayerData.getPlayerData(function (playerData: any) {
-
-            var dividedPlayerData = {
+            const dividedPlayerData: object = {
                 gkLeft: playerData.goalkeepers.slice(0, Math.floor(playerData.goalkeepers.length / 2)),
                 gkRight: playerData.goalkeepers.slice(Math.floor(playerData.goalkeepers.length / 2)),
 
@@ -35,16 +32,16 @@ namespace PlayerList {
                 fwRight: playerData.forwards.slice(Math.floor(playerData.forwards.length / 2)),
             };
 
-            // Retrieve the template data from the HTML (jQuery is used here).
-            var template = playersTemplate.html();
+            // retrieve the template data from the HTML (jQuery is used here).
+            const template: any = playersTemplate.html();
 
-            // Compile the template data into a function
-            var templateScript = Handlebars.compile(template);
+            // compile the template data into a function
+            const templateScript: any = Handlebars.compile(template);
 
-            // Create HTML code
-            var html = templateScript(dividedPlayerData);
+            // create HTML code
+            const html: HTMLElement = templateScript(dividedPlayerData);
 
-            // Insert the HTML code into the page
+            // insert the HTML code into the page
             playerContainer.append(html);
 
         });
@@ -52,15 +49,14 @@ namespace PlayerList {
 
     export function init() {
 
-        // Declare Variables
-        playerContainer = $('.player-container');
-        playersTemplate = $('#players-template');
-        playerImage = $('img')
+        // declare Variables
+        playerContainer = $(".player-container");
+        playersTemplate = $("#players-template");
+        playerImage = $("img");
 
-        // Initialise functions
+        // initialise functions
         setUpPlayers();
-        
-    };
+    }
 
 }
 

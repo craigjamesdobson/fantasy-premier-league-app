@@ -1,7 +1,5 @@
-/// <reference types="jquery" />
-
 import * as $ from "jquery";
-import { CreateTeams } from '../Calculations/CreateTeams';
+import { CreateTeams } from "../Calculations/CreateTeams";
 
 namespace ScoreCalculations {
 

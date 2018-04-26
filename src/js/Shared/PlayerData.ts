@@ -1,8 +1,6 @@
-/// <reference types="jquery" />
-
 import * as $ from "jquery";
 
-export module PlayerData {
+export namespace PlayerData {
 
     // Declare variables
     let players = [];
@@ -14,9 +12,9 @@ export module PlayerData {
     // Create enumarable list for player position
     enum PlayerPosition {
         Goalkeeper = 1,
-        Defender = 2,
-        Midfielder = 3,
-        Forward = 4
+            Defender = 2,
+            Midfielder = 3,
+            Forward = 4
     }
 
     // Interface for player elements
@@ -38,38 +36,33 @@ export module PlayerData {
     }
 
     // Interface for Players
-    interface IPlayer {
-        id: number;
-        image: string;
-        isUnavailable: boolean;
-        availabilityType: string;
-        availabilityNews: string;
-        teamID: number;
-        teamName: string;
-        teamShort: string;
-        name: string;
-        price: string;
-        playerType: PlayerPosition;
-    }
+    // interface IPlayer {
+    //     id: number;
+    //     image: string;
+    //     isUnavailable: boolean;
+    //     availabilityType: string;
+    //     availabilityNews: string;
+    //     teamID: number;
+    //     teamName: string;
+    //     teamShort: string;
+    //     name: string;
+    //     price: string;
+    //     playerType: PlayerPosition;
+    // }
 
     // Player class
-    class Player implements IPlayer {
-        id: number;
-        image: string;
-        isUnavailable: boolean;
-        availabilityType: string;
-        availabilityNews: string;
-        teamID: number;
-        teamName: string;
-        teamShort: string;
-        name: string;
-        price: string;
-        playerType: PlayerPosition;
-
-        // Calculate out the cost using the paramaters now and change
-        private getPlayerCost(now: number, change: number): string {
-            return ((now + change) / 10).toFixed(1);
-        }
+    class Player {
+        public playerType: PlayerPosition;
+        private id: number;
+        private image: string;
+        private isUnavailable: boolean;
+        private availabilityType: string;
+        private availabilityNews: string;
+        private teamID: number;
+        private teamName: string;
+        private teamShort: string;
+        private name: string;
+        private price: string;
 
         // Construct player objects
         constructor(player: IPlayerDataElements) {
@@ -167,7 +160,7 @@ export module PlayerData {
 
             // Create availability objects
             switch (true) {
-                case (this.availabilityType == "u" || this.availabilityType == "i"):
+                case (this.availabilityType === "u" || this.availabilityType === "i"):
                     this.isUnavailable = true;
                     this.availabilityNews = player.news;
                     break;
@@ -175,49 +168,53 @@ export module PlayerData {
                     this.isUnavailable = false;
             }
         }
+
+        // Calculate out the cost using the paramaters now and change
+        private getPlayerCost(now: number, change: number): string {
+            return ((now + change) / 10).toFixed(1);
+        }
     }
 
-    export function getPlayerData(playerListCallback: Function) {
+    export function getPlayerData(playerListCallback: any) {
 
         // Define variables
-        loadingOverlay = $('.loading');
+        loadingOverlay = $(".loading");
         loadingState = false;
         playerDataUrl = "https://jokecamp.github.io/epl-fantasy-geek/js/static-data.json";
         imageUrl = "https://platform-static-files.s3.amazonaws.com/premierleague/photos/players/40x40/p";
 
-
         fetch(playerDataUrl)
             .then(
-                function (data) {
+                (data: Response) => {
                     if (data.status !== 200) {
-                        console.log('Looks like there was a problem. Status Code: ' + data.status);
+                        Error(`Looks like there was a problem. Status Code:  ${data.status}`);
                         return;
                     }
 
                     // Examine the text in the response
-                    data.json().then(function (data: IPlayerData) {
+                    data.json().then((playerData: IPlayerData) => {
 
                         // Hide the loading overlay
                         loadingOverlay.hide();
 
-                        players = data.elements.map(player => new Player(player))
+                        players = playerData.elements.map(player => new Player(player));
 
-                        let playerList = {
+                        const playerList = {
                             settings: {
                                 loaded: true,
                             },
-                            goalkeepers: players.filter(p => p.playerType == 1),
-                            defenders: players.filter(p => p.playerType == 2),
-                            midfielders: players.filter(p => p.playerType == 3),
-                            forwards: players.filter(p => p.playerType == 4)
-                        }
+                            goalkeepers: players.filter(p => p.playerType === 1),
+                            defenders: players.filter(p => p.playerType === 2),
+                            midfielders: players.filter(p => p.playerType === 3),
+                            forwards: players.filter(p => p.playerType === 4)
+                        };
 
                         // Create callback with player data
-                        playerListCallback(playerList)
+                        playerListCallback(playerList);
                     });
                 }
             )
-            .catch(function (err: any) {
+            .catch((err: Error) => {
 
                 // Hide the loading overlay
                 loadingOverlay.hide();
