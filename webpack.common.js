@@ -7,8 +7,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
     entry: {
         Index: './src/js/Shared/Index.ts',
-        PlayerList: './src/js/Players/PlayerList.ts',
-        ScoreCalculations: './src/js/Calculations/ScoreCalculations.ts'
+        PlayerList: './src/js/views/Players/PlayerList.ts',
+        ScoreCalculations: './src/js/views/Calculations/ScoreCalculations.ts'
     },
     output: {
         filename: '[name].bundle.js',

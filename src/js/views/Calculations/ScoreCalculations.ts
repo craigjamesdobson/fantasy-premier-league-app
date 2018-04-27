@@ -1,5 +1,5 @@
 import * as $ from "jquery";
-import { CreateTeams } from "../Calculations/CreateTeams";
+import { CreateTeams } from "../../components/CreatedTeams/CreateTeams";
 
 namespace ScoreCalculations {
 
