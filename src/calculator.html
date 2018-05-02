@@ -16,7 +16,42 @@
 </head>
 
 <body>
-
+    <script id="fantasyteams-template" type="text/x-handlebars-template">
+        <div class="row">
+            {{#each this}}
+            <div class="col-xs-12 col-md-3">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <th colspan="5">{{this.0.team_name}}</th>
+                        </tr>
+                        <tr>
+                            <th>ID</th>
+                            <th>Position</th>
+                            <th>Team</th>
+                            <th>Name</th>
+                            <th>Points</th>
+                        </tr>
+                        {{#each this.1.team_players}}
+                        <tr class="player-total-data">
+                            <td class="id">{{player_id}}</td>
+                            <td class="position">{{player_playertype}}</td>
+                            <td class="club">{{player_teamshort}}</td>
+                            <td class="player">{{player_name}}</td>
+                            <td class="points">0</td>
+                        </tr>
+                        {{/each}}
+                        <tr class="total-points-row">
+                            <td colspan="3"></td>
+                            <th>Total</th>
+                            <td class="total-points">0</td>
+                        </tr>
+                    </tbody>
+                    </table>
+            </div>
+            {{/each}}
+        </div>
+    </script>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
