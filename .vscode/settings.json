@@ -6,5 +6,6 @@
     "explorer.confirmDelete": false,
     "window.menuBarVisibility": "default",
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Panda Syntax"
+    "workbench.colorTheme": "Panda Syntax",
+    "prettier.tabWidth": 2,
 }

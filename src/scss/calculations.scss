@@ -1,0 +1,49 @@
+@import "styles";
+
+.teams-container {
+    text-align: center;
+    table {
+        margin-bottom: 10px;
+        width: 100%;
+        max-width: 100%;
+        font-size: 12px;
+        .player-total-data {
+
+            &:nth-child(odd) {
+                background-color: #ddd;
+            }
+
+            &.transfered {
+                background-color: green;
+                color: #fff;
+                font-weight: bold;
+            }
+
+            &.current-week-transfer {
+                background-color: yellow;
+                color: rgb(68, 68, 209);
+                font-weight: bold;
+            }
+            
+            &.sent-off {
+                background-color: red;
+                color: #fff;
+            }
+        }
+    }
+    table,
+    td,
+    th,
+    tr {
+        padding: 2px 5px;
+        text-align: center;
+        border: 1px solid #ccc;
+        white-space: nowrap;
+        page-break-inside: avoid;
+    }
+    .total-points-row {
+        th {
+            text-align: center;
+        }
+    }
+}

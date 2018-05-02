@@ -1,7 +1,7 @@
 // imports
 import * as Handlebars from "handlebars";
 import * as $ from "jquery";
-import "../../../scss/PlayerList.scss";
+import "../../../scss/Playerlist.scss";
 import { PlayerData } from "../../components/Players/PlayerData";
 
 namespace PlayerList {

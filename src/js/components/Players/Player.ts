@@ -1,4 +1,3 @@
-import * as $ from "jquery";
 import { IPlayerData } from "../../components/Players/IPlayerData";
 import { IPlayerDataElements } from "../../components/Players/IPlayerDataElements";
 import { PlayerPosition } from "../../components/Players/PlayerPosition";
