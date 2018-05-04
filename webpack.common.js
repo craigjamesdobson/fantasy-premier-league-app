@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: {
-    Index: "./src/js/Shared/Index.ts",
+    Index: "./src/js/Index.ts",
     PlayerList: "./src/js/views/Players/PlayerList.ts",
     ScoreCalculations: "./src/js/views/Calculations/ScoreCalculations.ts"
   },
@@ -59,20 +59,20 @@ module.exports = {
     new HtmlWebpackPlugin({
       Title: "Fantasy Premier League App",
       filename: "index.html",
-      template: "src/index.html",
+      template: "views/index.html",
       excludeChunks: ["PlayerData", "PlayerList", "ScoreCalculations"]
     }),
     new HtmlWebpackPlugin({
       title: "Fantasy Premier League App - Players",
       chunks: ["Index", "PlayerData", "PlayerList"],
       filename: "players.html",
-      template: "src/players.html"
+      template: "views/players.html"
     }),
     new HtmlWebpackPlugin({
       title: "Fantasy Premier League App - Calculator",
       chunks: ["Index", "PlayerData", "ScoreCalculations"],
       filename: "calculator.html",
-      template: "src/calculator.html"
+      template: "views/calculator.html"
     }),
     new CleanWebpackPlugin(["docs"]),
     new MiniCssExtractPlugin({
@@ -83,6 +83,7 @@ module.exports = {
     })
   ],
   externals: {
-    jquery: "jQuery"
+    jquery: "jQuery",
+    Handlebars: "Handlebars"
   }
 };

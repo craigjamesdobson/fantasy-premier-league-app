@@ -1,9 +1,9 @@
-import { IPlayerData } from "../../components/Players/IPlayerData";
-import { IPlayerDataElements } from "../../components/Players/IPlayerDataElements";
-import { Player } from "../../components/Players/Player";
-import { PlayerData } from "../../components/Players/PlayerData";
-import { PlayerPosition } from "../../components/Players/PlayerPosition";
-import FantasyTeams from "../CreatedTeams/FantasyTeams.json";
+import { IPlayerData } from '../../components/Players/IPlayerData';
+import { IPlayerDataElements } from '../../components/Players/IPlayerDataElements';
+import { Player } from '../../components/Players/Player';
+import { PlayerData } from '../../components/Players/PlayerData';
+import { PlayerPosition } from '../../components/Players/PlayerPosition';
+import FantasyTeams from '../Data/FantasyTeams.json';
 
 const fantasyTeams = (FantasyTeams as any).fantasy_teams;
 let newFantasyTeam: any = [
@@ -53,16 +53,16 @@ export namespace CreateTeams {
 
               switch (player.playerType) {
                 case 1:
-                  playerPosition = "GK";
+                  playerPosition = 'GK';
                   break;
                 case 2:
-                  playerPosition = "DEF";
+                  playerPosition = 'DEF';
                   break;
                 case 3:
-                  playerPosition = "MID";
+                  playerPosition = 'MID';
                   break;
                 case 4:
-                  playerPosition = "FWD";
+                  playerPosition = 'FWD';
                   break;
               }
 

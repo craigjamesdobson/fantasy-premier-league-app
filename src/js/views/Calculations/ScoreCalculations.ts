@@ -1,25 +1,26 @@
-import * as Handlebars from "handlebars";
-import "../../../scss/calculations.scss";
-import { CreateTeams } from "../../components/CreatedTeams/CreateTeams";
+import '../../../scss/calculations.scss';
+import { CreateTeams } from '../../components/FantasyTeams/CreateFantasyTeams';
 
 namespace ScoreCalculations {
-    export function init() {
-        CreateTeams.CreateTeam((newFantasyTeams: any) => {
+  export function init() {
+    CreateTeams.CreateTeam((newFantasyTeams: any) => {
+      $.get(
+        '/src/js/components/Templates/FantasyTeamsTemplate.hbs',
+        (source: any) => {
+          // retrieve the template data from the HTML (jQuery is used here).
+          const template: any = source;
 
-            $.get( "/src/js/components/CreatedTeams/fantasyTeamsTemplate.hbs", (source: any) => {
-            // retrieve the template data from the HTML (jQuery is used here).
-            const template: any = source;
+          // compile the template
+          const templateScript: any = Handlebars.compile(template);
 
-            const templateScript: any = Handlebars.compile(template);
+          // create HTML code
+          const html: HTMLElement = templateScript(newFantasyTeams);
 
-            // create HTML code
-            const html: HTMLElement = templateScript(newFantasyTeams);
-
-            // insert the HTML code into the page
-            $(".teams-container").append(html);
-        });
-
-        });
-    }
+          // insert the HTML code into the page
+          $('.teams-container').append(html);
+        }
+      );
+    });
+  }
 }
 $(() => ScoreCalculations.init());
