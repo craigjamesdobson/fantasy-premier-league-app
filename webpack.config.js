@@ -4,6 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
@@ -14,7 +15,7 @@ module.exports = {
   },
   output: {
     path: __dirname + '/docs',
-    filename: '[name].bundle.js',
+    filename: '[name].[chunkhash].bundle.js',
     chunkFilename: '[name].bundle.js'
   },
   devtool: 'source-map',
@@ -73,6 +74,9 @@ module.exports = {
     // Clean dist folder
     new CleanWebpackPlugin(['docs']),
 
+    // Copy our external dependencies into the output folder so we can put them into MVC bundle(s)
+    new CopyWebpackPlugin([{ from: 'src/img', to: 'img' }]),
+
     // Generates default index.html
     new HtmlWebpackPlugin({
       title: 'Fantasy Premier League App - Players',
@@ -99,8 +103,8 @@ module.exports = {
 
     // Extract css into seperate files
     new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[name].css'
+      filename: '[name].[chunkhash].css',
+      chunkFilename: '[name].css',
     })
   ],
   resolve: {
