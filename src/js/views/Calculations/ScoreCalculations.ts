@@ -1,3 +1,4 @@
+import * as $ from 'jquery';
 import '../../../scss/calculations.scss';
 import { CreateTeams } from '../../components/FantasyTeams/CreateFantasyTeams';
 
