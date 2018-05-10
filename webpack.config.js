@@ -15,7 +15,6 @@ module.exports = {
   },
   output: {
     path: __dirname + '/docs',
-    publicPath: '/',
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js'
   },
@@ -76,7 +75,7 @@ module.exports = {
     new CleanWebpackPlugin(['docs']),
 
     // Copy our external dependencies into the output folder so we can put them into MVC bundle(s)
-    // new CopyWebpackPlugin([{ from: 'src/img', to: 'img' }]),
+    new CopyWebpackPlugin([{ from: 'src/js/components/Templates', to: 'templates' }]),
 
     // Generates default index.html
     new HtmlWebpackPlugin({

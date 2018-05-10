@@ -26,7 +26,7 @@ namespace PlayerList {
         fwRight: playerData.forwards.slice(Math.floor(playerData.forwards.length / 2))
       };
 
-      fetch('/src/js/components/Templates/PlayersTemplate.hbs')
+      fetch('Templates/PlayersTemplate.hbs')
         .then(res => {
           return res.text();
         })
