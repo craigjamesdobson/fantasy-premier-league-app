@@ -1,6 +1,7 @@
 import * as $ from 'jquery';
 import '../../../scss/Playerlist.scss';
 import { PlayerData } from '../../components/Players/PlayerData';
+const playerTemplate = require('../../components/Templates/PlayersTemplate.hbs');
 
 namespace PlayerList {
   // define variables
@@ -26,23 +27,10 @@ namespace PlayerList {
         fwRight: playerData.forwards.slice(Math.floor(playerData.forwards.length / 2))
       };
 
-      fetch('templates/PlayersTemplate.handlebars')
-        .then(res => {
-          return res.text();
-        })
-        .then(data => {
-          // retrieve the template data from the HTML
-          const template: any = data;
+      playerContainer.append(
+        playerTemplate(dividedPlayerData)
+      );
 
-          // compile the template data into a function
-          const templateScript: any = Handlebars.compile(template);
-
-          // create HTML code
-          const html: HTMLElement = templateScript(dividedPlayerData);
-
-          // insert the HTML code into the page
-          playerContainer.append(html);
-        });
     });
   }
 
