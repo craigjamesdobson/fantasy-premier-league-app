@@ -8,8 +8,8 @@
     "url": "https://github.com/craigjamesdobson/fantasy-premier-league-app"
   },
   "scripts": {
-    "dev": "webpack-dev-server --mode development",
-    "build": "webpack --mode production"
+    "dev": "webpack-dev-server --mode=development",
+    "build": "webpack --mode=production"
   },
   "keywords": [],
   "author": "Craig Dobson",

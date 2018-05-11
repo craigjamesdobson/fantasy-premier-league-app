@@ -1,9 +1,15 @@
-import { IPlayerData } from '../../components/Players/IPlayerData';
-import { IPlayerDataElements } from '../../components/Players/IPlayerDataElements';
-import { Player } from '../../components/Players/Player';
-import { PlayerData } from '../../components/Players/PlayerData';
-import { PlayerPosition } from '../../components/Players/PlayerPosition';
-import FantasyTeams from '../Data/FantasyTeams.json';
+import { IPlayerData } from '../Players/IPlayerData';
+import { IPlayerDataElements } from '../Players/IPlayerDataElements';
+import { Player } from '../Players/Player';
+import { PlayerData } from '../Players/PlayerData';
+import { PlayerPosition } from '../Players/PlayerPosition';
+
+import { ITeamData } from '../FantasyTeams/ITeamData';
+import { ITeamDataElements } from '../FantasyTeams/ITeamDataElements';
+import { ITeamPlayers } from '../FantasyTeams/ITeamPlayers';
+import { ITransferData } from '../FantasyTeams/ITransferData';
+
+import FantasyTeams from '../../../../Data/FantasyTeams.json';
 
 const fantasyTeams = (FantasyTeams as any).fantasy_teams;
 let newFantasyTeam: any = [
@@ -11,32 +17,10 @@ let newFantasyTeam: any = [
     team_players: []
   }
 ];
+
 const newFantasyTeams: any = [];
 
 export namespace CreateTeams {
-  // Interface for Team elements
-  interface ITeamData {
-    fantasy_teams: ITeamDataElements[];
-  }
-
-  // Interface for team data
-  interface ITeamDataElements {
-    team_id: number;
-    team_name: string;
-    team_players: ITeamPlayers[];
-  }
-
-  // Interface for team players data
-  interface ITeamPlayers {
-    player_id: number;
-    transfers: ITransferData[];
-  }
-
-  // Interface for team players transfer data
-  interface ITransferData {
-    transfer_id: number;
-    transfer_week: number;
-  }
 
   export function CreateTeam(newFantasyTeamsCallback: any) {
     PlayerData.getPlayerData((playerData: any) => {
@@ -87,8 +71,6 @@ export namespace CreateTeams {
 
       newFantasyTeamsCallback(newFantasyTeams);
 
-      // tslint:disable-next-line
-      console.log(newFantasyTeams);
     });
   }
 }

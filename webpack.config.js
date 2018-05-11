@@ -18,6 +18,11 @@ module.exports = {
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js'
   },
+  devServer: {
+    contentBase: path.join(__dirname, "dist"),
+    compress: true,
+    port: 8080
+  },
   devtool: 'source-map',
   module: {
     rules: [
@@ -54,8 +59,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'img',
-              publicPath: 'img'
+              outputPath: '/',
             }
           }
         ]
@@ -72,10 +76,12 @@ module.exports = {
     }),
 
     // Clean dist folder
-    new CleanWebpackPlugin(['docs']),
+     new CleanWebpackPlugin(['docs']),
 
     // Copy our external dependencies into the output folder so we can put them into MVC bundle(s)
-    new CopyWebpackPlugin([{ from: 'src/js/components/Templates', to: 'templates' }]),
+    // new CopyWebpackPlugin([
+    //   { from: 'src/js/components/Templates', to: 'templates' }
+    // ]),
 
     // Generates default index.html
     new HtmlWebpackPlugin({
