@@ -19,7 +19,7 @@ module.exports = {
     chunkFilename: '[name].bundle.js'
   },
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
+    contentBase: path.join(__dirname, "docs"),
     compress: true,
     port: 8080
   },
@@ -76,7 +76,7 @@ module.exports = {
     }),
 
     // Clean dist folder
-     new CleanWebpackPlugin(['docs']),
+    // new CleanWebpackPlugin(['docs']),
 
     // Copy our external dependencies into the output folder so we can put them into MVC bundle(s)
     // new CopyWebpackPlugin([
