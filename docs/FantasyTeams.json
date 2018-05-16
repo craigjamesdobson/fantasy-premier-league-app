@@ -6,6 +6,12 @@
       "team_players": [
         {
           "player_id": 375,
+          "real_life_transfer": [
+            {
+              "transfer_team": 7,
+              "transfer_week": 15
+            }
+          ],
           "transfers": []
         },
         {

@@ -20,8 +20,9 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, "docs"),
-    compress: true,
-    port: 8080
+    compress: false,
+    port: 8080,
+    open: true
   },
   devtool: 'source-map',
   module: {

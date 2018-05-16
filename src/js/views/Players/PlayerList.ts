@@ -10,10 +10,11 @@ namespace PlayerList {
   let playerImage: JQuery;
 
   // call in player data and slice them into column data
-  function setUpPlayers(): any {
-    PlayerData.getPlayerData((playerData: any) => {
-      // prettier-ignore
-      const dividedPlayerData: object = {
+  async function setUpPlayers(): Promise<any> {
+    const playerData = await PlayerData.getPlayerData();
+
+    // prettier-ignore
+    const dividedPlayerData: object = {
         gkLeft: playerData.goalkeepers.slice(0, Math.floor(playerData.goalkeepers.length / 2)),
         gkRight: playerData.goalkeepers.slice(Math.floor(playerData.goalkeepers.length / 2)),
 
@@ -27,11 +28,7 @@ namespace PlayerList {
         fwRight: playerData.forwards.slice(Math.floor(playerData.forwards.length / 2))
       };
 
-      playerContainer.append(
-        playerTemplate(dividedPlayerData)
-      );
-
-    });
+    playerContainer.append(playerTemplate(dividedPlayerData));
   }
 
   export function init() {
