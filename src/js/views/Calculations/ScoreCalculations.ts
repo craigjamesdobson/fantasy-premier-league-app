@@ -12,7 +12,18 @@ namespace ScoreCalculations {
     console.log(draftedTeamData);
     console.log(playerData);
 
-    $('.teams-container').append(DraftedTeamTemplate(draftedTeamData));
+    for (const draftedTeam of draftedTeamData.draftedTeams) {
+      const fullDraftedTeam: object = {
+        teamID: draftedTeam.teamID,
+        teamName: draftedTeam.teamName,
+        teamPlayers : [
+          {
+          }
+        ]
+      };
+    }
+
+    $('.teams-container').append(DraftedTeamTemplate(draftedTeamData.draftedTeams));
   }
 
   export function init() {

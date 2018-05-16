@@ -17,7 +17,9 @@ export namespace PlayerData {
       fetch(playerDataUrl)
         .then((data: Response) => {
           if (data.status !== 200) {
-            reject(`Looks like there was a problem. Status Code:  ${data.status}`);
+            reject(
+              `Looks like there was a problem. Status Code:  ${data.status}`
+            );
           }
 
           // Examine the text in the response
@@ -25,7 +27,9 @@ export namespace PlayerData {
             // Hide the loading overlay
             loadingOverlay.hide();
 
-            const players = playerData.elements.map(player => new Player(player));
+            const players = playerData.elements.map(
+              player => new Player(player)
+            );
 
             const playerList: IPlayerList = {
               loaded: true,

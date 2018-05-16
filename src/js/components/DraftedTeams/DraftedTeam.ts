@@ -13,8 +13,8 @@ import { IDraftedTransferData } from '../DraftedTeams/IDraftedTransferData';
 // Player class
 export class DraftedTeam {
   public teamID: number;
-  private teamName: string;
-  private teamPlayers: DraftedPlayer;
+  public teamName: string;
+  public teamPlayers: DraftedPlayer;
 
   constructor(draftedTeam: IDraftedTeamDataElements) {
     this.teamID = draftedTeam.team_id;
