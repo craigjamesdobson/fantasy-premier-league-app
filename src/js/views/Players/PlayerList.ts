@@ -4,10 +4,9 @@ import { PlayerData } from '../../components/Players/PlayerData';
 const playerTemplate = require('../../components/Templates/PlayersTemplate.hbs');
 
 namespace PlayerList {
-  // define variables
-  let playerContainer: JQuery;
-  let playersTemplate: JQuery;
-  let playerImage: JQuery;
+  // declare Variables
+  const playerContainer = $('.player-container');
+  const playersTemplate = $('#players-template');
 
   // call in player data and slice them into column data
   async function setUpPlayers(): Promise<any> {
@@ -32,11 +31,6 @@ namespace PlayerList {
   }
 
   export function init() {
-    // declare Variables
-    playerContainer = $('.player-container');
-    playersTemplate = $('#players-template');
-    playerImage = $('img');
-
     // initialise functions
     setUpPlayers();
   }
