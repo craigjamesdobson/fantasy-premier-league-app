@@ -1,6 +1,7 @@
 import * as $ from 'jquery';
 import '../../../scss/Playerlist.scss';
 import { PlayerData } from '../../components/Players/PlayerData';
+import { PlayerPosition } from '../../components/Players/PlayerPosition';
 const playerTemplate = require('../../components/Templates/PlayersTemplate.hbs');
 
 namespace PlayerList {
@@ -12,19 +13,26 @@ namespace PlayerList {
   async function setUpPlayers(): Promise<any> {
     const playerData = await PlayerData.getPlayerData();
 
+    playerData.getPlayersOfType(PlayerPosition.Goalkeeper);
+
+    const goalkeepers = playerData.getSplitPlayersOfType(PlayerPosition.Goalkeeper);
+    const defenders = playerData.getSplitPlayersOfType(PlayerPosition.Defender);
+    const midfielders = playerData.getSplitPlayersOfType(PlayerPosition.Midfielder);
+    const forwards = playerData.getSplitPlayersOfType(PlayerPosition.Forward);
+
     // prettier-ignore
     const dividedPlayerData: object = {
-        gkLeft: playerData.goalkeepers.slice(0, Math.floor(playerData.goalkeepers.length / 2)),
-        gkRight: playerData.goalkeepers.slice(Math.floor(playerData.goalkeepers.length / 2)),
+        gkLeft: goalkeepers[0],
+        gkRight: goalkeepers[1],
 
-        dfLeft: playerData.defenders.slice(0, Math.floor(playerData.defenders.length / 2)),
-        dfRight: playerData.defenders.slice(Math.floor(playerData.defenders.length / 2)),
+        dfLeft: defenders[0],
+        dfRight: defenders[1],
 
-        mfLeft: playerData.midfielders.slice(0, Math.floor(playerData.midfielders.length / 2)),
-        mfRight: playerData.midfielders.slice(Math.floor(playerData.midfielders.length / 2)),
+        mfLeft: midfielders[0],
+        mfRight: midfielders[1],
 
-        fwLeft: playerData.forwards.slice(0, Math.floor(playerData.forwards.length / 2)),
-        fwRight: playerData.forwards.slice(Math.floor(playerData.forwards.length / 2))
+        fwLeft: forwards[0],
+        fwRight: forwards[1]
       };
 
     playerContainer.append(playerTemplate(dividedPlayerData));

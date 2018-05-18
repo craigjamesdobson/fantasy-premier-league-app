@@ -8,18 +8,16 @@ import { DraftedPlayer } from '../DraftedTeams/DraftedPlayer';
 import { IDraftedPlayers } from '../DraftedTeams/IDraftedPlayers';
 import { IDraftedTeamData } from '../DraftedTeams/IDraftedTeamData';
 import { IDraftedTeamDataElements } from '../DraftedTeams/IDraftedTeamDataElements';
-import { IDraftedTransferData } from '../DraftedTeams/IDraftedTransferData';
 
 // Player class
 export class DraftedTeam {
-  public teamID: number;
-  public teamName: string;
-  public teamPlayers: DraftedPlayer;
+  public readonly teamID: number;
+  public readonly teamName: string;
+  public readonly teamPlayers: DraftedPlayer[];
 
   constructor(draftedTeam: IDraftedTeamDataElements) {
     this.teamID = draftedTeam.team_id;
     this.teamName = draftedTeam.team_name;
-    this.teamPlayers = this.teamPlayers;
+    this.teamPlayers = draftedTeam.team_players.map(x => new DraftedPlayer(x));
   }
-
 }

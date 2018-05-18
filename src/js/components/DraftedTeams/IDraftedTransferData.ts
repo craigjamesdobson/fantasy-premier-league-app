@@ -1,4 +1,4 @@
 export interface IDraftedTransferData {
-  transferID: number;
-  transferWeek: number;
+  transfer_id: number;
+  transfer_week: number;
 }

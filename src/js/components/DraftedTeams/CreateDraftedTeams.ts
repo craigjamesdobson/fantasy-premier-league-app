@@ -13,8 +13,8 @@ import { IDraftedTransferData } from '../DraftedTeams/IDraftedTransferData';
 import { DraftedTeam } from './DraftedTeam';
 
 export namespace DraftedTeamData {
-  export async function getDraftedTeamData(): Promise<IDraftedList> {
-    return new Promise<IDraftedList>((resolve, reject) => {
+  export async function getDraftedTeamData(): Promise<DraftedTeam[]> {
+    return new Promise<DraftedTeam[]>((resolve, reject) => {
       // Define variables
       const loadingOverlay = $('.loading');
       const loadingState = false;
@@ -33,13 +33,8 @@ export namespace DraftedTeamData {
             // Hide the loading overlay
             loadingOverlay.hide();
 
-            const draftedTeams = draftedTeamData.drafted_teams.map(
-              draftedTeam => new DraftedTeam(draftedTeam)
-            );
+            const draftedTeamList = draftedTeamData.drafted_teams.map(draftedTeam => new DraftedTeam(draftedTeam));
 
-            const draftedTeamList: IDraftedList = {
-              draftedTeams: draftedTeams,
-            };
             resolve(draftedTeamList);
           });
         })

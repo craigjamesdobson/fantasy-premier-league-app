@@ -10,11 +10,11 @@ import { IDraftedTeamDataElements } from '../DraftedTeams/IDraftedTeamDataElemen
 import { IDraftedTransferData } from '../DraftedTeams/IDraftedTransferData';
 
 export class DraftedTransfer {
-  private transferTeam: number;
-  private transferWeek: number;
+  public readonly transferId: number;
+  public readonly transferWeek: number;
 
   constructor(draftedTransfer: IDraftedTransferData) {
-    this.transferTeam = draftedTransfer.transferID;
-    this.transferWeek = draftedTransfer.transferWeek;
+    this.transferId = draftedTransfer.transfer_id;
+    this.transferWeek = draftedTransfer.transfer_week;
   }
 }

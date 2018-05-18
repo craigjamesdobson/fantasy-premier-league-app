@@ -4,3 +4,10 @@ export enum PlayerPosition {
   Midfielder = 3,
   Forward = 4
 }
+
+export enum PlayerPositionShort {
+  GK = 1,
+  DEF = 2,
+  MID = 3,
+  FWD = 4
+}

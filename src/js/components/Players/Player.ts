@@ -7,17 +7,17 @@ const imageUrl =
 
 // Player class
 export class Player {
-  public playerType: PlayerPosition;
-  private id: number;
-  private image: string;
-  private isUnavailable: boolean;
-  private availabilityType: string;
-  private availabilityNews: string;
-  private teamID: number;
-  private teamName: string;
-  private teamShort: string;
-  private name: string;
-  private price: string;
+  public readonly playerType: PlayerPosition;
+  public readonly id: number;
+  public readonly image: string;
+  public readonly isUnavailable: boolean;
+  public readonly availabilityType: string;
+  public readonly availabilityNews: string;
+  public readonly teamID: number;
+  public readonly teamName: string;
+  public readonly teamShort: string;
+  public readonly name: string;
+  public readonly price: string;
 
   // Construct player objects
   constructor(player: IPlayerDataElements) {

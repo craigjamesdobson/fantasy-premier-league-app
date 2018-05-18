@@ -1,6 +1,5 @@
 import { PlayerPosition } from '../../components/Players/PlayerPosition';
 
-// Interface for player data
 export interface IPlayerDataElements {
   id: number;
   code: string;

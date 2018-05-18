@@ -8,19 +8,14 @@ import { IDraftedPlayers } from '../DraftedTeams/IDraftedPlayers';
 import { IDraftedTeamData } from '../DraftedTeams/IDraftedTeamData';
 import { IDraftedTeamDataElements } from '../DraftedTeams/IDraftedTeamDataElements';
 import { IDraftedTransferData } from '../DraftedTeams/IDraftedTransferData';
+import { DraftedTransfer } from './DraftedTransfer';
 
 export class DraftedPlayer {
-  private playerID: number;
-  private playerPosition: PlayerPosition;
-  private playerTeam: number;
-  private playerName: string;
-  private transfers: IDraftedTransferData;
+  public readonly playerID: number;
+  public readonly transfers: DraftedTransfer[];
 
-  constructor(draftedPlayer: IDraftedPlayers, player: IPlayerDataElements) {
+  constructor(draftedPlayer: IDraftedPlayers) {
     this.playerID = draftedPlayer.player_id;
-    this.playerPosition = player.element_type;
-    this.playerTeam = player.team;
-    this.playerName = player.web_name;
-    this.transfers = this.transfers;
+    this.transfers = draftedPlayer.transfers.map(x => new DraftedTransfer(x));
   }
 }
