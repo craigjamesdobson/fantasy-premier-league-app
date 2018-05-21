@@ -41,6 +41,13 @@ footer {
     border: 1px solid #ccc;
     white-space: nowrap;
     page-break-inside: avoid; }
+  .teams-container .header-row th {
+    position: relative; }
+    .teams-container .header-row th .icon-transfer {
+      position: absolute;
+      right: 10px;
+      line-height: 20px;
+      top: 5px; }
   .teams-container .total-points-row th {
     text-align: center; }
 

@@ -1,10 +1,10 @@
 <div class="row">
     {{#each this}}
     <div class="col-xs-12 col-md-3">
-        <table>
+        <table class="table">
             <tbody>
-                <tr>
-                    <th colspan="5">{{teamName}}</th>
+                <tr class="header-row">
+                    <th colspan="5">{{teamName}} {{#if allowedTransfers}}<i class="fas fa-exchange-alt icon-transfer"></i>{{/if}}</th>
                 </tr>
                 <tr>
                     <th>ID</th>
@@ -14,13 +14,22 @@
                     <th>Points</th>
                 </tr>
                 {{#each teamPlayers}}
-                <tr class="player-total-data">
+                <tr class="player-total-data" data-player-id="{{playerId}}" {{#each transfers}}data-transfer-week-{{transferWeek}}="{{transferId}}"{{/each}}>
                     <td class="id">{{playerId}}</td>
                     <td class="position">{{playerPosition}}</td>
                     <td class="club">{{playerTeamShort}}</td>
                     <td class="player">{{playerName}}</td>
                     <td class="points">0</td>
                 </tr>
+                    {{!-- {{#each transfers}}
+                    <tr class="transfered-player" data-transfered-week="{{transferWeek}}">
+                        <td class="id">{{transferId}}</td>
+                        <td class="position">{{playerPosition}}</td>
+                        <td class="club">{{playerTeamShort}}</td>
+                        <td class="player">{{playerName}}</td>
+                        <td class="points">0</td>
+                    </tr>
+                    {{/each}} --}}
                 {{/each}}
                 <tr class="total-points-row">
                     <td colspan="3"></td>

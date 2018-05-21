@@ -9,6 +9,10 @@
         "trailing-comma": false,
         "object-literal-shorthand": false,
         "max-line-length": [ true, 150 ],
-        "object-literal-sort-keys": [ true, "match-declaration-order" ]
+        "object-literal-sort-keys": [ true, "match-declaration-order" ],
+        "ordered-imports": [true, {
+            "import-sources-order": "any",
+            "named-imports-order": "case-insensitive"
+          }]
     }
 }

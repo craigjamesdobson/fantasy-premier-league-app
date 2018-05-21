@@ -1,7 +1,11 @@
-import * as $ from 'jquery';
 import '../../../scss/Playerlist.scss';
+
+import * as $ from 'jquery';
+
 import { PlayerData } from '../../components/Players/PlayerData';
 import { PlayerPosition } from '../../components/Players/PlayerPosition';
+
+/* tslint:disable-next-line:no-var-requires */
 const playerTemplate = require('../../components/Templates/PlayersTemplate.hbs');
 
 namespace PlayerList {

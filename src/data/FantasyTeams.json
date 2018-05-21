@@ -3,6 +3,7 @@
     {
       "team_id": 1,
       "team_name": "WE HAVE IT ALL",
+      "allowed_transfers": false,
       "team_players": [
         {
           "player_id": 375,
@@ -70,15 +71,24 @@
       ]
     },
     {
-      "team_id": 1,
-      "team_name": "Lacking Creativity",
+      "team_id": 4,
+      "team_name": "HAKUNA MORATA",
+      "allowed_transfers": false,
       "team_players": [
         {
-          "player_id": 260,
+          "player_id": 135,
           "transfers": []
         },
         {
-          "player_id": 117,
+          "player_id": 13,
+          "transfers": []
+        },
+        {
+          "player_id": 146,
+          "transfers": []
+        },
+        {
+          "player_id": 330,
           "transfers": []
         },
         {
@@ -86,186 +96,137 @@
           "transfers": []
         },
         {
-          "player_id": 80,
+          "player_id": 62,
           "transfers": []
         },
         {
-          "player_id": 405,
+          "player_id": 340,
           "transfers": []
         },
         {
-          "player_id": 234,
+          "player_id": 324,
           "transfers": []
         },
         {
-          "player_id": 388,
-          "transfers": [
-            {
-              "transfer_id": 247,
-              "transfer_week": 15
-            }
-          ]
-        },
-        {
-          "player_id": 367,
-          "transfers": [
-            {
-              "transfer_id": 501,
-              "transfer_week": 15
-            }
-          ]
-        },
-        {
-          "player_id": 394,
+          "player_id": 28,
           "transfers": []
-        },
-        {
-          "player_id": 259,
-          "transfers": [
-            {
-              "transfer_id": 472,
-              "transfer_week": 15
-            },
-            {
-              "transfer_id": 259,
-              "transfer_week": 35
-            }
-          ]
-        },
-        {
-          "player_id": 285,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 2,
-      "team_name": "Diggers FC",
-      "team_players": [
-        {
-          "player_id": 421,
-          "transfers": []
-        },
-        {
-          "player_id": 60,
-          "transfers": []
-        },
-        {
-          "player_id": 37,
-          "transfers": []
-        },
-        {
-          "player_id": 353,
-          "transfers": []
-        },
-        {
-          "player_id": 405,
-          "transfers": []
-        },
-        {
-          "player_id": 234,
-          "transfers": []
-        },
-        {
-          "player_id": 388,
-          "transfers": []
-        },
-        {
-          "player_id": 230,
-          "transfers": []
-        },
-        {
-          "player_id": 394,
-          "transfers": []
-        },
-        {
-          "player_id": 259,
-          "transfers": []
-        },
-        {
-          "player_id": 52,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 1,
-      "team_name": "WE HAVE IT ALL",
-      "team_players": [
-        {
-          "player_id": 375,
-          "real_life_transfer": [
-            {
-              "transfer_team": 7,
-              "transfer_week": 15
-            }
-          ],
-          "transfers": []
-        },
-        {
-          "player_id": 101,
-          "transfers": []
-        },
-        {
-          "player_id": 194,
-          "transfers": []
-        },
-        {
-          "player_id": 222,
-          "transfers": []
-        },
-        {
-          "player_id": 267,
-          "transfers": []
-        },
-        {
-          "player_id": 24,
-          "transfers": []
-        },
-        {
-          "player_id": 230,
-          "transfers": [
-            {
-              "transfer_id": 247,
-              "transfer_week": 15
-            }
-          ]
-        },
-        {
-          "player_id": 295,
-          "transfers": [
-            {
-              "transfer_id": 501,
-              "transfer_week": 15
-            }
-          ]
         },
         {
           "player_id": 472,
           "transfers": []
         },
         {
-          "player_id": 134,
-          "transfers": [
-            {
-              "transfer_id": 472,
-              "transfer_week": 15
-            },
-            {
-              "transfer_id": 259,
-              "transfer_week": 35
-            }
-          ]
-        },
-        {
-          "player_id": 285,
+          "player_id": 161,
           "transfers": []
         }
       ]
     },
     {
-      "team_id": 1,
+      "team_id": 5,
+      "team_name": "JABBA'S not ATHLETIC 2nd XI",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 260,
+          "transfers": []
+        },
+        {
+          "player_id": 4,
+          "transfers": []
+        },
+        {
+          "player_id": 311,
+          "transfers": []
+        },
+        {
+          "player_id": 55,
+          "transfers": []
+        },
+        {
+          "player_id": 289,
+          "transfers": []
+        },
+        {
+          "player_id": 230,
+          "transfers": []
+        },
+        {
+          "player_id": 359,
+          "transfers": []
+        },
+        {
+          "player_id": 388,
+          "transfers": []
+        },
+        {
+          "player_id": 161,
+          "transfers": []
+        },
+        {
+          "player_id": 134,
+          "transfers": []
+        },
+        {
+          "player_id": 259,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 6,
+      "team_name": "MONTYCHUCKA",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 260,
+          "transfers": []
+        },
+        {
+          "player_id": 191,
+          "transfers": []
+        },
+        {
+          "player_id": 477,
+          "transfers": []
+        },
+        {
+          "player_id": 475,
+          "transfers": []
+        },
+        {
+          "player_id": 484,
+          "transfers": []
+        },
+        {
+          "player_id": 23,
+          "transfers": []
+        },
+        {
+          "player_id": 125,
+          "transfers": []
+        },
+        {
+          "player_id": 281,
+          "transfers": []
+        },
+        {
+          "player_id": 285,
+          "transfers": []
+        },
+        {
+          "player_id": 394,
+          "transfers": []
+        },
+        {
+          "player_id": 472,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 2,
       "team_name": "Lacking Creativity",
+      "allowed_transfers": true,
       "team_players": [
         {
           "player_id": 260,
@@ -333,8 +294,9 @@
       ]
     },
     {
-      "team_id": 2,
+      "team_id": 3,
       "team_name": "Diggers FC",
+      "allowed_transfers": true,
       "team_players": [
         {
           "player_id": 421,
