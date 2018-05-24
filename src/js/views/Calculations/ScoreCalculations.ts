@@ -1,49 +1,32 @@
 import '../../../scss/calculations.scss';
 
-import * as $ from 'jquery';
-
-import {
-  PlayerPosition,
-  PlayerPositionShort
-} from '../../components/Players/PlayerPosition';
-
-import { CompleteDraftedPlayer } from '../../components/DraftedTeams/CompleteDraftedPlayer';
 import { CompleteDraftedTeam } from '../../components/DraftedTeams/CompleteDraftedTeam';
-import { DraftedTeam } from '../../components/DraftedTeams/DraftedTeam';
+import { CreatePlayerData } from '../../components/Players/CreatePlayerData';
 import { DraftedTeamData } from '../../components/DraftedTeams/CreateDraftedTeams';
-import { DraftedTransfer } from '../../components/DraftedTeams/DraftedTransfer';
-import { IDraftedList } from '../../components/DraftedTeams/IDraftedList';
-import { IPlayerList } from '../../components/Players/IPlayerList';
-import { Player } from '../../components/Players/Player';
-import { PlayerData } from '../../components/Players/PlayerData';
+import { GetStaticData } from '../../components/StaticData/GetStaticData';
+import { PlayerList } from '../../components/Players/PlayerList';
 
 /* tslint:disable-next-line:no-var-requires */
 const DraftedTeamTemplate = require('../../components/Templates/DraftedTeamsTemplate.hbs');
+const teamsContainer = $('.teams-container');
 
-namespace ScoreCalculations {
-  async function getDraftedTeamData(): Promise<any> {
-    const playerData = await PlayerData.getPlayerData();
-    const draftedTeamList = await DraftedTeamData.getDraftedTeamData();
+GetStaticData.getstaticData().then(data => {
+  const playerData = CreatePlayerData.createPlayerData(data);
+  initTeamData(playerData);
+});
+async function initTeamData(playerList: PlayerList) {
+  // const playerList = await CreatePlayerData.createPlayerData();
+  const draftedTeamList = await DraftedTeamData.getDraftedTeamData();
 
-    const draftedTeams = draftedTeamList.map(draftedTeam => {
-      const players = draftedTeam.teamPlayers.map(player => ({
-        player: playerData.players.filter(p => p.id === player.playerID)[0],
-        transfers: player.transfers
-      }));
+  const draftedTeams = draftedTeamList.map(draftedTeam => {
+    const players = draftedTeam.teamPlayers.map(player => ({
+      player: playerList.players.filter(p => p.id === player.playerID)[0],
+      transfers: player.transfers
+    }));
 
-      return new CompleteDraftedTeam(draftedTeam, players);
-    });
+    return new CompleteDraftedTeam(draftedTeam, players);
+  });
 
-    $('.teams-container').append(DraftedTeamTemplate(draftedTeams));
+  teamsContainer.append(DraftedTeamTemplate(draftedTeams));
 
-    /* tslint:disable */
-    console.log(draftedTeams);
-    /* tslint:enable */
-  }
-
-  export function init() {
-    // initialise functions
-    getDraftedTeamData();
-  }
 }
-$(() => ScoreCalculations.init());

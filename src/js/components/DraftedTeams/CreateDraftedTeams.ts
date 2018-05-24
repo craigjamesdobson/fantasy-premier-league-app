@@ -1,15 +1,5 @@
-import { DraftedPlayer } from '../DraftedTeams/DraftedPlayer';
 import { DraftedTeam } from './DraftedTeam';
-import { IDraftedList } from '../DraftedTeams/IDraftedList';
-import { IDraftedPlayers } from '../DraftedTeams/IDraftedPlayers';
 import { IDraftedTeamData } from '../DraftedTeams/IDraftedTeamData';
-import { IDraftedTeamDataElements } from '../DraftedTeams/IDraftedTeamDataElements';
-import { IDraftedTransferData } from '../DraftedTeams/IDraftedTransferData';
-import { IPlayerData } from '../../components/Players/IPlayerData';
-import { IPlayerDataElements } from '../../components/Players/IPlayerDataElements';
-import { Player } from '../../components/Players/Player';
-import { PlayerData } from '../../components/Players/PlayerData';
-import { PlayerPosition } from '../Players/PlayerPosition';
 
 export namespace DraftedTeamData {
   export async function getDraftedTeamData(): Promise<DraftedTeam[]> {

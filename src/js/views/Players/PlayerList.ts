@@ -1,31 +1,39 @@
 import '../../../scss/Playerlist.scss';
 
-import * as $ from 'jquery';
-
-import { PlayerData } from '../../components/Players/PlayerData';
+import { CreatePlayerData } from '../../components/Players/CreatePlayerData';
+import { GetStaticData } from '../../components/StaticData/GetStaticData';
+import { IPlayerData } from '../../components/Players/IPlayerData';
+import { IPlayerList } from '../../components/Players/IPlayerList';
+import { PlayerList } from '../../components/Players/PlayerList';
 import { PlayerPosition } from '../../components/Players/PlayerPosition';
 
 /* tslint:disable-next-line:no-var-requires */
 const playerTemplate = require('../../components/Templates/PlayersTemplate.hbs');
+const playerContainer = $('.player-container');
+const playersTemplate = $('#players-template');
 
-namespace PlayerList {
-  // declare Variables
-  const playerContainer = $('.player-container');
-  const playersTemplate = $('#players-template');
+GetStaticData.getstaticData().then(data => {
+  const playerData = CreatePlayerData.createPlayerData(data);
+  initPlayerData(playerData);
+});
 
-  // call in player data and slice them into column data
-  async function setUpPlayers(): Promise<any> {
-    const playerData = await PlayerData.getPlayerData();
+function initPlayerData(playerList: PlayerList) {
 
-    playerData.getPlayersOfType(PlayerPosition.Goalkeeper);
+  const goalkeepers = playerList.getSplitPlayersOfType(
+    PlayerPosition.Goalkeeper
+  );
+  const defenders = playerList.getSplitPlayersOfType(
+    PlayerPosition.Defender
+  );
+  const midfielders = playerList.getSplitPlayersOfType(
+    PlayerPosition.Midfielder
+  );
+  const forwards = playerList.getSplitPlayersOfType(
+    PlayerPosition.Forward
+  );
 
-    const goalkeepers = playerData.getSplitPlayersOfType(PlayerPosition.Goalkeeper);
-    const defenders = playerData.getSplitPlayersOfType(PlayerPosition.Defender);
-    const midfielders = playerData.getSplitPlayersOfType(PlayerPosition.Midfielder);
-    const forwards = playerData.getSplitPlayersOfType(PlayerPosition.Forward);
-
-    // prettier-ignore
-    const dividedPlayerData: object = {
+  // prettier-ignore
+  const dividedPlayerData: object = {
         gkLeft: goalkeepers[0],
         gkRight: goalkeepers[1],
 
@@ -39,13 +47,5 @@ namespace PlayerList {
         fwRight: forwards[1]
       };
 
-    playerContainer.append(playerTemplate(dividedPlayerData));
-  }
-
-  export function init() {
-    // initialise functions
-    setUpPlayers();
-  }
+  playerContainer.append(playerTemplate(dividedPlayerData));
 }
-
-$(() => PlayerList.init());

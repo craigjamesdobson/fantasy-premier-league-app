@@ -103,7 +103,7 @@ module.exports = {
     // Generates calculator.html
     new HtmlWebpackPlugin({
       title: 'Fantasy Premier League App - Calculator',
-      chunks: ['Index', 'PlayerList', 'ScoreCalculations'],
+      chunks: ['Index', 'ScoreCalculations'],
       filename: 'calculator.html',
       template: 'views/calculator.html'
     }),

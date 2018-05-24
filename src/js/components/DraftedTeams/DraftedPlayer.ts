@@ -1,13 +1,5 @@
 import { DraftedTransfer } from './DraftedTransfer';
 import { IDraftedPlayers } from '../DraftedTeams/IDraftedPlayers';
-import { IDraftedTeamData } from '../DraftedTeams/IDraftedTeamData';
-import { IDraftedTeamDataElements } from '../DraftedTeams/IDraftedTeamDataElements';
-import { IDraftedTransferData } from '../DraftedTeams/IDraftedTransferData';
-import { IPlayerData } from '../Players/IPlayerData';
-import { IPlayerDataElements } from '../Players/IPlayerDataElements';
-import { Player } from '../Players/Player';
-import { PlayerData } from '../Players/PlayerData';
-import { PlayerPosition } from '../Players/PlayerPosition';
 
 export class DraftedPlayer {
   public readonly playerID: number;
