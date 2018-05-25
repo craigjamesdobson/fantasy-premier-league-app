@@ -1,11 +1,14 @@
 import { GetStaticData } from '../StaticData/GetStaticData';
+import { ITeamData } from './ITeamData';
+import { Team } from './Team';
+import { TeamList } from './TeamList';
 
 export namespace CreateTeamData {
-  export async function createPlayerData() {
-    const teamDataUrl =
-      'https://jokecamp.github.io/epl-fantasy-geek/js/static-data.json';
+  export function createTeamData(data: ITeamData): TeamList {
 
-    const staticData = await GetStaticData.getstaticData;
+    const teams = data.teams.map(team => new Team(team));
+    const teamList = new TeamList(teams);
 
+    return teamList;
   }
 }

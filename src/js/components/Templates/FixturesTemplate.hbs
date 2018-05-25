@@ -1,0 +1,42 @@
+<div class="row">
+    {{#repeat count=10 start=1}}
+    <div id="fixture-1" class="fixtures col-xs-12 col-md-6">
+        <h3>Fixture {{@index}}</h3>
+        <table>
+            <tbody>
+                <tr>
+                    <td class="home-team">
+                        <select class="teams-dropdown">
+                            <option selected="" style="display:none;">Teams</option>
+                            {{#each teams}}
+                            <option data-id="{{teamID}}" value="{{teamID}}">{{teamName}}</option>
+                            {{/each}}
+                        </select>
+                        <select class="score">
+                            {{#repeat 10 start=0}}
+                            <option value="{{@index}}">{{@index}}</option>
+                            {{/repeat}}
+                        </select>
+                    </td>
+                    <td>
+                        <div class="versus align-center">vs</div>
+                    </td>
+                    <td class="away-team">
+                        <select class="teams-dropdown">
+                            <option selected="" style="display:none;">Teams</option>
+                            {{#each teams}}
+                            <option data-id="{{teamID}}" value="{{teamID}}">{{teamName}}</option>
+                            {{/each}}
+                        </select>
+                        <select class="score">
+                            {{#repeat 10 start=0}}
+                            <option value="{{@index}}">{{@index}}</option>
+                            {{/repeat}}
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    {{/repeat}}
+</div>

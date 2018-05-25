@@ -71,7 +71,7 @@
       ]
     },
     {
-      "team_id": 4,
+      "team_id": 2,
       "team_name": "HAKUNA MORATA",
       "allowed_transfers": false,
       "team_players": [
@@ -122,7 +122,7 @@
       ]
     },
     {
-      "team_id": 5,
+      "team_id": 3,
       "team_name": "JABBA'S not ATHLETIC 2nd XI",
       "allowed_transfers": true,
       "team_players": [
@@ -173,7 +173,7 @@
       ]
     },
     {
-      "team_id": 6,
+      "team_id": 4,
       "team_name": "MONTYCHUCKA",
       "allowed_transfers": true,
       "team_players": [
@@ -224,7 +224,7 @@
       ]
     },
     {
-      "team_id": 2,
+      "team_id": 5,
       "team_name": "Lacking Creativity",
       "allowed_transfers": true,
       "team_players": [
@@ -294,7 +294,7 @@
       ]
     },
     {
-      "team_id": 3,
+      "team_id": 6,
       "team_name": "Diggers FC",
       "allowed_transfers": true,
       "team_players": [
@@ -340,6 +340,108 @@
         },
         {
           "player_id": 52,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 7,
+      "team_name": "TEAM TIC",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 94,
+          "transfers": []
+        },
+        {
+          "player_id": 55,
+          "transfers": []
+        },
+        {
+          "player_id": 80,
+          "transfers": []
+        },
+        {
+          "player_id": 33,
+          "transfers": []
+        },
+        {
+          "player_id": 118,
+          "transfers": []
+        },
+        {
+          "player_id": 340,
+          "transfers": []
+        },
+        {
+          "player_id": 282,
+          "transfers": []
+        },
+        {
+          "player_id": 104,
+          "transfers": []
+        },
+        {
+          "player_id": 259,
+          "transfers": []
+        },
+        {
+          "player_id": 394,
+          "transfers": []
+        },
+        {
+          "player_id": 161,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 8,
+      "team_name": "BRING IT ON THIS TIME",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 375,
+          "transfers": []
+        },
+        {
+          "player_id": 100,
+          "transfers": []
+        },
+        {
+          "player_id": 271,
+          "transfers": []
+        },
+        {
+          "player_id": 380,
+          "transfers": []
+        },
+        {
+          "player_id": 242,
+          "transfers": []
+        },
+        {
+          "player_id": 226,
+          "transfers": []
+        },
+        {
+          "player_id": 230,
+          "transfers": []
+        },
+        {
+          "player_id": 388,
+          "transfers": []
+        },
+        {
+          "player_id": 394,
+          "transfers": []
+        },
+        {
+          "player_id": 285,
+          "transfers": []
+        },
+        {
+          "player_id": 238,
           "transfers": []
         }
       ]
