@@ -1,0 +1,208 @@
+body {
+  color: #2c2c2c;
+  font-size: 14px;
+  font-family: 'Roboto Condensed', sans-serif; }
+
+footer {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #dedede; }
+
+.loading {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.fixtures-container .fixtures {
+  margin-bottom: 20px; }
+  .fixtures-container .fixtures h3 {
+    font-size: 18px; }
+  .fixtures-container .fixtures table {
+    width: 100%; }
+    .fixtures-container .fixtures table .teams-dropdown {
+      float: left;
+      width: 73%;
+      margin-right: 2%; }
+    .fixtures-container .fixtures table select {
+      padding: 5px 10px; }
+    .fixtures-container .fixtures table .team-option:disabled {
+      color: #ddd; }
+    .fixtures-container .fixtures table .score {
+      width: 25%; }
+    .fixtures-container .fixtures table .score:disabled {
+      cursor: disabled; }
+  .fixtures-container .fixtures .home-team .player-filter {
+    font-size: 12px;
+    margin: 5px 0; }
+    .fixtures-container .fixtures .home-team .player-filter input[type='radio'] {
+      vertical-align: sub; }
+  .fixtures-container .fixtures .player-table {
+    vertical-align: top; }
+    .fixtures-container .fixtures .player-table .defender-header,
+    .fixtures-container .fixtures .player-table .forward-header,
+    .fixtures-container .fixtures .player-table .goalkeeper-header,
+    .fixtures-container .fixtures .player-table .midfielder-header {
+      position: relative;
+      margin-bottom: 5px;
+      cursor: pointer;
+      color: #fff;
+      border: 1px solid #fff;
+      background-color: #808080; }
+      .fixtures-container .fixtures .player-table .defender-header th,
+      .fixtures-container .fixtures .player-table .forward-header th,
+      .fixtures-container .fixtures .player-table .goalkeeper-header th,
+      .fixtures-container .fixtures .player-table .midfielder-header th {
+        font-size: 12px !important;
+        position: relative;
+        padding: 5px; }
+        .fixtures-container .fixtures .player-table .defender-header th .heading-icon,
+        .fixtures-container .fixtures .player-table .forward-header th .heading-icon,
+        .fixtures-container .fixtures .player-table .goalkeeper-header th .heading-icon,
+        .fixtures-container .fixtures .player-table .midfielder-header th .heading-icon {
+          font-family: 'Font Awesome 5 Solid';
+          position: absolute;
+          right: 10px;
+          content: '\F078';
+          width: 15px;
+          height: 15px;
+          background-color: #fff;
+          color: grey;
+          text-align: center;
+          border-radius: 10px;
+          padding: 2px; }
+      .fixtures-container .fixtures .player-table .defender-header.active th .heading-icon,
+      .fixtures-container .fixtures .player-table .forward-header.active th .heading-icon,
+      .fixtures-container .fixtures .player-table .goalkeeper-header.active th .heading-icon,
+      .fixtures-container .fixtures .player-table .midfielder-header.active th .heading-icon {
+        -webkit-transform: rotate(-90deg);
+                transform: rotate(-90deg); }
+    .fixtures-container .fixtures .player-table .player-data {
+      display: none;
+      transition: all ease 2s; }
+      .fixtures-container .fixtures .player-table .player-data:nth-child(even) {
+        background-color: #eee; }
+      .fixtures-container .fixtures .player-table .player-data.active {
+        display: table-row;
+        transition: all ease 2s; }
+  .fixtures-container .fixtures .away-team-players,
+  .fixtures-container .fixtures .home-team-players {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 12px; }
+    .fixtures-container .fixtures .away-team-players .table-heading,
+    .fixtures-container .fixtures .home-team-players .table-heading {
+      border: 5px solid #fff;
+      display: none; }
+      .fixtures-container .fixtures .away-team-players .table-heading.active,
+      .fixtures-container .fixtures .home-team-players .table-heading.active {
+        display: table-row; }
+      .fixtures-container .fixtures .away-team-players .table-heading th,
+      .fixtures-container .fixtures .home-team-players .table-heading th {
+        text-align: center; }
+    .fixtures-container .fixtures .away-team-players table,
+    .fixtures-container .fixtures .home-team-players table {
+      width: 100%; }
+      .fixtures-container .fixtures .away-team-players table td:first-child,
+      .fixtures-container .fixtures .away-team-players table th:first-child,
+      .fixtures-container .fixtures .home-team-players table td:first-child,
+      .fixtures-container .fixtures .home-team-players table th:first-child {
+        font-size: 12px;
+        text-align: left; }
+      .fixtures-container .fixtures .away-team-players table input[type='checkbox'],
+      .fixtures-container .fixtures .home-team-players table input[type='checkbox'] {
+        width: 18px;
+        height: 18px; }
+      .fixtures-container .fixtures .away-team-players table img,
+      .fixtures-container .fixtures .home-team-players table img {
+        width: 15px; }
+      .fixtures-container .fixtures .away-team-players table select,
+      .fixtures-container .fixtures .home-team-players table select {
+        padding: 0; }
+        .fixtures-container .fixtures .away-team-players table select.active,
+        .fixtures-container .fixtures .home-team-players table select.active {
+          background-color: green;
+          color: #fff; }
+    .fixtures-container .fixtures .away-team-players p,
+    .fixtures-container .fixtures .home-team-players p {
+      font-size: 14px;
+      margin-top: 5px; }
+    .fixtures-container .fixtures .away-team-players .option-container,
+    .fixtures-container .fixtures .home-team-players .option-container {
+      position: relative; }
+      .fixtures-container .fixtures .away-team-players .option-container img,
+      .fixtures-container .fixtures .home-team-players .option-container img {
+        position: absolute;
+        top: -25px;
+        right: 0;
+        left: 0;
+        width: 15px;
+        height: 15px;
+        margin: 0 auto; }
+    .fixtures-container .fixtures .away-team-players span:nth-child(3n + 1),
+    .fixtures-container .fixtures .home-team-players span:nth-child(3n + 1) {
+      clear: left; }
+    .fixtures-container .fixtures .away-team-players span input[type='checkbox'],
+    .fixtures-container .fixtures .home-team-players span input[type='checkbox'] {
+      vertical-align: middle; }
+    .fixtures-container .fixtures .away-team-players span label,
+    .fixtures-container .fixtures .home-team-players span label {
+      font-size: 12px; }
+  .fixtures-container .fixtures .versus {
+    margin: 0 20px;
+    text-align: center; }
+
+.teams-container {
+  text-align: center; }
+  .teams-container table {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 100%;
+    font-size: 12px; }
+    .teams-container table .player-total-data:nth-child(odd) {
+      background-color: #ddd; }
+    .teams-container table .player-total-data.transfered {
+      background-color: green;
+      color: #fff;
+      font-weight: bold; }
+    .teams-container table .player-total-data.current-week-transfer {
+      background-color: yellow;
+      color: #4444d1;
+      font-weight: bold; }
+    .teams-container table .player-total-data.sent-off {
+      background-color: red;
+      color: #fff; }
+  .teams-container table,
+  .teams-container td,
+  .teams-container th,
+  .teams-container tr {
+    padding: 2px 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    white-space: nowrap;
+    page-break-inside: avoid; }
+  .teams-container .header-row th {
+    position: relative; }
+    .teams-container .header-row th .icon-transfer {
+      position: absolute;
+      right: 10px;
+      line-height: 20px;
+      top: 5px; }
+  .teams-container .total-points-row th {
+    text-align: center; }
+
+
+/*# sourceMappingURL=Calculations.css.map*/

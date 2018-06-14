@@ -1,0 +1,47 @@
+<table>
+    {{#each filteredPositions}}
+    <tr class="position-header {{toLower name}}-header" data-position="{{id}}">
+        <th colspan="5">{{name}}
+            <i class="heading-icon fas fa-chevron-down fa-xs"></i>
+        </th>
+    </tr>
+    <tr class="table-heading">
+        <th>ID</th>
+        <th>Players</th>
+        <th>
+            <img class="goals-image disabled" src="football.png" title="Goals Scored" alt="Goals Scored">
+        </th>
+        <th>
+            <img class="clean-sheet-image" src="clean_sheet.png" title="Clean Sheet" alt="Clean Sheet">
+        </th>
+        <th>
+            <img class="red-card-image" src="red_card.png" title="Red Card" alt="Red Card">
+        </th>
+    </tr>
+    {{#each players}}
+    <tr class="player-data" data-points="0" data-position="{{playerType}}" data-id="{{id}}">
+        <td>{{id}}</td>
+        <td>{{name}}</td>
+        <td class="goals-scored">
+            <select class="score-select disabled" disabled="disabled" name="score">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+        </td>
+        <td class="clean-sheet">
+            <input type="checkbox" class="clean-sheet-checkbox" data-points="5" id="1" name="Mignolet" value=" ">
+        </td>
+        <td class="red-card">
+            <input type="checkbox" class="red-card-checkbox" name="Mignolet" value=" ">
+        </td>
+    </tr>
+    {{/each}} {{/each}}
+</table>

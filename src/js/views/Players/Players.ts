@@ -18,34 +18,25 @@ GetStaticData.getstaticData().then(data => {
 });
 
 function initPlayerData(playerList: PlayerList) {
-
-  const goalkeepers = playerList.getSplitPlayersOfType(
-    PlayerPosition.Goalkeeper
-  );
-  const defenders = playerList.getSplitPlayersOfType(
-    PlayerPosition.Defender
-  );
-  const midfielders = playerList.getSplitPlayersOfType(
-    PlayerPosition.Midfielder
-  );
-  const forwards = playerList.getSplitPlayersOfType(
-    PlayerPosition.Forward
-  );
+  const goalkeepers = playerList.getSplitPlayersOfType(PlayerPosition.Goalkeeper);
+  const defenders = playerList.getSplitPlayersOfType(PlayerPosition.Defender);
+  const midfielders = playerList.getSplitPlayersOfType(PlayerPosition.Midfielder);
+  const forwards = playerList.getSplitPlayersOfType(PlayerPosition.Forward);
 
   // prettier-ignore
   const dividedPlayerData: object = {
-        gkLeft: goalkeepers[0],
-        gkRight: goalkeepers[1],
+    gkLeft: goalkeepers[0],
+    gkRight: goalkeepers[1],
 
-        dfLeft: defenders[0],
-        dfRight: defenders[1],
+    dfLeft: defenders[0],
+    dfRight: defenders[1],
 
-        mfLeft: midfielders[0],
-        mfRight: midfielders[1],
+    mfLeft: midfielders[0],
+    mfRight: midfielders[1],
 
-        fwLeft: forwards[0],
-        fwRight: forwards[1]
-      };
+    fwLeft: forwards[0],
+    fwRight: forwards[1]
+  };
 
   playerContainer.append(playerTemplate(dividedPlayerData));
 }

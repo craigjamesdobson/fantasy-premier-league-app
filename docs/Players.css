@@ -1,0 +1,89 @@
+body {
+  color: #2c2c2c;
+  font-size: 14px;
+  font-family: 'Roboto Condensed', sans-serif; }
+
+footer {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #dedede; }
+
+.loading {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.player-table {
+  text-align: center; }
+  .player-table colgroup .id {
+    width: 10%; }
+  .player-table colgroup .team {
+    width: 20%; }
+  .player-table colgroup .name {
+    width: 40%; }
+  .player-table colgroup .price {
+    width: 20%; }
+  .player-table.table {
+    width: 100%; }
+    .player-table.table td,
+    .player-table.table th {
+      padding: 5px 10px; }
+      .player-table.table td img,
+      .player-table.table th img {
+        height: 25px;
+        margin-right: 10px; }
+      .player-table.table td:nth-child(4n),
+      .player-table.table th:nth-child(4n) {
+        text-align: left; }
+    .player-table.table tr {
+      position: relative; }
+      .player-table.table tr .fa-exclamation-triangle {
+        position: relative;
+        float: right;
+        margin-top: 3px;
+        z-index: 100; }
+      .player-table.table tr .player-status {
+        display: none;
+        position: absolute;
+        color: #fff;
+        right: 15px;
+        left: 15px;
+        padding: 5px;
+        margin-top: -5px;
+        text-align: center;
+        z-index: 99; }
+      .player-table.table tr:hover .player-status {
+        display: inline;
+        transition: all 3s ease; }
+      .player-table.table tr:hover.u .fa-exclamation-triangle {
+        color: #fff; }
+      .player-table.table tr:hover.i .fa-exclamation-triangle {
+        color: #333; }
+    .player-table.table tr.u {
+      cursor: pointer; }
+      .player-table.table tr.u .fa-exclamation-triangle {
+        color: #DB0100; }
+      .player-table.table tr.u .player-status {
+        background-color: #DB0100; }
+    .player-table.table tr.i {
+      cursor: pointer; }
+      .player-table.table tr.i .fa-exclamation-triangle {
+        color: #FFCC00; }
+      .player-table.table tr.i .player-status {
+        background-color: #FFCC00;
+        color: #333; }
+
+
+/*# sourceMappingURL=Players.css.map*/

@@ -43,6 +43,7 @@ export var GetStaticData;
                         fetch(staticDataUrl)
                             .then(function (data) {
                             if (data.status !== 200) {
+                                // tslint:disable-next-line:no-console
                                 console.log('Looks like there was a problem. Status Code: ' + data.status);
                                 return;
                             }
@@ -51,6 +52,7 @@ export var GetStaticData;
                             });
                         })
                             .catch(function (err) {
+                            // tslint:disable-next-line:no-console
                             console.log('Fetch Error :-S', err);
                         });
                     })];

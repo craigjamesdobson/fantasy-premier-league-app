@@ -1,4 +1,4 @@
-import { PlayerPosition } from '../../components/Players/PlayerPosition';
+import { PlayerPosition } from './PlayerPosition';
 
 export interface IPlayerDataElements {
   id: number;

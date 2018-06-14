@@ -9,16 +9,17 @@ var devMode = process.env.NODE_ENV !== 'production';
 module.exports = {
     entry: {
         Index: './src/js/Index.ts',
-        PlayerList: './src/js/views/Players/PlayerList.ts',
-        ScoreCalculations: './src/js/views/Calculations/ScoreCalculations.ts'
+        Players: './src/js/views/Players/Players.ts',
+        Calculations: './src/js/views/Calculations/Calculations.ts'
     },
     output: {
         path: __dirname + '/docs',
         filename: '[name].bundle.js',
-        chunkFilename: '[name].bundle.js'
+        chunkFilename: '[name].bundle.js',
+        publicPath: '/img/'
     },
     devServer: {
-        contentBase: path.join(__dirname, "docs"),
+        contentBase: path.join(__dirname, 'docs'),
         compress: false,
         port: 8080,
         open: true
@@ -59,12 +60,21 @@ module.exports = {
                         loader: 'file-loader',
                         options: {
                             name: '[name].[ext]',
-                            outputPath: '/',
+                            outputPath: '/'
                         }
                     }
                 ]
             },
-            { test: /\.hbs$/, loader: 'handlebars-loader' }
+            {
+                test: /\.hbs$/,
+                loader: 'handlebars-loader',
+                options: {
+                    helperDirs: path.join(__dirname, 'src/js/components/Helpers'),
+                    precompileOptions: {
+                        knownHelpersOnly: false
+                    }
+                }
+            }
         ]
     },
     plugins: [
@@ -74,12 +84,7 @@ module.exports = {
             $: 'jquery',
             jQuery: 'jquery'
         }),
-        // Clean dist folder
-        // new CleanWebpackPlugin(['docs']),
-        // Copy our external dependencies into the output folder so we can put them into MVC bundle(s)
-        // new CopyWebpackPlugin([
-        //   { from: 'src/js/components/Templates', to: 'templates' }
-        // ]),
+        new CopyWebpackPlugin([{ from: 'src/data/FantasyTeams.Json', to: '/' }]),
         // Generates default index.html
         new HtmlWebpackPlugin({
             title: 'Fantasy Premier League App',
@@ -90,14 +95,14 @@ module.exports = {
         // Generates players.html
         new HtmlWebpackPlugin({
             title: 'Fantasy Premier League App - Players',
-            chunks: ['Index', 'PlayerList'],
+            chunks: ['Index', 'Players'],
             filename: 'players.html',
             template: 'views/players.html'
         }),
         // Generates calculator.html
         new HtmlWebpackPlugin({
             title: 'Fantasy Premier League App - Calculator',
-            chunks: ['Index', 'PlayerList', 'ScoreCalculations'],
+            chunks: ['Index', 'Calculations'],
             filename: 'calculator.html',
             template: 'views/calculator.html'
         }),

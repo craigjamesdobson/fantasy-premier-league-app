@@ -1,9 +1,5 @@
 import 'bootstrap';
 import '../scss/styles.scss';
-import { GetStaticData } from './components/StaticData/GetStaticData';
+// tslint:disable-next-line:no-var-requires
 var loadingGif = require('../img/loading.gif');
-GetStaticData.getstaticData().then(function (data) { return init(data); });
-function init(data) {
-}
-;
 //# sourceMappingURL=Index.js.map
