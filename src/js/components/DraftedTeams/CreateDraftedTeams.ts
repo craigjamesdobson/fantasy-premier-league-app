@@ -7,7 +7,7 @@ export namespace DraftedTeamData {
       // Define variables
       const loadingOverlay = $('.loading');
       const loadingState = false;
-      const draftedTeamUrl = '/FantasyTeams.json';
+      const draftedTeamUrl = 'FantasyTeams.json';
 
       fetch(draftedTeamUrl)
         .then((data: Response) => {
