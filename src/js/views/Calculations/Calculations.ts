@@ -33,7 +33,6 @@ GetStaticData.getstaticData().then(data => {
 });
 
 async function initDraftedTeamData(playerList: PlayerList) {
-
   const draftedTeamList = await DraftedTeamData.getDraftedTeamData();
 
   const draftedTeams = draftedTeamList.map(draftedTeam => {
@@ -58,7 +57,9 @@ function togglePlayers(event: JQuery.Event) {
   const playerTableClass = `.${positionHeader.parents('div').attr('class')}`;
   const positionTableHeader = positionHeader.next('.table-heading');
   const positionHeaderID = positionHeader.attr('data-position');
-  const players = $(selectedFixture).find(playerTableClass).find('.player-data');
+  const players = $(selectedFixture)
+    .find(playerTableClass)
+    .find('.player-data');
 
   players.filter(`[data-position="${positionHeaderID}"]`).toggleClass('active');
   positionTableHeader.toggleClass('active');
@@ -66,10 +67,11 @@ function togglePlayers(event: JQuery.Event) {
 }
 
 function disableSelectedTeams(event: JQuery.Event) {
-
-  const selectedOptions = $('.team-option:selected').map(function() {
-    return $(this).val();
-  }).toArray();
+  const selectedOptions = $('.team-option:selected')
+    .map(function() {
+      return $(this).val();
+    })
+    .toArray();
 
   $('.team-option').removeAttr('disabled');
 
@@ -89,7 +91,8 @@ function populateFixtures(event: JQuery.Event) {
   const selectedTeam = $this.find(':selected').val() as string;
   const playerTableClass = `.${$this.parent().attr('class')}-players`;
   const selectedFixture = `#${$this.closest('.fixtures').attr('id')}`;
-  const playerTable = selectedFixture + ' .' + $this.parent() + '-players' + ' table';
+  const playerTable =
+    selectedFixture + ' .' + $this.parent() + '-players' + ' table';
 
   const filteredPlayers = playerData.players.filter(
     p => p.teamID === parseInt(selectedTeam, 10)
@@ -124,7 +127,9 @@ function populateFixtures(event: JQuery.Event) {
     ]
   };
 
-  $(selectedFixture).find(playerTableClass).html(PopulateFixturesTemplate(filteredPositions));
+  $(selectedFixture)
+    .find(playerTableClass)
+    .html(PopulateFixturesTemplate(filteredPositions));
 }
 
 $(document).on('click', '.position-header', togglePlayers);
