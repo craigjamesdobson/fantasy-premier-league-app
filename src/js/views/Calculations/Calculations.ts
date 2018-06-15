@@ -132,9 +132,150 @@ function populateFixtures(event: JQuery.Event) {
     .html(PopulateFixturesTemplate(filteredPositions));
 }
 
+function calculatePoints() {
+  // Loop through each player from the selected fixtures
+  $('.player-data').each((i, player) => {
+    // Create calculation variables
+    let goalsTotal = 0;
+    let cleanSheetTotal = 0;
+    let redCardTotal = 0;
+    let pointsTotal = 0;
+    const goalsScored = parseInt($(player).find('select.score-select :selected').val() as string, 10);
+    const positionID = $(player).attr('data-position');
+    const cleanSheet = $(player).find('.clean-sheet-checkbox').is(':checked');
+    const sentOff = $(player).find('.red-card-checkbox').is(':checked');
+
+    // If clean sheet checkbox is checked set the cleanSheetTotal
+    if (cleanSheet) {
+      if (positionID === '1') {
+        cleanSheetTotal = 5;
+      } else if (positionID === '2') {
+        cleanSheetTotal = 2;
+      }
+    }
+
+    // If the red card checkbox is selected set the redCardTotal to 10
+    if (sentOff) {
+      redCardTotal = 10;
+      // Add attribute to current player if sent off
+      $(player).attr('data-sentoff', 'true');
+    } else {
+      $(player).removeAttr('data-sentoff');
+    }
+
+    if (goalsScored > 0) {
+      $(player)
+        .find('.score-select')
+        .addClass('active');
+    } else {
+      $(player)
+        .find('.score-select')
+        .removeClass('active');
+    }
+
+    // If the position of the current player loop is 'Goalkeeper' set the goalsTotal
+    if (positionID === '1') {
+      // Multiple the goals total by 10 if its a Goalkeeper
+      goalsTotal = goalsScored * 10;
+
+      // If 2 or more goals are scored add 5 to the goalsTotal
+      if (goalsScored === 2) {
+        goalsTotal = goalsTotal + 5;
+
+        // If 3 or more goals are scored add 10 to the goalsTotal
+      } else if (goalsScored >= 3) {
+        goalsTotal = goalsTotal + 10;
+      }
+
+      // If the position of the current player loop is 'Defender' set the goalsTotal
+    } else if (positionID === '2') {
+      // Multiple the goals total by 7 if its a Defender
+      goalsTotal = goalsScored * 7;
+
+      // If 2 or more goals are scored add 5 to the goalsTotal
+      if (goalsScored === 2) {
+        goalsTotal = goalsTotal + 5;
+
+        // If 3 or more goals are scored add 10 to the goalsTotal
+      } else if (goalsScored >= 3) {
+        goalsTotal = goalsTotal + 10;
+      }
+
+      // If the position of the current player loop is 'Midfielder' set the goalsTotal
+    } else if (positionID === '3') {
+      // Multiple the goals total by 5 if its a Midfielder
+      goalsTotal = goalsScored * 5;
+
+      // If 2 or more goals are scored add 5 to the goalsTotal
+      if (goalsScored === 2) {
+        goalsTotal = goalsTotal + 5;
+
+        // If 3 or more goals are scored add 10 to the goalsTotal
+      } else if (goalsScored >= 3) {
+        goalsTotal = goalsTotal + 10;
+      }
+
+      // If the position of the current player loop is 'Forward' set the goalsTotal
+    } else if (positionID === '4') {
+      // Multiple the goals total by 3 if its a Forward
+      goalsTotal = goalsScored * 3;
+
+      // If 2 or more goals are scored add 5 to the goalsTotal
+      if (goalsScored === 2) {
+        goalsTotal = goalsTotal + 5;
+
+        // If 3 or more goals are scored add 10 to the goalsTotal
+      } else if (goalsScored >= 3) {
+        goalsTotal = goalsTotal + 10;
+      }
+    }
+
+    // Create a variable by adding the totals of all calculation variables
+    pointsTotal = goalsTotal + cleanSheetTotal - redCardTotal;
+
+    // Create an attribute on the player table row and set it to the pointsTotal
+    $(player).attr('data-points', pointsTotal);
+  });
+}
+
+function updatePointsTotal() {
+
+      $('.player-total-data').each( (i, player) => {
+
+        const playerID = $(player).find('.id').text();
+
+        $(this).attr('data-player-id', playerID);
+
+        const matchingPlayerID = $('.player-data').filter( (ind, matchingplayer) => {
+            return $(matchingplayer).attr('data-id') === playerID;
+        });
+
+        const matchingPlayerPoints = matchingPlayerID.attr('data-points');
+
+        $(player).find('.points').text('0');
+        $(player).find('.points').text(matchingPlayerPoints);
+
+        if ($(matchingPlayerID).attr('data-sentoff') === 'true') {
+            $(player).addClass('sent-off');
+        } else {
+            $(player).removeClass('sent-off');
+        }
+    });
+}
+
 $(document).on('click', '.position-header', togglePlayers);
 
 $(document).on('change', '.teams-dropdown', event => {
   populateFixtures(event);
   disableSelectedTeams(event);
+  calculatePoints();
+  updatePointsTotal();
 });
+
+$(document).on('change', '.score-select, .clean-sheet-checkbox, .red-card-checkbox', event => {
+    calculatePoints();
+    updatePointsTotal();
+  }
+);
+
+const request = window.indexedDB.open('Fantasy Premier League Database', 3);
