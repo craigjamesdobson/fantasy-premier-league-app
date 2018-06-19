@@ -26,9 +26,15 @@ footer {
   justify-content: center; }
 
 .fixtures-container .fixtures {
+  position: relative;
   margin-bottom: 20px; }
   .fixtures-container .fixtures h3 {
     font-size: 18px; }
+  .fixtures-container .fixtures .clear-fixture {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 18px; }
   .fixtures-container .fixtures table {
     width: 100%; }
     .fixtures-container .fixtures table .teams-dropdown {
