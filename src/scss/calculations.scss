@@ -2,10 +2,18 @@
 
 .fixtures-container {
   .fixtures {
+    position: relative;
     margin-bottom: 20px;
 
     h3 {
       font-size: 18px;
+    }
+
+    .clear-fixture {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      right: 18px;
     }
 
     table {

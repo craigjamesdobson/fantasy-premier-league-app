@@ -9,6 +9,7 @@ import { PlayerList } from '../../components/Players/PlayerList';
 import { TeamList } from '../../components/Teams/TeamList';
 
 // tslint:disable:no-var-requires
+const swal = require('sweetalert2');
 const iconCleanSheet = require('../../../img/clean_sheet.png');
 const iconRedCard = require('../../../img/red_card.png');
 const iconGoal = require('../../../img/football.png');
@@ -173,58 +174,38 @@ function calculatePoints() {
         .removeClass('active');
     }
 
-    // If the position of the current player loop is 'Goalkeeper' set the goalsTotal
     if (positionID === '1') {
-      // Multiple the goals total by 10 if its a Goalkeeper
       goalsTotal = goalsScored * 10;
 
-      // If 2 or more goals are scored add 5 to the goalsTotal
       if (goalsScored === 2) {
         goalsTotal = goalsTotal + 5;
-
-        // If 3 or more goals are scored add 10 to the goalsTotal
       } else if (goalsScored >= 3) {
         goalsTotal = goalsTotal + 10;
       }
 
-      // If the position of the current player loop is 'Defender' set the goalsTotal
     } else if (positionID === '2') {
-      // Multiple the goals total by 7 if its a Defender
       goalsTotal = goalsScored * 7;
 
-      // If 2 or more goals are scored add 5 to the goalsTotal
       if (goalsScored === 2) {
         goalsTotal = goalsTotal + 5;
-
-        // If 3 or more goals are scored add 10 to the goalsTotal
       } else if (goalsScored >= 3) {
         goalsTotal = goalsTotal + 10;
       }
 
-      // If the position of the current player loop is 'Midfielder' set the goalsTotal
     } else if (positionID === '3') {
-      // Multiple the goals total by 5 if its a Midfielder
       goalsTotal = goalsScored * 5;
 
-      // If 2 or more goals are scored add 5 to the goalsTotal
       if (goalsScored === 2) {
         goalsTotal = goalsTotal + 5;
-
-        // If 3 or more goals are scored add 10 to the goalsTotal
       } else if (goalsScored >= 3) {
         goalsTotal = goalsTotal + 10;
       }
 
-      // If the position of the current player loop is 'Forward' set the goalsTotal
     } else if (positionID === '4') {
-      // Multiple the goals total by 3 if its a Forward
       goalsTotal = goalsScored * 3;
 
-      // If 2 or more goals are scored add 5 to the goalsTotal
       if (goalsScored === 2) {
         goalsTotal = goalsTotal + 5;
-
-        // If 3 or more goals are scored add 10 to the goalsTotal
       } else if (goalsScored >= 3) {
         goalsTotal = goalsTotal + 10;
       }
@@ -263,6 +244,31 @@ function updatePointsTotal() {
     });
 }
 
+function resetFixture(event: JQuery.Event) {
+  const $this = $(event.currentTarget);
+  const fixtureText = $this.closest('.fixtures').find('h3').text();
+  const selectedFixture = `#${$this.closest('.fixtures').attr('id')}`;
+
+  swal({
+      title: 'Are you sure?',
+      html: `Would you like to reset <b>${fixtureText.toLowerCase()}</b>`,
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#5cb85c',
+      cancelButtonColor: '#d9534f',
+      confirmButtonText: 'Yes, reset it!',
+    }).then((result: any) => {
+      if (result.value) {
+          $(selectedFixture).find('select').val(0);
+          $(selectedFixture).find('.home-team-players, .away-team-players').empty();
+
+          calculatePoints();
+          updatePointsTotal();
+          disableSelectedTeams(event);
+      }
+    });
+}
+
 $(document).on('click', '.position-header', togglePlayers);
 
 $(document).on('change', '.teams-dropdown', event => {
@@ -278,4 +284,4 @@ $(document).on('change', '.score-select, .clean-sheet-checkbox, .red-card-checkb
   }
 );
 
-const request = window.indexedDB.open('Fantasy Premier League Database', 3);
+$(document).on('click', '.clear-fixture', event => resetFixture(event));
