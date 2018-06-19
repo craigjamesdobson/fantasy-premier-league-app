@@ -141,10 +141,19 @@ function calculatePoints() {
     let cleanSheetTotal = 0;
     let redCardTotal = 0;
     let pointsTotal = 0;
-    const goalsScored = parseInt($(player).find('select.score-select :selected').val() as string, 10);
+    const goalsScored = parseInt(
+      $(player)
+        .find('select.score-select :selected')
+        .val() as string,
+      10
+    );
     const positionID = $(player).attr('data-position');
-    const cleanSheet = $(player).find('.clean-sheet-checkbox').is(':checked');
-    const sentOff = $(player).find('.red-card-checkbox').is(':checked');
+    const cleanSheet = $(player)
+      .find('.clean-sheet-checkbox')
+      .is(':checked');
+    const sentOff = $(player)
+      .find('.red-card-checkbox')
+      .is(':checked');
 
     // If clean sheet checkbox is checked set the cleanSheetTotal
     if (cleanSheet) {
@@ -174,41 +183,29 @@ function calculatePoints() {
         .removeClass('active');
     }
 
-    if (positionID === '1') {
-      goalsTotal = goalsScored * 10;
+    let multiplier;
 
-      if (goalsScored === 2) {
-        goalsTotal = goalsTotal + 5;
-      } else if (goalsScored >= 3) {
-        goalsTotal = goalsTotal + 10;
-      }
+    switch (positionID) {
+      case '1':
+        multiplier = 10;
+        break;
+      case '2':
+        multiplier = 7;
+        break;
+      case '3':
+        multiplier = 5;
+        break;
+      case '4':
+        multiplier = 3;
+        break;
+    }
 
-    } else if (positionID === '2') {
-      goalsTotal = goalsScored * 7;
+    goalsTotal = goalsScored * multiplier;
 
-      if (goalsScored === 2) {
-        goalsTotal = goalsTotal + 5;
-      } else if (goalsScored >= 3) {
-        goalsTotal = goalsTotal + 10;
-      }
-
-    } else if (positionID === '3') {
-      goalsTotal = goalsScored * 5;
-
-      if (goalsScored === 2) {
-        goalsTotal = goalsTotal + 5;
-      } else if (goalsScored >= 3) {
-        goalsTotal = goalsTotal + 10;
-      }
-
-    } else if (positionID === '4') {
-      goalsTotal = goalsScored * 3;
-
-      if (goalsScored === 2) {
-        goalsTotal = goalsTotal + 5;
-      } else if (goalsScored >= 3) {
-        goalsTotal = goalsTotal + 10;
-      }
+    if (goalsScored === 2) {
+      goalsTotal = goalsTotal + 5;
+    } else if (goalsScored >= 3) {
+      goalsTotal = goalsTotal + 10;
     }
 
     // Create a variable by adding the totals of all calculation variables
@@ -220,56 +217,69 @@ function calculatePoints() {
 }
 
 function updatePointsTotal() {
+  $('.player-total-data').each((i, player) => {
+    const playerID = $(player)
+      .find('.id')
+      .text();
 
-      $('.player-total-data').each( (i, player) => {
+    $(this).attr('data-player-id', playerID);
 
-        const playerID = $(player).find('.id').text();
-
-        $(this).attr('data-player-id', playerID);
-
-        const matchingPlayerID = $('.player-data').filter( (ind, matchingplayer) => {
-            return $(matchingplayer).attr('data-id') === playerID;
-        });
-
-        const matchingPlayerPoints = matchingPlayerID.attr('data-points');
-
-        $(player).find('.points').text('0');
-        $(player).find('.points').text(matchingPlayerPoints);
-
-        if ($(matchingPlayerID).attr('data-sentoff') === 'true') {
-            $(player).addClass('sent-off');
-        } else {
-            $(player).removeClass('sent-off');
-        }
+    const matchingPlayerID = $('.player-data').filter((ind, matchingplayer) => {
+      return $(matchingplayer).attr('data-id') === playerID;
     });
+
+    const matchingPlayerPoints = matchingPlayerID.attr('data-points');
+
+    $(player)
+      .find('.points')
+      .text('0');
+    $(player)
+      .find('.points')
+      .text(matchingPlayerPoints);
+
+    if ($(matchingPlayerID).attr('data-sentoff') === 'true') {
+      $(player).addClass('sent-off');
+    } else {
+      $(player).removeClass('sent-off');
+    }
+  });
 }
 
 function resetFixture(event: JQuery.Event) {
   const $this = $(event.currentTarget);
-  const fixtureText = $this.closest('.fixtures').find('h3').text();
+  const fixtureText = $this
+    .closest('.fixtures')
+    .find('h3')
+    .text();
   const selectedFixture = `#${$this.closest('.fixtures').attr('id')}`;
 
   swal({
-      title: 'Are you sure?',
-      html: `Would you like to reset <b>${fixtureText.toLowerCase()}</b>`,
-      type: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#5cb85c',
-      cancelButtonColor: '#d9534f',
-      confirmButtonText: 'Yes, reset it!',
-    }).then((result: any) => {
-      if (result.value) {
-          $(selectedFixture).find('select').val(0);
-          $(selectedFixture).find('.home-team-players, .away-team-players').empty();
+    title: 'Are you sure?',
+    html: `Would you like to reset <b>${fixtureText.toLowerCase()}</b>`,
+    type: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#5cb85c',
+    cancelButtonColor: '#d9534f',
+    confirmButtonText: 'Yes, reset it!'
+  }).then((result: any) => {
+    if (result.value) {
+      $(selectedFixture)
+        .find('select')
+        .val(0);
+      $(selectedFixture)
+        .find('.home-team-players, .away-team-players')
+        .empty();
 
-          calculatePoints();
-          updatePointsTotal();
-          disableSelectedTeams(event);
-      }
-    });
+      calculatePoints();
+      updatePointsTotal();
+      disableSelectedTeams(event);
+    }
+  });
 }
 
 $(document).on('click', '.position-header', togglePlayers);
+
+$(document).on('click', '.clear-fixture', event => resetFixture(event));
 
 $(document).on('change', '.teams-dropdown', event => {
   populateFixtures(event);
@@ -278,10 +288,11 @@ $(document).on('change', '.teams-dropdown', event => {
   updatePointsTotal();
 });
 
-$(document).on('change', '.score-select, .clean-sheet-checkbox, .red-card-checkbox', event => {
+$(document).on(
+  'change',
+  '.score-select, .clean-sheet-checkbox, .red-card-checkbox',
+  event => {
     calculatePoints();
     updatePointsTotal();
   }
 );
-
-$(document).on('click', '.clear-fixture', event => resetFixture(event));

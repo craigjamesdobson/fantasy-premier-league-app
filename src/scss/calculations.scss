@@ -157,7 +157,7 @@
         select {
           padding: 0;
           &.active {
-            background-color: green;
+            background-color: #5cb85c;
             color: #fff;
           }
         }
@@ -231,7 +231,7 @@
       }
 
       &.sent-off {
-        background-color: red;
+        background-color: #d9534f;
         color: #fff;
       }
     }
