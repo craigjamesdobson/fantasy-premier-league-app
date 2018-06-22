@@ -181,13 +181,11 @@ footer {
     .teams-container table .player-total-data:nth-child(odd) {
       background-color: #ddd; }
     .teams-container table .player-total-data.transfered {
-      background-color: green;
-      color: #fff;
-      font-weight: bold; }
+      background-color: #5cb85c;
+      color: #fff; }
     .teams-container table .player-total-data.current-week-transfer {
-      background-color: yellow;
-      color: #4444d1;
-      font-weight: bold; }
+      background-color: #EEE82C;
+      color: #292F36; }
     .teams-container table .player-total-data.sent-off {
       background-color: #d9534f;
       color: #fff; }

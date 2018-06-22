@@ -6,6 +6,7 @@ import { CreateTeamData } from '../../components/Teams/CreateTeamData';
 import { DraftedTeamData } from '../../components/DraftedTeams/CreateDraftedTeams';
 import { GetStaticData } from '../../components/StaticData/GetStaticData';
 import { PlayerList } from '../../components/Players/PlayerList';
+import { PlayerPositionShort } from '../../components/Players/PlayerPosition';
 import { TeamList } from '../../components/Teams/TeamList';
 
 // tslint:disable:no-var-requires
@@ -313,7 +314,7 @@ $(document).on(
 );
 
 $(document).on('change', '.week-dropdown', event => {
-  const weekID = $(event.currentTarget).val();
+  const weekID = +$(event.currentTarget).val();
 
   $('.player-total-data').each((i, player) => {
     const transferData = $(player).attr('data-transfer');
@@ -323,12 +324,11 @@ $(document).on('change', '.week-dropdown', event => {
     const cachedPlayerName = $(player).find('.player').attr('data-original-name');
     let transferSet = false;
 
-    $(player).removeClass('transfered');
+    $(player).removeClass('transfered current-week-transfer');
     $(player).find('.id').text(cachedPlayerID);
     $(player).find('.position').text(cachedPlayerPosition);
     $(player).find('.club').text(cachedPlayerTeam);
     $(player).find('.player').text(cachedPlayerName);
-    transferSet = false;
 
     if (transferData !== undefined) {
       const transfers = transferData.split(',');
@@ -351,9 +351,12 @@ $(document).on('change', '.week-dropdown', event => {
         for (const playerdata of playerData.players) {
           if (playerdata.id === parseInt(transferID, 10)) {
             if (weekID >= transferWeek) {
+              if (weekID === transferWeek) {
+                $(player).addClass('current-week-transfer');
+              }
               $(player).addClass('transfered');
               $(player).find('.id').text(playerdata.id);
-              $(player).find('.position').text(playerdata.playerType);
+              $(player).find('.position').text(PlayerPositionShort[playerdata.playerType]);
               $(player).find('.club').text(playerdata.teamShort);
               $(player).find('.player').text(playerdata.name);
               transferSet = true;

@@ -219,15 +219,13 @@
       }
 
       &.transfered {
-        background-color: green;
+        background-color: #5cb85c;
         color: #fff;
-        font-weight: bold;
       }
 
       &.current-week-transfer {
-        background-color: yellow;
-        color: rgb(68, 68, 209);
-        font-weight: bold;
+        background-color: #EEE82C;
+        color: #292F36;
       }
 
       &.sent-off {
