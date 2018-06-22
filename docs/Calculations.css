@@ -140,7 +140,7 @@ footer {
         padding: 0; }
         .fixtures-container .fixtures .away-team-players table select.active,
         .fixtures-container .fixtures .home-team-players table select.active {
-          background-color: green;
+          background-color: #5cb85c;
           color: #fff; }
     .fixtures-container .fixtures .away-team-players p,
     .fixtures-container .fixtures .home-team-players p {
@@ -189,7 +189,7 @@ footer {
       color: #4444d1;
       font-weight: bold; }
     .teams-container table .player-total-data.sent-off {
-      background-color: red;
+      background-color: #d9534f;
       color: #fff; }
   .teams-container table,
   .teams-container td,

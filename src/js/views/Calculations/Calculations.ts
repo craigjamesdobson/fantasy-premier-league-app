@@ -41,10 +41,8 @@ async function initDraftedTeamData(playerList: PlayerList) {
       player: playerList.players.filter(p => p.id === player.playerID)[0],
       transfers: player.transfers
     }));
-
     return new CompleteDraftedTeam(draftedTeam, players);
   });
-
   teamsContainer.append(DraftedTeamTemplate(draftedTeams));
 }
 
@@ -88,7 +86,6 @@ function disableSelectedTeams(event: JQuery.Event) {
 
 function populateFixtures(event: JQuery.Event) {
   const $this = $(event.currentTarget);
-
   const selectedTeam = $this.find(':selected').val() as string;
   const playerTableClass = `.${$this.parent().attr('class')}-players`;
   const selectedFixture = `#${$this.closest('.fixtures').attr('id')}`;
@@ -131,6 +128,17 @@ function populateFixtures(event: JQuery.Event) {
   $(selectedFixture)
     .find(playerTableClass)
     .html(PopulateFixturesTemplate(filteredPositions));
+
+  $('.player-data').each((i, player) => {
+    if (
+      $(player).attr('data-position') === '3' ||
+      $(player).attr('data-position') === '4'
+    ) {
+      $(player)
+        .find('.clean-sheet-checkbox')
+        .attr('disabled', 'disabled');
+    }
+  });
 }
 
 function calculatePoints() {
@@ -155,7 +163,6 @@ function calculatePoints() {
       .find('.red-card-checkbox')
       .is(':checked');
 
-    // If clean sheet checkbox is checked set the cleanSheetTotal
     if (cleanSheet) {
       if (positionID === '1') {
         cleanSheetTotal = 5;
@@ -164,10 +171,8 @@ function calculatePoints() {
       }
     }
 
-    // If the red card checkbox is selected set the redCardTotal to 10
     if (sentOff) {
       redCardTotal = 10;
-      // Add attribute to current player if sent off
       $(player).attr('data-sentoff', 'true');
     } else {
       $(player).removeAttr('data-sentoff');
@@ -207,11 +212,7 @@ function calculatePoints() {
     } else if (goalsScored >= 3) {
       goalsTotal = goalsTotal + 10;
     }
-
-    // Create a variable by adding the totals of all calculation variables
     pointsTotal = goalsTotal + cleanSheetTotal - redCardTotal;
-
-    // Create an attribute on the player table row and set it to the pointsTotal
     $(player).attr('data-points', pointsTotal);
   });
 }
@@ -222,11 +223,11 @@ function updatePointsTotal() {
       .find('.id')
       .text();
 
-    $(this).attr('data-player-id', playerID);
-
-    const matchingPlayerID = $('.player-data').filter((ind, matchingplayer) => {
-      return $(matchingplayer).attr('data-id') === playerID;
-    });
+    const matchingPlayerID = $('.player-data').filter(
+      (index, matchingplayer) => {
+        return $(matchingplayer).attr('data-id') === playerID;
+      }
+    );
 
     const matchingPlayerPoints = matchingPlayerID.attr('data-points');
 
@@ -242,6 +243,20 @@ function updatePointsTotal() {
     } else {
       $(player).removeClass('sent-off');
     }
+  });
+
+  $('.teams-container table').each((i, teams) => {
+    let $total = 0;
+
+    $(teams)
+      .find('.points')
+      .each((index, player) => {
+        $total += parseInt($(player).text(), 10);
+      });
+
+    $(teams)
+      .find('.total-points')
+      .text($total);
   });
 }
 
@@ -296,3 +311,57 @@ $(document).on(
     updatePointsTotal();
   }
 );
+
+$(document).on('change', '.week-dropdown', event => {
+  const weekID = $(event.currentTarget).val();
+
+  $('.player-total-data').each((i, player) => {
+    const transferData = $(player).attr('data-transfer');
+    const cachedPlayerID = $(player).find('.id').attr('data-original-id');
+    const cachedPlayerPosition = $(player).find('.position').attr('data-original-position');
+    const cachedPlayerTeam = $(player).find('.club').attr('data-original-team');
+    const cachedPlayerName = $(player).find('.player').attr('data-original-name');
+    let transferSet = false;
+
+    $(player).removeClass('transfered');
+    $(player).find('.id').text(cachedPlayerID);
+    $(player).find('.position').text(cachedPlayerPosition);
+    $(player).find('.club').text(cachedPlayerTeam);
+    $(player).find('.player').text(cachedPlayerName);
+    transferSet = false;
+
+    if (transferData !== undefined) {
+      const transfers = transferData.split(',');
+
+      $(transfers).each((ind, transfer: any) => {
+        const transferSplit = transfer.split('|');
+        const transferWeek = parseInt(transferSplit[0], 10);
+        const transferID = transferSplit[1];
+
+        if (transferWeek > weekID) {
+          transferSet = true;
+        } else {
+          transferSet = false;
+        }
+
+        if (transferSet === true) {
+          return;
+        }
+
+        for (const playerdata of playerData.players) {
+          if (playerdata.id === parseInt(transferID, 10)) {
+            if (weekID >= transferWeek) {
+              $(player).addClass('transfered');
+              $(player).find('.id').text(playerdata.id);
+              $(player).find('.position').text(playerdata.playerType);
+              $(player).find('.club').text(playerdata.teamShort);
+              $(player).find('.player').text(playerdata.name);
+              transferSet = true;
+              return;
+            }
+          }
+        }
+      });
+    }
+  });
+});

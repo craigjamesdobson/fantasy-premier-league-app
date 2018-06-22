@@ -14,22 +14,13 @@
                     <th>Points</th>
                 </tr>
                 {{#each teamPlayers}}
-                <tr class="player-total-data" data-player-id="{{playerId}}" {{#each transfers}}data-transfer-week-{{transferWeek}}="{{transferId}}"{{/each}}>
-                    <td class="id">{{playerId}}</td>
-                    <td class="position">{{playerPosition}}</td>
-                    <td class="club">{{playerTeamShort}}</td>
-                    <td class="player">{{playerName}}</td>
+                <tr class="player-total-data" data-player-id="{{playerId}}" {{#if transfers}}data-transfer="{{#each transfers}}{{transferWeek}}|{{transferId}}{{#if @last}}{{else}},{{/if}}{{/each}}"{{/if}}>
+                    <td class="id" data-original-id="{{playerId}}">{{playerId}}</td>
+                    <td class="position" data-original-position="{{playerPosition}}">{{playerPosition}}</td>
+                    <td class="club" data-original-team="{{playerTeamShort}}">{{playerTeamShort}}</td>
+                    <td class="player" data-original-name="{{playerName}}">{{playerName}}</td>
                     <td class="points">0</td>
                 </tr>
-                    {{!-- {{#each transfers}}
-                    <tr class="transfered-player" data-transfered-week="{{transferWeek}}">
-                        <td class="id">{{transferId}}</td>
-                        <td class="position">{{playerPosition}}</td>
-                        <td class="club">{{playerTeamShort}}</td>
-                        <td class="player">{{playerName}}</td>
-                        <td class="points">0</td>
-                    </tr>
-                    {{/each}} --}}
                 {{/each}}
                 <tr class="total-points-row">
                     <td colspan="3"></td>
