@@ -6,7 +6,8 @@
             <option value="{{@index}}">week {{@index}}</option>
             {{/repeat}}
         </select>
-        <button class="save-week">Save Week</button>
+        <button class="btn btn-primary save-week">Save Week</button>
+        <button class="btn btn-danger delete-week">Delete Week</button>
     </div>
     {{#repeat count=10 start=1}}
     <div id="fixture-{{@index}}" class="fixtures col-xs-12 col-md-6">

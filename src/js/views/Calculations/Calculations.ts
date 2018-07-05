@@ -1,20 +1,22 @@
 import '../../../scss/calculations.scss';
+import '../../../img/clean_sheet.png';
+import '../../../img/red_card.png';
+import '../../../img/football.png';
+import '../../components/Database/WeeklyData';
 
 import { CompleteDraftedTeam } from '../../components/DraftedTeams/CompleteDraftedTeam';
 import { CreatePlayerData } from '../../components/Players/CreatePlayerData';
 import { CreateTeamData } from '../../components/Teams/CreateTeamData';
+import Dexie from 'dexie';
 import { DraftedTeamData } from '../../components/DraftedTeams/CreateDraftedTeams';
 import { GetStaticData } from '../../components/StaticData/GetStaticData';
 import { PlayerList } from '../../components/Players/PlayerList';
 import { PlayerPositionShort } from '../../components/Players/PlayerPosition';
 import { TeamList } from '../../components/Teams/TeamList';
+import { storeWeeklyData } from '../../components/Database/WeeklyData';
+import swal from 'sweetalert2';
 
 // tslint:disable:no-var-requires
-const swal = require('sweetalert2');
-const iconCleanSheet = require('../../../img/clean_sheet.png');
-const iconRedCard = require('../../../img/red_card.png');
-const iconGoal = require('../../../img/football.png');
-
 const FixturesTemplate = require('../../components/Templates/FixturesTemplate.hbs');
 const DraftedTeamTemplate = require('../../components/Templates/DraftedTeamsTemplate.hbs');
 const PopulateFixturesTemplate = require('../../components/Templates/PopulateFixturesTemplate.hbs');
@@ -293,44 +295,40 @@ function resetFixture(event: JQuery.Event) {
   });
 }
 
-$(document).on('click', '.position-header', togglePlayers);
-
-$(document).on('click', '.clear-fixture', event => resetFixture(event));
-
-$(document).on('change', '.teams-dropdown', event => {
-  populateFixtures(event);
-  disableSelectedTeams(event);
-  calculatePoints();
-  updatePointsTotal();
-});
-
-$(document).on(
-  'change',
-  '.score-select, .clean-sheet-checkbox, .red-card-checkbox',
-  event => {
-    calculatePoints();
-    updatePointsTotal();
-  }
-);
-
-$(document).on('change', '.week-dropdown', event => {
+function applyTransfers(event: JQuery.Event) {
   const weekID = +$(event.currentTarget).val();
 
   $('.player-total-data').each((i, player) => {
     const transferData = $(player).attr('data-transfer');
-    const cachedPlayerID = $(player).find('.id').attr('data-original-id');
-    const cachedPlayerPosition = $(player).find('.position').attr('data-original-position');
-    const cachedPlayerTeam = $(player).find('.club').attr('data-original-team');
-    const cachedPlayerName = $(player).find('.player').attr('data-original-name');
+    const cachedPlayerID = $(player)
+      .find('.id')
+      .attr('data-original-id');
+    const cachedPlayerPosition = $(player)
+      .find('.position')
+      .attr('data-original-position');
+    const cachedPlayerTeam = $(player)
+      .find('.club')
+      .attr('data-original-team');
+    const cachedPlayerName = $(player)
+      .find('.player')
+      .attr('data-original-name');
     let transferSet = false;
 
-    $(player).removeClass('transfered current-week-transfer');
-    $(player).find('.id').text(cachedPlayerID);
-    $(player).find('.position').text(cachedPlayerPosition);
-    $(player).find('.club').text(cachedPlayerTeam);
-    $(player).find('.player').text(cachedPlayerName);
-
     if (transferData !== undefined) {
+      $(player).removeClass('transfered current-week-transfer');
+      $(player)
+        .find('.id')
+        .text(cachedPlayerID);
+      $(player)
+        .find('.position')
+        .text(cachedPlayerPosition);
+      $(player)
+        .find('.club')
+        .text(cachedPlayerTeam);
+      $(player)
+        .find('.player')
+        .text(cachedPlayerName);
+
       const transfers = transferData.split(',');
 
       $(transfers).each((ind, transfer: any) => {
@@ -355,10 +353,18 @@ $(document).on('change', '.week-dropdown', event => {
                 $(player).addClass('current-week-transfer');
               }
               $(player).addClass('transfered');
-              $(player).find('.id').text(playerdata.id);
-              $(player).find('.position').text(PlayerPositionShort[playerdata.playerType]);
-              $(player).find('.club').text(playerdata.teamShort);
-              $(player).find('.player').text(playerdata.name);
+              $(player)
+                .find('.id')
+                .text(playerdata.id);
+              $(player)
+                .find('.position')
+                .text(PlayerPositionShort[playerdata.playerType]);
+              $(player)
+                .find('.club')
+                .text(playerdata.teamShort);
+              $(player)
+                .find('.player')
+                .text(playerdata.name);
               transferSet = true;
               return;
             }
@@ -367,4 +373,30 @@ $(document).on('change', '.week-dropdown', event => {
       });
     }
   });
+}
+
+$(document).on('click', '.position-header', togglePlayers);
+
+$(document).on('click', '.clear-fixture', event => resetFixture(event));
+
+$(document).on('change', '.teams-dropdown', event => {
+  populateFixtures(event);
+  disableSelectedTeams(event);
+  calculatePoints();
+  updatePointsTotal();
+});
+
+$(document).on(
+  'change',
+  '.score-select, .clean-sheet-checkbox, .red-card-checkbox',
+  event => {
+    calculatePoints();
+    updatePointsTotal();
+  }
+);
+
+$(document).on('change', '.week-dropdown', event => applyTransfers(event));
+
+$(document).on('click', '.save-week', event => {
+  storeWeeklyData();
 });

@@ -3,6 +3,7 @@
       "outDir": "./docs/",
       "sourceMap": true,
       "noImplicitAny": true,
+      "moduleResolution": "node",
       "module": "es6",
       "target": "es5",
       "jsx": "react",
@@ -12,6 +13,6 @@
         "es5",
         "es2015",
         "es2015.promise"
-      ]
+      ],
     }
   }
