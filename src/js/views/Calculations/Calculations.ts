@@ -70,7 +70,7 @@ function togglePlayers(event: JQuery.Event) {
 function disableSelectedTeams(event: JQuery.Event) {
   const selectedOptions = $('.team-option:selected')
     .map(function() {
-      return $(this).val();
+      return $(this).val() as string;
     })
     .toArray();
 

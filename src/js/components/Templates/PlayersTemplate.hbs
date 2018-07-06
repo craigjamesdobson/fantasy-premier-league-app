@@ -1,6 +1,7 @@
 <div class="row">
 
     <!-- Goalkeepers -->
+    {{#if gkLeft.length}}
     <div class="col-12">
         <h3 class="mb-3">Goalkeepers</h2>
     </div>
@@ -36,6 +37,7 @@
             {{/each}}
         </table>
     </div>
+    {{#if gkRight.length}}
     <div class="col-12 col-md-6">
         <table class="table table-striped table-sm player-table">
             <colgroup>
@@ -68,9 +70,12 @@
             {{/each}}
         </table>
     </div>
+    {{/if}} 
+    {{/if}}
     <!-- END Goalkeepers -->
 
     <!-- Defenders -->
+    {{#if dfLeft.length}}
     <div class="col-12">
         <h3>Defenders</h2>
     </div>
@@ -104,6 +109,7 @@
             {{/each}}
         </table>
     </div>
+    {{#if dfRight.length}}
     <div class="col-12 col-md-6">
         <table class="table table-striped table-sm player-table">
             <colgroup>
@@ -134,9 +140,12 @@
             {{/each}}
         </table>
     </div>
+    {{/if}}
+    {{/if}}
     <!-- END Defenders -->
 
     <!-- Midfielders -->
+    {{#if mfLeft.length}}
     <div class="col-12">
         <h3>Midfielders</h2>
     </div>
@@ -170,6 +179,7 @@
             {{/each}}
         </table>
     </div>
+    {{#if mfRight.length}}
     <div class="col-12 col-md-6">
         <table class="table table-striped table-sm player-table">
             <colgroup>
@@ -200,9 +210,12 @@
             {{/each}}
         </table>
     </div>
+    {{/if}}
+    {{/if}}
     <!-- END Midfielders -->
 
     <!-- Forwards -->
+    {{#if fwLeft.length}}
     <div class="col-12">
         <h3>Forwards</h2>
     </div>
@@ -236,6 +249,7 @@
             {{/each}}
         </table>
     </div>
+    {{#if fwRight.length}}
     <div class="col-12 col-md-6">
         <table class="table table-striped table-sm player-table">
             <colgroup>
@@ -266,5 +280,7 @@
             {{/each}}
         </table>
     </div>
+    {{/if}}
+    {{/if}}
     <!-- END Forwards -->
 </div>
