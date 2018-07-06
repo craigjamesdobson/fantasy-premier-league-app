@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
 
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -28,7 +30,7 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="players.html">Players</a>
                     </li>
@@ -42,7 +44,19 @@
     <!-- END Navigation -->
 
     <div class="container">
-        <div class="player-container col-xs-12 py-3">
+        <div class="filter-container col-12 py-3">
+            <h4>Filters</h4>
+            <hr>
+            <div class="row">
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="searchInput">Search</label>
+                        <input type="email" class="form-control" id="searchInput" placeholder="Start typing to search...">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="player-container col-12 py-3">
             <div class="loading">
                 <img src="loading.gif" alt="loading">
             </div>

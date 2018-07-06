@@ -15,6 +15,7 @@
   "author": "Craig Dobson",
   "license": "ISC",
   "devDependencies": {
+    "@types/lodash": "^4.14.110",
     "@types/node": "^10.1.2",
     "autoprefixer": "^8.5.0",
     "clean-webpack-plugin": "^0.1.19",

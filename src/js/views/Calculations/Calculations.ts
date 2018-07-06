@@ -7,7 +7,6 @@ import '../../components/Database/WeeklyData';
 import { CompleteDraftedTeam } from '../../components/DraftedTeams/CompleteDraftedTeam';
 import { CreatePlayerData } from '../../components/Players/CreatePlayerData';
 import { CreateTeamData } from '../../components/Teams/CreateTeamData';
-import Dexie from 'dexie';
 import { DraftedTeamData } from '../../components/DraftedTeams/CreateDraftedTeams';
 import { GetStaticData } from '../../components/StaticData/GetStaticData';
 import { PlayerList } from '../../components/Players/PlayerList';
@@ -273,7 +272,7 @@ function resetFixture(event: JQuery.Event) {
 
   swal({
     title: 'Are you sure?',
-    html: `Would you like to reset <b>${fixtureText.toLowerCase()}</b>`,
+    html: `<h6>Would you like to reset <b>${fixtureText.toUpperCase()}</b><h4>`,
     type: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#5cb85c',
