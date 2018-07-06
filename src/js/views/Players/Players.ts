@@ -17,9 +17,10 @@ GetStaticData.getstaticData().then(data => {
   initPlayerData(playerData);
 });
 
-function initPlayerData(playerList: PlayerList, filterString?: string) {
+function initPlayerData(playerList?: PlayerList, filterString?: string) {
 
   const filter = filterString;
+  const players = playerList.players.filter(p => p.name.toLowerCase().indexOf(filter ? filter : '') > -1);
   const goalkeepers = playerList.getFilteredPlayersOfType(PlayerPosition.Goalkeeper, filter ? filter : '');
   const defenders = playerList.getFilteredPlayersOfType(PlayerPosition.Defender, filter ? filter : '');
   const midfielders = playerList.getFilteredPlayersOfType(PlayerPosition.Midfielder, filter ? filter : '');
@@ -27,6 +28,8 @@ function initPlayerData(playerList: PlayerList, filterString?: string) {
 
   // prettier-ignore
   dividedPlayerData = {
+    players: players,
+
     gkLeft: goalkeepers[0],
     gkRight: goalkeepers[1],
 
@@ -39,21 +42,14 @@ function initPlayerData(playerList: PlayerList, filterString?: string) {
     fwLeft: forwards[0],
     fwRight: forwards[1]
   };
+
   playerContainer.empty().append(playerTemplate(dividedPlayerData));
 }
 
-// $(document).on('keyup', '#searchInput', event => {
-//   const $this = $(event.currentTarget);
-
-//   const searchtext = $this.val() as string;
-
-//   initPlayerData(playerData, searchtext);
-// });
-
-$('#searchInput').on('keyup', debounce(event => {
+$('#searchInput').on('paste, keyup', debounce(event => {
   const $this = $(event.currentTarget);
 
   const searchtext = $this.val() as string;
 
-  initPlayerData(playerData, searchtext);
-}, 1000));
+  initPlayerData(playerData, searchtext.toLowerCase());
+}, 500));
