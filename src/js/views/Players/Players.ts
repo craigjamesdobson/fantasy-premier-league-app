@@ -1,4 +1,5 @@
 import '../../../scss/Playerlist.scss';
+import '../../../img/badges-sprite.png';
 
 import { CreatePlayerData } from '../../components/Players/CreatePlayerData';
 import { GetStaticData } from '../../components/StaticData/GetStaticData';
