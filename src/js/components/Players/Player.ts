@@ -51,52 +51,52 @@ export class Player {
         this.teamShort = 'BUR';
         break;
       case 5:
+        this.teamName = 'Cardiff';
+        this.teamShort = 'CAR';
+        break;
+      case 6:
         this.teamName = 'Chelsea';
         this.teamShort = 'CHE';
         break;
-      case 6:
+      case 7:
         this.teamName = 'Crystal Palace';
         this.teamShort = 'CRY';
         break;
-      case 7:
+      case 8:
         this.teamName = 'Everton';
         this.teamShort = 'EVE';
         break;
-      case 8:
-        this.teamName = 'Huddersfield Town';
-        this.teamShort = 'HUD';
-        break;
       case 9:
-        this.teamName = 'Leicester City';
-        this.teamShort = 'LEI';
+        this.teamName = 'Fulham';
+        this.teamShort = 'FUL';
         break;
       case 10:
+        this.teamName = 'Huddersfield';
+        this.teamShort = 'HUD';
+        break;
+      case 11:
+        this.teamName = 'Leicester';
+        this.teamShort = 'LEI';
+        break;
+      case 12:
         this.teamName = 'Liverpool';
         this.teamShort = 'LIV';
         break;
-      case 11:
+      case 13:
         this.teamName = 'Manchester City';
         this.teamShort = 'MNC';
         break;
-      case 12:
+      case 14:
         this.teamName = 'Manchester United';
         this.teamShort = 'MNU';
         break;
-      case 13:
-        this.teamName = 'Newcastle United';
+      case 15:
+        this.teamName = 'Newcastle';
         this.teamShort = 'NEW';
         break;
-      case 14:
+      case 16:
         this.teamName = 'Southampton';
         this.teamShort = 'SOU';
-        break;
-      case 15:
-        this.teamName = 'Stoke City';
-        this.teamShort = 'STO';
-        break;
-      case 16:
-        this.teamName = 'Swansea City';
-        this.teamShort = 'SWA';
         break;
       case 17:
         this.teamName = 'Tottenham Hotspur';
@@ -107,12 +107,12 @@ export class Player {
         this.teamShort = 'WAT';
         break;
       case 19:
-        this.teamName = 'West Bromwich Albion';
-        this.teamShort = 'WBA';
+        this.teamName = 'West Ham';
+        this.teamShort = 'WHU';
         break;
       case 20:
-        this.teamName = 'West Ham United';
-        this.teamShort = 'WHU';
+        this.teamName = 'Wolves';
+        this.teamShort = 'WOL';
         break;
     }
 

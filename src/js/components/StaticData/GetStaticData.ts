@@ -4,7 +4,7 @@ export namespace GetStaticData {
   export async function getstaticData(): Promise<any> {
     return new Promise<any>((resolve, reject) => {
       const staticDataUrl =
-        'https://jokecamp.github.io/epl-fantasy-geek/js/static-data.json';
+        './fplData.json';
 
       fetch(staticDataUrl)
         .then((data: Response) => {

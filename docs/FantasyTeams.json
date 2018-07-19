@@ -26,7 +26,7 @@
           "transfers": []
         },
         {
-          "player_id": 24,
+          "player_id": 253,
           "transfers": []
         },
         {
@@ -34,7 +34,7 @@
           "transfers": [
             {
               "transfer_id": 247,
-              "transfer_week": 5
+              "transfer_week": 15
             }
           ]
         },
@@ -43,388 +43,29 @@
           "transfers": [
             {
               "transfer_id": 501,
-              "transfer_week": 10
+              "transfer_week": 15
             }
           ]
         },
         {
-          "player_id": 472,
+          "player_id": 257,
+          "transfers": []
+        },
+        {
+          "player_id": 134,
           "transfers": [
-            
             {
-              "transfer_id": 257,
+              "transfer_id": 472,
               "transfer_week": 15
             },
             {
-              "transfer_id": 235,
-              "transfer_week": 20
+              "transfer_id": 259,
+              "transfer_week": 35
             }
-          
           ]
         },
         {
-          "player_id": 134,
-          "transfers": []
-        },
-        {
-          "player_id": 285,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 2,
-      "team_name": "HAKUNA MORATA",
-      "allowed_transfers": false,
-      "team_players": [
-        {
-          "player_id": 135,
-          "transfers": []
-        },
-        {
-          "player_id": 13,
-          "transfers": []
-        },
-        {
-          "player_id": 146,
-          "transfers": []
-        },
-        {
-          "player_id": 330,
-          "transfers": []
-        },
-        {
-          "player_id": 290,
-          "transfers": []
-        },
-        {
-          "player_id": 62,
-          "transfers": []
-        },
-        {
-          "player_id": 340,
-          "transfers": []
-        },
-        {
-          "player_id": 324,
-          "transfers": []
-        },
-        {
-          "player_id": 28,
-          "transfers": []
-        },
-        {
-          "player_id": 472,
-          "transfers": []
-        },
-        {
-          "player_id": 161,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 3,
-      "team_name": "JABBA'S not ATHLETIC 2nd XI",
-      "allowed_transfers": true,
-      "team_players": [
-        {
-          "player_id": 260,
-          "transfers": []
-        },
-        {
-          "player_id": 4,
-          "transfers": []
-        },
-        {
-          "player_id": 311,
-          "transfers": []
-        },
-        {
-          "player_id": 55,
-          "transfers": []
-        },
-        {
-          "player_id": 289,
-          "transfers": []
-        },
-        {
-          "player_id": 230,
-          "transfers": []
-        },
-        {
-          "player_id": 359,
-          "transfers": []
-        },
-        {
-          "player_id": 388,
-          "transfers": []
-        },
-        {
-          "player_id": 161,
-          "transfers": []
-        },
-        {
-          "player_id": 134,
-          "transfers": []
-        },
-        {
-          "player_id": 259,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 4,
-      "team_name": "MONTYCHUCKA",
-      "allowed_transfers": true,
-      "team_players": [
-        {
-          "player_id": 260,
-          "transfers": []
-        },
-        {
-          "player_id": 191,
-          "transfers": []
-        },
-        {
-          "player_id": 477,
-          "transfers": []
-        },
-        {
-          "player_id": 475,
-          "transfers": []
-        },
-        {
-          "player_id": 484,
-          "transfers": []
-        },
-        {
-          "player_id": 23,
-          "transfers": []
-        },
-        {
-          "player_id": 125,
-          "transfers": []
-        },
-        {
-          "player_id": 281,
-          "transfers": []
-        },
-        {
-          "player_id": 285,
-          "transfers": []
-        },
-        {
-          "player_id": 394,
-          "transfers": []
-        },
-        {
-          "player_id": 472,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 5,
-      "team_name": "Lacking Creativity",
-      "allowed_transfers": true,
-      "team_players": [
-        {
-          "player_id": 260,
-          "transfers": []
-        },
-        {
-          "player_id": 117,
-          "transfers": []
-        },
-        {
-          "player_id": 290,
-          "transfers": []
-        },
-        {
-          "player_id": 80,
-          "transfers": []
-        },
-        {
-          "player_id": 405,
-          "transfers": []
-        },
-        {
-          "player_id": 234,
-          "transfers": []
-        },
-        {
-          "player_id": 388,
-          "transfers": []
-        },
-        {
-          "player_id": 367,
-          "transfers": []
-        },
-        {
-          "player_id": 394,
-          "transfers": []
-        },
-        {
-          "player_id": 259,
-          "transfers": []
-        },
-        {
-          "player_id": 285,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 6,
-      "team_name": "Diggers FC",
-      "allowed_transfers": true,
-      "team_players": [
-        {
-          "player_id": 421,
-          "transfers": []
-        },
-        {
-          "player_id": 60,
-          "transfers": []
-        },
-        {
-          "player_id": 37,
-          "transfers": []
-        },
-        {
-          "player_id": 353,
-          "transfers": []
-        },
-        {
-          "player_id": 405,
-          "transfers": []
-        },
-        {
-          "player_id": 234,
-          "transfers": []
-        },
-        {
-          "player_id": 388,
-          "transfers": []
-        },
-        {
-          "player_id": 230,
-          "transfers": []
-        },
-        {
-          "player_id": 394,
-          "transfers": []
-        },
-        {
-          "player_id": 259,
-          "transfers": []
-        },
-        {
-          "player_id": 52,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 7,
-      "team_name": "TEAM TIC",
-      "allowed_transfers": false,
-      "team_players": [
-        {
-          "player_id": 94,
-          "transfers": []
-        },
-        {
-          "player_id": 55,
-          "transfers": []
-        },
-        {
-          "player_id": 80,
-          "transfers": []
-        },
-        {
-          "player_id": 33,
-          "transfers": []
-        },
-        {
-          "player_id": 118,
-          "transfers": []
-        },
-        {
-          "player_id": 340,
-          "transfers": []
-        },
-        {
-          "player_id": 282,
-          "transfers": []
-        },
-        {
-          "player_id": 104,
-          "transfers": []
-        },
-        {
-          "player_id": 259,
-          "transfers": []
-        },
-        {
-          "player_id": 394,
-          "transfers": []
-        },
-        {
-          "player_id": 161,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 8,
-      "team_name": "BRING IT ON THIS TIME",
-      "allowed_transfers": true,
-      "team_players": [
-        {
-          "player_id": 375,
-          "transfers": []
-        },
-        {
-          "player_id": 100,
-          "transfers": []
-        },
-        {
-          "player_id": 271,
-          "transfers": []
-        },
-        {
-          "player_id": 380,
-          "transfers": []
-        },
-        {
-          "player_id": 242,
-          "transfers": []
-        },
-        {
-          "player_id": 226,
-          "transfers": []
-        },
-        {
-          "player_id": 230,
-          "transfers": []
-        },
-        {
-          "player_id": 388,
-          "transfers": []
-        },
-        {
-          "player_id": 394,
-          "transfers": []
-        },
-        {
-          "player_id": 285,
-          "transfers": []
-        },
-        {
-          "player_id": 238,
+          "player_id": 1,
           "transfers": []
         }
       ]
