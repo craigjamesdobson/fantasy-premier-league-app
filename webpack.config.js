@@ -85,8 +85,8 @@ module.exports = {
       jQuery: 'jquery'
     }),
 
-    new CopyWebpackPlugin([{ from: 'src/data/FantasyTeams.Json', to: '/' }]),
-    new CopyWebpackPlugin([{ from: 'src/data/fplData.Json', to: '/' }]),
+    new CopyWebpackPlugin([{ from: 'src/data/FantasyTeams.Json', to: '' }]),
+    new CopyWebpackPlugin([{ from: 'src/data/fplData.Json', to: '' }]),
 
     // Generates default index.html
     new HtmlWebpackPlugin({
