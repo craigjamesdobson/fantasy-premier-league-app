@@ -4,6 +4,8 @@ import '../../../img/red_card.png';
 import '../../../img/football.png';
 import '../../components/Database/WeeklyData';
 
+import { deleteWeeklyData, storeWeeklyData } from '../../components/Database/WeeklyData';
+
 import { CompleteDraftedTeam } from '../../components/DraftedTeams/CompleteDraftedTeam';
 import { CreatePlayerData } from '../../components/Players/CreatePlayerData';
 import { CreateTeamData } from '../../components/Teams/CreateTeamData';
@@ -12,7 +14,6 @@ import { GetStaticData } from '../../components/StaticData/GetStaticData';
 import { PlayerList } from '../../components/Players/PlayerList';
 import { PlayerPositionShort } from '../../components/Players/PlayerPosition';
 import { TeamList } from '../../components/Teams/TeamList';
-import { storeWeeklyData } from '../../components/Database/WeeklyData';
 import swal from 'sweetalert2';
 
 // tslint:disable:no-var-requires
@@ -398,4 +399,8 @@ $(document).on('change', '.week-dropdown', event => applyTransfers(event));
 
 $(document).on('click', '.save-week', event => {
   storeWeeklyData();
+});
+
+$(document).on('click', '.delete-week', event => {
+  deleteWeeklyData();
 });

@@ -115,3 +115,10 @@ export function storeWeeklyData() {
   }
 
 }
+
+export function deleteWeeklyData() {
+  const currentWeek = 'week_' + $('.week-dropdown :selected').val();
+
+  localStorage.removeItem(`${currentWeek}_fixtures`);
+  localStorage.removeItem(`${currentWeek}_players`);
+}
