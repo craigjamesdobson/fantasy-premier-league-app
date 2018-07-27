@@ -6,7 +6,6 @@ export namespace DraftedTeamData {
     return new Promise<DraftedTeam[]>((resolve, reject) => {
       // Define variables
       const loadingOverlay = $('.loading');
-      const loadingState = false;
       const draftedTeamUrl = './FantasyTeams.json';
 
       fetch(draftedTeamUrl)
@@ -19,8 +18,6 @@ export namespace DraftedTeamData {
 
           // Examine the text in the response
           data.json().then((draftedTeamData: IDraftedTeamData) => {
-            // Hide the loading overlay
-            loadingOverlay.hide();
 
             const draftedTeamList = draftedTeamData.drafted_teams.map(
               draftedTeam => new DraftedTeam(draftedTeam)
@@ -30,8 +27,6 @@ export namespace DraftedTeamData {
           });
         })
         .catch((err: Error) => {
-          // Hide the loading overlay
-          loadingOverlay.hide();
 
           // Show alert error
           alert(`fetch error ${err}`);

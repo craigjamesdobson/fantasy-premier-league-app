@@ -26,6 +26,7 @@ const fixturesContainer = $('.fixtures-container');
 let playerData: PlayerList;
 let teamData: TeamList;
 
+async function getStaticData() {
 GetStaticData.getstaticData().then(data => {
   playerData = CreatePlayerData.createPlayerData(data);
   initDraftedTeamData(playerData);
@@ -33,6 +34,7 @@ GetStaticData.getstaticData().then(data => {
   teamData = CreateTeamData.createTeamData(data);
   initTeamData(teamData);
 });
+}
 
 async function initDraftedTeamData(playerList: PlayerList) {
   const draftedTeamList = await DraftedTeamData.getDraftedTeamData();
@@ -373,6 +375,22 @@ function applyTransfers(event: JQuery.Event) {
   });
 }
 
+async function loginCheck() {
+  const {value: password} = await swal({
+    title: 'Enter your password',
+    input: 'password',
+    inputPlaceholder: 'Enter your password',
+    allowOutsideClick: false,
+  });
+
+  if (password === 'Dobson') {
+    getStaticData();
+    $('.loading').hide();
+  } else {
+    loginCheck();
+  }
+}
+
 $(document).on('click', '.position-header', togglePlayers);
 
 $(document).on('click', '.clear-fixture', event => resetFixture(event));
@@ -394,3 +412,5 @@ $(document).on(
 );
 
 $(document).on('change', '.week-dropdown', event => applyTransfers(event));
+
+loginCheck();

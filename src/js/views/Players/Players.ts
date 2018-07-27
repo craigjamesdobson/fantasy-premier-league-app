@@ -45,6 +45,7 @@ function initPlayerData(playerList?: PlayerList, filterString?: string) {
   };
 
   playerContainer.empty().append(playerTemplate(dividedPlayerData));
+  $('.loading').hide();
 }
 
 $('#searchInput').on('paste, keyup', debounce(event => {
