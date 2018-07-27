@@ -30,7 +30,7 @@
                 <tr>
                     <td class="home-team">
                         <select class="teams-dropdown">
-                            <option selected disabled style="display:none;" value="0">Teams</option>
+                            <option style="display:none;" value="0">Teams</option>
                             {{#each teams}}
                             <option class="team-option" data-id="{{teamID}}" value="{{teamID}}">{{teamName}}</option>
                             {{/each}}
@@ -46,7 +46,7 @@
                     </td>
                     <td class="away-team">
                         <select class="teams-dropdown">
-                            <option selected="" style="display:none;" value="0">Teams</option>
+                            <option style="display:none;" value="0">Teams</option>
                             {{#each teams}}
                             <option class="team-option" data-id="{{teamID}}" value="{{teamID}}">{{teamName}}</option>
                             {{/each}}
