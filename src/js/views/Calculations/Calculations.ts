@@ -12,7 +12,6 @@ import { GetStaticData } from '../../components/StaticData/GetStaticData';
 import { PlayerList } from '../../components/Players/PlayerList';
 import { PlayerPositionShort } from '../../components/Players/PlayerPosition';
 import { TeamList } from '../../components/Teams/TeamList';
-import { storeWeeklyData } from '../../components/Database/WeeklyData';
 import swal from 'sweetalert2';
 
 // tslint:disable:no-var-requires
@@ -395,7 +394,3 @@ $(document).on(
 );
 
 $(document).on('change', '.week-dropdown', event => applyTransfers(event));
-
-$(document).on('click', '.save-week', event => {
-  storeWeeklyData();
-});
