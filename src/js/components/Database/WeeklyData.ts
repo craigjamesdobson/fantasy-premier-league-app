@@ -9,7 +9,6 @@ const miniSwal = (swal as any).mixin({
 });
 
 export function storeWeeklyData() {
-
   const currentWeek = 'week_' + $('.week-dropdown :selected').val();
   const selectedFixtures = $('.fixtures .teams-dropdown option[value!="0"]')
     .filter(':selected')
@@ -62,17 +61,35 @@ export function storeWeeklyData() {
   }
 
   $('.player-data').each((i, player) => {
-
-    const hasScored =   $(player).find('.score-select').val() !== '0';
-    const hasCleanSheet = $(player).find('.clean-sheet-checkbox').prop('checked');
-    const sentOff = $(player).find('.red-card-checkbox').prop('checked');
+    const hasScored =
+      $(player)
+        .find('.score-select')
+        .val() !== '0';
+    const hasCleanSheet = $(player)
+      .find('.clean-sheet-checkbox')
+      .prop('checked');
+    const sentOff = $(player)
+      .find('.red-card-checkbox')
+      .prop('checked');
 
     if (hasScored || hasCleanSheet || sentOff) {
-      const playerName = $(player).find('td:nth-child(2)').text();
+      const playerName = $(player)
+        .find('td:nth-child(2)')
+        .text();
       const playerID = $(player).attr('data-id');
-      const goalsScored = $(player).find('.score-select').val();
-      const cleanSheet = $(player).find('.clean-sheet-checkbox').prop('checked') ? true : false;
-      const redCard = $(player).find('.red-card-checkbox').prop('checked') ? true : false;
+      const goalsScored = $(player)
+        .find('.score-select')
+        .val();
+      const cleanSheet = $(player)
+        .find('.clean-sheet-checkbox')
+        .prop('checked')
+        ? true
+        : false;
+      const redCard = $(player)
+        .find('.red-card-checkbox')
+        .prop('checked')
+        ? true
+        : false;
 
       playerArray[playerID] = {
         playerName: playerName,
@@ -81,9 +98,7 @@ export function storeWeeklyData() {
         cleanSheet: cleanSheet,
         redCard: redCard
       };
-
     }
-
   });
 
   if (!jQuery.isEmptyObject(fixtureList)) {
@@ -91,37 +106,43 @@ export function storeWeeklyData() {
   }
 
   if (!jQuery.isEmptyObject(playerArray)) {
-  currentWeekPlayers.push(playerArray);
+    currentWeekPlayers.push(playerArray);
   }
 
   if (currentWeekPlayers.length > 0 || currentWeekFixtures.length > 0) {
-    localStorage[currentWeek + '_players'] = (JSON.stringify(currentWeekPlayers));
-    localStorage[currentWeek + '_fixtures'] = (JSON.stringify(currentWeekFixtures));
+    localStorage[currentWeek + '_players'] = JSON.stringify(currentWeekPlayers);
+    localStorage[currentWeek + '_fixtures'] = JSON.stringify(
+      currentWeekFixtures
+    );
 
     miniSwal({
-      position: 'top-end',
+      position: 'top-left',
       type: 'success',
-      title: `${$('.week-dropdown :selected').text().toUpperCase()} has been saved`,
+      title: `${$('.week-dropdown :selected')
+        .text()
+        .toUpperCase()} has been saved`,
       showConfirmButton: false,
       timer: 1500
     });
   } else {
     miniSwal({
-      position: 'top-end',
+      position: 'top-left',
       type: 'error',
       title: 'No data has been selected',
       showConfirmButton: false,
       timer: 1500
     });
   }
-
 }
 
 export function deleteWeeklyData() {
   const currentWeekText = $('.week-dropdown :selected').text();
   const currentWeek = 'week_' + $('.week-dropdown :selected').val();
 
-  if (localStorage.getItem(`${currentWeek}_fixtures`) === null || !localStorage.getItem(`${currentWeek}_players`) === null) {
+  if (
+    localStorage.getItem(`${currentWeek}_fixtures`) === null ||
+    !localStorage.getItem(`${currentWeek}_players`) === null
+  ) {
     miniSwal({
       position: 'top-left',
       type: 'error',
@@ -129,20 +150,55 @@ export function deleteWeeklyData() {
       showConfirmButton: false,
       timer: 1500
     });
-} else {
-  swal({
-    title: 'Are you sure?',
-    html: `<h6>Would you like to delete <b>${currentWeekText.toUpperCase()}</b><h4>`,
-    type: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#5cb85c',
-    cancelButtonColor: '#d9534f',
-    confirmButtonText: 'Yes, reset it!'
-  }).then((result: any) => {
-    if (result.value) {
-      localStorage.removeItem(`${currentWeek}_fixtures`);
-      localStorage.removeItem(`${currentWeek}_players`);
-    }
-  });
+  } else {
+    swal({
+      title: 'Are you sure?',
+      html: `<h6>Would you like to delete <b>${currentWeekText.toUpperCase()}</b><h4>`,
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#5cb85c',
+      cancelButtonColor: '#d9534f',
+      confirmButtonText: 'Yes, reset it!'
+    }).then((result: any) => {
+      if (result.value) {
+        localStorage.removeItem(`${currentWeek}_fixtures`);
+        localStorage.removeItem(`${currentWeek}_players`);
+      }
+    });
+  }
 }
+
+export function populateSelectedWeek() {
+
+    const selectedWeekFixtures = 'week_' + $('.week-dropdown').val() + '_fixtures';
+    const selectedWeekPlayers = 'week_' + $('.week-dropdown').val() + '_players';
+
+    const retrievedFixtures = localStorage.getItem(selectedWeekFixtures);
+    const retrievedPlayers = localStorage.getItem(selectedWeekPlayers);
+
+    const selectedWeekFixturesData = JSON.parse(retrievedFixtures);
+
+    if (localStorage.getItem(selectedWeekFixtures) !== null) {
+
+        $.each(selectedWeekFixturesData, (i, fixture) => {
+
+            $.each(fixture, (ind, fixturename) => {
+
+                const currentFixture = fixturename.fixture;
+
+                $('.fixtures').each((index, DOMfixture) => {
+                    if ($(DOMfixture).attr('id') === currentFixture) {
+
+                        $(DOMfixture).find('.home-team .teams-dropdown').val(fixturename.homeTeamID).prop('selected', true);
+                        $(DOMfixture).find('.away-team .teams-dropdown').val(fixturename.awayTeamID).prop('selected', true);
+
+                        $(DOMfixture).find('.home-team .score').val(fixturename.homeTeamScore).prop('selected', true);
+                        $(DOMfixture).find('.away-team .score').val(fixturename.awayTeamScore).prop('selected', true);
+                    }
+                });
+            });
+
+        });
+    }
+
 }

@@ -4,7 +4,11 @@ import '../../../img/red_card.png';
 import '../../../img/football.png';
 import '../../components/Database/WeeklyData';
 
-import { deleteWeeklyData, storeWeeklyData } from '../../components/Database/WeeklyData';
+import {
+  deleteWeeklyData,
+  populateSelectedWeek,
+  storeWeeklyData
+} from '../../components/Database/WeeklyData';
 
 import { CompleteDraftedTeam } from '../../components/DraftedTeams/CompleteDraftedTeam';
 import { CreatePlayerData } from '../../components/Players/CreatePlayerData';
@@ -142,6 +146,102 @@ function populateFixtures(event: JQuery.Event) {
         .attr('disabled', 'disabled');
     }
   });
+}
+
+export function populateAllFixtures() {
+  $('.teams-dropdown').each((i, teams) => {
+    const playerTableClass = `.${$(teams)
+      .parent()
+      .attr('class')}-players`;
+    const selectedFixture = `#${$(teams)
+      .closest('.fixtures')
+      .attr('id')}`;
+    const selectedTeam = $(teams)
+      .find(':selected')
+      .val() as string;
+
+    const filteredPlayers = playerData.players.filter(
+      p => p.teamID === parseInt(selectedTeam, 10)
+    );
+
+    const filteredPositions = {
+      filteredPositions: [
+        {
+          id: 1,
+          name: 'Goalkeeper',
+          nameShort: 'GK',
+          players: filteredPlayers.filter(g => g.playerType === 1)
+        },
+        {
+          id: 2,
+          name: 'Defender',
+          nameShort: 'DEF',
+          players: filteredPlayers.filter(g => g.playerType === 2)
+        },
+        {
+          id: 3,
+          name: 'Midfielder',
+          nameShort: 'MID',
+          players: filteredPlayers.filter(g => g.playerType === 3)
+        },
+        {
+          id: 4,
+          name: 'Forward',
+          nameShort: 'FWD',
+          players: filteredPlayers.filter(g => g.playerType === 4)
+        }
+      ]
+    };
+
+    if (
+      $(teams)
+        .find(':selected')
+        .val() !== '0'
+    ) {
+      $(selectedFixture)
+        .find(playerTableClass)
+        .html(PopulateFixturesTemplate(filteredPositions));
+
+      $('.player-data').each((ind, player) => {
+        if (
+          $(player).attr('data-position') === '3' ||
+          $(player).attr('data-position') === '4'
+        ) {
+          $(player)
+            .find('.clean-sheet-checkbox')
+            .attr('disabled', 'disabled');
+        }
+      });
+    }
+  });
+
+  const selectedWeekPlayers = 'week_' + $('.week-dropdown').val() + '_players';
+
+  const retrievedPlayers = localStorage.getItem(selectedWeekPlayers);
+
+  if (localStorage.getItem(selectedWeekPlayers) !== null) {
+    const selectedWeekPlayersData = JSON.parse(retrievedPlayers);
+
+    $.each(selectedWeekPlayersData, (i, playerList) => {
+
+      $.each(playerList, (ind, player) => {
+
+        $('.player-data').each((index, dataPlayer) => {
+          if ($(dataPlayer).attr('data-id') === playerList[ind].playerID) {
+            $(dataPlayer)
+              .find('.red-card-checkbox')
+              .prop('checked', playerList[ind].redCard);
+            $(dataPlayer)
+              .find('.clean-sheet-checkbox')
+              .prop('checked', playerList[ind].cleanSheet);
+            $(dataPlayer)
+              .find('.score-select')
+              .val(playerList[ind].goalsScored);
+          }
+        });
+      });
+    });
+  }
 }
 
 function calculatePoints() {
@@ -295,6 +395,11 @@ function resetFixture(event: JQuery.Event) {
   });
 }
 
+function resetAllFixtures() {
+  $('.fixtures').find('select').val(0);
+  $('.fixtures').find('.home-team-players, .away-team-players').empty();
+}
+
 function applyTransfers(event: JQuery.Event) {
   const weekID = +$(event.currentTarget).val();
 
@@ -395,7 +500,15 @@ $(document).on(
   }
 );
 
-$(document).on('change', '.week-dropdown', event => applyTransfers(event));
+$(document).on('change', '.week-dropdown', event => {
+  resetAllFixtures();
+  applyTransfers(event);
+  populateSelectedWeek();
+  populateAllFixtures();
+  disableSelectedTeams(event);
+  calculatePoints();
+  updatePointsTotal();
+});
 
 $(document).on('click', '.save-week', event => {
   storeWeeklyData();
