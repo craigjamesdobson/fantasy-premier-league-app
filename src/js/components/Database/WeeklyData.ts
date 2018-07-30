@@ -1,6 +1,13 @@
 import { compress as LZCompress } from 'lz-string';
 import swal from 'sweetalert2';
 
+const miniSwal = (swal as any).mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000
+});
+
 export function storeWeeklyData() {
 
   const currentWeek = 'week_' + $('.week-dropdown :selected').val();
@@ -87,17 +94,11 @@ export function storeWeeklyData() {
   currentWeekPlayers.push(playerArray);
   }
 
-  const toast = (swal as any).mixin({
-    toast: true,
-    position: 'top-end',
-    showConfirmButton: false,
-    timer: 3000
-  });
-
   if (currentWeekPlayers.length > 0 || currentWeekFixtures.length > 0) {
     localStorage[currentWeek + '_players'] = (JSON.stringify(currentWeekPlayers));
     localStorage[currentWeek + '_fixtures'] = (JSON.stringify(currentWeekFixtures));
-    toast({
+
+    miniSwal({
       position: 'top-end',
       type: 'success',
       title: `${$('.week-dropdown :selected').text().toUpperCase()} has been saved`,
@@ -105,7 +106,7 @@ export function storeWeeklyData() {
       timer: 1500
     });
   } else {
-    toast({
+    miniSwal({
       position: 'top-end',
       type: 'error',
       title: 'No data has been selected',
@@ -117,8 +118,31 @@ export function storeWeeklyData() {
 }
 
 export function deleteWeeklyData() {
+  const currentWeekText = $('.week-dropdown :selected').text();
   const currentWeek = 'week_' + $('.week-dropdown :selected').val();
 
-  localStorage.removeItem(`${currentWeek}_fixtures`);
-  localStorage.removeItem(`${currentWeek}_players`);
+  if (localStorage.getItem(`${currentWeek}_fixtures`) === null || !localStorage.getItem(`${currentWeek}_players`) === null) {
+    miniSwal({
+      position: 'top-left',
+      type: 'error',
+      title: 'No data available to delete',
+      showConfirmButton: false,
+      timer: 1500
+    });
+} else {
+  swal({
+    title: 'Are you sure?',
+    html: `<h6>Would you like to delete <b>${currentWeekText.toUpperCase()}</b><h4>`,
+    type: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#5cb85c',
+    cancelButtonColor: '#d9534f',
+    confirmButtonText: 'Yes, reset it!'
+  }).then((result: any) => {
+    if (result.value) {
+      localStorage.removeItem(`${currentWeek}_fixtures`);
+      localStorage.removeItem(`${currentWeek}_players`);
+    }
+  });
+}
 }
