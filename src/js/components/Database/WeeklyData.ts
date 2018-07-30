@@ -1,4 +1,5 @@
-import { compress as LZCompress } from 'lz-string';
+import { compress as LZCompress, decompress as LZDecompress } from 'lz-string';
+
 import swal from 'sweetalert2';
 
 const miniSwal = (swal as any).mixin({
@@ -110,10 +111,8 @@ export function storeWeeklyData() {
   }
 
   if (currentWeekPlayers.length > 0 || currentWeekFixtures.length > 0) {
-    localStorage[currentWeek + '_players'] = JSON.stringify(currentWeekPlayers);
-    localStorage[currentWeek + '_fixtures'] = JSON.stringify(
-      currentWeekFixtures
-    );
+    localStorage[currentWeek + '_players'] = LZCompress(JSON.stringify(currentWeekPlayers));
+    localStorage[currentWeek + '_fixtures'] = LZCompress(JSON.stringify(currentWeekFixtures));
 
     miniSwal({
       position: 'top-left',
@@ -174,11 +173,11 @@ export function populateSelectedWeek() {
     const selectedWeekPlayers = 'week_' + $('.week-dropdown').val() + '_players';
 
     const retrievedFixtures = localStorage.getItem(selectedWeekFixtures);
-    const retrievedPlayers = localStorage.getItem(selectedWeekPlayers);
-
-    const selectedWeekFixturesData = JSON.parse(retrievedFixtures);
+    const decompressFixtures = LZDecompress(retrievedFixtures);
 
     if (localStorage.getItem(selectedWeekFixtures) !== null) {
+
+        const selectedWeekFixturesData = JSON.parse(decompressFixtures);
 
         $.each(selectedWeekFixturesData, (i, fixture) => {
 

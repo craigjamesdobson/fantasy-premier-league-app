@@ -15,6 +15,7 @@ import { CreatePlayerData } from '../../components/Players/CreatePlayerData';
 import { CreateTeamData } from '../../components/Teams/CreateTeamData';
 import { DraftedTeamData } from '../../components/DraftedTeams/CreateDraftedTeams';
 import { GetStaticData } from '../../components/StaticData/GetStaticData';
+import { decompress as LZDecompress } from 'lz-string';
 import { PlayerList } from '../../components/Players/PlayerList';
 import { PlayerPositionShort } from '../../components/Players/PlayerPosition';
 import { TeamList } from '../../components/Teams/TeamList';
@@ -218,9 +219,10 @@ export function populateAllFixtures() {
   const selectedWeekPlayers = 'week_' + $('.week-dropdown').val() + '_players';
 
   const retrievedPlayers = localStorage.getItem(selectedWeekPlayers);
+  const decompressPlayers = LZDecompress(retrievedPlayers);
 
   if (localStorage.getItem(selectedWeekPlayers) !== null) {
-    const selectedWeekPlayersData = JSON.parse(retrievedPlayers);
+    const selectedWeekPlayersData = JSON.parse(decompressPlayers);
 
     $.each(selectedWeekPlayersData, (i, playerList) => {
 
