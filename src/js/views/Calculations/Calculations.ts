@@ -4,11 +4,18 @@ import '../../../img/red_card.png';
 import '../../../img/football.png';
 import '../../components/Database/WeeklyData';
 
+import {
+  deleteWeeklyData,
+  populateSelectedWeek,
+  storeWeeklyData
+} from '../../components/Database/WeeklyData';
+
 import { CompleteDraftedTeam } from '../../components/DraftedTeams/CompleteDraftedTeam';
 import { CreatePlayerData } from '../../components/Players/CreatePlayerData';
 import { CreateTeamData } from '../../components/Teams/CreateTeamData';
 import { DraftedTeamData } from '../../components/DraftedTeams/CreateDraftedTeams';
 import { GetStaticData } from '../../components/StaticData/GetStaticData';
+import { decompress as LZDecompress } from 'lz-string';
 import { PlayerList } from '../../components/Players/PlayerList';
 import { PlayerPositionShort } from '../../components/Players/PlayerPosition';
 import { TeamList } from '../../components/Teams/TeamList';
@@ -70,30 +77,28 @@ function togglePlayers(event: JQuery.Event) {
 
 function disableSelectedTeams(event: JQuery.Event) {
   const selectedOptions = $('.team-option:selected')
-    .map(function() {
-      return $(this).val() as string;
+    .map((i, selectedOption) => {
+      return $(selectedOption).val() as string;
     })
     .toArray();
 
   $('.team-option').removeAttr('disabled');
 
   for (const option of selectedOptions) {
-    $('.team-option').each((i, el) => {
-      const optionID = $(el).attr('data-id');
+    $('.team-option').each((i, teamOption) => {
+      const optionID = $(teamOption).attr('data-id');
       if (optionID === option.toString()) {
-        $(el).attr('disabled', 'disabled');
+        $(teamOption).attr('disabled', 'disabled');
       }
     });
   }
 }
 
-function populateFixtures(event: JQuery.Event) {
-  const $this = $(event.currentTarget);
-  const selectedTeam = $this.find(':selected').val() as string;
-  const playerTableClass = `.${$this.parent().attr('class')}-players`;
-  const selectedFixture = `#${$this.closest('.fixtures').attr('id')}`;
-  const playerTable =
-    selectedFixture + ' .' + $this.parent() + '-players' + ' table';
+function populateFixture(event: JQuery.Event) {
+  const fixture = $(event.currentTarget);
+  const selectedTeam = fixture.find(':selected').val() as string;
+  const playerTableClass = `.${fixture.parent().attr('class')}-players`;
+  const selectedFixture = `#${fixture.closest('.fixtures').attr('id')}`;
 
   const filteredPlayers = playerData.players.filter(
     p => p.teamID === parseInt(selectedTeam, 10)
@@ -144,6 +149,92 @@ function populateFixtures(event: JQuery.Event) {
   });
 }
 
+export function populateAllFixtures() {
+  const selectedWeekPlayers = 'week_' + $('.week-dropdown').val() + '_players';
+  const retrievedPlayers = localStorage.getItem(selectedWeekPlayers);
+
+  $('.teams-dropdown').each((i, teams) => {
+    const playerTableClass = `.${$(teams).parent().attr('class')}-players`;
+    const selectedFixture = `#${$(teams).closest('.fixtures').attr('id')}`;
+    const selectedTeam = $(teams).find(':selected').val() as string;
+    const filteredPlayers = playerData.players.filter(
+      p => p.teamID === parseInt(selectedTeam, 10)
+    );
+    const filteredPositions = {
+      filteredPositions: [
+        {
+          id: 1,
+          name: 'Goalkeeper',
+          nameShort: 'GK',
+          players: filteredPlayers.filter(g => g.playerType === 1)
+        },
+        {
+          id: 2,
+          name: 'Defender',
+          nameShort: 'DEF',
+          players: filteredPlayers.filter(g => g.playerType === 2)
+        },
+        {
+          id: 3,
+          name: 'Midfielder',
+          nameShort: 'MID',
+          players: filteredPlayers.filter(g => g.playerType === 3)
+        },
+        {
+          id: 4,
+          name: 'Forward',
+          nameShort: 'FWD',
+          players: filteredPlayers.filter(g => g.playerType === 4)
+        }
+      ]
+    };
+
+    if (
+      $(teams)
+        .find(':selected')
+        .val() !== '0'
+    ) {
+      $(selectedFixture)
+        .find(playerTableClass)
+        .html(PopulateFixturesTemplate(filteredPositions));
+
+      $('.player-data').each((ind, player) => {
+        if (
+          $(player).attr('data-position') === '3' ||
+          $(player).attr('data-position') === '4'
+        ) {
+          $(player)
+            .find('.clean-sheet-checkbox')
+            .attr('disabled', 'disabled');
+        }
+      });
+    }
+  });
+
+  if (localStorage.getItem(selectedWeekPlayers) !== null) {
+    const decompressPlayers = LZDecompress(retrievedPlayers);
+    const selectedWeekPlayersData = JSON.parse(decompressPlayers);
+
+    $.each(selectedWeekPlayersData, (i, playerList) => {
+      $.each(playerList, (j, player) => {
+        $('.player-data').each((k, dataPlayer) => {
+          if ($(dataPlayer).attr('data-id') === playerList[j].playerID) {
+            $(dataPlayer)
+              .find('.red-card-checkbox')
+              .prop('checked', playerList[j].redCard);
+            $(dataPlayer)
+              .find('.clean-sheet-checkbox')
+              .prop('checked', playerList[j].cleanSheet);
+            $(dataPlayer)
+              .find('.score-select')
+              .val(playerList[j].goalsScored);
+          }
+        });
+      });
+    });
+  }
+}
+
 function calculatePoints() {
   // Loop through each player from the selected fixtures
   $('.player-data').each((i, player) => {
@@ -152,19 +243,27 @@ function calculatePoints() {
     let cleanSheetTotal = 0;
     let redCardTotal = 0;
     let pointsTotal = 0;
-    const goalsScored = parseInt(
-      $(player)
-        .find('select.score-select :selected')
-        .val() as string,
-      10
-    );
+    const goalsScored = parseInt($(player).find('select.score-select :selected').val() as string, 10);
     const positionID = $(player).attr('data-position');
-    const cleanSheet = $(player)
-      .find('.clean-sheet-checkbox')
-      .is(':checked');
-    const sentOff = $(player)
-      .find('.red-card-checkbox')
-      .is(':checked');
+    const cleanSheet = $(player).find('.clean-sheet-checkbox').is(':checked');
+    const sentOff = $(player).find('.red-card-checkbox').is(':checked');
+
+    let multiplier;
+
+    switch (positionID) {
+      case '1':
+        multiplier = 10;
+        break;
+      case '2':
+        multiplier = 7;
+        break;
+      case '3':
+        multiplier = 5;
+        break;
+      case '4':
+        multiplier = 3;
+        break;
+    }
 
     if (cleanSheet) {
       if (positionID === '1') {
@@ -191,23 +290,6 @@ function calculatePoints() {
         .removeClass('active');
     }
 
-    let multiplier;
-
-    switch (positionID) {
-      case '1':
-        multiplier = 10;
-        break;
-      case '2':
-        multiplier = 7;
-        break;
-      case '3':
-        multiplier = 5;
-        break;
-      case '4':
-        multiplier = 3;
-        break;
-    }
-
     goalsTotal = goalsScored * multiplier;
 
     if (goalsScored === 2) {
@@ -227,8 +309,8 @@ function updatePointsTotal() {
       .text();
 
     const matchingPlayerID = $('.player-data').filter(
-      (index, matchingplayer) => {
-        return $(matchingplayer).attr('data-id') === playerID;
+      (j, matchingPlayer) => {
+        return $(matchingPlayer).attr('data-id') === playerID;
       }
     );
 
@@ -249,17 +331,17 @@ function updatePointsTotal() {
   });
 
   $('.teams-container table').each((i, teams) => {
-    let $total = 0;
+    let total = 0;
 
     $(teams)
       .find('.points')
       .each((index, player) => {
-        $total += parseInt($(player).text(), 10);
+        total += parseInt($(player).text(), 10);
       });
 
     $(teams)
       .find('.total-points')
-      .text($total);
+      .text(total);
   });
 }
 
@@ -293,6 +375,15 @@ function resetFixture(event: JQuery.Event) {
       disableSelectedTeams(event);
     }
   });
+}
+
+function resetAllFixtures() {
+  $('.fixtures')
+    .find('select')
+    .val(0);
+  $('.fixtures')
+    .find('.home-team-players, .away-team-players')
+    .empty();
 }
 
 function applyTransfers(event: JQuery.Event) {
@@ -331,7 +422,7 @@ function applyTransfers(event: JQuery.Event) {
 
       const transfers = transferData.split(',');
 
-      $(transfers).each((ind, transfer: any) => {
+      $(transfers).each((j, transfer: any) => {
         const transferSplit = transfer.split('|');
         const transferWeek = parseInt(transferSplit[0], 10);
         const transferID = transferSplit[1];
@@ -391,12 +482,14 @@ async function loginCheck() {
   }
 }
 
+loginCheck();
+
 $(document).on('click', '.position-header', togglePlayers);
 
 $(document).on('click', '.clear-fixture', event => resetFixture(event));
 
 $(document).on('change', '.teams-dropdown', event => {
-  populateFixtures(event);
+  populateFixture(event);
   disableSelectedTeams(event);
   calculatePoints();
   updatePointsTotal();
@@ -411,6 +504,20 @@ $(document).on(
   }
 );
 
-$(document).on('change', '.week-dropdown', event => applyTransfers(event));
+$(document).on('change', '.week-dropdown', event => {
+  resetAllFixtures();
+  applyTransfers(event);
+  populateSelectedWeek();
+  populateAllFixtures();
+  disableSelectedTeams(event);
+  calculatePoints();
+  updatePointsTotal();
+});
 
-loginCheck();
+$(document).on('click', '.save-week', event => {
+  storeWeeklyData();
+});
+
+$(document).on('click', '.delete-week', event => {
+  deleteWeeklyData();
+});
