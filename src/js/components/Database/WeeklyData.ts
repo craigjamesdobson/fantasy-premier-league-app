@@ -19,7 +19,7 @@ export function storeWeeklyData() {
   const playerArray: any = {};
 
   const currentWeekFixtures: any = [];
-  const fixtureList: any = {};
+  const fixtureArray: any = {};
 
   let homeTeamName: string;
   let homeTeamID: number;
@@ -50,7 +50,7 @@ export function storeWeeklyData() {
         .val() as number;
     }
 
-    fixtureList[fixtureNumber] = {
+    fixtureArray[fixtureNumber] = {
       fixture: fixtureNumber,
       homeTeamName: homeTeamName,
       homeTeamID: homeTeamID,
@@ -102,8 +102,8 @@ export function storeWeeklyData() {
     }
   });
 
-  if (!jQuery.isEmptyObject(fixtureList)) {
-    currentWeekFixtures.push(fixtureList);
+  if (!jQuery.isEmptyObject(fixtureArray)) {
+    currentWeekFixtures.push(fixtureArray);
   }
 
   if (!jQuery.isEmptyObject(playerArray)) {
@@ -170,7 +170,6 @@ export function deleteWeeklyData() {
 export function populateSelectedWeek() {
 
     const selectedWeekFixtures = 'week_' + $('.week-dropdown').val() + '_fixtures';
-    const selectedWeekPlayers = 'week_' + $('.week-dropdown').val() + '_players';
 
     const retrievedFixtures = localStorage.getItem(selectedWeekFixtures);
     const decompressFixtures = LZDecompress(retrievedFixtures);
@@ -181,23 +180,22 @@ export function populateSelectedWeek() {
 
         $.each(selectedWeekFixturesData, (i, fixture) => {
 
-            $.each(fixture, (ind, fixturename) => {
+            $.each(fixture, (j, fixturename) => {
 
                 const currentFixture = fixturename.fixture;
 
-                $('.fixtures').each((index, DOMfixture) => {
-                    if ($(DOMfixture).attr('id') === currentFixture) {
+                $('.fixtures').each((k, fixtureElement) => {
+                    if ($(fixtureElement).attr('id') === currentFixture) {
 
-                        $(DOMfixture).find('.home-team .teams-dropdown').val(fixturename.homeTeamID).prop('selected', true);
-                        $(DOMfixture).find('.away-team .teams-dropdown').val(fixturename.awayTeamID).prop('selected', true);
+                        $(fixtureElement).find('.home-team .teams-dropdown').val(fixturename.homeTeamID).prop('selected', true);
+                        $(fixtureElement).find('.away-team .teams-dropdown').val(fixturename.awayTeamID).prop('selected', true);
 
-                        $(DOMfixture).find('.home-team .score').val(fixturename.homeTeamScore).prop('selected', true);
-                        $(DOMfixture).find('.away-team .score').val(fixturename.awayTeamScore).prop('selected', true);
+                        $(fixtureElement).find('.home-team .score').val(fixturename.homeTeamScore).prop('selected', true);
+                        $(fixtureElement).find('.away-team .score').val(fixturename.awayTeamScore).prop('selected', true);
                     }
                 });
             });
 
         });
     }
-
 }
