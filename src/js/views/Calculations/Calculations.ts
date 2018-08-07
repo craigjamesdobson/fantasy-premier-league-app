@@ -469,6 +469,7 @@ function applyTransfers(event: JQuery.Event) {
 async function loginCheck() {
   const {value: password} = await swal({
     title: 'Enter your password',
+    html: '<p class="small">or <a href="/">click here</a> to return home</p>',
     input: 'password',
     inputPlaceholder: 'Enter your password',
     allowOutsideClick: false,
