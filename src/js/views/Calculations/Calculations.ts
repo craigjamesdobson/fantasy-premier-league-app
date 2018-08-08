@@ -281,10 +281,12 @@ function calculatePoints() {
 
     if (goalsScored > 0) {
       $(player)
+        .attr('data-goals', goalsScored)
         .find('.score-select')
         .addClass('active');
     } else {
       $(player)
+        .removeAttr('data-goals')
         .find('.score-select')
         .removeClass('active');
     }
@@ -297,7 +299,8 @@ function calculatePoints() {
       goalsTotal = goalsTotal + 10;
     }
     pointsTotal = goalsTotal + cleanSheetTotal - redCardTotal;
-    $(player).attr('data-points', pointsTotal);
+
+    pointsTotal !== 0 ? $(player).attr('data-points', pointsTotal) : $(player).removeAttr('data-points');
   });
 }
 
@@ -314,6 +317,7 @@ function updatePointsTotal() {
     );
 
     const matchingPlayerPoints = matchingPlayerID.attr('data-points');
+    const matchingPlayerGoals = matchingPlayerID.attr('data-goals');
 
     $(player)
       .find('.points')
@@ -327,6 +331,12 @@ function updatePointsTotal() {
     } else {
       $(player).removeClass('sent-off');
     }
+
+    if ($(matchingPlayerID).attr('data-goals')) {
+      $(player).attr('data-goals', matchingPlayerGoals);
+    } else {
+      $(player).removeAttr('data-goals');
+    }
   });
 
   $('.teams-container table').each((i, teams) => {
@@ -334,7 +344,7 @@ function updatePointsTotal() {
 
     $(teams)
       .find('.points')
-      .each((index, player) => {
+      .each((k, player) => {
         total += parseInt($(player).text(), 10);
       });
 

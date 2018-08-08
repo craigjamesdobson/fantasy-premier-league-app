@@ -19,7 +19,7 @@
         </th>
     </tr>
     {{#each players}}
-    <tr class="player-data" data-points="0" data-position="{{playerType}}" data-id="{{id}}">
+    <tr class="player-data" data-position="{{playerType}}" data-id="{{id}}">
         <td>{{id}}</td>
         <td>{{name}}</td>
         <td class="goals-scored">
@@ -30,10 +30,10 @@
             </select>
         </td>
         <td class="clean-sheet">
-            <input type="checkbox" class="clean-sheet-checkbox" data-points="5" id="1" value="">
+            <input type="checkbox" class="clean-sheet-checkbox">
         </td>
         <td class="red-card">
-            <input type="checkbox" class="red-card-checkbox" value="">
+            <input type="checkbox" class="red-card-checkbox">
         </td>
     </tr>
     {{/each}} {{/each}}
