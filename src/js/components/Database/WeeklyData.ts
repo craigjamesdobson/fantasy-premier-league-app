@@ -1,5 +1,7 @@
 import { compress as LZCompress, decompress as LZDecompress } from 'lz-string';
 
+import { IDraftedTeamTableData } from '../../Table/IDraftedTeamTableData';
+import { IDraftedTeamsTableData } from '../../Table/IDraftedTeamsTableData';
 import swal from 'sweetalert2';
 
 const miniSwal = (swal as any).mixin({
@@ -111,8 +113,12 @@ export function storeWeeklyData() {
   }
 
   if (currentWeekPlayers.length > 0 || currentWeekFixtures.length > 0) {
-    localStorage[currentWeek + '_players'] = LZCompress(JSON.stringify(currentWeekPlayers));
-    localStorage[currentWeek + '_fixtures'] = LZCompress(JSON.stringify(currentWeekFixtures));
+    localStorage[currentWeek + '_players'] = LZCompress(
+      JSON.stringify(currentWeekPlayers)
+    );
+    localStorage[currentWeek + '_fixtures'] = LZCompress(
+      JSON.stringify(currentWeekFixtures)
+    );
 
     miniSwal({
       position: 'top-left',
@@ -168,34 +174,70 @@ export function deleteWeeklyData() {
 }
 
 export function populateSelectedWeek() {
+  const selectedWeekFixtures =
+    'week_' + $('.week-dropdown').val() + '_fixtures';
 
-    const selectedWeekFixtures = 'week_' + $('.week-dropdown').val() + '_fixtures';
+  const retrievedFixtures = localStorage.getItem(selectedWeekFixtures);
+  const decompressFixtures = LZDecompress(retrievedFixtures);
 
-    const retrievedFixtures = localStorage.getItem(selectedWeekFixtures);
-    const decompressFixtures = LZDecompress(retrievedFixtures);
+  if (localStorage.getItem(selectedWeekFixtures) !== null) {
+    const selectedWeekFixturesData = JSON.parse(decompressFixtures);
 
-    if (localStorage.getItem(selectedWeekFixtures) !== null) {
+    $.each(selectedWeekFixturesData, (i, fixture) => {
+      $.each(fixture, (j, fixturename) => {
+        const currentFixture = fixturename.fixture;
 
-        const selectedWeekFixturesData = JSON.parse(decompressFixtures);
+        $('.fixtures').each((k, fixtureElement) => {
+          if ($(fixtureElement).attr('id') === currentFixture) {
+            $(fixtureElement)
+              .find('.home-team .teams-dropdown')
+              .val(fixturename.homeTeamID)
+              .prop('selected', true);
+            $(fixtureElement)
+              .find('.away-team .teams-dropdown')
+              .val(fixturename.awayTeamID)
+              .prop('selected', true);
 
-        $.each(selectedWeekFixturesData, (i, fixture) => {
-
-            $.each(fixture, (j, fixturename) => {
-
-                const currentFixture = fixturename.fixture;
-
-                $('.fixtures').each((k, fixtureElement) => {
-                    if ($(fixtureElement).attr('id') === currentFixture) {
-
-                        $(fixtureElement).find('.home-team .teams-dropdown').val(fixturename.homeTeamID).prop('selected', true);
-                        $(fixtureElement).find('.away-team .teams-dropdown').val(fixturename.awayTeamID).prop('selected', true);
-
-                        $(fixtureElement).find('.home-team .score').val(fixturename.homeTeamScore).prop('selected', true);
-                        $(fixtureElement).find('.away-team .score').val(fixturename.awayTeamScore).prop('selected', true);
-                    }
-                });
-            });
-
+            $(fixtureElement)
+              .find('.home-team .score')
+              .val(fixturename.homeTeamScore)
+              .prop('selected', true);
+            $(fixtureElement)
+              .find('.away-team .score')
+              .val(fixturename.awayTeamScore)
+              .prop('selected', true);
+          }
         });
-    }
+      });
+    });
+  }
+}
+
+export function storeTableData() {
+  const selectedWeekData =
+    'week_' + $('.week-dropdown').val() + '_drafted_team_data';
+  const draftedTeamsTableData: any = [];
+
+  $('.table').each((i, table) => {
+    const draftedTeamName = $(table).find('.drafted-team-name').text().trim();
+    const pointsTotal = parseInt($(table).find('.total-points').text(), 10);
+    let draftedTeamTableData: IDraftedTeamTableData;
+    let goalsTotal = 0;
+
+    $(table).find('.player-total-data').each((j, playerdata) => {
+      if ($(playerdata).attr('data-goals')) {
+        goalsTotal += parseInt($(playerdata).attr('data-goals'), 10);
+      }
+    });
+
+    draftedTeamTableData = {
+      draftedTeamName: draftedTeamName,
+      goalsScored: goalsTotal,
+      points: pointsTotal,
+    };
+
+    draftedTeamsTableData.push(draftedTeamTableData);
+  });
+
+  console.log(draftedTeamsTableData);
 }

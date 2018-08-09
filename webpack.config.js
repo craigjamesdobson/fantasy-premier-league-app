@@ -11,7 +11,8 @@ module.exports = {
   entry: {
     Index: './src/js/Index.ts',
     Players: './src/js/views/Players/Players.ts',
-    Calculations: './src/js/views/Calculations/Calculations.ts'
+    Calculations: './src/js/views/Calculations/Calculations.ts',
+    Table: './src/js/views/Table/Table.ts'
   },
   output: {
     path: __dirname + '/docs',
@@ -92,7 +93,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Fantasy Premier League App',
       chunks: ['Index'],
-      filename: 'index.html',
+      filename: 'index',
       template: 'views/index.html'
     }),
 
@@ -100,7 +101,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Fantasy Premier League App - Players',
       chunks: ['Index', 'Players'],
-      filename: 'players.html',
+      filename: 'players',
       template: 'views/players.html'
     }),
 
@@ -108,9 +109,17 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Fantasy Premier League App - Calculator',
       chunks: ['Index', 'Calculations'],
-      filename: 'calculator.html',
+      filename: 'calculator',
       template: 'views/calculator.html'
     }),
+
+      // Generates table.html
+      new HtmlWebpackPlugin({
+        title: 'Fantasy Premier League App - Table',
+        chunks: ['Index', 'Table'],
+        filename: 'table',
+        template: 'views/table.html'
+      }),
 
     // Extract css into seperate files
     new MiniCssExtractPlugin({

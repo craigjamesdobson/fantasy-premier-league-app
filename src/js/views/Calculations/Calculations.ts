@@ -7,6 +7,7 @@ import '../../components/Database/WeeklyData';
 import {
   deleteWeeklyData,
   populateSelectedWeek,
+  storeTableData,
   storeWeeklyData
 } from '../../components/Database/WeeklyData';
 
@@ -507,6 +508,7 @@ $(document).on('change', '.week-dropdown', event => {
 
 $(document).on('click', '.save-week', event => {
   storeWeeklyData();
+  storeTableData();
 });
 
 $(document).on('click', '.delete-week', event => {
