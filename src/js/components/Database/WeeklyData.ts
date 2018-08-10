@@ -1,7 +1,6 @@
 import { compress as LZCompress, decompress as LZDecompress } from 'lz-string';
 
 import { IDraftedTeamTableData } from '../../Table/IDraftedTeamTableData';
-import { IDraftedTeamsTableData } from '../../Table/IDraftedTeamsTableData';
 import swal from 'sweetalert2';
 
 const miniSwal = (swal as any).mixin({
@@ -238,6 +237,8 @@ export function storeTableData() {
 
     draftedTeamsTableData.push(draftedTeamTableData);
   });
+
+  localStorage[selectedWeekData] = JSON.stringify(draftedTeamsTableData);
 
   console.log(draftedTeamsTableData);
 }
