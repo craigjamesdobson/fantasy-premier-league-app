@@ -56,10 +56,7 @@
     .player-table {
       vertical-align: top;
 
-      .defender-header,
-      .forward-header,
-      .goalkeeper-header,
-      .midfielder-header {
+      .position-header {
         position: relative;
         margin-bottom: 5px;
         cursor: pointer;
