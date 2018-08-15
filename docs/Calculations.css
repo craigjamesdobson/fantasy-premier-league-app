@@ -97,6 +97,11 @@ footer {
     .fixtures-container .fixtures .player-table .player-data {
       display: none;
       transition: all ease 2s; }
+      .fixtures-container .fixtures .player-table .player-data td {
+        vertical-align: middle;
+        padding: 5px 0px; }
+        .fixtures-container .fixtures .player-table .player-data td input {
+          vertical-align: middle; }
       .fixtures-container .fixtures .player-table .player-data:nth-child(even) {
         background-color: #eee; }
       .fixtures-container .fixtures .player-table .player-data.active {
@@ -189,6 +194,8 @@ footer {
     .teams-container table .player-total-data.sent-off {
       background-color: #d9534f;
       color: #fff; }
+    .teams-container table .player-total-data.u {
+      opacity: 0.25; }
   .teams-container table,
   .teams-container td,
   .teams-container th,

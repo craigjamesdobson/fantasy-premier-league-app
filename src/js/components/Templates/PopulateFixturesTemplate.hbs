@@ -19,6 +19,7 @@
         </th>
     </tr>
     {{#each players}}
+    {{#unless unavailableForSeason}}
     <tr class="player-data" data-points="0" data-position="{{playerType}}" data-id="{{id}}">
         <td>{{id}}</td>
         <td>{{name}}</td>
@@ -30,11 +31,12 @@
             </select>
         </td>
         <td class="clean-sheet">
-            <input type="checkbox" class="clean-sheet-checkbox" data-points="5" id="1" value="">
+            <input type="checkbox" class="clean-sheet-checkbox" data-points="5">
         </td>
         <td class="red-card">
-            <input type="checkbox" class="red-card-checkbox" value="">
+            <input type="checkbox" class="red-card-checkbox">
         </td>
     </tr>
+    {{/unless}}
     {{/each}} {{/each}}
 </table>

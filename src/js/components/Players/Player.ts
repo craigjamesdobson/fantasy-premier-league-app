@@ -11,6 +11,7 @@ export class Player {
   public readonly id: number;
   public readonly image: string;
   public readonly isUnavailable: boolean;
+  public readonly unavailableForSeason: boolean;
   public readonly availabilityType: string;
   public readonly availabilityNews: string;
   public readonly teamID: number;
@@ -118,12 +119,21 @@ export class Player {
 
     // Create availability objects
     switch (true) {
-      case this.availabilityType === 'u' || this.availabilityType === 'i':
+      case this.availabilityType === 'u' || this.availabilityType === 'i' || this.availabilityType === 'n':
         this.isUnavailable = true;
         this.availabilityNews = player.news;
         break;
       default:
         this.isUnavailable = false;
+    }
+
+    switch (true) {
+      case this.availabilityType === 'u':
+        this.unavailableForSeason = true;
+        this.availabilityNews = player.news;
+        break;
+      default:
+        this.unavailableForSeason = false;
     }
   }
 

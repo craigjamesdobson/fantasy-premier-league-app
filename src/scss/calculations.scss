@@ -100,6 +100,15 @@
         display: none;
         transition: all ease 2s;
 
+        td {
+          vertical-align: middle;
+          padding: 5px 0px;
+
+          input {
+            vertical-align: middle;
+          }
+        }
+
         &:nth-child(even) {
           background-color: #eee;
         }
@@ -231,6 +240,10 @@
       &.sent-off {
         background-color: #d9534f;
         color: #fff;
+      }
+
+      &.u {
+        opacity: 0.25;
       }
     }
   }
