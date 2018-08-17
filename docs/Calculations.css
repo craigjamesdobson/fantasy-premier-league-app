@@ -56,27 +56,18 @@ footer {
       vertical-align: sub; }
   .fixtures-container .fixtures .player-table {
     vertical-align: top; }
-    .fixtures-container .fixtures .player-table .defender-header,
-    .fixtures-container .fixtures .player-table .forward-header,
-    .fixtures-container .fixtures .player-table .goalkeeper-header,
-    .fixtures-container .fixtures .player-table .midfielder-header {
+    .fixtures-container .fixtures .player-table .position-header {
       position: relative;
       margin-bottom: 5px;
       cursor: pointer;
       color: #fff;
       border: 1px solid #fff;
       background-color: #808080; }
-      .fixtures-container .fixtures .player-table .defender-header th,
-      .fixtures-container .fixtures .player-table .forward-header th,
-      .fixtures-container .fixtures .player-table .goalkeeper-header th,
-      .fixtures-container .fixtures .player-table .midfielder-header th {
+      .fixtures-container .fixtures .player-table .position-header th {
         font-size: 12px !important;
         position: relative;
         padding: 5px; }
-        .fixtures-container .fixtures .player-table .defender-header th .heading-icon,
-        .fixtures-container .fixtures .player-table .forward-header th .heading-icon,
-        .fixtures-container .fixtures .player-table .goalkeeper-header th .heading-icon,
-        .fixtures-container .fixtures .player-table .midfielder-header th .heading-icon {
+        .fixtures-container .fixtures .player-table .position-header th .heading-icon {
           font-family: 'Font Awesome 5 Solid';
           position: absolute;
           right: 10px;
@@ -88,15 +79,17 @@ footer {
           text-align: center;
           border-radius: 10px;
           padding: 2px; }
-      .fixtures-container .fixtures .player-table .defender-header.active th .heading-icon,
-      .fixtures-container .fixtures .player-table .forward-header.active th .heading-icon,
-      .fixtures-container .fixtures .player-table .goalkeeper-header.active th .heading-icon,
-      .fixtures-container .fixtures .player-table .midfielder-header.active th .heading-icon {
+      .fixtures-container .fixtures .player-table .position-header.active th .heading-icon {
         -webkit-transform: rotate(-90deg);
                 transform: rotate(-90deg); }
     .fixtures-container .fixtures .player-table .player-data {
       display: none;
       transition: all ease 2s; }
+      .fixtures-container .fixtures .player-table .player-data td {
+        vertical-align: middle;
+        padding: 5px 0px; }
+        .fixtures-container .fixtures .player-table .player-data td input {
+          vertical-align: middle; }
       .fixtures-container .fixtures .player-table .player-data:nth-child(even) {
         background-color: #eee; }
       .fixtures-container .fixtures .player-table .player-data.active {
@@ -189,6 +182,8 @@ footer {
     .teams-container table .player-total-data.sent-off {
       background-color: #d9534f;
       color: #fff; }
+    .teams-container table .player-total-data.u {
+      opacity: 0.25; }
   .teams-container table,
   .teams-container td,
   .teams-container th,

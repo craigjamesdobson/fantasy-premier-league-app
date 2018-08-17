@@ -9,6 +9,8 @@ export class CompleteDraftedPlayer {
   private readonly playerTeamId: number;
   private readonly playerTeamName: string;
   private readonly playerTeamShort: string;
+  private readonly isUnAvailable: boolean;
+  private readonly playerStatus: string;
   private readonly transfers: DraftedTransfer[];
 
   constructor(player: Player, transfers: DraftedTransfer[]) {
@@ -18,6 +20,8 @@ export class CompleteDraftedPlayer {
     this.playerTeamId = player.teamID;
     this.playerTeamName = player.teamName;
     this.playerTeamShort = player.teamShort;
+    this.isUnAvailable = player.isUnavailable;
+    this.playerStatus = player.availabilityType;
     this.transfers = transfers;
   }
 }

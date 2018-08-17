@@ -59,7 +59,7 @@
                         color: #fff;
                     }
                 }
-                &.i {
+                &.i, &.n {
                     .fa-exclamation-triangle {
                         color: #333;
                     }
@@ -75,7 +75,7 @@
                 background-color: #DB0100;
             }
         }
-        tr.i {
+        tr.i, tr.n {
             cursor: pointer;
             .fa-exclamation-triangle {
                 color: #FFCC00;

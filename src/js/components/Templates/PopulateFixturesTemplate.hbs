@@ -19,6 +19,7 @@
         </th>
     </tr>
     {{#each players}}
+    {{#unless unavailableForSeason}}
     <tr class="player-data" data-position="{{playerType}}" data-id="{{id}}">
         <td>{{id}}</td>
         <td>{{name}}</td>
@@ -36,5 +37,6 @@
             <input type="checkbox" class="red-card-checkbox">
         </td>
     </tr>
+    {{/unless}}
     {{/each}} {{/each}}
 </table>

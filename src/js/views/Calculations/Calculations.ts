@@ -71,9 +71,7 @@ function togglePlayers(event: JQuery.Event) {
   const playerTableClass = `.${positionHeader.parents('div').attr('class')}`;
   const positionTableHeader = positionHeader.next('.table-heading');
   const positionHeaderID = positionHeader.attr('data-position');
-  const players = $(selectedFixture)
-    .find(playerTableClass)
-    .find('.player-data');
+  const players = $(selectedFixture).find(playerTableClass).find('.player-data');
 
   players.filter(`[data-position="${positionHeaderID}"]`).toggleClass('active');
   positionTableHeader.toggleClass('active');
@@ -115,25 +113,25 @@ function populateFixture(event: JQuery.Event) {
         id: 1,
         name: 'Goalkeeper',
         nameShort: 'GK',
-        players: filteredPlayers.filter(g => g.playerType === 1)
+        players: filteredPlayers.filter(g => g.playerType === 1),
       },
       {
         id: 2,
         name: 'Defender',
         nameShort: 'DEF',
-        players: filteredPlayers.filter(g => g.playerType === 2)
+        players: filteredPlayers.filter(g => g.playerType === 2),
       },
       {
         id: 3,
         name: 'Midfielder',
         nameShort: 'MID',
-        players: filteredPlayers.filter(g => g.playerType === 3)
+        players: filteredPlayers.filter(g => g.playerType === 3),
       },
       {
         id: 4,
         name: 'Forward',
         nameShort: 'FWD',
-        players: filteredPlayers.filter(g => g.playerType === 4)
+        players: filteredPlayers.filter(g => g.playerType === 4),
       }
     ]
   };
@@ -143,13 +141,8 @@ function populateFixture(event: JQuery.Event) {
     .html(PopulateFixturesTemplate(filteredPositions));
 
   $('.player-data').each((i, player) => {
-    if (
-      $(player).attr('data-position') === '3' ||
-      $(player).attr('data-position') === '4'
-    ) {
-      $(player)
-        .find('.clean-sheet-checkbox')
-        .attr('disabled', 'disabled');
+    if ($(player).attr('data-position') === '3' || $(player).attr('data-position') === '4') {
+      $(player).find('.clean-sheet-checkbox').attr('disabled', 'disabled');
     }
   });
 }
@@ -200,11 +193,7 @@ export function populateAllFixtures() {
       ]
     };
 
-    if (
-      $(teams)
-        .find(':selected')
-        .val() !== '0'
-    ) {
+    if ($(teams).find(':selected').val() !== '0') {
       $(selectedFixture)
         .find(playerTableClass)
         .html(PopulateFixturesTemplate(filteredPositions));
@@ -247,9 +236,7 @@ export function populateAllFixtures() {
 }
 
 function calculatePoints() {
-  // Loop through each player from the selected fixtures
   $('.player-data').each((i, player) => {
-    // Create calculation variables
     let goalsTotal = 0;
     let cleanSheetTotal = 0;
     let redCardTotal = 0;

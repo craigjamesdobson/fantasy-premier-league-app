@@ -117,7 +117,7 @@ label {
         transition: all 3s ease; }
       .player-table.table tr:hover.u .fa-exclamation-triangle {
         color: #fff; }
-      .player-table.table tr:hover.i .fa-exclamation-triangle {
+      .player-table.table tr:hover.i .fa-exclamation-triangle, .player-table.table tr:hover.n .fa-exclamation-triangle {
         color: #333; }
     .player-table.table tr.u {
       cursor: pointer; }
@@ -125,11 +125,11 @@ label {
         color: #DB0100; }
       .player-table.table tr.u .player-status {
         background-color: #DB0100; }
-    .player-table.table tr.i {
+    .player-table.table tr.i, .player-table.table tr.n {
       cursor: pointer; }
-      .player-table.table tr.i .fa-exclamation-triangle {
+      .player-table.table tr.i .fa-exclamation-triangle, .player-table.table tr.n .fa-exclamation-triangle {
         color: #FFCC00; }
-      .player-table.table tr.i .player-status {
+      .player-table.table tr.i .player-status, .player-table.table tr.n .player-status {
         background-color: #FFCC00;
         color: #333; }
 
