@@ -1,0 +1,25 @@
+<div class="row">
+
+    <div class="col-12">
+        <table>
+            <tr>
+                <th>Pos</th>
+                <th>Last Week</th>
+                <th>Team</th>
+                <th>Goals</th>
+                <th>Week Score</th>
+                <th>Total</th>
+            </tr>
+            {{#each this}}
+            <tr class="team-row" data-team-id="{{draftedTeamID}}">
+                <td>{{@index}}</td>
+                <td>{{@index}}</td>
+                <td>{{draftedTeamName}}</td>
+                <td>{{goalsScored}}</td>
+                <td>{{points}}</td>
+                <td>{{points}}</td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+</div>

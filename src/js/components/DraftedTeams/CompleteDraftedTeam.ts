@@ -3,8 +3,8 @@ import { DraftedTeam } from './DraftedTeam';
 import { ICompleteDraftedPlayer } from './ICompleteDraftedPlayer';
 
 export class CompleteDraftedTeam {
-  private readonly teamID: number;
-  private readonly teamName: string;
+  public readonly teamID: number;
+  public readonly teamName: string;
   private readonly allowedTransfers: boolean;
   private readonly teamPlayers: CompleteDraftedPlayer[];
 

@@ -10,6 +10,8 @@ const miniSwal = (swal as any).mixin({
   timer: 3000
 });
 
+export let draftedTeamsTableData: any = [];
+
 export function storeWeeklyData() {
   const currentWeek = 'week_' + $('.week-dropdown :selected').val();
   const selectedFixtures = $('.fixtures .teams-dropdown option[value!="0"]')
@@ -213,14 +215,14 @@ export function populateSelectedWeek() {
 }
 
 export function storeTableData() {
-  const selectedWeekData =
-    'week_' + $('.week-dropdown').val() + '_drafted_team_data';
-  const draftedTeamsTableData: any = [];
+  const selectedWeekData = 'week_' + $('.week-dropdown').val() + '_drafted_team_data';
+  let draftedTeamTableData: IDraftedTeamTableData;
+  draftedTeamsTableData = [];
 
   $('.table').each((i, table) => {
+    const draftedTeamID = parseInt($(table).find('.drafted-team-name').attr('data-id'), 10);
     const draftedTeamName = $(table).find('.drafted-team-name').text().trim();
     const pointsTotal = parseInt($(table).find('.total-points').text(), 10);
-    let draftedTeamTableData: IDraftedTeamTableData;
     let goalsTotal = 0;
 
     $(table).find('.player-total-data').each((j, playerdata) => {
@@ -230,6 +232,7 @@ export function storeTableData() {
     });
 
     draftedTeamTableData = {
+      draftedTeamID: draftedTeamID,
       draftedTeamName: draftedTeamName,
       goalsScored: goalsTotal,
       points: pointsTotal,
@@ -239,6 +242,4 @@ export function storeTableData() {
   });
 
   localStorage[selectedWeekData] = JSON.stringify(draftedTeamsTableData);
-
-  console.log(draftedTeamsTableData);
 }

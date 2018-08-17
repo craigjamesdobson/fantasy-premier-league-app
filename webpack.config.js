@@ -17,7 +17,7 @@ module.exports = {
   output: {
     path: __dirname + '/docs',
     filename: '[name].bundle.js',
-    chunkFilename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js'
   },
   devServer: {
     contentBase: path.join(__dirname, 'docs'),
@@ -116,7 +116,7 @@ module.exports = {
       // Generates table.html
       new HtmlWebpackPlugin({
         title: 'Fantasy Premier League App - Table',
-        chunks: ['Index', 'Table'],
+        chunks: ['Index', 'Calculations', 'Table'],
         filename: 'table',
         template: 'views/table.html'
       }),

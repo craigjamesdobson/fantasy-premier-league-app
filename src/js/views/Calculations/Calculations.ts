@@ -33,10 +33,11 @@ const fixturesContainer = $('.fixtures-container');
 
 let playerData: PlayerList;
 let teamData: TeamList;
+export let draftedTeams: CompleteDraftedTeam[] = [];
 
-GetStaticData.getstaticData().then(data => {
+GetStaticData.getstaticData().then(async data => {
   playerData = CreatePlayerData.createPlayerData(data);
-  initDraftedTeamData(playerData);
+  await initDraftedTeamData(playerData);
 
   teamData = CreateTeamData.createTeamData(data);
   initTeamData(teamData);
@@ -44,16 +45,20 @@ GetStaticData.getstaticData().then(data => {
 });
 
 async function initDraftedTeamData(playerList: PlayerList) {
-  const draftedTeamList = await DraftedTeamData.getDraftedTeamData();
+  return new Promise<void>(async resolve => {
+    const draftedTeamList = await DraftedTeamData.getDraftedTeamData();
 
-  const draftedTeams = draftedTeamList.map(draftedTeam => {
-    const players = draftedTeam.teamPlayers.map(player => ({
-      player: playerList.players.filter(p => p.id === player.playerID)[0],
-      transfers: player.transfers
-    }));
-    return new CompleteDraftedTeam(draftedTeam, players);
+    draftedTeams = draftedTeamList.map(draftedTeam => {
+      const players = draftedTeam.teamPlayers.map(player => ({
+        player: playerList.players.filter(p => p.id === player.playerID)[0],
+        transfers: player.transfers
+      }));
+      return new CompleteDraftedTeam(draftedTeam, players);
+    });
+
+    teamsContainer.append(DraftedTeamTemplate(draftedTeams));
+    resolve();
   });
-  teamsContainer.append(DraftedTeamTemplate(draftedTeams));
 }
 
 function initTeamData(teamList: TeamList) {
@@ -154,9 +159,15 @@ export function populateAllFixtures() {
   const retrievedPlayers = localStorage.getItem(selectedWeekPlayers);
 
   $('.teams-dropdown').each((i, teams) => {
-    const playerTableClass = `.${$(teams).parent().attr('class')}-players`;
-    const selectedFixture = `#${$(teams).closest('.fixtures').attr('id')}`;
-    const selectedTeam = $(teams).find(':selected').val() as string;
+    const playerTableClass = `.${$(teams)
+      .parent()
+      .attr('class')}-players`;
+    const selectedFixture = `#${$(teams)
+      .closest('.fixtures')
+      .attr('id')}`;
+    const selectedTeam = $(teams)
+      .find(':selected')
+      .val() as string;
     const filteredPlayers = playerData.players.filter(
       p => p.teamID === parseInt(selectedTeam, 10)
     );
@@ -243,10 +254,19 @@ function calculatePoints() {
     let cleanSheetTotal = 0;
     let redCardTotal = 0;
     let pointsTotal = 0;
-    const goalsScored = parseInt($(player).find('select.score-select :selected').val() as string, 10);
+    const goalsScored = parseInt(
+      $(player)
+        .find('select.score-select :selected')
+        .val() as string,
+      10
+    );
     const positionID = $(player).attr('data-position');
-    const cleanSheet = $(player).find('.clean-sheet-checkbox').is(':checked');
-    const sentOff = $(player).find('.red-card-checkbox').is(':checked');
+    const cleanSheet = $(player)
+      .find('.clean-sheet-checkbox')
+      .is(':checked');
+    const sentOff = $(player)
+      .find('.red-card-checkbox')
+      .is(':checked');
 
     let multiplier;
 
@@ -301,7 +321,9 @@ function calculatePoints() {
     }
     pointsTotal = goalsTotal + cleanSheetTotal - redCardTotal;
 
-    pointsTotal !== 0 ? $(player).attr('data-points', pointsTotal) : $(player).removeAttr('data-points');
+    pointsTotal !== 0
+      ? $(player).attr('data-points', pointsTotal)
+      : $(player).removeAttr('data-points');
   });
 }
 
@@ -311,11 +333,9 @@ function updatePointsTotal() {
       .find('.id')
       .text();
 
-    const matchingPlayerID = $('.player-data').filter(
-      (j, matchingPlayer) => {
-        return $(matchingPlayer).attr('data-id') === playerID;
-      }
-    );
+    const matchingPlayerID = $('.player-data').filter((j, matchingPlayer) => {
+      return $(matchingPlayer).attr('data-id') === playerID;
+    });
 
     const matchingPlayerPoints = matchingPlayerID.attr('data-points');
     const matchingPlayerGoals = matchingPlayerID.attr('data-goals');
