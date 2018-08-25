@@ -173,17 +173,20 @@ footer {
     font-size: 12px; }
     .teams-container table .player-total-data:nth-child(odd) {
       background-color: #ddd; }
-    .teams-container table .player-total-data.transfered {
-      background-color: #5cb85c;
-      color: #fff; }
-    .teams-container table .player-total-data.current-week-transfer {
-      background-color: #EEE82C;
-      color: #292F36; }
-    .teams-container table .player-total-data.sent-off {
-      background-color: #d9534f;
-      color: #fff; }
     .teams-container table .player-total-data.u {
       opacity: 0.25; }
+    .teams-container table .player-total-data.transfered {
+      background-color: #5cb85c;
+      color: #fff;
+      opacity: 1; }
+    .teams-container table .player-total-data.current-week-transfer {
+      background-color: #EEE82C;
+      color: #292F36;
+      opacity: 1; }
+    .teams-container table .player-total-data.sent-off {
+      background-color: #d9534f;
+      color: #fff;
+      opacity: 1; }
   .teams-container table,
   .teams-container td,
   .teams-container th,
