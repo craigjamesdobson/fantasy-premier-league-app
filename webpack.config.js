@@ -93,7 +93,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Fantasy Premier League App',
       chunks: ['Index'],
-      filename: 'index',
+      filename: 'index.html',
       template: 'views/index.html'
     }),
 
