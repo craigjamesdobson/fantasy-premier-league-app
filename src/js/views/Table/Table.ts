@@ -1,67 +1,40 @@
+import { orderBy } from 'lodash';
 
 // tslint:disable:no-var-requires
 const LeagueTableTemplate = require('../../components/Templates/LeagueTableTemplate.hbs');
+const LeagueTableDataTemplate = require('../../components/Templates/LeagueTableDataTemplate.hbs');
 // tslint:enable:no-var-requires
-let leagueData = [];
-let draftedTeamsData = [];
-let draftedTeamData = {};
 
-let teamPoints = {};
-let teamPointsTotal = [];
+const draftedTeamsData = JSON.parse(localStorage.getItem('drafted_teams_data'));
 
-const weeklyData = Object.keys(localStorage).filter((key, i) => {
-    return key.includes('drafted_team_data');
-}).forEach((key, j) => {
-    leagueData.push(JSON.parse(localStorage.getItem(key)));
-});
+$('.table-container').append(LeagueTableTemplate);
 
-for (const week of leagueData) {
-    for (const team of week) {
+updateDraftedTeamData();
 
-        const points = team.points;
+function updateDraftedTeamData() {
+  let sortedTableData = [];
 
-        teamPointsTotal.push(points);
+  const currentWeek = parseInt($('.week-dropdown').val() as string, 10);
 
-        draftedTeamData = {
-            teamID: team.draftedTeamID,
-            teamName: team.draftedTeamName,
-            points: team.points,
-        };
-
-        draftedTeamsData.push(draftedTeamData);
+  for (const draftedTeam of draftedTeamsData) {
+    let pointsTotal = 0;
+    let goalsTotal = 0;
+    for (const weekData of draftedTeam.weeklyData) {
+      if (weekData.week <= currentWeek) {
+        pointsTotal += weekData.weekPoints;
+        goalsTotal += weekData.weekGoals;
+      }
     }
+    draftedTeam.goalsTotal = goalsTotal;
+    draftedTeam.pointsTotal = pointsTotal;
+
+    sortedTableData = orderBy(draftedTeamsData, ['pointsTotal'], ['desc']);
+  }
+  console.log(sortedTableData);
+
+  $('.league-table-container').html(LeagueTableDataTemplate(sortedTableData));
 }
 
-function getSum(total, num) {
-    return total + num;
-}
-
-const grandtotal = teamPointsTotal.reduce(getSum);
-
-console.log(grandtotal);
-
-// for (const key of Object.keys(localStorage)) {
-//     if (key.includes('drafted_team_data')) {
-//         const weeklyData = JSON.parse(localStorage.getItem(key));
-
-//         // for (const data of weeklyData) {
-//         //     const teamID = data.draftedTeamID;
-//         //     const teamName = data.draftedTeamName;
-//         //     const points = data.points++;
-
-//         //     draftedTeamData = {
-//         //         teamID: teamID,
-//         //         teamName: teamName,
-//         //         points: points,
-//         //     };
-
-//         //     leagueData.push(draftedTeamData);
-//         // }
-//     }
-// }
-
-// leagueData.sort((a, b) => parseInt(a.points, 10) - parseInt(b.points, 10)).reverse();
-
-console.log(draftedTeamsData);
-
-$('.table-container').append(LeagueTableTemplate(draftedTeamsData));
+$(document).on('change', '.week-dropdown', event => {
+  updateDraftedTeamData();
+});

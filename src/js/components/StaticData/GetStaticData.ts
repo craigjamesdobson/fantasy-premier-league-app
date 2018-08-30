@@ -1,5 +1,3 @@
-import { IStaticDataElements } from './IStaticDataElements';
-
 export namespace GetStaticData {
   export async function getstaticData(): Promise<any> {
     return new Promise<any>((resolve, reject) => {

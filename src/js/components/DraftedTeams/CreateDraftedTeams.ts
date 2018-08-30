@@ -4,8 +4,6 @@ import { IDraftedTeamData } from '../DraftedTeams/IDraftedTeamData';
 export namespace DraftedTeamData {
   export async function getDraftedTeamData(): Promise<DraftedTeam[]> {
     return new Promise<DraftedTeam[]>((resolve, reject) => {
-      // Define variables
-      const loadingOverlay = $('.loading');
       const draftedTeamUrl = './FantasyTeams.json';
 
       fetch(draftedTeamUrl)

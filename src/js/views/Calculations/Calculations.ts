@@ -57,8 +57,26 @@ async function initDraftedTeamData(playerList: PlayerList) {
     });
 
     teamsContainer.append(DraftedTeamTemplate(draftedTeams));
+    if (localStorage.getItem('drafted_teams_data') === null) {
+      createDraftedTeamData();
+    }
     resolve();
   });
+}
+
+function createDraftedTeamData() {
+  const draftedTeamsData = [];
+  let draftedTeamData = {};
+  for (const draftedTeam of draftedTeams) {
+
+    draftedTeamData = {
+      teamID: draftedTeam.teamID,
+      teamName: draftedTeam.teamName,
+      weeklyData: []
+    },
+    draftedTeamsData.push(draftedTeamData);
+  }
+  localStorage.setItem('drafted_teams_data', JSON.stringify(draftedTeamsData));
 }
 
 function initTeamData(teamList: TeamList) {

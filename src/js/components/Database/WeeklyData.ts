@@ -1,6 +1,7 @@
 import { compress as LZCompress, decompress as LZDecompress } from 'lz-string';
 
 import { IDraftedTeamTableData } from '../../Table/IDraftedTeamTableData';
+import { draftedTeams } from '../../views/Calculations/Calculations';
 import swal from 'sweetalert2';
 
 const miniSwal = (swal as any).mixin({
@@ -215,31 +216,77 @@ export function populateSelectedWeek() {
 }
 
 export function storeTableData() {
-  const selectedWeekData = 'week_' + $('.week-dropdown').val() + '_drafted_team_data';
-  let draftedTeamTableData: IDraftedTeamTableData;
-  draftedTeamsTableData = [];
+  const draftedTeamsData = JSON.parse(
+    localStorage.getItem('drafted_teams_data')
+  );
 
-  $('.table').each((i, table) => {
-    const draftedTeamID = parseInt($(table).find('.drafted-team-name').attr('data-id'), 10);
-    const draftedTeamName = $(table).find('.drafted-team-name').text().trim();
-    const pointsTotal = parseInt($(table).find('.total-points').text(), 10);
-    let goalsTotal = 0;
+  for (const draftedTeam of draftedTeamsData) {
+    const draftedTeamID = draftedTeam.teamID;
 
-    $(table).find('.player-total-data').each((j, playerdata) => {
-      if ($(playerdata).attr('data-goals')) {
-        goalsTotal += parseInt($(playerdata).attr('data-goals'), 10);
+    $('.table').each((i, table) => {
+      const TableTeamID = parseInt(
+        $(table)
+          .find('.drafted-team-name')
+          .attr('data-id'),
+        10
+      );
+      const draftedTeamName = $(table)
+        .find('.drafted-team-name')
+        .text()
+        .trim();
+      const weekPoints = parseInt(
+        $(table)
+          .find('.total-points')
+          .text(),
+        10
+      );
+      const currentWeek = $('.week-dropdown').val() as number;
+      let weeklyData = {};
+      let weekGoals = 0;
+
+      $(table)
+        .find('.player-total-data')
+        .each((j, playerdata) => {
+          if ($(playerdata).attr('data-goals')) {
+            weekGoals += parseInt($(playerdata).attr('data-goals'), 10);
+          }
+        });
+
+      if (draftedTeamID === TableTeamID) {
+        weeklyData = {
+          week: currentWeek,
+          weekPoints: weekPoints,
+          weekGoals: weekGoals
+        };
+
+        let weekExists = false;
+
+        if (draftedTeam.weeklyData.length) {
+          for (const weekData of draftedTeam.weeklyData) {
+            if (weekData.week === currentWeek) {
+              weekExists = true;
+              weekData.weekPoints = weekPoints;
+              weekData.weekGoals = weekGoals;
+            }
+          }
+        }
+
+        if (!weekExists) {
+          draftedTeam.weeklyData.push(weeklyData);
+        }
+
+        // for (const weekData of draftedTeam.weeklyData) {
+        //   pointsTotal += weekData.weekPoints;
+        //   goalsTotal += weekData.weekGoals;
+        // }
+        // draftedTeam.goalsTotal = goalsTotal;
+        // draftedTeam.pointsTotal = pointsTotal;
       }
     });
 
-    draftedTeamTableData = {
-      draftedTeamID: draftedTeamID,
-      draftedTeamName: draftedTeamName,
-      goalsScored: goalsTotal,
-      points: pointsTotal,
-    };
-
-    draftedTeamsTableData.push(draftedTeamTableData);
-  });
-
-  localStorage[selectedWeekData] = JSON.stringify(draftedTeamsTableData);
+    localStorage.setItem(
+      'drafted_teams_data',
+      JSON.stringify(draftedTeamsData)
+    );
+  }
 }
