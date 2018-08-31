@@ -2,6 +2,7 @@ import { compress as LZCompress, decompress as LZDecompress } from 'lz-string';
 
 import { IDraftedTeamTableData } from '../../Table/IDraftedTeamTableData';
 import { draftedTeams } from '../../views/Calculations/Calculations';
+import { orderBy } from 'lodash';
 import swal from 'sweetalert2';
 
 const miniSwal = (swal as any).mixin({
@@ -220,6 +221,8 @@ export function storeTableData() {
     localStorage.getItem('drafted_teams_data')
   );
 
+  let tablePosition = 1;
+
   for (const draftedTeam of draftedTeamsData) {
     const draftedTeamID = draftedTeam.teamID;
 
@@ -260,6 +263,8 @@ export function storeTableData() {
         };
 
         let weekExists = false;
+        let pointsTotal = 0;
+        let goalsTotal = 0;
 
         if (draftedTeam.weeklyData.length) {
           for (const weekData of draftedTeam.weeklyData) {
@@ -275,18 +280,24 @@ export function storeTableData() {
           draftedTeam.weeklyData.push(weeklyData);
         }
 
-        // for (const weekData of draftedTeam.weeklyData) {
-        //   pointsTotal += weekData.weekPoints;
-        //   goalsTotal += weekData.weekGoals;
-        // }
-        // draftedTeam.goalsTotal = goalsTotal;
-        // draftedTeam.pointsTotal = pointsTotal;
+        for (const weekData of draftedTeam.weeklyData) {
+          pointsTotal += weekData.weekPoints;
+          goalsTotal += weekData.weekGoals;
+        }
+        draftedTeam.goalsTotal = goalsTotal;
+        draftedTeam.pointsTotal = pointsTotal;
       }
     });
 
+    const sortedTableData = orderBy(draftedTeamsData, ['pointsTotal'], ['desc']);
+
+    for (const sortedTeam of sortedTableData) {
+      sortedTeam.tablePosition = ++tablePosition;
+  }
+
     localStorage.setItem(
       'drafted_teams_data',
-      JSON.stringify(draftedTeamsData)
+      JSON.stringify(sortedTableData)
     );
   }
 }

@@ -1,3 +1,5 @@
+import '../../../scss/table.scss';
+
 import { orderBy } from 'lodash';
 
 // tslint:disable:no-var-requires
@@ -16,6 +18,9 @@ function updateDraftedTeamData() {
 
   const currentWeek = parseInt($('.week-dropdown').val() as string, 10);
 
+  let tablePosition = 0;
+  let prevTablePosition = 0;
+
   for (const draftedTeam of draftedTeamsData) {
     let pointsTotal = 0;
     let goalsTotal = 0;
@@ -25,11 +30,18 @@ function updateDraftedTeamData() {
         goalsTotal += weekData.weekGoals;
       }
     }
+
     draftedTeam.goalsTotal = goalsTotal;
     draftedTeam.pointsTotal = pointsTotal;
 
-    sortedTableData = orderBy(draftedTeamsData, ['pointsTotal'], ['desc']);
   }
+
+  sortedTableData = orderBy(draftedTeamsData, ['pointsTotal'], ['desc']);
+
+  for (const sortedTeam of sortedTableData) {
+      sortedTeam.tablePosition = ++tablePosition;
+  }
+
   console.log(sortedTableData);
 
   $('.league-table-container').html(LeagueTableDataTemplate(sortedTableData));
