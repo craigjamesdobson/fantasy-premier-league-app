@@ -224,23 +224,26 @@
         background-color: #ddd;
       }
 
+      &.u {
+        opacity: 0.25;
+      }
+
       &.transfered {
         background-color: #5cb85c;
         color: #fff;
+        opacity: 1;
       }
 
       &.current-week-transfer {
         background-color: #EEE82C;
         color: #292F36;
+        opacity: 1;
       }
 
       &.sent-off {
         background-color: #d9534f;
         color: #fff;
-      }
-
-      &.u {
-        opacity: 0.25;
+        opacity: 1;
       }
     }
   }

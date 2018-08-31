@@ -21,7 +21,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 
-<link href="Index.css" rel="stylesheet"><link href="Calculations.css" rel="stylesheet"></head>
+<link href="Index.css" rel="stylesheet"><link href="Calculations.css" rel="stylesheet"><link href="Table.css" rel="stylesheet"></head>
 
 <body>
     <!-- Navigation -->
