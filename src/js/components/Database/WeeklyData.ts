@@ -222,6 +222,7 @@ export function storeTableData() {
   );
 
   let tablePosition = 1;
+  let weekPosition = 1;
 
   for (const draftedTeam of draftedTeamsData) {
     const draftedTeamID = draftedTeam.teamID;
@@ -272,6 +273,7 @@ export function storeTableData() {
               weekExists = true;
               weekData.weekPoints = weekPoints;
               weekData.weekGoals = weekGoals;
+              weekData.weekPosition = ++weekPosition;
             }
           }
         }
@@ -297,7 +299,7 @@ export function storeTableData() {
 
     localStorage.setItem(
       'drafted_teams_data',
-      JSON.stringify(sortedTableData)
+      JSON.stringify(draftedTeamsData)
     );
   }
 }

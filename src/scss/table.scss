@@ -3,5 +3,28 @@
 .league-table-container {
     table {
         width: 100%;
+
+        .team-row {
+            width: 100%;
+        }
+
+        .th-position, .td-position {
+            width: 12.5%;
+        }
+        .th-prevweek, .td-prevweek {
+            width: 12.5%;
+        }
+        .th-team, .td-team {
+            width: 37.5%;
+        }
+        .th-goals, .td-goals {
+            width: 12.5%;
+        }
+        .th-weekscore, .td-weekscore {
+            width: 12.5%;
+        }
+        .th-total, .td-total {
+            width: 12.5%;
+        }
     }
 }

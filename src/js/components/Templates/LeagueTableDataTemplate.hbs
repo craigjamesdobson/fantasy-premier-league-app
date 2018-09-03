@@ -1,20 +1,20 @@
-<table>
+<table class="table table-striped">
     <tr>
-        <th>Pos</th>
-        <th>Last Week</th>
-        <th>Team</th>
-        <th>Goals</th>
-        <th>Week Score</th>
-        <th>Total</th>
+        <th class="th-position">Position</th>
+        <th class="th-prevweek">Prv Week</th>
+        <th class="th-team">Team</th>
+        <th class="th-goals">Goals Scored</th>
+        <th class="th-weekscore">Week Points</th>
+        <th class="th-total">Total Points</th>
     </tr>
     {{#each this}}
-    <tr class="team-row" data-team-id="{{teamID}}" data-team-points="{{pointsTotal}}" data-team-goals="{{goalsTotal}}">
-        <td>{{tablePosition}}</td>
-        <td>{{tablePosition}}</td>
-        <td>{{teamName}}</td>
-        <td>{{goalsTotal}}</td>
-        <td>{{pointsTotal}}</td>
-        <td>{{pointsTotal}}</td>
+    <tr class="team-row" data-team-id="{{teamID}}" data-team-points="{{pointsTotal}}" data-team-goals="{{goalsTotal}}" data-table-position="{{tablePosition}}">
+        <td class="td-position">{{tablePosition}}</td>
+        <td class="td-prevweek">{{tablePosition}}</td>
+        <td class="td-team">{{teamName}}</td>
+        <td class="td-goals">{{goalsTotal}}</td>
+        <td class="td-weekscore">{{weekPoints}}</td>
+        <td class="td-total">{{pointsTotal}}</td>
     </tr>
     {{/each}}
 </table>
