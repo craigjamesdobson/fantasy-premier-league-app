@@ -27,6 +27,53 @@ footer {
 
 .league-table-container table {
   width: 100%; }
+  .league-table-container table .team-row {
+    width: 100%; }
+  .league-table-container table .th-position,
+  .league-table-container table .td-position {
+    position: relative;
+    width: 12.5%; }
+    .league-table-container table .th-position .svg-inline--fa,
+    .league-table-container table .td-position .svg-inline--fa {
+      position: absolute;
+      left: 50px;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%); }
+    .league-table-container table .th-position .fa-circle,
+    .league-table-container table .td-position .fa-circle {
+      font-size: 6px;
+      color: var(--gray); }
+    .league-table-container table .th-position .fa-chevron-up,
+    .league-table-container table .td-position .fa-chevron-up {
+      font-size: 12px;
+      color: var(--success); }
+    .league-table-container table .th-position .fa-chevron-down,
+    .league-table-container table .td-position .fa-chevron-down {
+      font-size: 12px;
+      color: var(--danger); }
+  .league-table-container table .th-prevweek,
+  .league-table-container table .td-prevweek {
+    width: 12.5%; }
+  .league-table-container table .th-team,
+  .league-table-container table .td-team {
+    width: 37.5%; }
+  .league-table-container table .th-goals,
+  .league-table-container table .td-goals {
+    width: 12.5%; }
+  .league-table-container table .th-weekscore,
+  .league-table-container table .td-weekscore {
+    position: relative;
+    width: 12.5%; }
+    .league-table-container table .th-weekscore .fa-star,
+    .league-table-container table .td-weekscore .fa-star {
+      margin-left: 10px;
+      font-size: 12px;
+      color: var(--yellow);
+      vertical-align: baseline; }
+  .league-table-container table .th-total,
+  .league-table-container table .td-total {
+    width: 12.5%; }
 
 
 /*# sourceMappingURL=Table.css.map*/
