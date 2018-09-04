@@ -1,8 +1,5 @@
 import { compress as LZCompress, decompress as LZDecompress } from 'lz-string';
-
-import { IDraftedTeamTableData } from '../../Table/IDraftedTeamTableData';
-import { draftedTeams } from '../../views/Calculations/Calculations';
-import { orderBy } from 'lodash';
+import { chain, orderBy } from 'lodash';
 import swal from 'sweetalert2';
 
 const miniSwal = (swal as any).mixin({
@@ -221,11 +218,12 @@ export function storeTableData() {
     localStorage.getItem('drafted_teams_data')
   );
 
-  let tablePosition = 1;
-  let weekPosition = 1;
+  let sortedTableData = [];
 
   for (const draftedTeam of draftedTeamsData) {
     const draftedTeamID = draftedTeam.teamID;
+
+    const currentWeek = parseInt($('.week-dropdown').val() as string, 10);
 
     $('.table').each((i, table) => {
       const TableTeamID = parseInt(
@@ -244,7 +242,6 @@ export function storeTableData() {
           .text(),
         10
       );
-      const currentWeek = $('.week-dropdown').val() as number;
       let weeklyData = {};
       let weekGoals = 0;
 
@@ -273,7 +270,6 @@ export function storeTableData() {
               weekExists = true;
               weekData.weekPoints = weekPoints;
               weekData.weekGoals = weekGoals;
-              weekData.weekPosition = ++weekPosition;
             }
           }
         }
@@ -291,15 +287,20 @@ export function storeTableData() {
       }
     });
 
-    const sortedTableData = orderBy(draftedTeamsData, ['pointsTotal'], ['desc']);
+    // sortedTableData = chain(draftedTeamsData)
+    // .orderBy('goalsTotal')
+    // .orderBy('pointsTotal')
+    // .value().reverse();
 
-    for (const sortedTeam of sortedTableData) {
-      sortedTeam.tablePosition = ++tablePosition;
+    // let weekPosition = 0;
+    // for (const sortedTeam of draftedTeamsData) {
+    //   for (const sortedTeamWeek of sortedTeam.weeklyData) {
+    //     if (sortedTeamWeek.week === currentWeek) {
+    //       sortedTeamWeek.weekPosition = ++weekPosition;
+    //     }
+    //   }
+    // }
   }
-
-    localStorage.setItem(
-      'drafted_teams_data',
-      JSON.stringify(draftedTeamsData)
-    );
-  }
+  console.log(draftedTeamsData);
+  localStorage.setItem('drafted_teams_data', JSON.stringify(draftedTeamsData));
 }

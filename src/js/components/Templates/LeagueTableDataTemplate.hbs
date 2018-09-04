@@ -9,11 +9,11 @@
     </tr>
     {{#each this}}
     <tr class="team-row" data-team-id="{{teamID}}" data-team-points="{{pointsTotal}}" data-team-goals="{{goalsTotal}}" data-table-position="{{tablePosition}}">
-        <td class="td-position">{{tablePosition}}</td>
-        <td class="td-prevweek">{{tablePosition}}</td>
+        <td class="td-position {{positionChange}}">{{tablePosition}} <i class="fas {{positionChange}}"></i></td>
+        <td class="td-prevweek">{{prevWeekPosition}}</td>
         <td class="td-team">{{teamName}}</td>
         <td class="td-goals">{{goalsTotal}}</td>
-        <td class="td-weekscore">{{weekPoints}}</td>
+        <td class="td-weekscore">{{weekPoints}}{{#if weekWinner}}<i class="fas fa-star"></i>{{/if}}</td>
         <td class="td-total">{{pointsTotal}}</td>
     </tr>
     {{/each}}
