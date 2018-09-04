@@ -36,13 +36,13 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="players">Players</a>
+                        <a class="nav-link" href="players.html">Players</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="calculator">Calculator</a>
+                        <a class="nav-link" href="calculator.html">Calculator</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="table">Table</a>
+                        <a class="nav-link" href="table.html">Table</a>
                     </li>
                 </ul>
             </div>
