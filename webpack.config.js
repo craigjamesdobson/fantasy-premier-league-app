@@ -93,7 +93,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Fantasy Premier League App',
       chunks: ['Index'],
-      filename: 'index',
+      filename: 'index.html',
       template: 'views/index.html'
     }),
 
@@ -101,7 +101,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Fantasy Premier League App - Players',
       chunks: ['Index', 'Players'],
-      filename: 'players',
+      filename: 'players.html',
       template: 'views/players.html'
     }),
 
@@ -109,7 +109,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Fantasy Premier League App - Calculator',
       chunks: ['Index', 'Calculations'],
-      filename: 'calculator',
+      filename: 'calculator.html',
       template: 'views/calculator.html'
     }),
 
@@ -117,7 +117,7 @@ module.exports = {
       new HtmlWebpackPlugin({
         title: 'Fantasy Premier League App - Table',
         chunks: ['Index', 'Calculations', 'Table'],
-        filename: 'table',
+        filename: 'table.html',
         template: 'views/table.html'
       }),
 
