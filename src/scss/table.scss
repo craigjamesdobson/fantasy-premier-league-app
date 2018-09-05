@@ -1,8 +1,18 @@
 @import 'styles';
 
 .league-table-container {
+
   table {
     width: 100%;
+    font-size: 12px;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 14px;
+    }
+
+    th, td {
+      vertical-align: middle;
+    }
 
     .team-row {
       width: 100%;
@@ -26,26 +36,45 @@
       }
 
       .fa-chevron-up {
-        font-size: 12px;
+        font-size: 10px;
         color: var(--success);
       }
 
       .fa-chevron-down {
-        font-size: 12px;
+        font-size: 10px;
         color: var(--danger);
       }
     }
     .th-prevweek,
     .td-prevweek {
+      display: none;
       width: 12.5%;
+
+      @include media-breakpoint-up(sm) {
+        display: table-cell;
+      }
     }
     .th-team,
     .td-team {
-      width: 37.5%;
+      width: 27.5%;
+    }
+    .th-redcards,
+    .td-redcards {
+      display: none;
+      width: 10%;
+
+      @include media-breakpoint-up(sm) {
+        display: table-cell;
+      }
     }
     .th-goals,
     .td-goals {
+      display: none;
       width: 12.5%;
+
+      @include media-breakpoint-up(sm) {
+        display: table-cell;
+      }
     }
     .th-weekscore,
     .td-weekscore {

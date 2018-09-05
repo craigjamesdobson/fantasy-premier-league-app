@@ -24,11 +24,7 @@
         <td>{{id}}</td>
         <td>{{name}}</td>
         <td class="goals-scored">
-            <select class="score-select" name="score">
-                {{#repeat count=10 start=0}}
-                <option value="{{@index}}">{{@index}}</option>
-                {{/repeat}}
-            </select>
+        <input class="score-select" type="number" value="0" min="0">
         </td>
         <td class="clean-sheet">
             <input type="checkbox" class="clean-sheet-checkbox">

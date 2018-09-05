@@ -37,6 +37,7 @@
 
       .score {
         width: 25%;
+        padding: 5px 10px;
       }
 
       .score:disabled {
@@ -104,6 +105,11 @@
           input {
             vertical-align: middle;
           }
+
+          .score-select {
+            width: 40px;
+            padding: 0 0 0 5px;
+          }
         }
 
         &:nth-child(even) {
@@ -160,8 +166,9 @@
           width: 15px;
         }
 
-        select {
+        input {
           padding: 0;
+          border: 1px solid #ccc;
           &.active {
             background-color: #5cb85c;
             color: #fff;

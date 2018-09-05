@@ -1,6 +1,6 @@
 import '../../../scss/table.scss';
 
-import { chain, maxBy, orderBy } from 'lodash';
+import { chain, maxBy } from 'lodash';
 
 // tslint:disable:no-var-requires
 const LeagueTableTemplate = require('../../components/Templates/LeagueTableTemplate.hbs');
@@ -19,11 +19,10 @@ function initDraftedTeamData() {
   const currentWeek = parseInt($('.week-dropdown').val() as string, 10);
   const prevWeek = currentWeek - 1;
 
-  let tablePosition = 0;
-
   for (const draftedTeam of draftedTeamsData) {
     let pointsTotal = 0;
     let goalsTotal = 0;
+    let redCardTotal = 0;
     let weekPoints = 0;
     let prevWeekPos = 'N/A';
 
@@ -31,6 +30,7 @@ function initDraftedTeamData() {
       if (parseInt(weekData.week, 10) <= currentWeek) {
         pointsTotal += weekData.weekPoints;
         goalsTotal += weekData.weekGoals;
+        redCardTotal += weekData.weekRedCards;
       }
 
       if (parseInt(weekData.week, 10) === currentWeek) {
@@ -45,19 +45,41 @@ function initDraftedTeamData() {
     draftedTeam.currentWeek = currentWeek;
     draftedTeam.prevWeekPosition = prevWeekPos;
     draftedTeam.weekPoints = weekPoints;
+    draftedTeam.redCardTotal = redCardTotal;
     draftedTeam.goalsTotal = goalsTotal;
     draftedTeam.pointsTotal = pointsTotal;
   }
 
-  console.log(draftedTeamsData);
+  sortTableData();
+  applyPositionData(currentWeek);
+  getWeeklyWinners();
 
+  $('.league-table-container').html(LeagueTableDataTemplate(sortedTableData));
+}
+
+function getWeeklyWinners() {
+  const maxScoreObject = maxBy(sortedTableData, 'weekPoints');
+  const maxScore = maxScoreObject.weekPoints;
+
+  for (const team of sortedTableData) {
+    if (team.weekPoints === maxScore && maxScore > 0) {
+      team.weekWinner = true;
+    }
+  }
+}
+
+function sortTableData() {
   sortedTableData = chain(draftedTeamsData)
+    .orderBy('redCardsTotal')
     .orderBy('goalsTotal')
     .orderBy('pointsTotal')
     .value()
     .reverse();
+}
 
+function applyPositionData(currentWeek) {
   let weekPosition = 0;
+  let tablePosition = 0;
 
   for (const sortedTeam of sortedTableData) {
     sortedTeam.tablePosition = ++tablePosition;
@@ -75,48 +97,6 @@ function initDraftedTeamData() {
       }
     }
   }
-
-  const weeklyWinners = maxBy(sortedTableData, 'weekPoints');
-  weeklyWinners.weekWinner = true;
-
-  console.log(weeklyWinners);
-
-  $('.league-table-container').html(LeagueTableDataTemplate(sortedTableData));
-}
-
-function sortTableData() {
-  $('.league-table-container').html(LeagueTableDataTemplate(sortedTableData));
-
-  const teamRow = $('.team-row');
-
-  let offsetPos = 0;
-
-  teamRow.each((i, row) => {
-    for (const teamData of draftedTeamsData) {
-      if (parseInt($(row).attr('data-team-id'), 10) === teamData.teamID) {
-        // $(row).attr('data-table-position', teamData.tablePosition);
-      }
-    }
-
-    const offsetAnimate = parseInt($(row).attr('data-table-position'), 10);
-    $(row).css({
-      position: 'absolute',
-      display: 'flex',
-      top: (offsetPos += 46)
-    });
-
-    $(row).animate(
-      {
-        top: 46 * offsetAnimate
-      },
-      1000,
-      () => {
-        $('.league-table-container').html(
-          LeagueTableDataTemplate(sortedTableData)
-        );
-      }
-    );
-  });
 }
 
 $(document).on('change', '.week-dropdown', event => {

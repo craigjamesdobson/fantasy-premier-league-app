@@ -261,7 +261,7 @@ function calculatePoints() {
     let pointsTotal = 0;
     const goalsScored = parseInt(
       $(player)
-        .find('select.score-select :selected')
+        .find('.score-select')
         .val() as string,
       10
     );

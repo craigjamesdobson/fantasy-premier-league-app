@@ -1,5 +1,5 @@
 import { compress as LZCompress, decompress as LZDecompress } from 'lz-string';
-import { chain, orderBy } from 'lodash';
+
 import swal from 'sweetalert2';
 
 const miniSwal = (swal as any).mixin({
@@ -104,11 +104,11 @@ export function storeWeeklyData() {
     }
   });
 
-  if (!jQuery.isEmptyObject(fixtureArray)) {
+  if (!$.isEmptyObject(fixtureArray)) {
     currentWeekFixtures.push(fixtureArray);
   }
 
-  if (!jQuery.isEmptyObject(playerArray)) {
+  if (!$.isEmptyObject(playerArray)) {
     currentWeekPlayers.push(playerArray);
   }
 
@@ -218,8 +218,6 @@ export function storeTableData() {
     localStorage.getItem('drafted_teams_data')
   );
 
-  let sortedTableData = [];
-
   for (const draftedTeam of draftedTeamsData) {
     const draftedTeamID = draftedTeam.teamID;
 
@@ -232,10 +230,6 @@ export function storeTableData() {
           .attr('data-id'),
         10
       );
-      const draftedTeamName = $(table)
-        .find('.drafted-team-name')
-        .text()
-        .trim();
       const weekPoints = parseInt(
         $(table)
           .find('.total-points')
@@ -244,6 +238,7 @@ export function storeTableData() {
       );
       let weeklyData = {};
       let weekGoals = 0;
+      let redCards  = 0;
 
       $(table)
         .find('.player-total-data')
@@ -251,18 +246,20 @@ export function storeTableData() {
           if ($(playerdata).attr('data-goals')) {
             weekGoals += parseInt($(playerdata).attr('data-goals'), 10);
           }
+          if ($(playerdata).hasClass('sent-off')) {
+            redCards++;
+          }
         });
 
       if (draftedTeamID === TableTeamID) {
         weeklyData = {
           week: currentWeek,
           weekPoints: weekPoints,
-          weekGoals: weekGoals
+          weekGoals: weekGoals,
+          weekRedCards: redCards
         };
 
         let weekExists = false;
-        let pointsTotal = 0;
-        let goalsTotal = 0;
 
         if (draftedTeam.weeklyData.length) {
           for (const weekData of draftedTeam.weeklyData) {
@@ -270,6 +267,7 @@ export function storeTableData() {
               weekExists = true;
               weekData.weekPoints = weekPoints;
               weekData.weekGoals = weekGoals;
+              weekData.weekRedCards = redCards;
             }
           }
         }
@@ -277,30 +275,8 @@ export function storeTableData() {
         if (!weekExists) {
           draftedTeam.weeklyData.push(weeklyData);
         }
-
-        for (const weekData of draftedTeam.weeklyData) {
-          pointsTotal += weekData.weekPoints;
-          goalsTotal += weekData.weekGoals;
-        }
-        draftedTeam.goalsTotal = goalsTotal;
-        draftedTeam.pointsTotal = pointsTotal;
       }
     });
-
-    // sortedTableData = chain(draftedTeamsData)
-    // .orderBy('goalsTotal')
-    // .orderBy('pointsTotal')
-    // .value().reverse();
-
-    // let weekPosition = 0;
-    // for (const sortedTeam of draftedTeamsData) {
-    //   for (const sortedTeamWeek of sortedTeam.weeklyData) {
-    //     if (sortedTeamWeek.week === currentWeek) {
-    //       sortedTeamWeek.weekPosition = ++weekPosition;
-    //     }
-    //   }
-    // }
   }
-  console.log(draftedTeamsData);
   localStorage.setItem('drafted_teams_data', JSON.stringify(draftedTeamsData));
 }
