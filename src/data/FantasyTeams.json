@@ -974,16 +974,16 @@
         },
         {
           "player_id": 251,
+          "transfers": []
+        },
+        {
+          "player_id": 223,
           "transfers": [
             {
               "transfer_week": 4,
               "transfer_id": 365
             }
           ]
-        },
-        {
-          "player_id": 223,
-          "transfers": []
         },
         {
           "player_id": 372,
