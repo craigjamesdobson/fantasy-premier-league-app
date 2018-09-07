@@ -2,7 +2,7 @@
     <div class="col-12 py-3">
         <h3>Select a week to populate</h3>
         <div class="row">
-            <div class="form-group col-12 col-sm-6 col-lg-3">
+            <div class="form-group col-12 col-md-6 col-lg-4">
                 <select class="form-control week-dropdown mb-3">
                     {{#repeat count=38 start=1}}
                     <option value="{{@index}}">week {{@index}}</option>
@@ -17,10 +17,16 @@
                     </div>
                 </div>
             </div>
+            <div class="col-12 col-md-8 text-right">
+                <button class="btn btn-primary" id="create">Download Week</button>
+                <button type="button" class="btn btn-primary" id="import-week">Import Week</button>
+            </div>
+
+
         </div>
     </div>
     {{#repeat count=10 start=1}}
-    <div id="fixture-{{@index}}" class="fixtures col-xs-12 col-md-6">
+    <div id="fixture-{{@index}}" class="fixtures col-xs-12 col-lg-6">
         <h3>Fixture {{@index}}</h3>
         <span class="clear-fixture">
             <i class="fa fa-undo" aria-hidden="true"></i>

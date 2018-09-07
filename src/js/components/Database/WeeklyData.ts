@@ -280,3 +280,31 @@ export function storeTableData() {
   }
   localStorage.setItem('drafted_teams_data', JSON.stringify(draftedTeamsData));
 }
+
+export function importWeekData() {
+  const currentWeek = parseInt($('.week-dropdown').val() as string, 10);
+
+  swal({
+    html:
+    `<form>
+      <div class="form-group">
+        <label for="import-week-fixtures">Input fixture data below</label>
+        <textarea class="form-control swal2-textarea" id="import-week-fixtures" placeholder="Input fixture data here..."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="import-week-players">Input player data below</label>
+        <textarea class="form-control swal2-textarea" id="import-week-players" placeholder="Input player data here..."></textarea>
+      </div>
+    </form>`,
+    customClass: 'swal-import',
+    confirmButtonText: 'Import',
+    showCancelButton: true
+  }).then((result: any) => {
+    if (result.value) {
+      const weekDataText = $('#import-week-text').val() as string;
+      localStorage.setItem('week_' + currentWeek + '_fixtures', LZCompress(weekDataText));
+
+      $('.week-dropdown').trigger('change');
+    }
+  });
+}
