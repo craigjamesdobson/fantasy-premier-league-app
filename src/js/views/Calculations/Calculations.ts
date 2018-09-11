@@ -513,39 +513,43 @@ function applyTransfers(event: JQuery.Event) {
   });
 }
 
-function downloadWeekData() {
-  let textFile = null;
+function exportWeekData() {
+  let selectedWeekFixturesText = null;
+  let selectedWeekPlayersText = null;
+
   const selectedWeekPlayers = 'week_' + $('.week-dropdown').val() + '_players';
   const selectedWeekFixtures = 'week_' + $('.week-dropdown').val() + '_fixtures';
 
-  const selectedWeekFixtureString = JSON.stringify(LZDecompress(localStorage.getItem(selectedWeekFixtures)).replace(/\\/g, ''));
+  const selectedWeekFixtureString = JSON.stringify(LZDecompress(localStorage.getItem(selectedWeekFixtures)));
+  const selectedWeekPlayerString = JSON.stringify(LZDecompress(localStorage.getItem(selectedWeekPlayers)));
 
-  const abc = selectedWeekFixtureString.replace(/\\/g, '');
+  const formattedFixtureString = selectedWeekFixtureString.replace(/^"|"$|\\/g, '');
+  const formattedPlayerString = selectedWeekPlayerString.replace(/^"|"$|\\/g, '');
 
-  const selectedWeekPlayersData = new Blob([selectedWeekFixtureString], { type: 'text/plain' });
-  const selectedWeekFixturesData = new Blob([abc], { type: 'text/plain' });
+  const selectedWeekFixturesData = new Blob([formattedFixtureString], { type: 'text/plain' });
+  const selectedWeekPlayersData = new Blob([formattedPlayerString], { type: 'text/plain' });
 
   // If we are replacing a previously generated file we need to
   // manually revoke the object URL to avoid memory leaks.
-  if (textFile !== null) {
-    window.URL.revokeObjectURL(textFile);
+  if (selectedWeekFixturesText !== null || selectedWeekPlayersText !== null) {
+    window.URL.revokeObjectURL(selectedWeekFixturesText);
+    window.URL.revokeObjectURL(selectedWeekPlayersText);
   }
 
-  textFile = window.URL.createObjectURL(selectedWeekFixturesData);
+  selectedWeekFixturesText = window.URL.createObjectURL(selectedWeekFixturesData);
+  selectedWeekPlayersText = window.URL.createObjectURL(selectedWeekPlayersData);
 
-  const create = document.getElementById('create');
+  $('.fixtures-container').append('<a class="fixture-export-link" href="">fixtures</a>').append('<a class="player-export-link" href="">players</a>');
 
-  create.addEventListener('click', () => {
-      const link = document.createElement('a');
-      link.setAttribute('download', `${selectedWeekPlayers}.txt`);
-      link.href = textFile;
-      document.body.appendChild(link);
+  $('.fixture-export-link').attr('download', `${selectedWeekFixtures}.txt`).attr('href', selectedWeekFixturesText);
+  $('.player-export-link').attr('download', `${selectedWeekPlayers}.txt`).attr('href', selectedWeekPlayersText);
 
-      // wait for the link to be added to the document
-      const event = new MouseEvent('click');
-      link.dispatchEvent(event);
-      document.body.removeChild(link);
-  });
+  $('a.fixture-export-link')[0].click();
+  $('a.player-export-link')[0].click();
+
+  $('.fixture-export-link').remove();
+  $('.player-export-link').remove();
+
 }
 
 $(document).on('click', '.position-header', togglePlayers);
@@ -589,4 +593,8 @@ $(document).on('click', '.delete-week', event => {
 
 $(document).on('click', '#import-week', event => {
   importWeekData();
+});
+
+$(document).on('click', '#export-week', event => {
+  exportWeekData();
 });

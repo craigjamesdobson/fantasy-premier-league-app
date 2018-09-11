@@ -281,6 +281,15 @@ export function storeTableData() {
   localStorage.setItem('drafted_teams_data', JSON.stringify(draftedTeamsData));
 }
 
+function IsValidJSONString(str) {
+  try {
+      JSON.parse(str);
+  } catch (e) {
+      return false;
+  }
+  return true;
+}
+
 export function importWeekData() {
   const currentWeek = parseInt($('.week-dropdown').val() as string, 10);
 
@@ -301,10 +310,22 @@ export function importWeekData() {
     showCancelButton: true
   }).then((result: any) => {
     if (result.value) {
-      const weekDataText = $('#import-week-text').val() as string;
-      localStorage.setItem('week_' + currentWeek + '_fixtures', LZCompress(weekDataText));
+      const weekFixtureText = $('#import-week-fixtures').val() as string;
+      const weekPlayerText = $('#import-week-players').val() as string;
 
-      $('.week-dropdown').trigger('change');
+      if (IsValidJSONString(weekFixtureText) && IsValidJSONString(weekPlayerText)) {
+        localStorage.setItem('week_' + currentWeek + '_fixtures', LZCompress(weekFixtureText));
+        localStorage.setItem('week_' + currentWeek + '_players', LZCompress(weekPlayerText));
+        $('.week-dropdown').trigger('change');
+      } else {
+        swal({
+          title: 'Data input is not correct format',
+          showConfirmButton: false,
+          allowOutsideClick: false,
+          type: 'error',
+          timer: 1000
+        });
+      }
     }
   });
 }

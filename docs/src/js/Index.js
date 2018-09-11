@@ -1,5 +1,5 @@
-import 'bootstrap';
+import '../scss/overrides.scss';
 import '../scss/styles.scss';
-// tslint:disable-next-line:no-var-requires
-var loadingGif = require('../img/loading.gif');
+import '../img/loading.gif';
+import 'bootstrap';
 //# sourceMappingURL=Index.js.map

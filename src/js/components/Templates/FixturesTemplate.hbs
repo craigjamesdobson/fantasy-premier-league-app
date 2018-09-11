@@ -2,8 +2,8 @@
     <div class="col-12 py-3">
         <h3>Select a week to populate</h3>
         <div class="row">
-            <div class="form-group col-12 col-md-6 col-lg-4">
-                <select class="form-control week-dropdown mb-3">
+            <div class="form-group col-12 col-lg-4">
+                <select class="form-control week-dropdown mb-4">
                     {{#repeat count=38 start=1}}
                     <option value="{{@index}}">week {{@index}}</option>
                     {{/repeat}}
@@ -17,12 +17,22 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-8 text-right">
-                <button class="btn btn-primary" id="create">Download Week</button>
-                <button type="button" class="btn btn-primary" id="import-week">Import Week</button>
+            <div class="col-12 offset-lg-2 col-lg-6 text-lg-right">
+                <small><i class="fas fa-info-circle mr-1"></i>Click the export week button to download files with
+                    weekly data ready for import in case of lost data</small>
+                <br>
+                <small><i class="fas fa-info-circle mr-1"></i>Click the import week to import weekly data from
+                    previously downloaded weeks</small>
+                <hr>
+                <div class="row">
+                    <div class="col-6 offset-lg-4 col-lg-4">
+                        <button class="btn btn-block btn-primary" id="export-week">Export Week</button>
+                    </div>
+                    <div class="col-6 col-lg-4">
+                        <button type="button" class="btn btn-block btn-primary" id="import-week">Import Week</button>
+                    </div>
+                </div>
             </div>
-
-
         </div>
     </div>
     {{#repeat count=10 start=1}}
