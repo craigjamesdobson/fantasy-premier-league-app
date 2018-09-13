@@ -520,6 +520,17 @@ function exportWeekData() {
   const selectedWeekPlayers = 'week_' + $('.week-dropdown').val() + '_players';
   const selectedWeekFixtures = 'week_' + $('.week-dropdown').val() + '_fixtures';
 
+  if (localStorage.getItem(selectedWeekPlayers) === null && localStorage.getItem(selectedWeekPlayers) === null) {
+    swal({
+      title: 'No week data to export',
+      type: 'error',
+      showCancelButton: false,
+      showConfirmButton: false,
+      timer: 1500,
+    });
+    return;
+  }
+
   const selectedWeekFixtureString = JSON.stringify(LZDecompress(localStorage.getItem(selectedWeekFixtures)));
   const selectedWeekPlayerString = JSON.stringify(LZDecompress(localStorage.getItem(selectedWeekPlayers)));
 
