@@ -104,15 +104,3 @@ function applyPositionData(currentWeek) {
 $(document).on('change', '.week-dropdown', event => {
   initDraftedTeamData();
 });
-
-$(document).on('click', '#print-table', event => {
-
-  const leagueTable = $('.league-table-container').html();
-
-  swal({
-    title: `WEEK ${$('.week-dropdown').val() as string}`,
-    html: `<div class="league-table-container">${leagueTable}</div>`,
-    confirmButtonText: 'Print',
-    showCancelButton: true,
-  });
-});
