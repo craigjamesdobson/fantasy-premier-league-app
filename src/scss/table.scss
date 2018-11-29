@@ -92,5 +92,13 @@
     .td-total {
       width: 12.5%;
     }
+
+    .sticky-header {
+      position: sticky;
+      z-index: 10;
+      border: none;
+      background-color: var(--gray-dark);
+      color: #fff;
+    }
   }
 }
