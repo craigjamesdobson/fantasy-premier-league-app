@@ -1,12 +1,12 @@
 <table class="table table-striped">
     <tr>
-        <th class="th-position">Position</th>
-        <th class="th-prevweek">Prv Week</th>
-        <th class="th-team">Team</th>
-        <th class="th-redcards">Red Cards</th>
-        <th class="th-goals">Goals Scored</th>
-        <th class="th-weekscore">Week Points</th>
-        <th class="th-total">Total Points</th>
+        <th class="th-position sticky-header">Position</th>
+        <th class="th-prevweek sticky-header">Prv Week</th>
+        <th class="th-team sticky-header">Team</th>
+        <th class="th-redcards sticky-header">Red Cards</th>
+        <th class="th-goals sticky-header">Goals Scored</th>
+        <th class="th-weekscore sticky-header">Week Points</th>
+        <th class="th-total sticky-header">Total Points</th>
     </tr>
     {{#each this}}
     <tr class="team-row" data-team-id="{{teamID}}" data-team-points="{{pointsTotal}}" data-team-goals="{{goalsTotal}}" data-table-position="{{tablePosition}}">
