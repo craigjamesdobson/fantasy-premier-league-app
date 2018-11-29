@@ -304,7 +304,12 @@
         },
         {
           "player_id": 10,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_week": 10,
+              "transfer_id": 116
+            }
+          ]
         },
         {
           "player_id": 220,
@@ -623,7 +628,12 @@
         },
         {
           "player_id": 223,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_week": 6,
+              "transfer_id": 367
+            }
+          ]
         },
         {
           "player_id": 13,
@@ -891,7 +901,7 @@
           "transfers": []
         },
         {
-          "player_id": 165,
+          "player_id": 365,
           "transfers": []
         },
         {
@@ -1002,6 +1012,10 @@
             {
               "transfer_week": 4,
               "transfer_id": 365
+            },
+            {
+              "transfer_week": 6,
+              "transfer_id": 122
             }
           ]
         },
@@ -1015,7 +1029,12 @@
         },
         {
           "player_id": 234,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_week": 6,
+              "transfer_id": 151
+            }
+          ]
         }
       ]
     },
@@ -1242,7 +1261,12 @@
         },
         {
           "player_id": 331,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_week": 12,
+              "transfer_id": 246
+            }
+          ]
         },
         {
           "player_id": 48,
@@ -1258,11 +1282,21 @@
         },
         {
           "player_id": 295,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_week": 12,
+              "transfer_id": 251
+            }
+          ]
         },
         {
           "player_id": 177,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_week": 12,
+              "transfer_id": 43
+            }
+          ]
         },
         {
           "player_id": 23,
