@@ -6464,7 +6464,6 @@ footer {
   .league-table-container table .sticky-header {
     position: -webkit-sticky;
     position: sticky;
-    top: 0;
     z-index: 10;
     border: none;
     background-color: var(--gray-dark);
