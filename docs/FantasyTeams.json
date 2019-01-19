@@ -23,7 +23,12 @@
         },
         {
           "player_id": 262,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_week": 20,
+              "transfer_id": 427
+            }
+          ]
         },
         {
           "player_id": 253,
@@ -35,6 +40,10 @@
             {
               "transfer_week": 5,
               "transfer_id": 370
+            },
+            {
+              "transfer_week": 20,
+              "transfer_id": 367
             }
           ]
         },
@@ -110,7 +119,12 @@
         },
         {
           "player_id": 151,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_week": 23,
+              "transfer_id": 280
+            }
+          ]
         },
         {
           "player_id": 306,
@@ -118,7 +132,12 @@
         },
         {
           "player_id": 372,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_week": 23,
+              "transfer_id": 305
+            }
+          ]
         }
       ]
     },
@@ -908,7 +927,7 @@
           "transfers": []
         },
         {
-          "player_id": 381,
+          "player_id": 312,
           "transfers": []
         },
         {
@@ -1191,7 +1210,12 @@
         },
         {
           "player_id": 324,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_week": 23,
+              "transfer_id": 253
+            }
+          ]
         },
         {
           "player_id": 122,
@@ -1199,7 +1223,12 @@
         },
         {
           "player_id": 372,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_week": 23,
+              "transfer_id": 189
+            }
+          ]
         },
         {
           "player_id": 280,
@@ -1591,7 +1620,12 @@
         },
         {
           "player_id": 372,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_week": 23,
+              "transfer_id": 23
+            }
+          ]
         },
         {
           "player_id": 257,
