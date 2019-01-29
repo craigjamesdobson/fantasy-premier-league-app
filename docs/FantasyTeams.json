@@ -936,7 +936,12 @@
         },
         {
           "player_id": 365,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_week": 24,
+              "transfer_id": 302
+            }
+          ]
         },
         {
           "player_id": 150,
