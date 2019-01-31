@@ -6465,6 +6465,7 @@ footer {
     position: -webkit-sticky;
     position: sticky;
     z-index: 10;
+    top: 0;
     border: none;
     background-color: var(--gray-dark);
     color: #fff; }

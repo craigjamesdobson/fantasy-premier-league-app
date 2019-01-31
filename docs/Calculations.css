@@ -6574,5 +6574,8 @@ footer {
   .teams-container .total-points-row th {
     text-align: center; }
 
+.swal2-popup.swal-import .swal2-textarea {
+  font-size: 14px; }
+
 
 /*# sourceMappingURL=Calculations.css.map*/
