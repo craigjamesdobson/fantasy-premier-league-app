@@ -13,8 +13,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
         while (_) try {
-            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [0, t.value];
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
                 case 0: case 1: t = op; break;
                 case 4: _.label++; return { value: op[1], done: false };
@@ -40,10 +40,7 @@ export var DraftedTeamData;
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 return [2 /*return*/, new Promise(function (resolve, reject) {
-                        // Define variables
-                        var loadingOverlay = $('.loading');
-                        var loadingState = false;
-                        var draftedTeamUrl = '/FantasyTeams.json';
+                        var draftedTeamUrl = './FantasyTeams.json';
                         fetch(draftedTeamUrl)
                             .then(function (data) {
                             if (data.status !== 200) {
@@ -51,15 +48,11 @@ export var DraftedTeamData;
                             }
                             // Examine the text in the response
                             data.json().then(function (draftedTeamData) {
-                                // Hide the loading overlay
-                                loadingOverlay.hide();
                                 var draftedTeamList = draftedTeamData.drafted_teams.map(function (draftedTeam) { return new DraftedTeam(draftedTeam); });
                                 resolve(draftedTeamList);
                             });
                         })
                             .catch(function (err) {
-                            // Hide the loading overlay
-                            loadingOverlay.hide();
                             // Show alert error
                             alert("fetch error " + err);
                         });

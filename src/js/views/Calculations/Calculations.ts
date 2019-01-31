@@ -6,6 +6,7 @@ import '../../components/Database/WeeklyData';
 
 import {
   deleteWeeklyData,
+  importWeekData,
   populateSelectedWeek,
   storeTableData,
   storeWeeklyData
@@ -42,6 +43,7 @@ GetStaticData.getstaticData().then(async data => {
   teamData = CreateTeamData.createTeamData(data);
   initTeamData(teamData);
   $('.loading').hide();
+  $('.week-dropdown').trigger('change');
 });
 
 async function initDraftedTeamData(playerList: PlayerList) {
@@ -68,13 +70,12 @@ function createDraftedTeamData() {
   const draftedTeamsData = [];
   let draftedTeamData = {};
   for (const draftedTeam of draftedTeams) {
-
-    draftedTeamData = {
+    (draftedTeamData = {
       teamID: draftedTeam.teamID,
       teamName: draftedTeam.teamName,
       weeklyData: []
-    },
-    draftedTeamsData.push(draftedTeamData);
+    }),
+      draftedTeamsData.push(draftedTeamData);
   }
   localStorage.setItem('drafted_teams_data', JSON.stringify(draftedTeamsData));
 }
@@ -89,7 +90,9 @@ function togglePlayers(event: JQuery.Event) {
   const playerTableClass = `.${positionHeader.parents('div').attr('class')}`;
   const positionTableHeader = positionHeader.next('.table-heading');
   const positionHeaderID = positionHeader.attr('data-position');
-  const players = $(selectedFixture).find(playerTableClass).find('.player-data');
+  const players = $(selectedFixture)
+    .find(playerTableClass)
+    .find('.player-data');
 
   players.filter(`[data-position="${positionHeaderID}"]`).toggleClass('active');
   positionTableHeader.toggleClass('active');
@@ -131,25 +134,25 @@ function populateFixture(event: JQuery.Event) {
         id: 1,
         name: 'Goalkeeper',
         nameShort: 'GK',
-        players: filteredPlayers.filter(g => g.playerType === 1),
+        players: filteredPlayers.filter(g => g.playerType === 1)
       },
       {
         id: 2,
         name: 'Defender',
         nameShort: 'DEF',
-        players: filteredPlayers.filter(g => g.playerType === 2),
+        players: filteredPlayers.filter(g => g.playerType === 2)
       },
       {
         id: 3,
         name: 'Midfielder',
         nameShort: 'MID',
-        players: filteredPlayers.filter(g => g.playerType === 3),
+        players: filteredPlayers.filter(g => g.playerType === 3)
       },
       {
         id: 4,
         name: 'Forward',
         nameShort: 'FWD',
-        players: filteredPlayers.filter(g => g.playerType === 4),
+        players: filteredPlayers.filter(g => g.playerType === 4)
       }
     ]
   };
@@ -159,8 +162,13 @@ function populateFixture(event: JQuery.Event) {
     .html(PopulateFixturesTemplate(filteredPositions));
 
   $('.player-data').each((i, player) => {
-    if ($(player).attr('data-position') === '3' || $(player).attr('data-position') === '4') {
-      $(player).find('.clean-sheet-checkbox').attr('disabled', 'disabled');
+    if (
+      $(player).attr('data-position') === '3' ||
+      $(player).attr('data-position') === '4'
+    ) {
+      $(player)
+        .find('.clean-sheet-checkbox')
+        .attr('disabled', 'disabled');
     }
   });
 }
@@ -211,7 +219,11 @@ export function populateAllFixtures() {
       ]
     };
 
-    if ($(teams).find(':selected').val() !== '0') {
+    if (
+      $(teams)
+        .find(':selected')
+        .val() !== '0'
+    ) {
       $(selectedFixture)
         .find(playerTableClass)
         .html(PopulateFixturesTemplate(filteredPositions));
@@ -501,6 +513,56 @@ function applyTransfers(event: JQuery.Event) {
   });
 }
 
+function exportWeekData() {
+  let selectedWeekFixturesText = null;
+  let selectedWeekPlayersText = null;
+
+  const selectedWeekPlayers = 'week_' + $('.week-dropdown').val() + '_players';
+  const selectedWeekFixtures = 'week_' + $('.week-dropdown').val() + '_fixtures';
+
+  if (localStorage.getItem(selectedWeekPlayers) === null && localStorage.getItem(selectedWeekPlayers) === null) {
+    swal({
+      title: 'No week data to export',
+      type: 'error',
+      showCancelButton: false,
+      showConfirmButton: false,
+      timer: 1500,
+    });
+    return;
+  }
+
+  const selectedWeekFixtureString = JSON.stringify(LZDecompress(localStorage.getItem(selectedWeekFixtures)));
+  const selectedWeekPlayerString = JSON.stringify(LZDecompress(localStorage.getItem(selectedWeekPlayers)));
+
+  const formattedFixtureString = selectedWeekFixtureString.replace(/^"|"$|\\/g, '');
+  const formattedPlayerString = selectedWeekPlayerString.replace(/^"|"$|\\/g, '');
+
+  const selectedWeekFixturesData = new Blob([formattedFixtureString], { type: 'text/plain' });
+  const selectedWeekPlayersData = new Blob([formattedPlayerString], { type: 'text/plain' });
+
+  // If we are replacing a previously generated file we need to
+  // manually revoke the object URL to avoid memory leaks.
+  if (selectedWeekFixturesText !== null || selectedWeekPlayersText !== null) {
+    window.URL.revokeObjectURL(selectedWeekFixturesText);
+    window.URL.revokeObjectURL(selectedWeekPlayersText);
+  }
+
+  selectedWeekFixturesText = window.URL.createObjectURL(selectedWeekFixturesData);
+  selectedWeekPlayersText = window.URL.createObjectURL(selectedWeekPlayersData);
+
+  $('.fixtures-container').append('<a class="fixture-export-link" href="">fixtures</a>').append('<a class="player-export-link" href="">players</a>');
+
+  $('.fixture-export-link').attr('download', `${selectedWeekFixtures}.txt`).attr('href', selectedWeekFixturesText);
+  $('.player-export-link').attr('download', `${selectedWeekPlayers}.txt`).attr('href', selectedWeekPlayersText);
+
+  $('a.fixture-export-link')[0].click();
+  $('a.player-export-link')[0].click();
+
+  $('.fixture-export-link').remove();
+  $('.player-export-link').remove();
+
+}
+
 $(document).on('click', '.position-header', togglePlayers);
 
 $(document).on('click', '.clear-fixture', event => resetFixture(event));
@@ -538,4 +600,12 @@ $(document).on('click', '.save-week', event => {
 
 $(document).on('click', '.delete-week', event => {
   deleteWeeklyData();
+});
+
+$(document).on('click', '#import-week', event => {
+  importWeekData();
+});
+
+$(document).on('click', '#export-week', event => {
+  exportWeekData();
 });

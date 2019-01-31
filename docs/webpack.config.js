@@ -10,13 +10,13 @@ module.exports = {
     entry: {
         Index: './src/js/Index.ts',
         Players: './src/js/views/Players/Players.ts',
-        Calculations: './src/js/views/Calculations/Calculations.ts'
+        Calculations: './src/js/views/Calculations/Calculations.ts',
+        Table: './src/js/views/Table/Table.ts'
     },
     output: {
         path: __dirname + '/docs',
         filename: '[name].bundle.js',
-        chunkFilename: '[name].bundle.js',
-        publicPath: '/img/'
+        chunkFilename: '[name].bundle.js'
     },
     devServer: {
         contentBase: path.join(__dirname, 'docs'),
@@ -84,7 +84,8 @@ module.exports = {
             $: 'jquery',
             jQuery: 'jquery'
         }),
-        new CopyWebpackPlugin([{ from: 'src/data/FantasyTeams.Json', to: '/' }]),
+        new CopyWebpackPlugin([{ from: 'src/data/FantasyTeams.json', to: '' }]),
+        new CopyWebpackPlugin([{ from: 'src/data/fplData.json', to: '' }]),
         // Generates default index.html
         new HtmlWebpackPlugin({
             title: 'Fantasy Premier League App',
@@ -105,6 +106,13 @@ module.exports = {
             chunks: ['Index', 'Calculations'],
             filename: 'calculator.html',
             template: 'views/calculator.html'
+        }),
+        // Generates table.html
+        new HtmlWebpackPlugin({
+            title: 'Fantasy Premier League App - Table',
+            chunks: ['Index', 'Calculations', 'Table'],
+            filename: 'table.html',
+            template: 'views/table.html'
         }),
         // Extract css into seperate files
         new MiniCssExtractPlugin({

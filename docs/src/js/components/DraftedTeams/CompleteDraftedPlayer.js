@@ -7,6 +7,8 @@ var CompleteDraftedPlayer = /** @class */ (function () {
         this.playerTeamId = player.teamID;
         this.playerTeamName = player.teamName;
         this.playerTeamShort = player.teamShort;
+        this.isUnAvailable = player.isUnavailable;
+        this.playerStatus = player.availabilityType;
         this.transfers = transfers;
     }
     return CompleteDraftedPlayer;
