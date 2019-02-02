@@ -1369,7 +1369,12 @@
       "team_players": [
         {
           "player_id": 191,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_week": 25,
+              "transfer_id": 468
+            }
+          ]
         },
         {
           "player_id": 314,
@@ -1401,15 +1406,30 @@
         },
         {
           "player_id": 151,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_week": 25,
+              "transfer_id": 23
+            }
+          ]
         },
         {
           "player_id": 257,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_week": 25,
+              "transfer_id": 305
+            }
+          ]
         },
         {
           "player_id": 372,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_week": 25,
+              "transfer_id": 496
+            }
+          ]
         }
       ]
     },
