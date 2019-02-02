@@ -19,8 +19,8 @@
         </th>
     </tr>
     {{#each players}}
-    {{#unless unavailableForSeason}}
-    <tr class="player-data" data-position="{{playerType}}" data-id="{{id}}">
+
+    <tr class="player-data {{#if unavailableForSeason}}unavailable{{/if}}" data-position="{{playerType}}" data-id="{{id}}">
         <td>{{id}}</td>
         <td>{{name}}</td>
         <td class="goals-scored">
@@ -33,6 +33,5 @@
             <input type="checkbox" class="red-card-checkbox">
         </td>
     </tr>
-    {{/unless}}
     {{/each}} {{/each}}
 </table>

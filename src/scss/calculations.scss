@@ -123,6 +123,11 @@
           -o-transition: all ease 2s;
           transition: all ease 2s;
         }
+        
+        &.unavailable {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
       }
     }
     .away-team-players,

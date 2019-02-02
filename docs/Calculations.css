@@ -6462,6 +6462,9 @@ footer {
       .fixtures-container .fixtures .player-table .player-data.active {
         display: table-row;
         transition: all ease 2s; }
+      .fixtures-container .fixtures .player-table .player-data.unavailable {
+        opacity: 0.5;
+        cursor: not-allowed; }
   .fixtures-container .fixtures .away-team-players,
   .fixtures-container .fixtures .home-team-players {
     float: left;
