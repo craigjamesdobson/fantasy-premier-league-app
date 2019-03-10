@@ -508,6 +508,16 @@ function exportWeekData() {
     var selectedWeekPlayersText = null;
     var selectedWeekPlayers = 'week_' + $('.week-dropdown').val() + '_players';
     var selectedWeekFixtures = 'week_' + $('.week-dropdown').val() + '_fixtures';
+    if (localStorage.getItem(selectedWeekPlayers) === null && localStorage.getItem(selectedWeekPlayers) === null) {
+        swal({
+            title: 'No week data to export',
+            type: 'error',
+            showCancelButton: false,
+            showConfirmButton: false,
+            timer: 1500,
+        });
+        return;
+    }
     var selectedWeekFixtureString = JSON.stringify(LZDecompress(localStorage.getItem(selectedWeekFixtures)));
     var selectedWeekPlayerString = JSON.stringify(LZDecompress(localStorage.getItem(selectedWeekPlayers)));
     var formattedFixtureString = selectedWeekFixtureString.replace(/^"|"$|\\/g, '');

@@ -41,7 +41,7 @@ function initDraftedTeamData() {
         draftedTeam.pointsTotal = pointsTotal;
     }
     sortTableData();
-    applyPositionData(currentWeek);
+    applyPositionData(currentWeek, prevWeek);
     getWeeklyWinners();
     $('.league-table-container').html(LeagueTableDataTemplate(sortedTableData));
 }
@@ -63,8 +63,9 @@ function sortTableData() {
         .value()
         .reverse();
 }
-function applyPositionData(currentWeek) {
+function applyPositionData(currentWeek, prevWeek) {
     var weekPosition = 0;
+    var prevWeekPosition = 0;
     var tablePosition = 0;
     for (var _i = 0, sortedTableData_2 = sortedTableData; _i < sortedTableData_2.length; _i++) {
         var sortedTeam = sortedTableData_2[_i];
@@ -83,8 +84,12 @@ function applyPositionData(currentWeek) {
             if (sortedTeamWeek.week === currentWeek) {
                 sortedTeamWeek.weekPosition = ++weekPosition;
             }
+            if (sortedTeamWeek.week === prevWeek) {
+                sortedTeamWeek.prevWeekPosition = ++prevWeekPosition;
+            }
         }
     }
+    console.log(sortedTableData);
 }
 $(document).on('change', '.week-dropdown', function (event) {
     initDraftedTeamData();

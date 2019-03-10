@@ -3,12 +3,22 @@
         <h3>Select a week to populate</h3>
         <div class="row">
             <div class="form-group col-12 col-lg-4">
-                <select class="form-control week-dropdown mb-4">
-                    {{#repeat count=38 start=1}}
-                    <option value="{{@index}}">week {{@index}}</option>
-                    {{/repeat}}
-                </select>
                 <div class="row">
+                    <div class="col-6">
+                        <select class="form-control week-dropdown">
+                            {{#repeat count=38 start=1}}
+                            <option value="{{@index}}">week {{@index}}</option>
+                            {{/repeat}}
+                        </select>
+                    </div>
+                    <div class="col-6 d-flex align-items-center">
+                        <div class="form-check exclude-week-container">
+                            <input class="form-check-input" id="exclude-week" type="checkbox" value=""><label
+                                class="form-check-label" for="exclude-week">Is this week incomplete?</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
                     <div class="col-6">
                         <button class="btn btn-block btn-primary save-week">Save Week</button>
                     </div>

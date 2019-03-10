@@ -1,4 +1,11 @@
-<table class="table table-striped">
+{{#each this}}
+{{#if @first}}
+{{#if excludeWeek}}
+<p class="alert alert-warning"><i class="fas fa-info-circle mr-2 align-right"></i>This week is currently incomplete and will not be included in the total points calculation</small>
+{{/if}}
+{{/if}}
+{{/each}}
+<table class="table table-striped mt-2">
     <tr>
         <th class="th-position sticky-header">Position</th>
         <th class="th-prevweek sticky-header">Prv Week</th>
@@ -9,7 +16,8 @@
         <th class="th-total sticky-header">Total Points</th>
     </tr>
     {{#each this}}
-    <tr class="team-row" data-team-id="{{teamID}}" data-team-points="{{pointsTotal}}" data-team-goals="{{goalsTotal}}" data-table-position="{{tablePosition}}">
+    <tr class="team-row" data-team-id="{{teamID}}" data-team-points="{{pointsTotal}}" data-team-goals="{{goalsTotal}}"
+        data-table-position="{{tablePosition}}">
         <td class="td-position {{positionChange}}">{{tablePosition}} <i class="fas {{positionChange}}"></i></td>
         <td class="td-prevweek">{{prevWeekPosition}}</td>
         <td class="td-team">{{teamName}}</td>

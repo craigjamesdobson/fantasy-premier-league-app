@@ -1,0 +1,54 @@
+.badge-ars {
+  display: inline-block;
+  background-color: red;
+  background: url("./../img/badges-sprite.png");
+  background-position: 0 -50px;
+  background-size: 375px;
+  width: 25px;
+  height: 25px;
+}
+
+.badge-che {
+  display: inline-block;
+  background-color: blue;
+  background: url("./../img/badges-sprite.png");
+  background-position: -150px -150px;
+  background-size: 375px;
+  width: 25px;
+  height: 25px;
+}
+
+.badge-liv {
+  display: inline-block;
+  background-color: darkred;
+  background: url("./../img/badges-sprite.png");
+  background-position: -500px -450px;
+  background-size: 375px;
+  width: 25px;
+  height: 25px;
+}
+
+.badge-mnc {
+  display: inline-block;
+  background-color: lightblue;
+  background: url("./../img/badges-sprite.png");
+  background-position: -500px -450px;
+  background-size: 375px;
+  width: 25px;
+  height: 25px;
+}
+
+.badge-mnu {
+  display: inline-block;
+  background-color: red;
+  background: url("./../img/badges-sprite.png");
+  background-position: -500px -450px;
+  background-size: 375px;
+  width: 25px;
+  height: 25px;
+}
+
+label {
+  display: block;
+}
+/*# sourceMappingURL=teams.css.map */

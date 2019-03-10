@@ -7110,6 +7110,15 @@ footer {
   align-items: center;
   justify-content: center; }
 
+.fixtures-container .exclude-week-container input[type="checkbox"] {
+  height: 18px;
+  width: 18px; }
+
+.fixtures-container .exclude-week-container label {
+  margin-left: 10px;
+  vertical-align: sub;
+  font-size: 13px; }
+
 .fixtures-container .fixtures {
   position: relative;
   margin-bottom: 20px; }
