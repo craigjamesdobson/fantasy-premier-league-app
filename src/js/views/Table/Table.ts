@@ -31,9 +31,9 @@ function initDraftedTeamData() {
       if (parseInt(weekData.week, 10) <= currentWeek) {
         if (!weekData.excludeWeek) {
           pointsTotal += weekData.weekPoints;
+          goalsTotal += weekData.weekGoals;
+          redCardTotal += weekData.weekRedCards;
         }
-        goalsTotal += weekData.weekGoals;
-        redCardTotal += weekData.weekRedCards;
       }
 
       if (parseInt(weekData.week, 10) === currentWeek) {
