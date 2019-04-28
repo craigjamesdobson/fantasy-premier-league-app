@@ -954,7 +954,12 @@
         },
         {
           "player_id": 138,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_week": 36,
+              "transfer_id": 268
+            }
+          ]
         },
         {
           "player_id": 312,
@@ -1693,6 +1698,10 @@
             {
               "transfer_week": 27,
               "transfer_id": 302
+            },
+            {
+              "transfer_week": 36,
+              "transfer_id": 394
             }
           ]
         },
