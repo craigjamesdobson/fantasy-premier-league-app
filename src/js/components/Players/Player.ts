@@ -1,6 +1,5 @@
 import { IPlayerDataElements } from '../../components/Players/IPlayerDataElements';
 import { PlayerPosition } from './PlayerPosition';
-import { Position } from '../Positions/Positions';
 
 const imageUrl =
   'https://platform-static-files.s3.amazonaws.com/premierleague/photos/players/40x40/p';
