@@ -1,7 +1,8 @@
 import '../../../scss/calculations.scss';
-import '../../../img/clean_sheet.png';
-import '../../../img/red_card.png';
-import '../../../img/football.png';
+import '../../../img/icon-cleansheet.png';
+import '../../../img/icon-redcard.png';
+import '../../../img/icon-goal.png';
+import '../../../img/icon-assist.png';
 import '../../components/Database/WeeklyData';
 
 import {
