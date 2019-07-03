@@ -7110,7 +7110,7 @@ footer {
   align-items: center;
   justify-content: center; }
 
-.fixtures-container .exclude-week-container input[type="checkbox"] {
+.fixtures-container .exclude-week-container input[type='checkbox'] {
   height: 18px;
   width: 18px; }
 
@@ -7185,8 +7185,9 @@ footer {
         padding: 5px 0px; }
         .fixtures-container .fixtures .player-table .player-data td input {
           vertical-align: middle; }
-        .fixtures-container .fixtures .player-table .player-data td .score-select {
-          width: 40px;
+        .fixtures-container .fixtures .player-table .player-data td .score-select,
+        .fixtures-container .fixtures .player-table .player-data td .assist-select {
+          width: 32px;
           padding: 0 0 0 5px; }
       .fixtures-container .fixtures .player-table .player-data:nth-child(even) {
         background-color: #eee; }
@@ -7282,8 +7283,8 @@ footer {
       color: #fff;
       opacity: 1; }
     .teams-container table .player-total-data.current-week-transfer {
-      background-color: #EEE82C;
-      color: #292F36;
+      background-color: #eee82c;
+      color: #292f36;
       opacity: 1; }
     .teams-container table .player-total-data.sent-off {
       background-color: #d9534f;
@@ -7305,6 +7306,14 @@ footer {
       right: 10px;
       line-height: 20px;
       top: 5px; }
+    .teams-container .header-row th .invalid-team-warning {
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      padding: 2px;
+      background-color: #d9534f;
+      color: #fff; }
   .teams-container .total-points-row th {
     text-align: center; }
 

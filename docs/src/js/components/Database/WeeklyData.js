@@ -187,6 +187,7 @@ export function storeTableData() {
     var _loop_1 = function (draftedTeam) {
         var draftedTeamID = draftedTeam.teamID;
         var currentWeek = parseInt($('.week-dropdown').val(), 10);
+        var excludeWeek = $('#exclude-week').prop('checked');
         $('.table').each(function (i, table) {
             var TableTeamID = parseInt($(table)
                 .find('.drafted-team-name')
@@ -210,6 +211,7 @@ export function storeTableData() {
             if (draftedTeamID === TableTeamID) {
                 weeklyData = {
                     week: currentWeek,
+                    excludeWeek: excludeWeek,
                     weekPoints: weekPoints,
                     weekGoals: weekGoals,
                     weekRedCards: redCards
@@ -221,6 +223,7 @@ export function storeTableData() {
                         if (weekData.week === currentWeek) {
                             weekExists = true;
                             weekData.weekPoints = weekPoints;
+                            weekData.excludeWeek = excludeWeek;
                             weekData.weekGoals = weekGoals;
                             weekData.weekRedCards = redCards;
                         }

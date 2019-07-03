@@ -8,6 +8,7 @@ export class CompleteDraftedTeam {
   private readonly isInvalidTeam: boolean;
   private readonly allowedTransfers: boolean;
   private readonly teamValueAllowed: number;
+  private readonly totalTeamValue: number;
   private readonly teamPlayers: CompleteDraftedPlayer[];
 
   constructor(draftedTeam: DraftedTeam, players: ICompleteDraftedPlayer[]) {
@@ -20,9 +21,9 @@ export class CompleteDraftedTeam {
       x => new CompleteDraftedPlayer(x.player, x.transfers)
     );
 
-    const teamCostTotal = this.teamPlayers.reduce((accumulator, current) => accumulator += parseInt(current.playerPrice, 10), 0);
+    this.totalTeamValue = this.teamPlayers.reduce((accumulator, current) => accumulator += parseInt(current.playerPrice, 10), 0);
 
-    if (teamCostTotal > this.teamValueAllowed) {
+    if (this.totalTeamValue > this.teamValueAllowed) {
       this.isInvalidTeam = true;
     }
   }
