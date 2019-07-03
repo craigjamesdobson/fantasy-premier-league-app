@@ -1,9 +1,8 @@
 @import 'styles';
 
 .fixtures-container {
-
   .exclude-week-container {
-    input[type="checkbox"] {
+    input[type='checkbox'] {
       height: 18px;
       width: 18px;
     }
@@ -120,8 +119,9 @@
             vertical-align: middle;
           }
 
-          .score-select {
-            width: 40px;
+          .score-select,
+          .assist-select {
+            width: 32px;
             padding: 0 0 0 5px;
           }
         }
@@ -137,7 +137,7 @@
           -o-transition: all ease 2s;
           transition: all ease 2s;
         }
-        
+
         &.unavailable {
           opacity: 0.5;
           cursor: not-allowed;
@@ -261,8 +261,8 @@
       }
 
       &.current-week-transfer {
-        background-color: #EEE82C;
-        color: #292F36;
+        background-color: #eee82c;
+        color: #292f36;
         opacity: 1;
       }
 
@@ -294,6 +294,16 @@
       line-height: 20px;
       top: 5px;
     }
+
+    .invalid-team-warning {
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      padding: 2px;
+      background-color: #d9534f;
+      color: #fff;
+    }
   }
 
   .total-points-row {
@@ -307,4 +317,4 @@
   .swal2-textarea {
     font-size: 14px;
   }
-} 
+}

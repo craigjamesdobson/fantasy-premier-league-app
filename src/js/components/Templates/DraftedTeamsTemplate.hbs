@@ -4,7 +4,10 @@
         <table class="table">
             <tbody>
                 <tr class="header-row drafted-team-name" data-id="{{teamID}}">
-                    <th colspan="5">{{teamName}} {{#if allowedTransfers}}<i class="fas fa-exchange-alt icon-transfer"></i>{{/if}}</th>
+                    <th colspan="5">
+                        {{teamName}} {{#if allowedTransfers}}<i class="fas fa-exchange-alt icon-transfer"></i>{{/if}}
+                        {{#if isInvalidTeam}}<span class="invalid-team-warning">{{teamName}} is invalid, please double check</span>{{/if}}
+                    </th>
                 </tr>
                 <tr>
                     <th>ID</th>
@@ -14,7 +17,7 @@
                     <th>Points</th>
                 </tr>
                 {{#each teamPlayers}}
-                <tr class="player-total-data {{playerStatus}}" data-player-id="{{playerId}}" {{#if transfers}}data-transfer="{{#each transfers}}{{transferWeek}}|{{transferId}}{{#if @last}}{{else}},{{/if}}{{/each}}"{{/if}}>
+                <tr class="player-total-data {{playerStatus}}" data-player-price="{{playerPrice}}" data-player-id="{{playerId}}" {{#if transfers}}data-transfer="{{#each transfers}}{{transferWeek}}|{{transferId}}{{#if @last}}{{else}},{{/if}}{{/each}}"{{/if}}>
                     <td class="id" data-original-id="{{playerId}}">{{playerId}}</td>
                     <td class="position" data-original-position="{{playerPosition}}">{{playerPosition}}</td>
                     <td class="club" data-original-team="{{playerTeamShort}}">{{playerTeamShort}}</td>

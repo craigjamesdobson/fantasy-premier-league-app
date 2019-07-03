@@ -11,11 +11,11 @@
         <th>
             <img class="goals-image disabled" src="icon-goal.png" title="Goals Scored" alt="Goals Scored">
         </th>
+                <th>
+            <img class="assist-image" src="icon-assist.png" title="Assist" alt="Assist">
+        </th>
         <th>
             <img class="clean-sheet-image" src="icon-cleansheet.png" title="Clean Sheet" alt="Clean Sheet">
-        </th>
-                <th>
-            <img class="clean-sheet-image" src="icon-assist.png" title="Assist" alt="Assist">
         </th>
         <th>
             <img class="red-card-image" src="icon-redcard.png" title="Red Card" alt="Red Card">
@@ -23,17 +23,18 @@
     </tr>
     {{#each players}}
 
-    <tr class="player-data {{#if unavailableForSeason}}unavailable{{/if}}" data-position="{{playerType}}" data-id="{{id}}">
+    <tr class="player-data {{#if unavailableForSeason}}unavailable{{/if}}" data-position="{{playerType}}"
+        data-id="{{id}}">
         <td>{{id}}</td>
         <td>{{name}}</td>
         <td class="goals-scored">
-        <input class="score-select" type="number" value="0" min="0">
+            <input class="score-select" type="number" value="0" min="0">
+        </td>
+        <td class="assist">
+            <input class="assist-select" type="number" value="0" min="0">
         </td>
         <td class="clean-sheet">
             <input type="checkbox" class="clean-sheet-checkbox">
-        </td>
-        <td class="assist">
-            <input type="checkbox" class="assist-checkbox">
         </td>
         <td class="red-card">
             <input type="checkbox" class="red-card-checkbox">
