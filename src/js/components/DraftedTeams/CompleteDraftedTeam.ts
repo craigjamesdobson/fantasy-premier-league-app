@@ -18,12 +18,7 @@ export class CompleteDraftedTeam {
       x => new CompleteDraftedPlayer(x.player, x.transfers)
     );
 
-    let teamCostTotal = 0;
-    for (const teamPlayer of this.teamPlayers) {
-      const playerPrice = parseInt(teamPlayer.playerPrice, 10);
-
-      teamCostTotal = teamCostTotal + playerPrice;
-    }
+    const teamCostTotal = this.teamPlayers.reduce((accumulator, current) => accumulator += parseInt(current.playerPrice, 10), 0);
 
     if (teamCostTotal > 80) {
       this.isInvalidTeam = true;
