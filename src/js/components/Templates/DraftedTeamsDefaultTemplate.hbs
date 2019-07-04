@@ -1,12 +1,13 @@
 <div class="row">
     {{#each this}}
     <div class="col-xs-12 col-md-3">
-        <table class="table">
+        <table class="table mb-2 mt-4">
             <tbody>
                 <tr class="header-row drafted-team-name" data-id="{{teamID}}">
                     <th colspan="5">
-                        {{teamName}} {{#if allowedTransfers}}<i class="fas fa-exchange-alt icon-transfer" title="Transfers allowed"></i>{{/if}}
-                        {{#if isInvalidTeam}}<span class="invalid-team-warning">{{teamName}} is invalid, please double check</span>{{/if}}
+                        {{teamName}} {{#if allowedTransfers}}<i class="fas fa-exchange-alt icon-transfer"
+                            title="Transfers allowed"></i>{{/if}}
+                        {{#if isInvalidTeam}}<span class="invalid-team-warning">{{teamName}} IS INVALID!</span>{{/if}}
                     </th>
                 </tr>
                 <tr>
@@ -17,7 +18,10 @@
                     <th>Price</th>
                 </tr>
                 {{#each teamPlayers}}
-                <tr class="player-total-data {{playerStatus}}" data-player-price="{{playerPrice}}" data-player-id="{{playerId}}" {{#if transfers}}data-transfer="{{#each transfers}}{{transferWeek}}|{{transferId}}{{#if @last}}{{else}},{{/if}}{{/each}}"{{/if}}>
+                <tr class="player-total-data {{playerStatus}}" data-player-price="{{playerPrice}}"
+                    data-player-id="{{playerId}}"
+                    {{#if transfers}}data-transfer="{{#each transfers}}{{transferWeek}}|{{transferId}}{{#if @last}}{{else}},{{/if}}{{/each}}"
+                    {{/if}}>
                     <td class="id" data-original-id="{{playerId}}">{{playerId}}</td>
                     <td class="position" data-original-position="{{playerPosition}}">{{playerPosition}}</td>
                     <td class="club" data-original-team="{{playerTeamShort}}">{{playerTeamShort}}</td>
@@ -32,6 +36,16 @@
                 </tr>
             </tbody>
         </table>
+        {{#if isInvalidTeam}}
+        <ul class="error-list list-group">
+            {{#each invalidErrorMsg}}
+                <li class="d-flex align-items-center mb-1 small">
+                    <i class="fas fa-exclamation-circle mr-2"></i>
+                    {{this}}
+                </li>
+            {{/each}}
+        </ul>
+        {{/if}}
     </div>
     {{/each}}
 </div>

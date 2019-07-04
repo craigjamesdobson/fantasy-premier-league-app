@@ -4,9 +4,9 @@ import { PlayerPositionShort } from '../Players/PlayerPosition';
 
 export class CompleteDraftedPlayer {
   public readonly playerPrice: string;
+  public readonly playerPosition: string;
   private readonly playerId: number;
   private readonly playerName: string;
-  private readonly playerPosition: string;
   private readonly playerTeamId: number;
   private readonly playerTeamName: string;
   private readonly playerTeamShort: string;

@@ -311,6 +311,13 @@
       text-align: center;
     }
   }
+  .error-list {
+    text-align: left;
+
+    .fa-exclamation-circle {
+      color: #DB0100;
+    }
+  }
 }
 
 .swal2-popup.swal-import {
