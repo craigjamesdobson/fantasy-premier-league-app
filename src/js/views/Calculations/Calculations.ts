@@ -259,6 +259,9 @@ export function populateAllFixtures() {
             $(dataPlayer)
               .find('.score-select')
               .val(playerList[j].goalsScored);
+            $(dataPlayer)
+              .find('.assist-select')
+              .val(playerList[j].assistTotal);
           }
         });
       });

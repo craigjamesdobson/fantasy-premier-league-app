@@ -68,6 +68,10 @@ export function storeWeeklyData() {
       $(player)
         .find('.score-select')
         .val() !== '0';
+    const hasAssisted =
+      $(player)
+        .find('.assist-select')
+        .val() !== '0';
     const hasCleanSheet = $(player)
       .find('.clean-sheet-checkbox')
       .prop('checked');
@@ -75,12 +79,15 @@ export function storeWeeklyData() {
       .find('.red-card-checkbox')
       .prop('checked');
 
-    if (hasScored || hasCleanSheet || sentOff) {
+    if (hasScored || hasAssisted || hasCleanSheet || sentOff) {
       const playerName = $(player)
         .find('td:nth-child(2)')
         .text();
       const playerID = $(player).attr('data-id');
       const goalsScored = $(player)
+        .find('.score-select')
+        .val();
+      const assistTotal = $(player)
         .find('.score-select')
         .val();
       const cleanSheet = $(player)
@@ -98,6 +105,7 @@ export function storeWeeklyData() {
         playerName: playerName,
         playerID: playerID,
         goalsScored: goalsScored,
+        assistTotal: assistTotal,
         cleanSheet: cleanSheet,
         redCard: redCard
       };
@@ -240,7 +248,7 @@ export function storeTableData() {
       );
       let weeklyData = {};
       let weekGoals = 0;
-      let redCards  = 0;
+      let redCards = 0;
 
       $(table)
         .find('.player-total-data')
@@ -287,9 +295,9 @@ export function storeTableData() {
 
 function IsValidJSONString(str) {
   try {
-      JSON.parse(str);
+    JSON.parse(str);
   } catch (e) {
-      return false;
+    return false;
   }
   return true;
 }
@@ -298,8 +306,7 @@ export function importWeekData() {
   const currentWeek = parseInt($('.week-dropdown').val() as string, 10);
 
   swal({
-    html:
-    `<form>
+    html: `<form>
       <div class="form-group">
         <label for="import-week-fixtures">Input fixture data below</label>
         <textarea class="form-control swal2-textarea" id="import-week-fixtures" placeholder="Input fixture data here..."></textarea>
@@ -317,9 +324,18 @@ export function importWeekData() {
       const weekFixtureText = $('#import-week-fixtures').val() as string;
       const weekPlayerText = $('#import-week-players').val() as string;
 
-      if (IsValidJSONString(weekFixtureText) && IsValidJSONString(weekPlayerText)) {
-        localStorage.setItem('week_' + currentWeek + '_fixtures', LZCompress(weekFixtureText));
-        localStorage.setItem('week_' + currentWeek + '_players', LZCompress(weekPlayerText));
+      if (
+        IsValidJSONString(weekFixtureText) &&
+        IsValidJSONString(weekPlayerText)
+      ) {
+        localStorage.setItem(
+          'week_' + currentWeek + '_fixtures',
+          LZCompress(weekFixtureText)
+        );
+        localStorage.setItem(
+          'week_' + currentWeek + '_players',
+          LZCompress(weekPlayerText)
+        );
         $('.week-dropdown').trigger('change');
       } else {
         swal({
