@@ -1,4 +1,5 @@
 import '../../../scss/calculations.scss';
+import '../../../scss/teams.scss';
 
 import { CompleteDraftedTeam } from '../../components/DraftedTeams/CompleteDraftedTeam';
 import { CreatePlayerData } from '../../components/Players/CreatePlayerData';
