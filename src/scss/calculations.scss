@@ -306,6 +306,13 @@
     }
   }
 
+  .invalid-team {
+    .icon-transfer {
+      z-index: 10;
+      color: #fff;
+    }
+  }
+
   .total-points-row {
     th {
       text-align: center;

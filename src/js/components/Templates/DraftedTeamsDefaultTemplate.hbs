@@ -3,7 +3,7 @@
     <div class="col-xs-12 col-md-3">
         <table class="table mb-2 mt-4">
             <tbody>
-                <tr class="header-row drafted-team-name" data-id="{{teamID}}">
+                <tr class="header-row drafted-team-name {{#if isInvalidTeam}}invalid-team{{/if}}" data-id="{{teamID}}">
                     <th colspan="5">
                         {{teamName}} {{#if allowedTransfers}}<i class="fas fa-exchange-alt icon-transfer"
                             title="Transfers allowed"></i>{{/if}}
