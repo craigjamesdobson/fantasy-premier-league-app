@@ -72,7 +72,7 @@ export class CompleteDraftedTeam {
 
     if (this.totalTeamValue > this.teamValueAllowed) {
       this.isInvalidTeam = true;
-      this.invalidErrorMsg.push(`The team value exceeds ${this.teamValueAllowed} million limit`);
+      this.invalidErrorMsg.push(`The team value exceeds the ${this.teamValueAllowed} million limit`);
     }
   }
 }
