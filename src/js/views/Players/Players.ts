@@ -18,35 +18,36 @@ GetStaticData.getstaticData().then(data => {
   initPlayerData(playerData);
 });
 
-function initPlayerData(playerList?: PlayerList, filterString?: string) {
-  const filter = filterString;
-  const players = playerList.players.filter(
-    p =>
-      p.name
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')
-        .toLowerCase()
-        .indexOf(filter ? filter : '') > -1
-  );
+function initPlayerData(playerList?: PlayerList, filterName?: string, filterPrice?: string) {
+  const FilterName = filterName;
+  const FilterPrice = filterPrice;
+  const players = playerList.players;
+  const filteredPlayers = playerList.getFilteredPlayers(filterName, filterPrice);
+
   const goalkeepers = playerList.getFilteredPlayersOfType(
     PlayerPosition.Goalkeeper,
-    filter ? filter : ''
+    FilterName ? FilterName : '',
+    FilterPrice ? FilterPrice : ''
   );
   const defenders = playerList.getFilteredPlayersOfType(
     PlayerPosition.Defender,
-    filter ? filter : ''
+    FilterName ? FilterName : '',
+    FilterPrice ? FilterPrice : ''
   );
   const midfielders = playerList.getFilteredPlayersOfType(
     PlayerPosition.Midfielder,
-    filter ? filter : ''
+    FilterName ? FilterName : '',
+    FilterPrice ? FilterPrice : ''
   );
   const forwards = playerList.getFilteredPlayersOfType(
     PlayerPosition.Forward,
-    filter ? filter : ''
+    FilterName ? FilterName : '',
+    FilterPrice ? FilterPrice : ''
   );
 
   // prettier-ignore
   dividedPlayerData = {
+    filteredPlayers: filteredPlayers,
     players: players,
 
     gkLeft: goalkeepers[0],
@@ -66,13 +67,23 @@ function initPlayerData(playerList?: PlayerList, filterString?: string) {
   $('.loading').hide();
 }
 
-$('#searchInput').on(
+$('#search-name').on(
   'paste, keyup',
   debounce(event => {
     const $this = $(event.currentTarget);
 
     const searchtext = $this.val() as string;
+    const searchPrice = $('#search-price').val() as string;
 
-    initPlayerData(playerData, searchtext.toLowerCase());
+    initPlayerData(playerData, searchtext.toLowerCase(), searchPrice);
   }, 500)
 );
+
+$('#search-price').on('change', event => {
+    const $this = $(event.currentTarget);
+
+    const searchtext = $('#search-name').val() as string;
+    const searchPrice = $this.val() as string;
+
+    initPlayerData(playerData, searchtext.toLowerCase(), searchPrice);
+});
