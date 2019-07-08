@@ -258,10 +258,10 @@
     {
       "team_id": 1,
       "team_name": "TEST FC 6",
-      "allowed_transfers": true,
+      "allowed_transfers": false,
       "team_players": [
         {
-          "player_id": 388,
+          "player_id": 212,
           "transfers": []
         },
         {
@@ -277,7 +277,7 @@
           "transfers": []
         },
         {
-          "player_id": 122,
+          "player_id": 401,
           "transfers": []
         },
         {
@@ -285,7 +285,7 @@
           "transfers": []
         },
         {
-          "player_id": 133,
+          "player_id": 214,
           "transfers": []
         },
         {
@@ -293,7 +293,7 @@
           "transfers": []
         },
         {
-          "player_id": 409,
+          "player_id": 210,
           "transfers": []
         },
         {
