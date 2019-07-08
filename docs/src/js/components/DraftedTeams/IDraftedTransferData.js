@@ -1,1 +1,0 @@
-//# sourceMappingURL=IDraftedTransferData.js.map
