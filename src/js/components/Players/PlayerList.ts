@@ -14,7 +14,7 @@ export class PlayerList {
     const FilterName = filterName ? filterName : '';
     const FilterPrice = filterPrice ? filterPrice : '';
 
-    const filteredPlayers = this.players.filter(
+    let filteredPlayers = this.players.filter(
       p =>
         p.name
           .normalize('NFD')
@@ -23,7 +23,9 @@ export class PlayerList {
           .indexOf(FilterName) > -1
     );
 
-    filteredPlayers.filter( p => p.price.indexOf(FilterPrice) > -1);
+    filteredPlayers = filteredPlayers.filter(
+      p => p.price.indexOf(FilterPrice) > -1
+    );
 
     return this.filteredPlayers = filteredPlayers;
   }
