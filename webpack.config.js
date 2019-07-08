@@ -80,6 +80,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin([__dirname + '/docs']),
     // This automatically adds aliases to the application scope for the specified packages
     // So packages which look for the 'jQuery' global alias still work within our app closure
     new webpack.ProvidePlugin({
@@ -87,8 +88,8 @@ module.exports = {
       jQuery: 'jquery'
     }),
 
-    new CopyWebpackPlugin([{ from: 'src/data/FantasyTeams.json', to: '' }]),
-    new CopyWebpackPlugin([{ from: 'src/data/fplData.json', to: '' }]),
+    new CopyWebpackPlugin([{ from: 'src/data/', to: '' }]),
+    new CopyWebpackPlugin([{ from: 'src/misc/', to: '' }]),
 
     // Generates default index.html
     new HtmlWebpackPlugin({
