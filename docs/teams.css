@@ -7314,8 +7314,15 @@ footer {
       padding: 2px;
       background-color: #d9534f;
       color: #fff; }
+  .teams-container .invalid-team .icon-transfer {
+    z-index: 10;
+    color: #fff; }
   .teams-container .total-points-row th {
     text-align: center; }
+  .teams-container .error-list {
+    text-align: left; }
+    .teams-container .error-list .fa-exclamation-circle {
+      color: #DB0100; }
 
 .swal2-popup.swal-import .swal2-textarea {
   font-size: 14px; }
