@@ -2,300 +2,23 @@
   "drafted_teams": [
     {
       "team_id": 1,
-      "team_name": "HELLS BELLS BALL BOYS",
+      "team_name": "TEST FC",
       "allowed_transfers": true,
       "team_players": [
         {
-          "player_id": 468,
+          "player_id": 388,
           "transfers": []
         },
         {
-          "player_id": 11,
+          "player_id": 212,
           "transfers": []
         },
         {
-          "player_id": 32,
+          "player_id": 181,
           "transfers": []
         },
         {
-          "player_id": 220,
-          "transfers": []
-        },
-        {
-          "player_id": 262,
-          "transfers": [
-            {
-              "transfer_week": 20,
-              "transfer_id": 427
-            }
-          ]
-        },
-        {
-          "player_id": 253,
-          "transfers": []
-        },
-        {
-          "player_id": 300,
-          "transfers": [
-            {
-              "transfer_week": 5,
-              "transfer_id": 370
-            },
-            {
-              "transfer_week": 20,
-              "transfer_id": 367
-            }
-          ]
-        },
-        {
-          "player_id": 365,
-          "transfers": []
-        },
-        {
-          "player_id": 177,
-          "transfers": [
-            {
-              "transfer_week": 5,
-              "transfer_id": 305
-            }
-          ]
-        },
-        {
-          "player_id": 280,
-          "transfers": []
-        },
-        {
-          "player_id": 372,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 2,
-      "team_name": "COTFORD KOP",
-      "allowed_transfers": true,
-      "team_players": [
-        {
-          "player_id": 260,
-          "transfers": []
-        },
-        {
-          "player_id": 48,
-          "transfers": []
-        },
-        {
-          "player_id": 239,
-          "transfers": [
-            {
-              "transfer_week": 5,
-              "transfer_id": 242
-            }
-          ]
-        },
-        {
-          "player_id": 286,
-          "transfers": []
-        },
-        {
-          "player_id": 377,
-          "transfers": [
-            {
-              "transfer_week": 5,
-              "transfer_id": 376
-            }
-          ]
-        },
-        {
-          "player_id": 253,
-          "transfers": []
-        },
-        {
-          "player_id": 251,
-          "transfers": []
-        },
-        {
-          "player_id": 276,
-          "transfers": []
-        },
-        {
-          "player_id": 151,
-          "transfers": [
-            {
-              "transfer_week": 23,
-              "transfer_id": 280
-            }
-          ]
-        },
-        {
-          "player_id": 306,
-          "transfers": []
-        },
-        {
-          "player_id": 372,
-          "transfers": [
-            {
-              "transfer_week": 23,
-              "transfer_id": 305
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "team_id": 3,
-      "team_name": "DYNAMO BROOKS",
-      "allowed_transfers": true,
-      "team_players": [
-        {
-          "player_id": 468,
-          "transfers": []
-        },
-        {
-          "player_id": 53,
-          "transfers": []
-        },
-        {
-          "player_id": 93,
-          "transfers": []
-        },
-        {
-          "player_id": 335,
-          "transfers": []
-        },
-        {
-          "player_id": 428,
-          "transfers": []
-        },
-        {
-          "player_id": 253,
-          "transfers": []
-        },
-        {
-          "player_id": 13,
-          "transfers": [
-            {
-              "transfer_week": 29,
-              "transfer_id": 275
-            }
-          ]
-        },
-        {
-          "player_id": 223,
-          "transfers": [
-            {
-              "transfer_week": 29,
-              "transfer_id": 302
-            }
-          ]
-        },
-        {
-          "player_id": 23,
-          "transfers": []
-        },
-        {
-          "player_id": 372,
-          "transfers": []
-        },
-        {
-          "player_id": 22,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 4,
-      "team_name": "MONTYCHUCKA",
-      "allowed_transfers": true,
-      "team_players": [
-        {
-          "player_id": 282,
-          "transfers": [
-            {
-              "transfer_week": 4,
-              "transfer_id": 260
-            }
-          ]
-        },
-        {
-          "player_id": 120,
-          "transfers": [
-            {
-              "transfer_week": 4,
-              "transfer_id": 357
-            }
-          ]
-        },
-        {
-          "player_id": 220,
-          "transfers": []
-        },
-        {
-          "player_id": 246,
-          "transfers": []
-        },
-        {
-          "player_id": 267,
-          "transfers": [
-            {
-              "transfer_week": 16,
-              "transfer_id": 427
-            }
-          ]
-        },
-        {
-          "player_id": 17,
-          "transfers": []
-        },
-        {
-          "player_id": 304,
-          "transfers": [
-            {
-              "transfer_week": 16,
-              "transfer_id": 223
-            }
-          ]
-        },
-        {
-          "player_id": 253,
-          "transfers": []
-        },
-        {
-          "player_id": 305,
-          "transfers": []
-        },
-        {
-          "player_id": 280,
-          "transfers": []
-        },
-        {
-          "player_id": 372,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 5,
-      "team_name": "KNOBBYS SOLANO'S",
-      "allowed_transfers": false,
-      "team_players": [
-        {
-          "player_id": 213,
-          "transfers": []
-        },
-        {
-          "player_id": 114,
-          "transfers": []
-        },
-        {
-          "player_id": 285,
-          "transfers": []
-        },
-        {
-          "player_id": 262,
-          "transfers": []
-        },
-        {
-          "player_id": 357,
+          "player_id": 381,
           "transfers": []
         },
         {
@@ -303,894 +26,15 @@
           "transfers": []
         },
         {
-          "player_id": 270,
+          "player_id": 191,
           "transfers": []
         },
         {
-          "player_id": 253,
-          "transfers": []
-        },
-        {
-          "player_id": 234,
-          "transfers": []
-        },
-        {
-          "player_id": 280,
-          "transfers": []
-        },
-        {
-          "player_id": 372,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 6,
-      "team_name": "JABBA MUNCHESONPORKSCRAZ",
-      "allowed_transfers": true,
-      "team_players": [
-        {
-          "player_id": 282,
-          "transfers": []
-        },
-        {
-          "player_id": 48,
-          "transfers": []
-        },
-        {
-          "player_id": 246,
-          "transfers": []
-        },
-        {
-          "player_id": 10,
-          "transfers": [
-            {
-              "transfer_week": 10,
-              "transfer_id": 116
-            }
-          ]
-        },
-        {
-          "player_id": 220,
-          "transfers": []
-        },
-        {
-          "player_id": 364,
-          "transfers": [
-            {
-              "transfer_week": 27,
-              "transfer_id": 367
-            }
-          ]
-        },
-        {
-          "player_id": 251,
-          "transfers": []
-        },
-        {
-          "player_id": 276,
-          "transfers": []
-        },
-        {
-          "player_id": 23,
-          "transfers": []
-        },
-        {
-          "player_id": 417,
-          "transfers": [
-            {
-              "transfer_week": 27,
-              "transfer_id": 579
-            }
-          ]
-        },
-        {
-          "player_id": 281,
-          "transfers": [
-            {
-              "transfer_week": 30,
-              "transfer_id": 280
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "team_id": 7,
-      "team_name": "DESPERADOS CITY",
-      "allowed_transfers": true,
-      "team_players": [
-        {
-          "player_id": 154,
-          "transfers": [
-            {
-              "transfer_week": 30,
-              "transfer_id": 260
-            }
-          ]
-        },
-        {
-          "player_id": 162,
-          "transfers": []
-        },
-        {
-          "player_id": 48,
-          "transfers": []
-        },
-        {
-          "player_id": 220,
-          "transfers": []
-        },
-        {
-          "player_id": 70,
-          "transfers": []
-        },
-        {
-          "player_id": 251,
-          "transfers": []
-        },
-        {
-          "player_id": 364,
-          "transfers": []
-        },
-        {
-          "player_id": 122,
-          "transfers": []
-        },
-        {
-          "player_id": 280,
-          "transfers": []
-        },
-        {
-          "player_id": 372,
-          "transfers": []
-        },
-        {
-          "player_id": 480,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 8,
-      "team_name": "BRING IT ON THIS TIME",
-      "allowed_transfers": false,
-      "team_players": [
-        {
-          "player_id": 468,
-          "transfers": []
-        },
-        {
-          "player_id": 220,
-          "transfers": []
-        },
-        {
-          "player_id": 246,
-          "transfers": []
-        },
-        {
-          "player_id": 115,
-          "transfers": []
-        },
-        {
-          "player_id": 357,
-          "transfers": []
-        },
-        {
-          "player_id": 253,
-          "transfers": []
-        },
-        {
-          "player_id": 251,
-          "transfers": []
-        },
-        {
-          "player_id": 275,
-          "transfers": []
-        },
-        {
-          "player_id": 257,
-          "transfers": []
-        },
-        {
-          "player_id": 306,
-          "transfers": []
-        },
-        {
-          "player_id": 372,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 9,
-      "team_name": "WE HAVE IT ALL",
-      "allowed_transfers": true,
-      "team_players": [
-        {
-          "player_id": 154,
-          "transfers": []
-        },
-        {
-          "player_id": 246,
-          "transfers": []
-        },
-        {
-          "player_id": 264,
-          "transfers": []
-        },
-        {
-          "player_id": 357,
-          "transfers": []
-        },
-        {
-          "player_id": 6,
-          "transfers": []
-        },
-        {
-          "player_id": 253,
-          "transfers": []
-        },
-        {
-          "player_id": 365,
-          "transfers": []
-        },
-        {
-          "player_id": 342,
-          "transfers": [
-            {
-              "transfer_week": 14,
-              "transfer_id": 450
-            }
-          ]
-        },
-        {
-          "player_id": 234,
-          "transfers": []
-        },
-        {
-          "player_id": 280,
-          "transfers": []
-        },
-        {
-          "player_id": 257,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 10,
-      "team_name": "ELITE 11",
-      "allowed_transfers": false,
-      "team_players": [
-        {
-          "player_id": 282,
-          "transfers": []
-        },
-        {
-          "player_id": 357,
-          "transfers": []
-        },
-        {
-          "player_id": 264,
-          "transfers": []
-        },
-        {
-          "player_id": 115,
-          "transfers": []
-        },
-        {
-          "player_id": 220,
-          "transfers": []
-        },
-        {
-          "player_id": 295,
-          "transfers": []
-        },
-        {
-          "player_id": 251,
-          "transfers": []
-        },
-        {
-          "player_id": 273,
-          "transfers": []
-        },
-        {
-          "player_id": 306,
-          "transfers": []
-        },
-        {
-          "player_id": 280,
-          "transfers": []
-        },
-        {
-          "player_id": 372,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 11,
-      "team_name": "CORKY'S WARHORSES",
-      "allowed_transfers": false,
-      "team_players": [
-        {
-          "player_id": 282,
-          "transfers": []
-        },
-        {
-          "player_id": 115,
-          "transfers": []
-        },
-        {
-          "player_id": 140,
-          "transfers": []
-        },
-        {
-          "player_id": 156,
-          "transfers": []
-        },
-        {
-          "player_id": 157,
-          "transfers": []
-        },
-        {
-          "player_id": 122,
-          "transfers": []
-        },
-        {
-          "player_id": 251,
-          "transfers": []
-        },
-        {
-          "player_id": 253,
-          "transfers": []
-        },
-        {
-          "player_id": 280,
-          "transfers": []
-        },
-        {
-          "player_id": 306,
-          "transfers": []
-        },
-        {
-          "player_id": 372,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 12,
-      "team_name": "AFC  BJ",
-      "allowed_transfers": true,
-      "team_players": [
-        {
-          "player_id": 468,
-          "transfers": []
-        },
-        {
-          "player_id": 140,
-          "transfers": []
-        },
-        {
-          "player_id": 196,
-          "transfers": [
-            {
-              "transfer_week": 3,
-              "transfer_id": 245
-            }
-          ]
-        },
-        {
-          "player_id": 427,
-          "transfers": []
-        },
-        {
-          "player_id": 334,
-          "transfers": []
-        },
-        {
-          "player_id": 223,
-          "transfers": [
-            {
-              "transfer_week": 6,
-              "transfer_id": 367
-            }
-          ]
-        },
-        {
-          "player_id": 13,
-          "transfers": [
-            {
-              "transfer_week": 3,
-              "transfer_id": 302
-            }
-          ]
-        },
-        {
-          "player_id": 253,
-          "transfers": []
-        },
-        {
-          "player_id": 234,
-          "transfers": []
-        },
-        {
-          "player_id": 372,
-          "transfers": []
-        },
-        {
-          "player_id": 306,
-          "transfers": [
-            {
-              "transfer_week": 3,
-              "transfer_id": 280
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "team_id": 13,
-      "team_name": "THATCHERS REVENGE",
-      "allowed_transfers": true,
-      "team_players": [
-        {
-          "player_id": 260,
-          "transfers": []
-        },
-        {
-          "player_id": 288,
-          "transfers": []
-        },
-        {
-          "player_id": 357,
-          "transfers": []
-        },
-        {
-          "player_id": 220,
-          "transfers": []
-        },
-        {
-          "player_id": 157,
-          "transfers": []
-        },
-        {
-          "player_id": 304,
-          "transfers": []
-        },
-        {
-          "player_id": 253,
-          "transfers": []
-        },
-        {
-          "player_id": 18,
-          "transfers": []
-        },
-        {
-          "player_id": 151,
-          "transfers": []
-        },
-        {
-          "player_id": 372,
-          "transfers": []
-        },
-        {
-          "player_id": 281,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 14,
-      "team_name": "REAL SOSOBAD",
-      "allowed_transfers": false,
-      "team_players": [
-        {
-          "player_id": 260,
-          "transfers": []
-        },
-        {
-          "player_id": 142,
-          "transfers": []
-        },
-        {
-          "player_id": 264,
-          "transfers": []
-        },
-        {
-          "player_id": 246,
-          "transfers": []
-        },
-        {
-          "player_id": 115,
-          "transfers": []
-        },
-        {
-          "player_id": 253,
-          "transfers": []
-        },
-        {
-          "player_id": 270,
+          "player_id": 133,
           "transfers": []
         },
         {
           "player_id": 150,
-          "transfers": []
-        },
-        {
-          "player_id": 280,
-          "transfers": []
-        },
-        {
-          "player_id": 306,
-          "transfers": []
-        },
-        {
-          "player_id": 372,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 15,
-      "team_name": "RONALDARLOW FC",
-      "allowed_transfers": false,
-      "team_players": [
-        {
-          "player_id": 260,
-          "transfers": []
-        },
-        {
-          "player_id": 30,
-          "transfers": []
-        },
-        {
-          "player_id": 220,
-          "transfers": []
-        },
-        {
-          "player_id": 246,
-          "transfers": []
-        },
-        {
-          "player_id": 48,
-          "transfers": []
-        },
-        {
-          "player_id": 253,
-          "transfers": []
-        },
-        {
-          "player_id": 270,
-          "transfers": []
-        },
-        {
-          "player_id": 295,
-          "transfers": []
-        },
-        {
-          "player_id": 280,
-          "transfers": []
-        },
-        {
-          "player_id": 306,
-          "transfers": []
-        },
-        {
-          "player_id": 372,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 16,
-      "team_name": "JOHNNYDOGSDONKEYS",
-      "allowed_transfers": false,
-      "team_players": [
-        {
-          "player_id": 260,
-          "transfers": []
-        },
-        {
-          "player_id": 262,
-          "transfers": []
-        },
-        {
-          "player_id": 115,
-          "transfers": []
-        },
-        {
-          "player_id": 138,
-          "transfers": []
-        },
-        {
-          "player_id": 246,
-          "transfers": []
-        },
-        {
-          "player_id": 251,
-          "transfers": []
-        },
-        {
-          "player_id": 275,
-          "transfers": []
-        },
-        {
-          "player_id": 253,
-          "transfers": []
-        },
-        {
-          "player_id": 280,
-          "transfers": []
-        },
-        {
-          "player_id": 306,
-          "transfers": []
-        },
-        {
-          "player_id": 372,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 17,
-      "team_name": "SNAKES AND ANTNERS",
-      "allowed_transfers": true,
-      "team_players": [
-        {
-          "player_id": 154,
-          "transfers": []
-        },
-        {
-          "player_id": 142,
-          "transfers": []
-        },
-        {
-          "player_id": 115,
-          "transfers": []
-        },
-        {
-          "player_id": 138,
-          "transfers": [
-            {
-              "transfer_week": 36,
-              "transfer_id": 268
-            }
-          ]
-        },
-        {
-          "player_id": 312,
-          "transfers": []
-        },
-        {
-          "player_id": 253,
-          "transfers": []
-        },
-        {
-          "player_id": 365,
-          "transfers": [
-            {
-              "transfer_week": 24,
-              "transfer_id": 302
-            }
-          ]
-        },
-        {
-          "player_id": 150,
-          "transfers": []
-        },
-        {
-          "player_id": 280,
-          "transfers": []
-        },
-        {
-          "player_id": 306,
-          "transfers": []
-        },
-        {
-          "player_id": 417,
-          "transfers": [
-            {
-              "transfer_week": 16,
-              "transfer_id": 43
-            },
-            {
-              "transfer_week": 27,
-              "transfer_id": 305
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "team_id": 18,
-      "team_name": "SCRUMPY FCUK",
-      "allowed_transfers": false,
-      "team_players": [
-        {
-          "player_id": 154,
-          "transfers": []
-        },
-        {
-          "player_id": 264,
-          "transfers": []
-        },
-        {
-          "player_id": 220,
-          "transfers": []
-        },
-        {
-          "player_id": 113,
-          "transfers": []
-        },
-        {
-          "player_id": 143,
-          "transfers": []
-        },
-        {
-          "player_id": 253,
-          "transfers": []
-        },
-        {
-          "player_id": 122,
-          "transfers": []
-        },
-        {
-          "player_id": 273,
-          "transfers": []
-        },
-        {
-          "player_id": 372,
-          "transfers": []
-        },
-        {
-          "player_id": 280,
-          "transfers": []
-        },
-        {
-          "player_id": 257,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 19,
-      "team_name": "DAY DO DOH DON’T DAY DOH",
-      "allowed_transfers": true,
-      "team_players": [
-        {
-          "player_id": 468,
-          "transfers": []
-        },
-        {
-          "player_id": 53,
-          "transfers": []
-        },
-        {
-          "player_id": 95,
-          "transfers": []
-        },
-        {
-          "player_id": 145,
-          "transfers": []
-        },
-        {
-          "player_id": 427,
-          "transfers": []
-        },
-        {
-          "player_id": 253,
-          "transfers": []
-        },
-        {
-          "player_id": 251,
-          "transfers": []
-        },
-        {
-          "player_id": 223,
-          "transfers": [
-            {
-              "transfer_week": 4,
-              "transfer_id": 365
-            },
-            {
-              "transfer_week": 6,
-              "transfer_id": 122
-            }
-          ]
-        },
-        {
-          "player_id": 372,
-          "transfers": []
-        },
-        {
-          "player_id": 281,
-          "transfers": []
-        },
-        {
-          "player_id": 234,
-          "transfers": [
-            {
-              "transfer_week": 6,
-              "transfer_id": 151
-            },
-            {
-              "transfer_week": 26,
-              "transfer_id": 305
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "team_id": 20,
-      "team_name": "YOU PETR CECH YOURSELF",
-      "allowed_transfers": false,
-      "team_players": [
-        {
-          "player_id": 282,
-          "transfers": []
-        },
-        {
-          "player_id": 284,
-          "transfers": []
-        },
-        {
-          "player_id": 264,
-          "transfers": []
-        },
-        {
-          "player_id": 5,
-          "transfers": []
-        },
-        {
-          "player_id": 115,
-          "transfers": []
-        },
-        {
-          "player_id": 122,
-          "transfers": []
-        },
-        {
-          "player_id": 364,
-          "transfers": []
-        },
-        {
-          "player_id": 253,
-          "transfers": []
-        },
-        {
-          "player_id": 280,
-          "transfers": []
-        },
-        {
-          "player_id": 257,
-          "transfers": []
-        },
-        {
-          "player_id": 306,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 21,
-      "team_name": "JESUS LOVES BUT DAVE SAVES",
-      "allowed_transfers": false,
-      "team_players": [
-        {
-          "player_id": 282,
-          "transfers": []
-        },
-        {
-          "player_id": 220,
-          "transfers": []
-        },
-        {
-          "player_id": 357,
           "transfers": []
         },
         {
@@ -1198,251 +42,85 @@
           "transfers": []
         },
         {
-          "player_id": 423,
-          "transfers": []
-        },
-        {
-          "player_id": 122,
-          "transfers": []
-        },
-        {
-          "player_id": 295,
-          "transfers": []
-        },
-        {
-          "player_id": 253,
-          "transfers": []
-        },
-        {
-          "player_id": 306,
-          "transfers": []
-        },
-        {
-          "player_id": 372,
-          "transfers": []
-        },
-        {
-          "player_id": 280,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 22,
-      "team_name": "DIAMOND DOGS",
-      "allowed_transfers": true,
-      "team_players": [
-        {
-          "player_id": 154,
-          "transfers": []
-        },
-        {
-          "player_id": 354,
-          "transfers": []
-        },
-        {
-          "player_id": 357,
-          "transfers": []
-        },
-        {
-          "player_id": 463,
-          "transfers": []
-        },
-        {
-          "player_id": 408,
-          "transfers": []
-        },
-        {
-          "player_id": 364,
-          "transfers": []
-        },
-        {
-          "player_id": 324,
-          "transfers": [
-            {
-              "transfer_week": 23,
-              "transfer_id": 253
-            }
-          ]
-        },
-        {
-          "player_id": 122,
-          "transfers": []
-        },
-        {
-          "player_id": 372,
-          "transfers": [
-            {
-              "transfer_week": 23,
-              "transfer_id": 189
-            }
-          ]
-        },
-        {
-          "player_id": 280,
-          "transfers": []
-        },
-        {
-          "player_id": 257,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 23,
-      "team_name": "TOMTIC18",
-      "allowed_transfers": true,
-      "team_players": [
-        {
-          "player_id": 468,
-          "transfers": []
-        },
-        {
-          "player_id": 262,
-          "transfers": [
-            {
-              "transfer_week": 26,
-              "transfer_id": 3
-            }
-          ]
-        },
-        {
-          "player_id": 222,
-          "transfers": []
-        },
-        {
-          "player_id": 162,
-          "transfers": []
-        },
-        {
-          "player_id": 27,
-          "transfers": []
-        },
-        {
-          "player_id": 223,
-          "transfers": [
-            {
-              "transfer_week": 26,
-              "transfer_id": 302
-            }
-          ]
-        },
-        {
-          "player_id": 253,
-          "transfers": []
-        },
-        {
-          "player_id": 122,
-          "transfers": []
-        },
-        {
-          "player_id": 257,
-          "transfers": []
-        },
-        {
-          "player_id": 280,
-          "transfers": []
-        },
-        {
-          "player_id": 62,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 24,
-      "team_name": "TEAMTIC",
-      "allowed_transfers": true,
-      "team_players": [
-        {
-          "player_id": 282,
-          "transfers": []
-        },
-        {
-          "player_id": 220,
+          "player_id": 166,
           "transfers": []
         },
         {
           "player_id": 11,
           "transfers": []
-        },
-        {
-          "player_id": 331,
-          "transfers": [
-            {
-              "transfer_week": 12,
-              "transfer_id": 246
-            }
-          ]
-        },
-        {
-          "player_id": 48,
-          "transfers": []
-        },
-        {
-          "player_id": 270,
-          "transfers": []
-        },
-        {
-          "player_id": 124,
-          "transfers": []
-        },
-        {
-          "player_id": 295,
-          "transfers": [
-            {
-              "transfer_week": 12,
-              "transfer_id": 251
-            }
-          ]
-        },
-        {
-          "player_id": 177,
-          "transfers": [
-            {
-              "transfer_week": 12,
-              "transfer_id": 43
-            }
-          ]
-        },
-        {
-          "player_id": 23,
-          "transfers": []
-        },
-        {
-          "player_id": 372,
-          "transfers": []
         }
       ]
     },
     {
-      "team_id": 25,
-      "team_name": "STORMIN'S ELITE",
-      "allowed_transfers": true,
+      "team_id": 1,
+      "team_name": "TEST FC 2",
+      "allowed_transfers": false,
       "team_players": [
+        {
+          "player_id": 388,
+          "transfers": []
+        },
+        {
+          "player_id": 182,
+          "transfers": []
+        },
+        {
+          "player_id": 181,
+          "transfers": []
+        },
+        {
+          "player_id": 381,
+          "transfers": []
+        },
+        {
+          "player_id": 122,
+          "transfers": []
+        },
         {
           "player_id": 191,
-          "transfers": [
-            {
-              "transfer_week": 25,
-              "transfer_id": 468
-            }
-          ]
-        },
-        {
-          "player_id": 314,
           "transfers": []
         },
         {
-          "player_id": 28,
+          "player_id": 133,
           "transfers": []
         },
         {
-          "player_id": 53,
+          "player_id": 150,
           "transfers": []
         },
         {
-          "player_id": 140,
+          "player_id": 409,
+          "transfers": []
+        },
+        {
+          "player_id": 166,
+          "transfers": []
+        },
+        {
+          "player_id": 11,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 1,
+      "team_name": "TEST FC 3",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 388,
+          "transfers": []
+        },
+        {
+          "player_id": 182,
+          "transfers": []
+        },
+        {
+          "player_id": 22,
+          "transfers": []
+        },
+        {
+          "player_id": 381,
           "transfers": []
         },
         {
@@ -1450,303 +128,50 @@
           "transfers": []
         },
         {
-          "player_id": 253,
+          "player_id": 191,
           "transfers": []
         },
         {
-          "player_id": 270,
+          "player_id": 133,
           "transfers": []
         },
         {
-          "player_id": 151,
-          "transfers": [
-            {
-              "transfer_week": 25,
-              "transfer_id": 23
-            }
-          ]
-        },
-        {
-          "player_id": 257,
-          "transfers": [
-            {
-              "transfer_week": 25,
-              "transfer_id": 305
-            }
-          ]
-        },
-        {
-          "player_id": 372,
-          "transfers": [
-            {
-              "transfer_week": 25,
-              "transfer_id": 579
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "team_id": 26,
-      "team_name": "DEANO'S SUPERSTARS",
-      "allowed_transfers": false,
-      "team_players": [
-        {
-          "player_id": 468,
+          "player_id": 150,
           "transfers": []
         },
         {
-          "player_id": 115,
+          "player_id": 409,
           "transfers": []
         },
         {
-          "player_id": 246,
+          "player_id": 166,
           "transfers": []
         },
         {
-          "player_id": 220,
-          "transfers": []
-        },
-        {
-          "player_id": 247,
-          "transfers": []
-        },
-        {
-          "player_id": 253,
-          "transfers": []
-        },
-        {
-          "player_id": 273,
-          "transfers": []
-        },
-        {
-          "player_id": 275,
-          "transfers": []
-        },
-        {
-          "player_id": 306,
-          "transfers": []
-        },
-        {
-          "player_id": 372,
-          "transfers": []
-        },
-        {
-          "player_id": 257,
+          "player_id": 11,
           "transfers": []
         }
       ]
     },
     {
-      "team_id": 27,
-      "team_name": "KLOPPITY KOPPED IT",
-      "allowed_transfers": false,
-      "team_players": [
-        {
-          "player_id": 468,
-          "transfers": []
-        },
-        {
-          "player_id": 115,
-          "transfers": []
-        },
-        {
-          "player_id": 220,
-          "transfers": []
-        },
-        {
-          "player_id": 246,
-          "transfers": []
-        },
-        {
-          "player_id": 264,
-          "transfers": []
-        },
-        {
-          "player_id": 251,
-          "transfers": []
-        },
-        {
-          "player_id": 253,
-          "transfers": []
-        },
-        {
-          "player_id": 275,
-          "transfers": []
-        },
-        {
-          "player_id": 257,
-          "transfers": []
-        },
-        {
-          "player_id": 306,
-          "transfers": []
-        },
-        {
-          "player_id": 372,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 28,
-      "team_name": "LACKING CREATIVITY",
+      "team_id": 1,
+      "team_name": "TEST FC 4",
       "allowed_transfers": true,
       "team_players": [
         {
-          "player_id": 260,
+          "player_id": 388,
           "transfers": []
         },
         {
-          "player_id": 239,
-          "transfers": [
-            {
-              "transfer_week": 5,
-              "transfer_id": 115
-            }
-          ]
-        },
-        {
-          "player_id": 138,
+          "player_id": 182,
           "transfers": []
         },
         {
-          "player_id": 195,
+          "player_id": 181,
           "transfers": []
         },
         {
-          "player_id": 48,
-          "transfers": []
-        },
-        {
-          "player_id": 253,
-          "transfers": []
-        },
-        {
-          "player_id": 364,
-          "transfers": []
-        },
-        {
-          "player_id": 275,
-          "transfers": [
-            {
-              "transfer_week": 5,
-              "transfer_id": 122
-            }
-          ]
-        },
-        {
-          "player_id": 151,
-          "transfers": []
-        },
-        {
-          "player_id": 23,
-          "transfers": [
-            {
-              "transfer_week": 5,
-              "transfer_id": 480
-            }
-          ]
-        },
-        {
-          "player_id": 280,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 29,
-      "team_name": "DIGGERS FC",
-      "allowed_transfers": true,
-      "team_players": [
-        {
-          "player_id": 154,
-          "transfers": []
-        },
-        {
-          "player_id": 27,
-          "transfers": []
-        },
-        {
-          "player_id": 312,
-          "transfers": []
-        },
-        {
-          "player_id": 142,
-          "transfers": []
-        },
-        {
-          "player_id": 196,
-          "transfers": [
-            {
-              "transfer_week": 16,
-              "transfer_id": 145
-            }
-          ]
-        },
-        {
-          "player_id": 253,
-          "transfers": []
-        },
-        {
-          "player_id": 367,
-          "transfers": []
-        },
-        {
-          "player_id": 125,
-          "transfers": [
-            {
-              "transfer_week": 27,
-              "transfer_id": 302
-            },
-            {
-              "transfer_week": 36,
-              "transfer_id": 394
-            }
-          ]
-        },
-        {
-          "player_id": 372,
-          "transfers": [
-            {
-              "transfer_week": 23,
-              "transfer_id": 23
-            }
-          ]
-        },
-        {
-          "player_id": 257,
-          "transfers": []
-        },
-        {
-          "player_id": 280,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 30,
-      "team_name": "EGG FRIED REUS",
-      "allowed_transfers": false,
-      "team_players": [
-        {
-          "player_id": 282,
-          "transfers": []
-        },
-        {
-          "player_id": 115,
-          "transfers": []
-        },
-        {
-          "player_id": 246,
-          "transfers": []
-        },
-        {
-          "player_id": 142,
-          "transfers": []
-        },
-        {
-          "player_id": 262,
+          "player_id": 381,
           "transfers": []
         },
         {
@@ -1754,125 +179,231 @@
           "transfers": []
         },
         {
-          "player_id": 253,
+          "player_id": 191,
           "transfers": []
         },
         {
-          "player_id": 275,
+          "player_id": 133,
           "transfers": []
         },
         {
-          "player_id": 234,
+          "player_id": 150,
           "transfers": []
         },
         {
-          "player_id": 280,
+          "player_id": 409,
           "transfers": []
         },
         {
-          "player_id": 372,
+          "player_id": 166,
+          "transfers": []
+        },
+        {
+          "player_id": 11,
           "transfers": []
         }
       ]
     },
     {
-      "team_id": 31,
-      "team_name": "BUTLAND TOWN",
+      "team_id": 1,
+      "team_name": "TEST FC 5",
       "allowed_transfers": true,
       "team_players": [
         {
-          "player_id": 400,
+          "player_id": 388,
           "transfers": []
         },
         {
-          "player_id": 330,
+          "player_id": 212,
           "transfers": []
         },
         {
-          "player_id": 312,
+          "player_id": 181,
           "transfers": []
         },
         {
-          "player_id": 264,
+          "player_id": 381,
           "transfers": []
         },
         {
-          "player_id": 142,
+          "player_id": 122,
           "transfers": []
         },
         {
-          "player_id": 273,
+          "player_id": 191,
           "transfers": []
         },
         {
-          "player_id": 434,
+          "player_id": 133,
           "transfers": []
         },
         {
-          "player_id": 253,
+          "player_id": 150,
           "transfers": []
         },
         {
-          "player_id": 419,
+          "player_id": 284,
           "transfers": []
         },
         {
-          "player_id": 372,
+          "player_id": 166,
           "transfers": []
         },
         {
-          "player_id": 280,
+          "player_id": 11,
           "transfers": []
         }
       ]
     },
     {
-      "team_id": 32,
-      "team_name": "BOBBLE UTD",
+      "team_id": 1,
+      "team_name": "TEST FC 6",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 212,
+          "transfers": []
+        },
+        {
+          "player_id": 182,
+          "transfers": []
+        },
+        {
+          "player_id": 181,
+          "transfers": []
+        },
+        {
+          "player_id": 381,
+          "transfers": []
+        },
+        {
+          "player_id": 401,
+          "transfers": []
+        },
+        {
+          "player_id": 191,
+          "transfers": []
+        },
+        {
+          "player_id": 214,
+          "transfers": []
+        },
+        {
+          "player_id": 150,
+          "transfers": []
+        },
+        {
+          "player_id": 210,
+          "transfers": []
+        },
+        {
+          "player_id": 166,
+          "transfers": []
+        },
+        {
+          "player_id": 11,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 1,
+      "team_name": "TEST FC 7",
       "allowed_transfers": true,
       "team_players": [
         {
-          "player_id": 154,
+          "player_id": 388,
           "transfers": []
         },
         {
-          "player_id": 357,
+          "player_id": 182,
           "transfers": []
         },
         {
-          "player_id": 220,
+          "player_id": 181,
           "transfers": []
         },
         {
-          "player_id": 265,
+          "player_id": 381,
           "transfers": []
         },
         {
-          "player_id": 262,
+          "player_id": 122,
           "transfers": []
         },
         {
-          "player_id": 365,
+          "player_id": 191,
           "transfers": []
         },
         {
-          "player_id": 270,
+          "player_id": 133,
           "transfers": []
         },
         {
-          "player_id": 300,
+          "player_id": 150,
           "transfers": []
         },
         {
-          "player_id": 305,
+          "player_id": 409,
           "transfers": []
         },
         {
-          "player_id": 234,
+          "player_id": 166,
           "transfers": []
         },
         {
-          "player_id": 372,
+          "player_id": 11,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 1,
+      "team_name": "TEST FC 8",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 388,
+          "transfers": []
+        },
+        {
+          "player_id": 182,
+          "transfers": []
+        },
+        {
+          "player_id": 181,
+          "transfers": []
+        },
+        {
+          "player_id": 381,
+          "transfers": []
+        },
+        {
+          "player_id": 122,
+          "transfers": []
+        },
+        {
+          "player_id": 191,
+          "transfers": []
+        },
+        {
+          "player_id": 133,
+          "transfers": []
+        },
+        {
+          "player_id": 150,
+          "transfers": []
+        },
+        {
+          "player_id": 409,
+          "transfers": []
+        },
+        {
+          "player_id": 166,
+          "transfers": []
+        },
+        {
+          "player_id": 11,
           "transfers": []
         }
       ]

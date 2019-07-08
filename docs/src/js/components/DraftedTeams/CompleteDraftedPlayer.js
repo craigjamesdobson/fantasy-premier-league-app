@@ -9,6 +9,7 @@ var CompleteDraftedPlayer = /** @class */ (function () {
         this.playerTeamShort = player.teamShort;
         this.isUnAvailable = player.isUnavailable;
         this.playerStatus = player.availabilityType;
+        this.playerPrice = player.price;
         this.transfers = transfers;
     }
     return CompleteDraftedPlayer;

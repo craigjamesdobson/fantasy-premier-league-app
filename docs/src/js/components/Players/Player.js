@@ -21,16 +21,16 @@ var Player = /** @class */ (function () {
                 this.teamShort = 'BOU';
                 break;
             case 3:
+                this.teamName = 'Bournemouth';
+                this.teamShort = 'BOU';
+                break;
+            case 4:
                 this.teamName = 'Brighton and Hove Albion';
                 this.teamShort = 'BHA';
                 break;
-            case 4:
+            case 5:
                 this.teamName = 'Burnley';
                 this.teamShort = 'BUR';
-                break;
-            case 5:
-                this.teamName = 'Cardiff';
-                this.teamShort = 'CAR';
                 break;
             case 6:
                 this.teamName = 'Chelsea';
@@ -45,32 +45,32 @@ var Player = /** @class */ (function () {
                 this.teamShort = 'EVE';
                 break;
             case 9:
-                this.teamName = 'Fulham';
-                this.teamShort = 'FUL';
-                break;
-            case 10:
-                this.teamName = 'Huddersfield';
-                this.teamShort = 'HUD';
-                break;
-            case 11:
                 this.teamName = 'Leicester';
                 this.teamShort = 'LEI';
                 break;
-            case 12:
+            case 10:
                 this.teamName = 'Liverpool';
                 this.teamShort = 'LIV';
                 break;
-            case 13:
+            case 11:
                 this.teamName = 'Manchester City';
                 this.teamShort = 'MNC';
                 break;
-            case 14:
+            case 12:
                 this.teamName = 'Manchester United';
                 this.teamShort = 'MNU';
                 break;
-            case 15:
+            case 13:
                 this.teamName = 'Newcastle';
                 this.teamShort = 'NEW';
+                break;
+            case 14:
+                this.teamName = 'Norwich';
+                this.teamShort = 'NOR';
+                break;
+            case 15:
+                this.teamName = 'Sheffield United';
+                this.teamShort = 'SHU';
                 break;
             case 16:
                 this.teamName = 'Southampton';
@@ -95,7 +95,9 @@ var Player = /** @class */ (function () {
         }
         // Create availability objects
         switch (true) {
-            case this.availabilityType === 'u' || this.availabilityType === 'i' || this.availabilityType === 'n':
+            case this.availabilityType === 'u' ||
+                this.availabilityType === 'i' ||
+                this.availabilityType === 'n':
                 this.isUnavailable = true;
                 this.availabilityNews = player.news;
                 break;

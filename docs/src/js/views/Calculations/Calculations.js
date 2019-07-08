@@ -35,9 +35,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 var _this = this;
 import '../../../scss/calculations.scss';
-import '../../../img/clean_sheet.png';
-import '../../../img/red_card.png';
-import '../../../img/football.png';
+import '../../../img/icon-cleansheet.png';
+import '../../../img/icon-redcard.png';
+import '../../../img/icon-goal.png';
+import '../../../img/icon-assist.png';
 import '../../components/Database/WeeklyData';
 import { deleteWeeklyData, importWeekData, populateSelectedWeek, storeTableData, storeWeeklyData } from '../../components/Database/WeeklyData';
 import { CompleteDraftedTeam } from '../../components/DraftedTeams/CompleteDraftedTeam';
@@ -284,10 +285,14 @@ function calculatePoints() {
     $('.player-data').each(function (i, player) {
         var goalsTotal = 0;
         var cleanSheetTotal = 0;
+        var assistTotal = 0;
         var redCardTotal = 0;
         var pointsTotal = 0;
         var goalsScored = parseInt($(player)
             .find('.score-select')
+            .val(), 10);
+        var assists = parseInt($(player)
+            .find('.assist-select')
             .val(), 10);
         var positionID = $(player).attr('data-position');
         var cleanSheet = $(player)
@@ -338,6 +343,9 @@ function calculatePoints() {
                 .find('.score-select')
                 .removeClass('active');
         }
+        if (assists > 0) {
+            assistTotal = 3 * assists;
+        }
         goalsTotal = goalsScored * multiplier;
         if (goalsScored === 2) {
             goalsTotal = goalsTotal + 5;
@@ -345,7 +353,7 @@ function calculatePoints() {
         else if (goalsScored >= 3) {
             goalsTotal = goalsTotal + 10;
         }
-        pointsTotal = goalsTotal + cleanSheetTotal - redCardTotal;
+        pointsTotal = goalsTotal + cleanSheetTotal + assistTotal - redCardTotal;
         pointsTotal !== 0
             ? $(player).attr('data-points', pointsTotal)
             : $(player).removeAttr('data-points');
@@ -508,13 +516,14 @@ function exportWeekData() {
     var selectedWeekPlayersText = null;
     var selectedWeekPlayers = 'week_' + $('.week-dropdown').val() + '_players';
     var selectedWeekFixtures = 'week_' + $('.week-dropdown').val() + '_fixtures';
-    if (localStorage.getItem(selectedWeekPlayers) === null && localStorage.getItem(selectedWeekPlayers) === null) {
+    if (localStorage.getItem(selectedWeekPlayers) === null &&
+        localStorage.getItem(selectedWeekPlayers) === null) {
         swal({
             title: 'No week data to export',
             type: 'error',
             showCancelButton: false,
             showConfirmButton: false,
-            timer: 1500,
+            timer: 1500
         });
         return;
     }
@@ -522,8 +531,12 @@ function exportWeekData() {
     var selectedWeekPlayerString = JSON.stringify(LZDecompress(localStorage.getItem(selectedWeekPlayers)));
     var formattedFixtureString = selectedWeekFixtureString.replace(/^"|"$|\\/g, '');
     var formattedPlayerString = selectedWeekPlayerString.replace(/^"|"$|\\/g, '');
-    var selectedWeekFixturesData = new Blob([formattedFixtureString], { type: 'text/plain' });
-    var selectedWeekPlayersData = new Blob([formattedPlayerString], { type: 'text/plain' });
+    var selectedWeekFixturesData = new Blob([formattedFixtureString], {
+        type: 'text/plain'
+    });
+    var selectedWeekPlayersData = new Blob([formattedPlayerString], {
+        type: 'text/plain'
+    });
     // If we are replacing a previously generated file we need to
     // manually revoke the object URL to avoid memory leaks.
     if (selectedWeekFixturesText !== null || selectedWeekPlayersText !== null) {
@@ -532,9 +545,15 @@ function exportWeekData() {
     }
     selectedWeekFixturesText = window.URL.createObjectURL(selectedWeekFixturesData);
     selectedWeekPlayersText = window.URL.createObjectURL(selectedWeekPlayersData);
-    $('.fixtures-container').append('<a class="fixture-export-link" href="">fixtures</a>').append('<a class="player-export-link" href="">players</a>');
-    $('.fixture-export-link').attr('download', selectedWeekFixtures + ".txt").attr('href', selectedWeekFixturesText);
-    $('.player-export-link').attr('download', selectedWeekPlayers + ".txt").attr('href', selectedWeekPlayersText);
+    $('.fixtures-container')
+        .append('<a class="fixture-export-link" href="">fixtures</a>')
+        .append('<a class="player-export-link" href="">players</a>');
+    $('.fixture-export-link')
+        .attr('download', selectedWeekFixtures + ".txt")
+        .attr('href', selectedWeekFixturesText);
+    $('.player-export-link')
+        .attr('download', selectedWeekPlayers + ".txt")
+        .attr('href', selectedWeekPlayersText);
     $('a.fixture-export-link')[0].click();
     $('a.player-export-link')[0].click();
     $('.fixture-export-link').remove();
@@ -548,7 +567,7 @@ $(document).on('change', '.teams-dropdown', function (event) {
     calculatePoints();
     updatePointsTotal();
 });
-$(document).on('change', '.score-select, .clean-sheet-checkbox, .red-card-checkbox', function (event) {
+$(document).on('change', '.score-select, .assist-select, .clean-sheet-checkbox, .red-card-checkbox', function (event) {
     calculatePoints();
     updatePointsTotal();
 });
