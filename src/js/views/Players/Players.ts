@@ -104,7 +104,7 @@ $('.badge-link').on('click', event => {
   $this.hasClass('active') ? $this.removeClass('active') : $this.addClass('active');
 
   const searchtext = $('#search-name').val() as string;
-  const searchPrice = $('#search-name').val() as string;
+  const searchPrice = $('#search-price').val() as string;
   const searchTeam =  parseInt($('.badge-link.active').attr('id'), 10);
 
   initPlayerData(playerData, searchtext.toLowerCase(), searchPrice, searchTeam);

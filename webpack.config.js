@@ -21,7 +21,7 @@ module.exports = {
     chunkFilename: '[name].bundle.js'
   },
   devServer: {
-    contentBase: path.join(__dirname, 'docs'),
+    contentBase: path.join(__dirname, 'src/img'),
     compress: false,
     port: 8080,
     open: true

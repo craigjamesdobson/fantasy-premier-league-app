@@ -53,6 +53,7 @@ export class PlayerList {
           .toLowerCase()
           .indexOf(filterName) > -1 && p.playerType === position
     );
+
     let filteredPlayers = players.filter(
       p => p.price.indexOf(filterPrice) > -1 && p.playerType === position
     );
@@ -60,6 +61,11 @@ export class PlayerList {
     if (filterTeam !== null) {
       filteredPlayers = filteredPlayers.filter(p => p.teamID === filterTeam);
     }
+
+    // TODO: Sort by price etc (WIP);
+    // filteredPlayers.sort((a, b) => {
+    //   return parseFloat(b.price) - parseFloat(a.price);
+    // });
 
     const divisor = Math.ceil(filteredPlayers.length / 2);
 

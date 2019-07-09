@@ -1,22 +1,22 @@
-import "../../../scss/table.scss";
+import '../../../scss/table.scss';
 
-import { chain, maxBy } from "lodash";
+import { chain, maxBy } from 'lodash';
 
-import swal from "sweetalert2";
+import swal from 'sweetalert2';
 
 // tslint:disable:no-var-requires
-const LeagueTableTemplate = require("../../components/Templates/LeagueTableTemplate.hbs");
-const LeagueTableDataTemplate = require("../../components/Templates/LeagueTableDataTemplate.hbs");
+const LeagueTableTemplate = require('../../components/Templates/LeagueTableTemplate.hbs');
+const LeagueTableDataTemplate = require('../../components/Templates/LeagueTableDataTemplate.hbs');
 // tslint:enable:no-var-requires
 
-const draftedTeamsData = JSON.parse(localStorage.getItem("drafted_teams_data"));
+const draftedTeamsData = JSON.parse(localStorage.getItem('drafted_teams_data'));
 
-$(".table-container").html(LeagueTableTemplate);
+$('.table-container').html(LeagueTableTemplate);
 
 let sortedTableData = [];
 
 function initDraftedTeamData() {
-  const currentWeek = parseInt($(".week-dropdown").val() as string, 10);
+  const currentWeek = parseInt($('.week-dropdown').val() as string, 10);
   const prevWeek = currentWeek - 1;
   let excludeWeek = false;
 
@@ -25,7 +25,7 @@ function initDraftedTeamData() {
     let goalsTotal = 0;
     let redCardTotal = 0;
     let weekPoints = 0;
-    let prevWeekPos = "N/A";
+    let prevWeekPos = 'N/A';
 
     for (const weekData of draftedTeam.weeklyData) {
       if (parseInt(weekData.week, 10) <= currentWeek) {
@@ -59,11 +59,11 @@ function initDraftedTeamData() {
   applyPositionData(currentWeek);
   getWeeklyWinners();
 
-  $(".league-table-container").html(LeagueTableDataTemplate(sortedTableData));
+  $('.league-table-container').html(LeagueTableDataTemplate(sortedTableData));
 }
 
 function getWeeklyWinners() {
-  const maxScoreObject = maxBy(sortedTableData, "weekPoints");
+  const maxScoreObject = maxBy(sortedTableData, 'weekPoints');
   const maxScore = maxScoreObject.weekPoints;
 
   for (const team of sortedTableData) {
@@ -75,9 +75,9 @@ function getWeeklyWinners() {
 
 function sortTableData() {
   sortedTableData = chain(draftedTeamsData)
-    .orderBy("redCardsTotal")
-    .orderBy("goalsTotal")
-    .orderBy("pointsTotal")
+    .orderBy('redCardsTotal')
+    .orderBy('goalsTotal')
+    .orderBy('pointsTotal')
     .value()
     .reverse();
 }
@@ -90,11 +90,11 @@ function applyPositionData(currentWeek: number) {
     sortedTeam.tablePosition = ++tablePosition;
 
     if (sortedTeam.tablePosition < sortedTeam.prevWeekPosition) {
-      sortedTeam.positionChange = "fa-chevron-up";
+      sortedTeam.positionChange = 'fa-chevron-up';
     } else if (sortedTeam.tablePosition > sortedTeam.prevWeekPosition) {
-      sortedTeam.positionChange = "fa-chevron-down";
+      sortedTeam.positionChange = 'fa-chevron-down';
     } else {
-      sortedTeam.positionChange = "fa-circle";
+      sortedTeam.positionChange = 'fa-circle';
     }
     for (const sortedTeamWeek of sortedTeam.weeklyData) {
       if (sortedTeamWeek.week === currentWeek) {
@@ -106,6 +106,6 @@ function applyPositionData(currentWeek: number) {
 
 initDraftedTeamData();
 
-$(document).on("change", ".week-dropdown", event => {
+$(document).on('change', '.week-dropdown', event => {
   initDraftedTeamData();
 });

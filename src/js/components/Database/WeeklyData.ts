@@ -3,10 +3,10 @@ import { compress as LZCompress, decompress as LZDecompress } from 'lz-string';
 import swal from 'sweetalert2';
 
 const miniSwal = (swal as any).mixin({
-  toast: true,
   position: 'top-end',
   showConfirmButton: false,
-  timer: 3000
+  timer: 3000,
+  toast: true
 });
 
 export let draftedTeamsTableData: any = [];
@@ -55,7 +55,6 @@ export function storeWeeklyData() {
     fixtureArray[fixtureNumber] = {
       fixture: fixtureNumber,
       homeTeamName: homeTeamName,
-      homeTeamID: homeTeamID,
       homeTeamScore: homeTeamScore,
       awayTeamName: awayTeamName,
       awayTeamID: awayTeamID,
