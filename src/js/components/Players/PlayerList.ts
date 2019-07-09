@@ -10,9 +10,14 @@ export class PlayerList {
     this.filteredPlayers = players;
   }
 
-  public getFilteredPlayers(filterName?: string, filterPrice?: string) {
+  public getFilteredPlayers(
+    filterName?: string,
+    filterPrice?: string,
+    filterTeam?: number
+  ) {
     const FilterName = filterName ? filterName : '';
     const FilterPrice = filterPrice ? filterPrice : '';
+    const FilterTeam = filterTeam ? filterTeam : null;
 
     let filteredPlayers = this.players.filter(
       p =>
@@ -27,13 +32,18 @@ export class PlayerList {
       p => p.price.indexOf(FilterPrice) > -1
     );
 
-    return this.filteredPlayers = filteredPlayers;
+    if (FilterTeam !== null) {
+      filteredPlayers = filteredPlayers.filter(p => p.teamID === FilterTeam);
+    }
+
+    return (this.filteredPlayers = filteredPlayers);
   }
 
   public getFilteredPlayersOfType(
     position: PlayerPosition,
     filterName?: string,
-    filterPrice?: string
+    filterPrice?: string,
+    filterTeam?: number
   ): [Player[], Player[]] {
     const players = this.getPlayersOfType(position).filter(
       p =>
@@ -43,9 +53,14 @@ export class PlayerList {
           .toLowerCase()
           .indexOf(filterName) > -1 && p.playerType === position
     );
-    const filteredPlayers = players.filter(
+    let filteredPlayers = players.filter(
       p => p.price.indexOf(filterPrice) > -1 && p.playerType === position
     );
+
+    if (filterTeam !== null) {
+      filteredPlayers = filteredPlayers.filter(p => p.teamID === filterTeam);
+    }
+
     const divisor = Math.ceil(filteredPlayers.length / 2);
 
     return [filteredPlayers.slice(0, divisor), filteredPlayers.slice(divisor)];

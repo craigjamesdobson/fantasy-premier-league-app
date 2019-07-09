@@ -18,31 +18,36 @@ GetStaticData.getstaticData().then(data => {
   initPlayerData(playerData);
 });
 
-function initPlayerData(playerList?: PlayerList, filterName?: string, filterPrice?: string) {
+function initPlayerData(playerList?: PlayerList, filterName?: string, filterPrice?: string, filterTeam?: number) {
   const FilterName = filterName;
   const FilterPrice = filterPrice;
+  const FilterTeam = filterTeam;
   const players = playerList.players;
-  const filteredPlayers = playerList.getFilteredPlayers(filterName, filterPrice);
+  const filteredPlayers = playerList.getFilteredPlayers(filterName, filterPrice, filterTeam);
 
   const goalkeepers = playerList.getFilteredPlayersOfType(
     PlayerPosition.Goalkeeper,
     FilterName ? FilterName : '',
-    FilterPrice ? FilterPrice : ''
+    FilterPrice ? FilterPrice : '',
+    FilterTeam ? FilterTeam : null,
   );
   const defenders = playerList.getFilteredPlayersOfType(
     PlayerPosition.Defender,
     FilterName ? FilterName : '',
-    FilterPrice ? FilterPrice : ''
+    FilterPrice ? FilterPrice : '',
+    FilterTeam ? FilterTeam : null,
   );
   const midfielders = playerList.getFilteredPlayersOfType(
     PlayerPosition.Midfielder,
     FilterName ? FilterName : '',
-    FilterPrice ? FilterPrice : ''
+    FilterPrice ? FilterPrice : '',
+    FilterTeam ? FilterTeam : null,
   );
   const forwards = playerList.getFilteredPlayersOfType(
     PlayerPosition.Forward,
     FilterName ? FilterName : '',
-    FilterPrice ? FilterPrice : ''
+    FilterPrice ? FilterPrice : '',
+    FilterTeam ? FilterTeam : null,
   );
 
   // prettier-ignore
@@ -74,8 +79,9 @@ $('#search-name').on(
 
     const searchtext = $this.val() as string;
     const searchPrice = $('#search-price').val() as string;
+    const searchTeam =  parseInt($('.badge-link.active').attr('id'), 10);
 
-    initPlayerData(playerData, searchtext.toLowerCase(), searchPrice);
+    initPlayerData(playerData, searchtext.toLowerCase(), searchPrice, searchTeam);
   }, 500)
 );
 
@@ -84,6 +90,22 @@ $('#search-price').on('change', event => {
 
     const searchtext = $('#search-name').val() as string;
     const searchPrice = $this.val() as string;
+    const searchTeam =  parseInt($('.badge-link.active').attr('id'), 10);
 
-    initPlayerData(playerData, searchtext.toLowerCase(), searchPrice);
+    initPlayerData(playerData, searchtext.toLowerCase(), searchPrice, searchTeam);
+});
+
+$('.badge-link').on('click', event => {
+  event.preventDefault();
+  const $this = $(event.currentTarget);
+
+  $('.badge-link').removeClass('active');
+
+  $this.hasClass('active') ? $this.removeClass('active') : $this.addClass('active');
+
+  const searchtext = $('#search-name').val() as string;
+  const searchPrice = $('#search-name').val() as string;
+  const searchTeam =  parseInt($('.badge-link.active').attr('id'), 10);
+
+  initPlayerData(playerData, searchtext.toLowerCase(), searchPrice, searchTeam);
 });
