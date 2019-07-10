@@ -39,8 +39,8 @@ export class Player {
         this.teamShort = 'ARS';
         break;
       case 2:
-        this.teamName = 'Bournemouth';
-        this.teamShort = 'BOU';
+        this.teamName = 'Aston Villa';
+        this.teamShort = 'AST';
         break;
       case 3:
         this.teamName = 'Bournemouth';
