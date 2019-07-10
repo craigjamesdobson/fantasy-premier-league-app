@@ -215,6 +215,333 @@
 .swal2-popup.swal-import .swal2-textarea {
   font-size: 14px; }
 
+.badges-container {
+  margin-top: -5px;
+  margin-left: -10px; }
+  .badges-container .badge {
+    padding: 0; }
+    .badges-container .badge:first-child {
+      padding-left: 0; }
+    .badges-container .badge .badge-ars {
+      display: inline-block;
+      background: url(/badges-sprite.png);
+      background-position: 0px -100px;
+      width: 50px;
+      height: 50px;
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+      -webkit-transform: scale(0.6);
+              transform: scale(0.6);
+      transition: all ease-in-out 0.2s; }
+      .badges-container .badge .badge-ars.active, .badges-container .badge .badge-ars:hover {
+        -webkit-transform: scale(0.75);
+                transform: scale(0.75);
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
+    .badges-container .badge .badge-avl {
+      display: inline-block;
+      background: url(/badges-sprite.png);
+      background-position: -100px -150px;
+      width: 50px;
+      height: 50px;
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+      -webkit-transform: scale(0.6);
+              transform: scale(0.6);
+      transition: all ease-in-out 0.2s; }
+      .badges-container .badge .badge-avl.active, .badges-container .badge .badge-avl:hover {
+        -webkit-transform: scale(0.75);
+                transform: scale(0.75);
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
+    .badges-container .badge .badge-bou {
+      display: inline-block;
+      background: url(/badges-sprite.png);
+      background-position: -100px -250px;
+      width: 50px;
+      height: 50px;
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+      -webkit-transform: scale(0.6);
+              transform: scale(0.6);
+      transition: all ease-in-out 0.2s; }
+      .badges-container .badge .badge-bou.active, .badges-container .badge .badge-bou:hover {
+        -webkit-transform: scale(0.75);
+                transform: scale(0.75);
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
+    .badges-container .badge .badge-bha {
+      display: inline-block;
+      background: url(/badges-sprite.png);
+      background-position: -200px -200px;
+      width: 50px;
+      height: 50px;
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+      -webkit-transform: scale(0.6);
+              transform: scale(0.6);
+      transition: all ease-in-out 0.2s; }
+      .badges-container .badge .badge-bha.active, .badges-container .badge .badge-bha:hover {
+        -webkit-transform: scale(0.75);
+                transform: scale(0.75);
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
+    .badges-container .badge .badge-bur {
+      display: inline-block;
+      background: url(/badges-sprite.png);
+      background-position: -50px -300px;
+      width: 50px;
+      height: 50px;
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+      -webkit-transform: scale(0.6);
+              transform: scale(0.6);
+      transition: all ease-in-out 0.2s; }
+      .badges-container .badge .badge-bur.active, .badges-container .badge .badge-bur:hover {
+        -webkit-transform: scale(0.75);
+                transform: scale(0.75);
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
+    .badges-container .badge .badge-che {
+      display: inline-block;
+      background: url(/badges-sprite.png);
+      background-position: -300px -300px;
+      width: 50px;
+      height: 50px;
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+      -webkit-transform: scale(0.6);
+              transform: scale(0.6);
+      transition: all ease-in-out 0.2s; }
+      .badges-container .badge .badge-che.active, .badges-container .badge .badge-che:hover {
+        -webkit-transform: scale(0.75);
+                transform: scale(0.75);
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
+    .badges-container .badge .badge-cry {
+      display: inline-block;
+      background: url(/badges-sprite.png);
+      background-position: -100px -350px;
+      width: 50px;
+      height: 50px;
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+      -webkit-transform: scale(0.6);
+              transform: scale(0.6);
+      transition: all ease-in-out 0.2s; }
+      .badges-container .badge .badge-cry.active, .badges-container .badge .badge-cry:hover {
+        -webkit-transform: scale(0.75);
+                transform: scale(0.75);
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
+    .badges-container .badge .badge-eve {
+      display: inline-block;
+      background: url(/badges-sprite.png);
+      background-position: -50px -400px;
+      width: 50px;
+      height: 50px;
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+      -webkit-transform: scale(0.6);
+              transform: scale(0.6);
+      transition: all ease-in-out 0.2s; }
+      .badges-container .badge .badge-eve.active, .badges-container .badge .badge-eve:hover {
+        -webkit-transform: scale(0.75);
+                transform: scale(0.75);
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
+    .badges-container .badge .badge-lei {
+      display: inline-block;
+      background: url(/badges-sprite.png);
+      background-position: 0px 0px;
+      width: 50px;
+      height: 50px;
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+      -webkit-transform: scale(0.6);
+              transform: scale(0.6);
+      transition: all ease-in-out 0.2s; }
+      .badges-container .badge .badge-lei.active, .badges-container .badge .badge-lei:hover {
+        -webkit-transform: scale(0.75);
+                transform: scale(0.75);
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
+    .badges-container .badge .badge-liv {
+      display: inline-block;
+      background: url(/badges-sprite.png);
+      background-position: 0px -500px;
+      width: 50px;
+      height: 50px;
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+      -webkit-transform: scale(0.6);
+              transform: scale(0.6);
+      transition: all ease-in-out 0.2s; }
+      .badges-container .badge .badge-liv.active, .badges-container .badge .badge-liv:hover {
+        -webkit-transform: scale(0.75);
+                transform: scale(0.75);
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
+    .badges-container .badge .badge-mci {
+      display: inline-block;
+      background: url(/badges-sprite.png);
+      background-position: -550px 0px;
+      width: 50px;
+      height: 50px;
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+      -webkit-transform: scale(0.6);
+              transform: scale(0.6);
+      transition: all ease-in-out 0.2s; }
+      .badges-container .badge .badge-mci.active, .badges-container .badge .badge-mci:hover {
+        -webkit-transform: scale(0.75);
+                transform: scale(0.75);
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
+    .badges-container .badge .badge-mun {
+      display: inline-block;
+      background: url(/badges-sprite.png);
+      background-position: -550px -450px;
+      width: 50px;
+      height: 50px;
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+      -webkit-transform: scale(0.6);
+              transform: scale(0.6);
+      transition: all ease-in-out 0.2s; }
+      .badges-container .badge .badge-mun.active, .badges-container .badge .badge-mun:hover {
+        -webkit-transform: scale(0.75);
+                transform: scale(0.75);
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
+    .badges-container .badge .badge-new {
+      display: inline-block;
+      background: url(/badges-sprite.png);
+      background-position: 0px -550px;
+      width: 50px;
+      height: 50px;
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+      -webkit-transform: scale(0.6);
+              transform: scale(0.6);
+      transition: all ease-in-out 0.2s; }
+      .badges-container .badge .badge-new.active, .badges-container .badge .badge-new:hover {
+        -webkit-transform: scale(0.75);
+                transform: scale(0.75);
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
+    .badges-container .badge .badge-nor {
+      display: inline-block;
+      background: url(/badges-sprite.png);
+      background-position: -250px -550px;
+      width: 50px;
+      height: 50px;
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+      -webkit-transform: scale(0.6);
+              transform: scale(0.6);
+      transition: all ease-in-out 0.2s; }
+      .badges-container .badge .badge-nor.active, .badges-container .badge .badge-nor:hover {
+        -webkit-transform: scale(0.75);
+                transform: scale(0.75);
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
+    .badges-container .badge .badge-shu {
+      display: inline-block;
+      background: url(/badges-sprite.png);
+      background-position: -650px -350px;
+      width: 50px;
+      height: 50px;
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+      -webkit-transform: scale(0.6);
+              transform: scale(0.6);
+      transition: all ease-in-out 0.2s; }
+      .badges-container .badge .badge-shu.active, .badges-container .badge .badge-shu:hover {
+        -webkit-transform: scale(0.75);
+                transform: scale(0.75);
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
+    .badges-container .badge .badge-sou {
+      display: inline-block;
+      background: url(/badges-sprite.png);
+      background-position: -650px -550px;
+      width: 50px;
+      height: 50px;
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+      -webkit-transform: scale(0.6);
+              transform: scale(0.6);
+      transition: all ease-in-out 0.2s; }
+      .badges-container .badge .badge-sou.active, .badges-container .badge .badge-sou:hover {
+        -webkit-transform: scale(0.75);
+                transform: scale(0.75);
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
+    .badges-container .badge .badge-tot {
+      display: inline-block;
+      background: url(/badges-sprite.png);
+      background-position: -600px -650px;
+      width: 50px;
+      height: 50px;
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+      -webkit-transform: scale(0.6);
+              transform: scale(0.6);
+      transition: all ease-in-out 0.2s; }
+      .badges-container .badge .badge-tot.active, .badges-container .badge .badge-tot:hover {
+        -webkit-transform: scale(0.75);
+                transform: scale(0.75);
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
+    .badges-container .badge .badge-wat {
+      display: inline-block;
+      background: url(/badges-sprite.png);
+      background-position: -700px -150px;
+      width: 50px;
+      height: 50px;
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+      -webkit-transform: scale(0.6);
+              transform: scale(0.6);
+      transition: all ease-in-out 0.2s; }
+      .badges-container .badge .badge-wat.active, .badges-container .badge .badge-wat:hover {
+        -webkit-transform: scale(0.75);
+                transform: scale(0.75);
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
+    .badges-container .badge .badge-whu {
+      display: inline-block;
+      background: url(/badges-sprite.png);
+      background-position: -700px -250px;
+      width: 50px;
+      height: 50px;
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+      -webkit-transform: scale(0.6);
+              transform: scale(0.6);
+      transition: all ease-in-out 0.2s; }
+      .badges-container .badge .badge-whu.active, .badges-container .badge .badge-whu:hover {
+        -webkit-transform: scale(0.75);
+                transform: scale(0.75);
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
+    .badges-container .badge .badge-wol {
+      display: inline-block;
+      background: url(/badges-sprite.png);
+      background-position: -700px -500px;
+      width: 50px;
+      height: 50px;
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+      -webkit-transform: scale(0.6);
+              transform: scale(0.6);
+      transition: all ease-in-out 0.2s; }
+      .badges-container .badge .badge-wol.active, .badges-container .badge .badge-wol:hover {
+        -webkit-transform: scale(0.75);
+                transform: scale(0.75);
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
 
 
 /*# sourceMappingURL=Teams.css.map*/
