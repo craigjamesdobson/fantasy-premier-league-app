@@ -1,48 +1,63 @@
 $teamList: (
   'ars': (
-    red,
-    0 -74px
+    #f00000,
+    0px -100px
+  ),
+  'ast': (
+    #660033,
+    -100px -150px
+  ),
+  'bou': (
+    #d21b23,
+    -100px -250px
+  ),
+  'bha': (
+    #004799,
+    -200px -200px
+  ),
+  'bur': (
+    #fff,
+    -50px -300px
   ),
   'che': (
-    blue,
-    -150px -150px
+    #fff,
+    -300px -300px
   ),
-  'liv': (
-    darkred,
-    -625px -600px
-  ),
-  'mnc': (
-    lightblue,
-    -500px -450px
-  ),
-  'mnu': (
-    red,
-    -500px -450px
+  'cry': (
+    #fff,
+    -300px -300px
   )
 );
 
-.badge {
-  padding: 0 5px;
+.badges-container {
+  margin-top: -5px;
+  margin-left: -10px;
 
-  &:first-child {
+  .badge {
+    padding: 0;
+
+    &:first-child {
       padding-left: 0;
-  }
+    }
 
-  @each $teamList, $keyNumber in $teamList {
-    $background: nth($keyNumber, 1);
-    $position: nth($keyNumber, 2);
-    .badge-#{$teamList} {
-      display: inline-block;
-      background-color: $background;
-      background: url('./../img/badges-sprite.png');
-      background-position: $position;
-      background-size: 550px;
-      width: 35px;
-      height: 35px;
-      filter: grayscale(100%);
+    @each $teamList, $keyNumber in $teamList {
+      $background: nth($keyNumber, 1);
+      $position: nth($keyNumber, 2);
+      .badge-#{$teamList} {
+        display: inline-block;
+        background: url('./../img/badges-sprite.png');
+        background-position: $position;
+        width: 50px;
+        height: 50px;
+        filter: grayscale(100%);
+        scale: 0.6;
+        transition: all ease-in-out 0.2s;
 
-      &.active {
-        filter: grayscale(0%);
+        &.active,
+        &:hover {
+          scale: 0.75;
+          filter: grayscale(0%);
+        }
       }
     }
   }
