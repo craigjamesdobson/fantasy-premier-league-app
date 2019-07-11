@@ -2,9 +2,11 @@ import '../../../scss/Playerlist.scss';
 import '../../../img/badges-sprite.png';
 
 import { CreatePlayerData } from '../../components/Players/CreatePlayerData';
+import { CreateTeamData } from '../../components/Teams/CreateTeamData';
 import { GetStaticData } from '../../components/StaticData/GetStaticData';
 import { PlayerList } from '../../components/Players/PlayerList';
 import { PlayerPosition } from '../../components/Players/PlayerPosition';
+import { TeamList } from '../../components/Teams/TeamList';
 import { debounce } from 'lodash';
 import { initPlayerFilters } from './Filters';
 
@@ -13,12 +15,12 @@ const playerTemplate = require('../../components/Templates/PlayersTemplate.hbs')
 const playerContainer = $('.player-container');
 const filterContainer = $('.filter-container');
 let playerData: PlayerList;
-let teamData = [];
+let teamData: TeamList;
 let dividedPlayerData: object;
 
 GetStaticData.getstaticData().then(data => {
   playerData = CreatePlayerData.createPlayerData(data);
-  teamData =  data.teams;
+  teamData =  CreateTeamData.createTeamData(data);
   initPlayerData(playerData);
   initPlayerFilters(teamData);
 });

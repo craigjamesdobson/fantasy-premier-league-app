@@ -46,8 +46,8 @@
         <label for="search-team">Filter by team</label>
         <div class="form-group search-team">
             <div class="d-flex flex-row flex-wrap justify-content-between" id="search-team">
-                {{#each this}}
-                <div class="badge"><a class="badge-link badge-{{toLower short_name}}" title="{{name}}" id="{{id}}"
+                {{#each teams}}
+                <div class="badge"><a class="badge-link badge-{{toLower teamNameShort}}" title="{{teamName}}" id="{{teamID}}"
                         href="#"></a></div>
                 {{/each}}
             </div>
