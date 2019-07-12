@@ -56,6 +56,7 @@ export function storeWeeklyData() {
       fixture: fixtureNumber,
       homeTeamName: homeTeamName,
       homeTeamScore: homeTeamScore,
+      homeTeamID: homeTeamID,
       awayTeamName: awayTeamName,
       awayTeamID: awayTeamID,
       awayTeamScore: awayTeamScore
@@ -87,7 +88,7 @@ export function storeWeeklyData() {
         .find('.score-select')
         .val();
       const assistTotal = $(player)
-        .find('.score-select')
+        .find('.assist-select')
         .val();
       const cleanSheet = $(player)
         .find('.clean-sheet-checkbox')
