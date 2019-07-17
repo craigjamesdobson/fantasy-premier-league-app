@@ -1,19 +1,38 @@
 .filter-container {
 
-    .clear-filter {
-        cursor: pointer;
-        position: absolute;
-        right: 20px;
+  .filter-toggle {
+    display: inline-block;
+    color: #444;
+
+    .fa-chevron-circle-left {
+      transition: transform 0.25s ease-in-out;
     }
 
+    &.collapsed {
+      .fa-chevron-circle-left {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  .clear-filter {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+  }
+
   #search-team {
-      margin: -5px -10px 0 -10px;
+    margin: -5px -10px 0 -10px;
 
     .badge {
       padding: 0;
 
       &:first-child {
         padding-left: 0;
+      }
+
+      &:nth-child(5n) {
+        clear: both;
       }
 
       @each $teamList, $keyNumber in $teamList {

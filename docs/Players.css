@@ -1,3 +1,14 @@
+.filter-container .filter-toggle {
+  display: inline-block;
+  color: #444; }
+  .filter-container .filter-toggle .fa-chevron-circle-left {
+    transition: -webkit-transform 0.25s ease-in-out;
+    transition: transform 0.25s ease-in-out;
+    transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out; }
+  .filter-container .filter-toggle.collapsed .fa-chevron-circle-left {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg); }
+
 .filter-container .clear-filter {
   cursor: pointer;
   position: absolute;
@@ -9,6 +20,8 @@
     padding: 0; }
     .filter-container #search-team .badge:first-child {
       padding-left: 0; }
+    .filter-container #search-team .badge:nth-child(5n) {
+      clear: both; }
     .filter-container #search-team .badge .badge-ars {
       display: inline-block;
       background: url(/badges-sprite.png);

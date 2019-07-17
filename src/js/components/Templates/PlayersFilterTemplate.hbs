@@ -1,55 +1,61 @@
-<h4>Filters</h4>
+<div class="d-flex justify-content-between align-items-center">
+    <h4 class="mb-0">Filters</h4>
+    <a class="filter-toggle" data-toggle="collapse" href="#filter-collapse" title="Collapse filters" role="button" aria-expanded="false"
+        aria-controls="filter-collapse"><i class="fas fa-lg fa-chevron-circle-left"></i></a>
+</div>
 <hr>
-<div class="row d-flex flex-row">
-    <div class="d-flex flex-column col-12 col-md-3">
-        <span class="clear-filter" title="clear name search">
-            <i class="fa fa-undo" aria-hidden="true"></i>
-        </span>
-        <label for="search-name">Filter by name</label>
-        <div class="form-group flex-container">
-            <input type="text" class="form-control" id="search-name" placeholder="Start typing to search...">
+<div class="collapse show" id="filter-collapse">
+    <div class="row d-flex flex-row">
+        <div class="d-flex flex-column col-12 col-md-3">
+            <span class="clear-filter" title="clear name search">
+                <i class="fa fa-undo" aria-hidden="true"></i>
+            </span>
+            <label for="search-name">Filter by name</label>
+            <div class="form-group flex-container">
+                <input type="text" class="form-control" id="search-name" placeholder="Start typing to search...">
+            </div>
         </div>
-    </div>
-    <div class="d-flex flex-column col-12 col-md-3">
-        <span class="clear-filter" title="clear price search">
-            <i class="fa fa-undo" aria-hidden="true"></i>
-        </span>
-        <label for="search-price">Filter by price</label>
-        <div class="form-group">
-            <select name="search-price" class="form-control" id="search-price">
-                <option value="">All</option>
-                <option value="4.0">4.0</option>
-                <option value="4.5">4.5</option>
-                <option value="5.0">5.0</option>
-                <option value="5.5">5.5</option>
-                <option value="6.0">6.0</option>
-                <option value="6.5">6.5</option>
-                <option value="7.0">7.0</option>
-                <option value="7.5">7.5</option>
-                <option value="8.0">8.0</option>
-                <option value="8.5">8.5</option>
-                <option value="9.0">9.0</option>
-                <option value="9.5">9.5</option>
-                <option value="10.0">10.0</option>
-                <option value="10.5">10.5</option>
-                <option value="11.0">11.0</option>
-                <option value="11.5">11.5</option>
-                <option value="12.0">12.0</option>
-                <option value="12.5">12.5</option>
-            </select>
+        <div class="d-flex flex-column col-12 col-md-3">
+            <span class="clear-filter" title="clear price search">
+                <i class="fa fa-undo" aria-hidden="true"></i>
+            </span>
+            <label for="search-price">Filter by price</label>
+            <div class="form-group">
+                <select name="search-price" class="form-control" id="search-price">
+                    <option value="">All</option>
+                    <option value="4.0">4.0</option>
+                    <option value="4.5">4.5</option>
+                    <option value="5.0">5.0</option>
+                    <option value="5.5">5.5</option>
+                    <option value="6.0">6.0</option>
+                    <option value="6.5">6.5</option>
+                    <option value="7.0">7.0</option>
+                    <option value="7.5">7.5</option>
+                    <option value="8.0">8.0</option>
+                    <option value="8.5">8.5</option>
+                    <option value="9.0">9.0</option>
+                    <option value="9.5">9.5</option>
+                    <option value="10.0">10.0</option>
+                    <option value="10.5">10.5</option>
+                    <option value="11.0">11.0</option>
+                    <option value="11.5">11.5</option>
+                    <option value="12.0">12.0</option>
+                    <option value="12.5">12.5</option>
+                </select>
+            </div>
         </div>
-    </div>
-    <div class="d-flex flex-column col-xs-12 col-md-6">
-        <span class="clear-filter" title="clear team search">
-            <i class="fa fa-undo" aria-hidden="true"></i>
-        </span>
-        <label for="search-team">Filter by team</label>
-        <div class="form-group search-team">
-            <div class="d-flex flex-row flex-wrap justify-content-between" id="search-team">
-                {{#each teams}}
-                <div class="badge"><a class="badge-link badge-{{toLower teamNameShort}}" title="{{teamName}}" id="{{teamID}}"
-                        href="#"></a></div>
-                {{/each}}
+        <div class="d-flex flex-column col-xs-12 col-md-6">
+            <span class="clear-filter" title="clear team search">
+                <i class="fa fa-undo" aria-hidden="true"></i>
+            </span>
+            <label for="search-team">Filter by team</label>
+            <div class="form-group search-team">
+                <div class="d-flex flex-row flex-wrap justify-content-between" id="search-team">
+                    {{#each teams}}
+                    <div class="badge"><a class="badge-link badge-{{toLower teamNameShort}}" title="{{teamName}}"
+                            id="{{teamID}}" href="#"></a></div>
+                    {{/each}}
+                </div>
             </div>
         </div>
     </div>
