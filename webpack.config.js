@@ -56,7 +56,7 @@ module.exports = {
       //   }
       // },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif|pdf)$/,
         use: [
           {
             loader: 'file-loader',
@@ -129,6 +129,14 @@ module.exports = {
       chunks: ['Index', 'Calculations', 'Table'],
       filename: 'table.html',
       template: 'views/table.html'
+    }),
+
+    // Generates table.html
+    new HtmlWebpackPlugin({
+      title: 'Fantasy Premier League App - Rules',
+      chunks: ['Index'],
+      filename: 'rules.html',
+      template: 'views/rules.html'
     }),
 
     // Extract css into seperate files
