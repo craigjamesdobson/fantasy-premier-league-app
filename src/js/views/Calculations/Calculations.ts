@@ -59,7 +59,10 @@ async function initDraftedTeamData(playerList: PlayerList) {
       return new CompleteDraftedTeam(draftedTeam, players);
     });
 
-    teamsContainer.append(DraftedTeamTemplate(draftedTeams));
+    // TODO: Re apply drafted teams when season starts
+    teamsContainer.append('<h3>Drafted teams will appear here when season starts</h3>');
+    // teamsContainer.append(DraftedTeamTemplate(draftedTeams));
+
     if (localStorage.getItem('drafted_teams_data') === null) {
       createDraftedTeamData();
     }
