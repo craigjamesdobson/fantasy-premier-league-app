@@ -54,19 +54,19 @@
                     display: inline;
                     transition: all 3s ease;
                 }
-                &.u {
+                &.unavailable-for-season {
                     .fa-exclamation-triangle {
                         color: #fff;
                     }
                 }
-                &.i, &.n {
+                &.temporary-unavailable {
                     .fa-exclamation-triangle {
                         color: #333;
                     }
                 }
             }
         }
-        tr.u {
+        tr.unavailable-for-season {
             cursor: pointer;
             .fa-exclamation-triangle {
                 color: #DB0100;
@@ -75,7 +75,7 @@
                 background-color: #DB0100;
             }
         }
-        tr.i, tr.n {
+        tr.temporary-unavailable {
             cursor: pointer;
             .fa-exclamation-triangle {
                 color: #FFCC00;

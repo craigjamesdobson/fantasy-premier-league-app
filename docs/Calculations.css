@@ -164,7 +164,7 @@
     font-size: 12px; }
     .teams-container table .player-total-data:nth-child(odd) {
       background-color: #ddd; }
-    .teams-container table .player-total-data.u {
+    .teams-container table .player-total-data.unavailable-for-season {
       opacity: 0.25; }
     .teams-container table .player-total-data.transfered {
       background-color: #5cb85c;

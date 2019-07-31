@@ -118,22 +118,20 @@ export class Player {
 
     // Create availability objects
     switch (true) {
-      case this.availabilityType === 'u' ||
-        this.availabilityType === 'i' ||
-        this.availabilityType === 'n':
+      case this.availabilityType === 'i' || this.availabilityType === 'd':
+        this.availabilityType = 'temporary-unavailable';
         this.isUnavailable = true;
         this.availabilityNews = player.news;
         break;
-      default:
-        this.isUnavailable = false;
-    }
-
-    switch (true) {
-      case this.availabilityType === 'u':
+      case this.availabilityType === 'u' || this.availabilityType === 'n':
+        this.availabilityType = 'unavailable-for-season';
+        this.isUnavailable = true;
         this.unavailableForSeason = true;
         this.availabilityNews = player.news;
         break;
       default:
+        this.isUnavailable = false;
+        this.availabilityType = 'available';
         this.unavailableForSeason = false;
     }
   }
