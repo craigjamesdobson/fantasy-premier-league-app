@@ -18,7 +18,7 @@ export class CompleteDraftedTeam {
     this.invalidErrorMsg = [];
     this.isInvalidTeam = false;
     this.allowedTransfers = draftedTeam.allowedTransfers;
-    this.teamValueAllowed = this.allowedTransfers ? 80 : 90;
+    this.teamValueAllowed = this.allowedTransfers ? 85 : 95;
     this.teamPlayers = players.map(
       x => new CompleteDraftedPlayer(x.player, x.transfers)
     );
