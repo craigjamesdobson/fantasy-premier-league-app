@@ -23,7 +23,7 @@ export class CompleteDraftedTeam {
       x => new CompleteDraftedPlayer(x.player, x.transfers)
     );
 
-    this.totalTeamValue = this.teamPlayers.reduce((accumulator, current) => accumulator += parseInt(current.playerPrice, 10), 0);
+    this.totalTeamValue = this.teamPlayers.reduce((accumulator, current) => accumulator += parseFloat(current.playerPrice), 0);
 
     let goalkeeperCount = 0;
     let defenderCount = 0;
