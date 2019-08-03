@@ -2,15 +2,19 @@
   "drafted_teams": [
     {
       "team_id": 1,
-      "team_name": "TEST FC",
-      "allowed_transfers": true,
+      "team_name": "Bakkadannet",
+      "allowed_transfers": false,
       "team_players": [
         {
-          "player_id": 413,
+          "player_id": 235,
           "transfers": []
         },
         {
-          "player_id": 212,
+          "player_id": 203,
+          "transfers": []
+        },
+        {
+          "player_id": 183,
           "transfers": []
         },
         {
@@ -18,11 +22,11 @@
           "transfers": []
         },
         {
-          "player_id": 381,
+          "player_id": 182,
           "transfers": []
         },
         {
-          "player_id": 122,
+          "player_id": 119,
           "transfers": []
         },
         {
@@ -30,38 +34,39 @@
           "transfers": []
         },
         {
-          "player_id": 133,
+          "player_id": 192,
           "transfers": []
         },
         {
-          "player_id": 150,
+          "player_id": 338,
           "transfers": []
         },
         {
-          "player_id": 409,
+          "player_id": 210,
           "transfers": []
         },
         {
-          "player_id": 166,
-          "transfers": []
-        },
-        {
-          "player_id": 11,
+          "player_id": 187,
           "transfers": []
         }
       ]
     },
     {
-      "team_id": 1,
-      "team_name": "TEST FC 2",
-      "allowed_transfers": false,
+      "team_id": 2,
+      "team_name": "JABBA McRIB",
+      "allowed_transfers": true,
       "team_players": [
         {
-          "player_id": 93,
-          "transfers": []
+          "player_id": 319,
+          "transfers": [
+            {
+              "transfer_week": 1,
+              "transfer_id": 10
+            }
+          ]
         },
         {
-          "player_id": 181,
+          "player_id": 122,
           "transfers": []
         },
         {
@@ -73,7 +78,215 @@
           "transfers": []
         },
         {
-          "player_id": 206,
+          "player_id": 274,
+          "transfers": []
+        },
+        {
+          "player_id": 192,
+          "transfers": []
+        },
+        {
+          "player_id": 218,
+          "transfers": []
+        },
+        {
+          "player_id": 151,
+          "transfers": []
+        },
+        {
+          "player_id": 11,
+          "transfers": []
+        },
+        {
+          "player_id": 210,
+          "transfers": []
+        },
+        {
+          "player_id": 233,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 3,
+      "team_name": "WE HAVE IT ALL",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 340,
+          "transfers": []
+        },
+        {
+          "player_id": 181,
+          "transfers": []
+        },
+        {
+          "player_id": 254,
+          "transfers": []
+        },
+        {
+          "player_id": 311,
+          "transfers": []
+        },
+        {
+          "player_id": 381,
+          "transfers": []
+        },
+        {
+          "player_id": 75,
+          "transfers": []
+        },
+        {
+          "player_id": 191,
+          "transfers": []
+        },
+        {
+          "player_id": 214,
+          "transfers": []
+        },
+        {
+          "player_id": 166,
+          "transfers": []
+        },
+        {
+          "player_id": 187,
+          "transfers": []
+        },
+        {
+          "player_id": 67,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 4,
+      "team_name": "Bodz Hammers",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 212,
+          "transfers": []
+        },
+        {
+          "player_id": 181,
+          "transfers": []
+        },
+        {
+          "player_id": 183,
+          "transfers": []
+        },
+        {
+          "player_id": 141,
+          "transfers": []
+        },
+        {
+          "player_id": 160,
+          "transfers": []
+        },
+        {
+          "player_id": 214,
+          "transfers": []
+        },
+        {
+          "player_id": 390,
+          "transfers": []
+        },
+        {
+          "player_id": 191,
+          "transfers": []
+        },
+        {
+          "player_id": 210,
+          "transfers": []
+        },
+        {
+          "player_id": 338,
+          "transfers": []
+        },
+        {
+          "player_id": 457,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 5,
+      "team_name": "A.F.C BJ",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 189,
+          "transfers": []
+        },
+        {
+          "player_id": 183,
+          "transfers": []
+        },
+        {
+          "player_id": 181,
+          "transfers": []
+        },
+        {
+          "player_id": 182,
+          "transfers": []
+        },
+        {
+          "player_id": 6,
+          "transfers": []
+        },
+        {
+          "player_id": 191,
+          "transfers": []
+        },
+        {
+          "player_id": 214,
+          "transfers": []
+        },
+        {
+          "player_id": 215,
+          "transfers": []
+        },
+        {
+          "player_id": 166,
+          "transfers": []
+        },
+        {
+          "player_id": 338,
+          "transfers": []
+        },
+        {
+          "player_id": 187,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 6,
+      "team_name": "BETTER THAN MY UNCLE",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 111,
+          "transfers": []
+        },
+        {
+          "player_id": 128,
+          "transfers": []
+        },
+        {
+          "player_id": 277,
+          "transfers": []
+        },
+        {
+          "player_id": 403,
+          "transfers": []
+        },
+        {
+          "player_id": 383,
+          "transfers": []
+        },
+        {
+          "player_id": 342,
           "transfers": []
         },
         {
@@ -85,211 +298,7 @@
           "transfers": []
         },
         {
-          "player_id": 150,
-          "transfers": []
-        },
-        {
-          "player_id": 409,
-          "transfers": []
-        },
-        {
-          "player_id": 11,
-          "transfers": []
-        },
-        {
-          "player_id": 68,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 1,
-      "team_name": "TEST FC 3",
-      "allowed_transfers": true,
-      "team_players": [
-        {
-          "player_id": 388,
-          "transfers": []
-        },
-        {
-          "player_id": 182,
-          "transfers": []
-        },
-        {
-          "player_id": 22,
-          "transfers": []
-        },
-        {
-          "player_id": 381,
-          "transfers": []
-        },
-        {
-          "player_id": 122,
-          "transfers": []
-        },
-        {
-          "player_id": 191,
-          "transfers": []
-        },
-        {
-          "player_id": 133,
-          "transfers": []
-        },
-        {
-          "player_id": 150,
-          "transfers": []
-        },
-        {
-          "player_id": 409,
-          "transfers": []
-        },
-        {
-          "player_id": 166,
-          "transfers": []
-        },
-        {
-          "player_id": 11,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 1,
-      "team_name": "TEST FC 4",
-      "allowed_transfers": true,
-      "team_players": [
-        {
-          "player_id": 388,
-          "transfers": []
-        },
-        {
-          "player_id": 182,
-          "transfers": []
-        },
-        {
-          "player_id": 181,
-          "transfers": []
-        },
-        {
-          "player_id": 381,
-          "transfers": []
-        },
-        {
-          "player_id": 122,
-          "transfers": []
-        },
-        {
-          "player_id": 191,
-          "transfers": []
-        },
-        {
-          "player_id": 133,
-          "transfers": []
-        },
-        {
-          "player_id": 150,
-          "transfers": []
-        },
-        {
-          "player_id": 409,
-          "transfers": []
-        },
-        {
-          "player_id": 166,
-          "transfers": []
-        },
-        {
-          "player_id": 11,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 1,
-      "team_name": "TEST FC 5",
-      "allowed_transfers": true,
-      "team_players": [
-        {
-          "player_id": 388,
-          "transfers": []
-        },
-        {
-          "player_id": 212,
-          "transfers": []
-        },
-        {
-          "player_id": 181,
-          "transfers": []
-        },
-        {
-          "player_id": 381,
-          "transfers": []
-        },
-        {
-          "player_id": 122,
-          "transfers": []
-        },
-        {
-          "player_id": 191,
-          "transfers": []
-        },
-        {
-          "player_id": 133,
-          "transfers": []
-        },
-        {
-          "player_id": 150,
-          "transfers": []
-        },
-        {
-          "player_id": 284,
-          "transfers": []
-        },
-        {
-          "player_id": 166,
-          "transfers": []
-        },
-        {
-          "player_id": 11,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 1,
-      "team_name": "TEST FC 6",
-      "allowed_transfers": false,
-      "team_players": [
-        {
-          "player_id": 212,
-          "transfers": []
-        },
-        {
-          "player_id": 182,
-          "transfers": []
-        },
-        {
-          "player_id": 181,
-          "transfers": []
-        },
-        {
-          "player_id": 381,
-          "transfers": []
-        },
-        {
-          "player_id": 401,
-          "transfers": []
-        },
-        {
-          "player_id": 191,
-          "transfers": []
-        },
-        {
-          "player_id": 214,
-          "transfers": []
-        },
-        {
-          "player_id": 150,
+          "player_id": 187,
           "transfers": []
         },
         {
@@ -297,7 +306,105 @@
           "transfers": []
         },
         {
-          "player_id": 166,
+          "player_id": 67,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 7,
+      "team_name": "Bob's boys",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 189,
+          "transfers": []
+        },
+        {
+          "player_id": 181,
+          "transfers": []
+        },
+        {
+          "player_id": 226,
+          "transfers": []
+        },
+        {
+          "player_id": 183,
+          "transfers": []
+        },
+        {
+          "player_id": 207,
+          "transfers": []
+        },
+        {
+          "player_id": 342,
+          "transfers": []
+        },
+        {
+          "player_id": 214,
+          "transfers": []
+        },
+        {
+          "player_id": 191,
+          "transfers": []
+        },
+        {
+          "player_id": 338,
+          "transfers": []
+        },
+        {
+          "player_id": 11,
+          "transfers": []
+        },
+        {
+          "player_id": 233,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 8,
+      "team_name": "Montychuka",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 168,
+          "transfers": []
+        },
+        {
+          "player_id": 122,
+          "transfers": []
+        },
+        {
+          "player_id": 160,
+          "transfers": []
+        },
+        {
+          "player_id": 445,
+          "transfers": []
+        },
+        {
+          "player_id": 467,
+          "transfers": []
+        },
+        {
+          "player_id": 191,
+          "transfers": []
+        },
+        {
+          "player_id": 192,
+          "transfers": []
+        },
+        {
+          "player_id": 214,
+          "transfers": []
+        },
+        {
+          "player_id": 210,
+          "transfers": []
+        },
+        {
+          "player_id": 338,
           "transfers": []
         },
         {
@@ -307,16 +414,16 @@
       ]
     },
     {
-      "team_id": 1,
-      "team_name": "TEST FC 7",
-      "allowed_transfers": true,
+      "team_id": 9,
+      "team_name": "Bring it on this time",
+      "allowed_transfers": false,
       "team_players": [
         {
-          "player_id": 388,
+          "player_id": 189,
           "transfers": []
         },
         {
-          "player_id": 182,
+          "player_id": 160,
           "transfers": []
         },
         {
@@ -324,62 +431,11 @@
           "transfers": []
         },
         {
-          "player_id": 381,
-          "transfers": []
-        },
-        {
-          "player_id": 122,
-          "transfers": []
-        },
-        {
-          "player_id": 191,
-          "transfers": []
-        },
-        {
-          "player_id": 133,
-          "transfers": []
-        },
-        {
-          "player_id": 150,
-          "transfers": []
-        },
-        {
-          "player_id": 409,
-          "transfers": []
-        },
-        {
-          "player_id": 166,
-          "transfers": []
-        },
-        {
-          "player_id": 11,
-          "transfers": []
-        }
-      ]
-    },
-    {
-      "team_id": 1,
-      "team_name": "TEST FC 8",
-      "allowed_transfers": true,
-      "team_players": [
-        {
-          "player_id": 388,
-          "transfers": []
-        },
-        {
           "player_id": 182,
           "transfers": []
         },
         {
-          "player_id": 181,
-          "transfers": []
-        },
-        {
-          "player_id": 381,
-          "transfers": []
-        },
-        {
-          "player_id": 122,
+          "player_id": 183,
           "transfers": []
         },
         {
@@ -387,23 +443,23 @@
           "transfers": []
         },
         {
-          "player_id": 133,
+          "player_id": 192,
           "transfers": []
         },
         {
-          "player_id": 150,
+          "player_id": 214,
           "transfers": []
         },
         {
-          "player_id": 409,
+          "player_id": 67,
           "transfers": []
         },
         {
-          "player_id": 166,
+          "player_id": 187,
           "transfers": []
         },
         {
-          "player_id": 11,
+          "player_id": 233,
           "transfers": []
         }
       ]
