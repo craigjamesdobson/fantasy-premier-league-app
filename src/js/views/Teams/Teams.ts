@@ -8,7 +8,8 @@ import { DraftedTeamData } from '../../components/DraftedTeams/CreateDraftedTeam
 import { GetStaticData } from '../../components/StaticData/GetStaticData';
 import { PlayerList } from '../../components/Players/PlayerList';
 import { TeamList } from '../../components/Teams/TeamList';
-import swal from 'sweetalert2';
+
+import { chain } from 'lodash';
 
 // tslint:disable:no-var-requires
 const DraftedTeamDefualtTemplate = require('../../components/Templates/DraftedTeamsDefaultTemplate.hbs');
@@ -33,6 +34,7 @@ async function initDraftedTeamData(playerList: PlayerList) {
     const draftedTeamList = await DraftedTeamData.getDraftedTeamData();
 
     draftedTeams = draftedTeamList.map(draftedTeam => {
+      const teamName =  draftedTeam.teamName;
       const players = draftedTeam.teamPlayers.map(player => ({
         player: playerList.players.filter(p => p.id === player.playerID)[0],
         transfers: player.transfers
@@ -40,7 +42,11 @@ async function initDraftedTeamData(playerList: PlayerList) {
       return new CompleteDraftedTeam(draftedTeam, players);
     });
 
-    teamsContainer.append(DraftedTeamDefualtTemplate(draftedTeams));
+    const sortedDraftTeams = chain(draftedTeams)
+    .orderBy('teamName')
+    .value();
+
+    teamsContainer.append(DraftedTeamDefualtTemplate(sortedDraftTeams));
     resolve();
   });
 }
