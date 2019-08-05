@@ -463,6 +463,465 @@
           "transfers": []
         }
       ]
+    },
+    {
+      "team_id": 10,
+      "team_name": "DUFFERS",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 235,
+          "transfers": []
+        },
+        {
+          "player_id": 183,
+          "transfers": []
+        },
+        {
+          "player_id": 160,
+          "transfers": []
+        },
+        {
+          "player_id": 59,
+          "transfers": []
+        },
+        {
+          "player_id": 225,
+          "transfers": []
+        },
+        {
+          "player_id": 171,
+          "transfers": []
+        },
+        {
+          "player_id": 215,
+          "transfers": []
+        },
+        {
+          "player_id": 218,
+          "transfers": []
+        },
+        {
+          "player_id": 11,
+          "transfers": []
+        },
+        {
+          "player_id": 233,
+          "transfers": []
+        },
+        {
+          "player_id": 210,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 11,
+      "team_name": "DEANO'S SUPERSTARS",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 189,
+          "transfers": []
+        },
+        {
+          "player_id": 181,
+          "transfers": []
+        },
+        {
+          "player_id": 183,
+          "transfers": []
+        },
+        {
+          "player_id": 203,
+          "transfers": []
+        },
+        {
+          "player_id": 182,
+          "transfers": []
+        },
+        {
+          "player_id": 214,
+          "transfers": []
+        },
+        {
+          "player_id": 192,
+          "transfers": []
+        },
+        {
+          "player_id": 191,
+          "transfers": []
+        },
+        {
+          "player_id": 11,
+          "transfers": []
+        },
+        {
+          "player_id": 338,
+          "transfers": []
+        },
+        {
+          "player_id": 464,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 12,
+      "team_name": "No Chance",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 212,
+          "transfers": []
+        },
+        {
+          "player_id": 160,
+          "transfers": []
+        },
+        {
+          "player_id": 183,
+          "transfers": []
+        },
+        {
+          "player_id": 122,
+          "transfers": []
+        },
+        {
+          "player_id": 226,
+          "transfers": []
+        },
+        {
+          "player_id": 349,
+          "transfers": []
+        },
+        {
+          "player_id": 241,
+          "transfers": []
+        },
+        {
+          "player_id": 214,
+          "transfers": []
+        },
+        {
+          "player_id": 187,
+          "transfers": []
+        },
+        {
+          "player_id": 210,
+          "transfers": []
+        },
+        {
+          "player_id": 338,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 13,
+      "team_name": "Johnnydogsdonkeys",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 212,
+          "transfers": []
+        },
+        {
+          "player_id": 202,
+          "transfers": []
+        },
+        {
+          "player_id": 105,
+          "transfers": []
+        },
+        {
+          "player_id": 182,
+          "transfers": []
+        },
+        {
+          "player_id": 122,
+          "transfers": []
+        },
+        {
+          "player_id": 191,
+          "transfers": []
+        },
+        {
+          "player_id": 192,
+          "transfers": []
+        },
+        {
+          "player_id": 214,
+          "transfers": []
+        },
+        {
+          "player_id": 410,
+          "transfers": []
+        },
+        {
+          "player_id": 210,
+          "transfers": []
+        },
+        {
+          "player_id": 166,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 14,
+      "team_name": "SARAHSCARERS",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 212,
+          "transfers": []
+        },
+        {
+          "player_id": 183,
+          "transfers": []
+        },
+        {
+          "player_id": 160,
+          "transfers": []
+        },
+        {
+          "player_id": 106,
+          "transfers": []
+        },
+        {
+          "player_id": 143,
+          "transfers": []
+        },
+        {
+          "player_id": 214,
+          "transfers": []
+        },
+        {
+          "player_id": 192,
+          "transfers": []
+        },
+        {
+          "player_id": 191,
+          "transfers": []
+        },
+        {
+          "player_id": 11,
+          "transfers": []
+        },
+        {
+          "player_id": 338,
+          "transfers": []
+        },
+        {
+          "player_id": 409,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 15,
+      "team_name": "Tom'sTIC's",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 189,
+          "transfers": []
+        },
+        {
+          "player_id": 183,
+          "transfers": []
+        },
+        {
+          "player_id": 202,
+          "transfers": []
+        },
+        {
+          "player_id": 123,
+          "transfers": []
+        },
+        {
+          "player_id": 160,
+          "transfers": []
+        },
+        {
+          "player_id": 191,
+          "transfers": []
+        },
+        {
+          "player_id": 192,
+          "transfers": []
+        },
+        {
+          "player_id": 343,
+          "transfers": []
+        },
+        {
+          "player_id": 210,
+          "transfers": []
+        },
+        {
+          "player_id": 338,
+          "transfers": []
+        },
+        {
+          "player_id": 166,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 16,
+      "team_name": "TEAM TIC",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 235,
+          "transfers": []
+        },
+        {
+          "player_id": 225,
+          "transfers": []
+        },
+        {
+          "player_id": 202,
+          "transfers": []
+        },
+        {
+          "player_id": 401,
+          "transfers": []
+        },
+        {
+          "player_id": 42,
+          "transfers": []
+        },
+        {
+          "player_id": 342,
+          "transfers": []
+        },
+        {
+          "player_id": 191,
+          "transfers": []
+        },
+        {
+          "player_id": 238,
+          "transfers": []
+        },
+        {
+          "player_id": 457,
+          "transfers": []
+        },
+        {
+          "player_id": 11,
+          "transfers": []
+        },
+        {
+          "player_id": 67,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 17,
+      "team_name": "EARTH WIND AND MAGUIRE",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 212,
+          "transfers": []
+        },
+        {
+          "player_id": 122,
+          "transfers": []
+        },
+        {
+          "player_id": 182,
+          "transfers": []
+        },
+        {
+          "player_id": 160,
+          "transfers": []
+        },
+        {
+          "player_id": 183,
+          "transfers": []
+        },
+        {
+          "player_id": 214,
+          "transfers": []
+        },
+        {
+          "player_id": 238,
+          "transfers": []
+        },
+        {
+          "player_id": 342,
+          "transfers": []
+        },
+        {
+          "player_id": 11,
+          "transfers": []
+        },
+        {
+          "player_id": 338,
+          "transfers": []
+        },
+        {
+          "player_id": 210,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 18,
+      "team_name": "DESPERADOS CITY",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 94,
+          "transfers": []
+        },
+        {
+          "player_id": 182,
+          "transfers": []
+        },
+        {
+          "player_id": 42,
+          "transfers": []
+        },
+        {
+          "player_id": 226,
+          "transfers": []
+        },
+        {
+          "player_id": 376,
+          "transfers": []
+        },
+        {
+          "player_id": 192,
+          "transfers": []
+        },
+        {
+          "player_id": 414,
+          "transfers": []
+        },
+        {
+          "player_id": 343,
+          "transfers": []
+        },
+        {
+          "player_id": 210,
+          "transfers": []
+        },
+        {
+          "player_id": 338,
+          "transfers": []
+        },
+        {
+          "player_id": 187,
+          "transfers": []
+        }
+      ]
     }
   ]
 }
