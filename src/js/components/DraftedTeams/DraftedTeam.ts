@@ -10,7 +10,7 @@ export class DraftedTeam {
 
   constructor(draftedTeam: IDraftedTeamDataElements) {
     this.teamID = draftedTeam.team_id;
-    this.teamName = draftedTeam.team_name;
+    this.teamName = draftedTeam.team_name.toUpperCase();
     this.allowedTransfers = draftedTeam.allowed_transfers;
     this.teamPlayers = draftedTeam.team_players.map(x => new DraftedPlayer(x));
   }
