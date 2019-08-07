@@ -1718,7 +1718,7 @@
           "transfers": []
         },
         {
-          "player_id": 218,
+          "player_id": 219,
           "transfers": []
         },
         {
@@ -1888,6 +1888,57 @@
         },
         {
           "player_id": 166,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 38,
+      "team_name": "LOTAKOP",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 189,
+          "transfers": []
+        },
+        {
+          "player_id": 181,
+          "transfers": []
+        },
+        {
+          "player_id": 182,
+          "transfers": []
+        },
+        {
+          "player_id": 183,
+          "transfers": []
+        },
+        {
+          "player_id": 160,
+          "transfers": []
+        },
+        {
+          "player_id": 191,
+          "transfers": []
+        },
+        {
+          "player_id": 192,
+          "transfers": []
+        },
+        {
+          "player_id": 214,
+          "transfers": []
+        },
+        {
+          "player_id": 11,
+          "transfers": []
+        },
+        {
+          "player_id": 338,
+          "transfers": []
+        },
+        {
+          "player_id": 234,
           "transfers": []
         }
       ]
