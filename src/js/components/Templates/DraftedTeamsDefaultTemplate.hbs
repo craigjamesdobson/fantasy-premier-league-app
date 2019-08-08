@@ -1,7 +1,7 @@
 <div class="row">
     {{#each this}}
     <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
-        <table class="table mb-2 mt-4">
+        <table class="table my-3">
             <tbody>
                 <tr class="header-row drafted-team-name {{#if isInvalidTeam}}invalid-team{{/if}}" data-id="{{teamID}}">
                     <th colspan="5">
@@ -39,10 +39,10 @@
         {{#if isInvalidTeam}}
         <ul class="error-list list-group">
             {{#each invalidErrorMsg}}
-                <li class="d-flex align-items-center mb-1 small">
-                    <i class="fas fa-exclamation-circle mr-2"></i>
-                    {{this}}
-                </li>
+            <li class="d-flex align-items-center mb-1 small">
+                <i class="fas fa-exclamation-circle mr-2"></i>
+                {{this}}
+            </li>
             {{/each}}
         </ul>
         {{/if}}

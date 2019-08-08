@@ -22,6 +22,7 @@ import { decompress as LZDecompress } from 'lz-string';
 import { PlayerList } from '../../components/Players/PlayerList';
 import { PlayerPositionShort } from '../../components/Players/PlayerPosition';
 import { TeamList } from '../../components/Teams/TeamList';
+import { chain } from 'lodash';
 import swal from 'sweetalert2';
 
 // tslint:disable:no-var-requires
@@ -59,9 +60,11 @@ async function initDraftedTeamData(playerList: PlayerList) {
       return new CompleteDraftedTeam(draftedTeam, players);
     });
 
-    // TODO: Re apply drafted teams when season starts
-    teamsContainer.append('<h3>Drafted teams will appear here when season starts</h3>');
-    // teamsContainer.append(DraftedTeamTemplate(draftedTeams));
+    const sortedDraftTeams = chain(draftedTeams)
+    .orderBy('teamName')
+    .value();
+
+    teamsContainer.append(DraftedTeamTemplate(sortedDraftTeams));
 
     if (localStorage.getItem('drafted_teams_data') === null) {
       createDraftedTeamData();
