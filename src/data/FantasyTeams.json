@@ -298,11 +298,21 @@
         },
         {
           "player_id": 210,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 11,
+              "transfer_week": 2
+            }
+          ]
         },
         {
           "player_id": 67,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 233,
+              "transfer_week": 2
+            }
+          ]
         }
       ]
     },
