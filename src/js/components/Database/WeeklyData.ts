@@ -107,7 +107,7 @@ export function storeWeeklyData() {
         goalsScored: goalsScored,
         assistTotal: assistTotal,
         cleanSheet: cleanSheet,
-        redCard: redCard
+        redCard: redCard,
       };
     }
   });
@@ -248,7 +248,9 @@ export function storeTableData() {
       );
       let weeklyData = {};
       let weekGoals = 0;
-      let redCards = 0;
+      let weekRedCards = 0;
+      let weekAssists = 0;
+      let weekCleanSheets = 0;
 
       $(table)
         .find('.player-total-data')
@@ -257,17 +259,25 @@ export function storeTableData() {
             weekGoals += parseInt($(playerdata).attr('data-goals'), 10);
           }
           if ($(playerdata).hasClass('sent-off')) {
-            redCards++;
+            weekRedCards++;
+          }
+          if ($(playerdata).attr('data-cleansheets')) {
+            weekCleanSheets++;
+          }
+          if ($(playerdata).attr('data-assists')) {
+            weekAssists += parseInt($(playerdata).attr('data-assists'), 10);
           }
         });
 
       if (draftedTeamID === TableTeamID) {
         weeklyData = {
-          week: currentWeek,
           excludeWeek: excludeWeek,
-          weekPoints: weekPoints,
+          week: currentWeek,
           weekGoals: weekGoals,
-          weekRedCards: redCards
+          weekPoints: weekPoints,
+          weekRedCards: weekRedCards,
+          weekAssists: weekAssists,
+          weekCleanSheets: weekCleanSheets
         };
 
         let weekExists = false;
@@ -279,7 +289,9 @@ export function storeTableData() {
               weekData.weekPoints = weekPoints;
               weekData.excludeWeek = excludeWeek;
               weekData.weekGoals = weekGoals;
-              weekData.weekRedCards = redCards;
+              weekData.weekRedCards = weekRedCards;
+              weekData.weekAssists = weekAssists;
+              weekData.weekCleanSheets = weekCleanSheets;
             }
           }
         }

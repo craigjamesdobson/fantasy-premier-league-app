@@ -23,7 +23,7 @@
     .th-position,
     .td-position {
       position: relative;
-      width: 12.5%;
+      width: 10%;
 
       .svg-inline--fa {
         position: absolute;
@@ -50,7 +50,7 @@
     .th-prevweek,
     .td-prevweek {
       display: none;
-      width: 12.5%;
+      width: 10%;
 
       @include media-breakpoint-up(sm) {
         display: table-cell;
@@ -58,7 +58,7 @@
     }
     .th-team,
     .td-team {
-      width: 27.5%;
+      width: 20%;
     }
     .th-redcards,
     .td-redcards {
@@ -72,7 +72,7 @@
     .th-goals,
     .td-goals {
       display: none;
-      width: 12.5%;
+      width: 10%;
 
       @include media-breakpoint-up(sm) {
         display: table-cell;
@@ -81,7 +81,7 @@
     .th-weekscore,
     .td-weekscore {
       position: relative;
-      width: 12.5%;
+      width: 10%;
 
       .fa-star {
         margin-left: 10px;
@@ -90,9 +90,17 @@
         vertical-align: baseline;
       }
     }
+    .th-cleansheets,
+    .td-cleansheets {
+      width: 10%;
+    }
+    .th-assists,
+    .td-assists {
+      width: 10%;
+    }
     .th-total,
     .td-total {
-      width: 12.5%;
+      width: 10%;
     }
 
     .sticky-header {

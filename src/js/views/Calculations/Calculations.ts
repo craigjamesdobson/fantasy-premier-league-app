@@ -325,6 +325,7 @@ function calculatePoints() {
       } else if (positionID === '2') {
         cleanSheetTotal = 2;
       }
+      $(player).attr('data-cleansheets', '1');
     }
 
     if (sentOff) {
@@ -347,6 +348,8 @@ function calculatePoints() {
     }
 
     if (assists > 0) {
+      $(player)
+      .attr('data-assists', assists);
       assistTotal = 3 * assists;
     }
 
@@ -377,6 +380,8 @@ function updatePointsTotal() {
 
     const matchingPlayerPoints = matchingPlayerID.attr('data-points');
     const matchingPlayerGoals = matchingPlayerID.attr('data-goals');
+    const matchingPlayerCleanSheets = matchingPlayerID.attr('data-cleansheets');
+    const matchingPlayerAssists = matchingPlayerID.attr('data-assists');
 
     $(player)
       .find('.points')
@@ -395,6 +400,18 @@ function updatePointsTotal() {
       $(player).attr('data-goals', matchingPlayerGoals);
     } else {
       $(player).removeAttr('data-goals');
+    }
+
+    if ($(matchingPlayerID).attr('data-cleansheets')) {
+      $(player).attr('data-cleansheets', matchingPlayerCleanSheets);
+    } else {
+      $(player).removeAttr('data-cleansheets');
+    }
+
+    if ($(matchingPlayerID).attr('data-assists')) {
+      $(player).attr('data-assists', matchingPlayerAssists);
+    } else {
+      $(player).removeAttr('data-assists');
     }
   });
 

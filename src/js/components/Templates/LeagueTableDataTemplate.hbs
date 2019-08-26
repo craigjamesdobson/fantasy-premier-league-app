@@ -10,8 +10,10 @@
         <th class="th-position sticky-header">Position</th>
         <th class="th-prevweek sticky-header">Prv Week</th>
         <th class="th-team sticky-header">Team</th>
-        <th class="th-redcards sticky-header">Red Cards</th>
+        <th class="th-cleansheets sticky-header">Clean Sheets</th>
+        <th class="th-assists sticky-header">Assists</th>
         <th class="th-goals sticky-header">Goals Scored</th>
+        <th class="th-redcards sticky-header">Red Cards</th>
         <th class="th-weekscore sticky-header">Week Points</th>
         <th class="th-total sticky-header">Total Points</th>
     </tr>
@@ -21,8 +23,10 @@
         <td class="td-position {{positionChange}}">{{tablePosition}} <i class="fas {{positionChange}}"></i></td>
         <td class="td-prevweek">{{prevWeekPosition}}</td>
         <td class="td-team">{{teamName}}</td>
-        <td class="td-redcards">{{redCardTotal}}</td>
+        <td class="td-cleansheets">{{cleanSheetTotal}}</td>
+        <td class="td-assists">{{assistTotal}}</td>
         <td class="td-goals">{{goalsTotal}}</td>
+        <td class="td-redcards">{{redCardTotal}}</td>
         <td class="td-weekscore">{{weekPoints}}{{#if weekWinner}}<i class="fas fa-star"></i>{{/if}}</td>
         <td class="td-total">{{pointsTotal}}</td>
     </tr>

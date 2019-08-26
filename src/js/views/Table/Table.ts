@@ -24,6 +24,8 @@ function initDraftedTeamData() {
     let pointsTotal = 0;
     let goalsTotal = 0;
     let redCardTotal = 0;
+    let assistTotal = 0;
+    let cleanSheetTotal = 0;
     let weekPoints = 0;
     let prevWeekPos = 'N/A';
 
@@ -33,6 +35,8 @@ function initDraftedTeamData() {
           pointsTotal += weekData.weekPoints;
           goalsTotal += weekData.weekGoals;
           redCardTotal += weekData.weekRedCards;
+          assistTotal += weekData.weekAssists;
+          cleanSheetTotal += weekData.weekCleanSheets;
         }
       }
 
@@ -50,6 +54,8 @@ function initDraftedTeamData() {
     draftedTeam.prevWeekPosition = prevWeekPos;
     draftedTeam.weekPoints = weekPoints;
     draftedTeam.redCardTotal = redCardTotal;
+    draftedTeam.assistTotal = assistTotal;
+    draftedTeam.cleanSheetTotal = cleanSheetTotal;
     draftedTeam.goalsTotal = goalsTotal;
     draftedTeam.pointsTotal = pointsTotal;
     draftedTeam.excludeWeek = excludeWeek;

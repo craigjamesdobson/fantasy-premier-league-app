@@ -11,7 +11,7 @@
   .league-table-container table .th-position,
   .league-table-container table .td-position {
     position: relative;
-    width: 12.5%; }
+    width: 10%; }
     .league-table-container table .th-position .svg-inline--fa,
     .league-table-container table .td-position .svg-inline--fa {
       position: absolute;
@@ -34,14 +34,14 @@
   .league-table-container table .th-prevweek,
   .league-table-container table .td-prevweek {
     display: none;
-    width: 12.5%; }
+    width: 10%; }
     @media (min-width: 576px) {
       .league-table-container table .th-prevweek,
       .league-table-container table .td-prevweek {
         display: table-cell; } }
   .league-table-container table .th-team,
   .league-table-container table .td-team {
-    width: 27.5%; }
+    width: 20%; }
   .league-table-container table .th-redcards,
   .league-table-container table .td-redcards {
     display: none;
@@ -53,7 +53,7 @@
   .league-table-container table .th-goals,
   .league-table-container table .td-goals {
     display: none;
-    width: 12.5%; }
+    width: 10%; }
     @media (min-width: 576px) {
       .league-table-container table .th-goals,
       .league-table-container table .td-goals {
@@ -61,16 +61,22 @@
   .league-table-container table .th-weekscore,
   .league-table-container table .td-weekscore {
     position: relative;
-    width: 12.5%; }
+    width: 10%; }
     .league-table-container table .th-weekscore .fa-star,
     .league-table-container table .td-weekscore .fa-star {
       margin-left: 10px;
       font-size: 12px;
       color: var(--yellow);
       vertical-align: baseline; }
+  .league-table-container table .th-cleansheets,
+  .league-table-container table .td-cleansheets {
+    width: 10%; }
+  .league-table-container table .th-assists,
+  .league-table-container table .td-assists {
+    width: 10%; }
   .league-table-container table .th-total,
   .league-table-container table .td-total {
-    width: 12.5%; }
+    width: 10%; }
   .league-table-container table .sticky-header {
     position: -webkit-sticky;
     position: sticky;
