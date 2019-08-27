@@ -7,8 +7,8 @@ import { CreateTeamData } from '../../components/Teams/CreateTeamData';
 import { DraftedTeamData } from '../../components/DraftedTeams/CreateDraftedTeams';
 import { GetStaticData } from '../../components/StaticData/GetStaticData';
 import { PlayerList } from '../../components/Players/PlayerList';
+import { PlayerPositionShort } from '../../components/Players/PlayerPosition';
 import { TeamList } from '../../components/Teams/TeamList';
-
 import { chain } from 'lodash';
 
 // tslint:disable:no-var-requires
@@ -34,7 +34,6 @@ async function initDraftedTeamData(playerList: PlayerList) {
     const draftedTeamList = await DraftedTeamData.getDraftedTeamData();
 
     draftedTeams = draftedTeamList.map(draftedTeam => {
-      const teamName =  draftedTeam.teamName;
       const players = draftedTeam.teamPlayers.map(player => ({
         player: playerList.players.filter(p => p.id === player.playerID)[0],
         transfers: player.transfers
@@ -43,10 +42,45 @@ async function initDraftedTeamData(playerList: PlayerList) {
     });
 
     const sortedDraftTeams = chain(draftedTeams)
-    .orderBy('teamName')
-    .value();
+      .orderBy('teamName')
+      .value();
 
     teamsContainer.append(DraftedTeamDefualtTemplate(sortedDraftTeams));
     resolve();
+    applyTransfers();
+  });
+}
+
+function applyTransfers() {
+  $('.player-total-data').each((i, player) => {
+    const transferData = $(player).attr('data-transfer');
+
+    if (transferData !== undefined) {
+
+      const transfers = transferData.split(',');
+
+      $(transfers).each((j, transfer: any) => {
+        const transferSplit = transfer.split('|');
+        const transferID = transferSplit[1];
+
+        for (const playerdata of playerData.players) {
+          if (playerdata.id === parseInt(transferID, 10)) {
+            $(player).addClass('transfered');
+            $(player)
+              .find('.id')
+              .text(playerdata.id);
+            $(player)
+              .find('.position')
+              .text(PlayerPositionShort[playerdata.playerType]);
+            $(player)
+              .find('.club')
+              .text(playerdata.teamShort);
+            $(player)
+              .find('.player')
+              .text(playerdata.name);
+          }
+        }
+      });
+    }
   });
 }
