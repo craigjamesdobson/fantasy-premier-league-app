@@ -52,35 +52,46 @@ async function initDraftedTeamData(playerList: PlayerList) {
 }
 
 function applyTransfers() {
-  $('.player-total-data').each((i, player) => {
-    const transferData = $(player).attr('data-transfer');
+  $('.table').each((i, table) => {
+    let totalTeamCost = 0;
 
-    if (transferData !== undefined) {
+    $(table).find('.player-total-data').each((i, player) => {
+      const transferData = $(player).attr('data-transfer');
 
-      const transfers = transferData.split(',');
+      if (transferData !== undefined) {
+        const transfers = transferData.split(',');
 
-      $(transfers).each((j, transfer: any) => {
-        const transferSplit = transfer.split('|');
-        const transferID = transferSplit[1];
+        $(transfers).each((j, transfer: any) => {
+          const transferSplit = transfer.split('|');
+          const transferID = transferSplit[1];
 
-        for (const playerdata of playerData.players) {
-          if (playerdata.id === parseInt(transferID, 10)) {
-            $(player).addClass('transfered');
-            $(player)
-              .find('.id')
-              .text(playerdata.id);
-            $(player)
-              .find('.position')
-              .text(PlayerPositionShort[playerdata.playerType]);
-            $(player)
-              .find('.club')
-              .text(playerdata.teamShort);
-            $(player)
-              .find('.player')
-              .text(playerdata.name);
+          for (const playerdata of playerData.players) {
+            if (playerdata.id === parseInt(transferID, 10)) {
+              $(player).addClass('transfered');
+              $(player)
+                .find('.id')
+                .text(playerdata.id);
+              $(player)
+                .find('.position')
+                .text(PlayerPositionShort[playerdata.playerType]);
+              $(player)
+                .find('.club')
+                .text(playerdata.teamShort);
+              $(player)
+                .find('.player')
+                .text(playerdata.name);
+              $(player)
+                .find('.price')
+                .text(playerdata.price);
+            }
           }
-        }
-      });
-    }
+        });
+      }
+      const playerPrice = $(player)
+      .find('.price')
+      .text();
+      totalTeamCost += parseFloat(playerPrice);
+    });
+    $(table).find('.total-team-value').text(totalTeamCost);
   });
 }
