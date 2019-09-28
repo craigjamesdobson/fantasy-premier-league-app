@@ -266,7 +266,12 @@
         },
         {
           "player_id": 128,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 183,
+              "transfer_week": 7
+            }
+          ]
         },
         {
           "player_id": 277,
@@ -311,6 +316,10 @@
             {
               "transfer_id": 233,
               "transfer_week": 2
+            },
+            {
+              "transfer_id": 278,
+              "transfer_week": 7
             }
           ]
         }
@@ -1501,7 +1510,12 @@
       "team_players": [
         {
           "player_id": 189,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 212,
+              "transfer_week": 7
+            }
+          ]
         },
         {
           "player_id": 459,
@@ -1517,7 +1531,12 @@
         },
         {
           "player_id": 163,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 159,
+              "transfer_week": 7
+            }
+          ]
         },
         {
           "player_id": 191,
@@ -1525,7 +1544,12 @@
         },
         {
           "player_id": 114,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 171,
+              "transfer_week": 7
+            }
+          ]
         },
         {
           "player_id": 214,
@@ -1533,7 +1557,12 @@
         },
         {
           "player_id": 409,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 460,
+              "transfer_week": 7
+            }
+          ]
         },
         {
           "player_id": 67,
