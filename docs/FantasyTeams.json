@@ -1192,7 +1192,12 @@
         },
         {
           "player_id": 67,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 460,
+              "transfer_week": 17
+            }
+          ]
         }
       ]
     },
