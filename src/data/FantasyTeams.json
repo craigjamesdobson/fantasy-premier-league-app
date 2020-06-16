@@ -1479,7 +1479,12 @@
         },
         {
           "player_id": 181,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 297,
+              "transfer_week": 28
+            }
+          ]
         },
         {
           "player_id": 182,
@@ -1495,7 +1500,12 @@
         },
         {
           "player_id": 431,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 191,
+              "transfer_week": 28
+            }
+          ]
         },
         {
           "player_id": 11,
@@ -1503,11 +1513,21 @@
         },
         {
           "player_id": 457,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 409,
+              "transfer_week": 28
+            }
+          ]
         },
         {
           "player_id": 210,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 166,
+              "transfer_week": 28
+            }
+          ]
         }
       ]
     },
