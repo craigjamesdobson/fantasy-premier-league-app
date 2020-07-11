@@ -1,10 +1,17 @@
 const path = require('path');
 const webpack = require('webpack');
+
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
+const terserPlugin = require('terser-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const zlib = require('zlib');
+
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
@@ -30,6 +37,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(ts|tsx)$/,
+        loader: 'babel-loader',
+        exclude: [/node_modules/]
+      },
+      {
         test: /\.scss$/,
         use: [
           devMode ? MiniCssExtractPlugin.loader : 'style-loader',
@@ -44,17 +56,6 @@ module.exports = {
           'sass-loader'
         ]
       },
-      {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
-      },
-      // {
-      //   test: /\.(html)$/,
-      //   use: {
-      //     loader: 'html-loader'
-      //   }
-      // },
       {
         test: /\.(png|svg|jpg|gif|pdf)$/,
         use: [
@@ -143,14 +144,23 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[name].css'
-    })
+    }),
+
+    new CompressionPlugin({
+      filename: '[path].gz[query]',
+      algorithm: 'gzip',
+      test: /\.(js|css|html|svg)$/,
+      threshold: 10240,
+      minRatio: 0.8,
+      deleteOriginalAssets: true,
+    }),
   ],
   resolve: {
     extensions: ['.tsx', '.ts', '.js']
   },
   optimization: {
     minimizer: [
-      new UglifyJsPlugin({
+      new terserPlugin({
         cache: true,
         parallel: true,
         sourceMap: true // set to true if you want JS source maps
