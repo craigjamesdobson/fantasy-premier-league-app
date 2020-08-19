@@ -1496,7 +1496,7 @@
           "transfers": [
             {
               "transfer_id": 297,
-              "transfer_week": 28
+              "transfer_week": 30
             }
           ]
         },
@@ -1517,7 +1517,7 @@
           "transfers": [
             {
               "transfer_id": 191,
-              "transfer_week": 28
+              "transfer_week": 30
             }
           ]
         },
@@ -1530,7 +1530,7 @@
           "transfers": [
             {
               "transfer_id": 409,
-              "transfer_week": 28
+              "transfer_week": 30
             }
           ]
         },
@@ -1539,7 +1539,7 @@
           "transfers": [
             {
               "transfer_id": 166,
-              "transfer_week": 28
+              "transfer_week": 30
             }
           ]
         }
@@ -1606,6 +1606,10 @@
             {
               "transfer_id": 278,
               "transfer_week": 6
+            },
+            {
+              "transfer_id": 313,
+              "transfer_week": 35
             }
           ]
         }
