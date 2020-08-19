@@ -2,12 +2,9 @@
   display: inline-block;
   color: #444; }
   .filter-container .filter-toggle .fa-chevron-circle-left {
-    transition: -webkit-transform 0.25s ease-in-out;
-    transition: transform 0.25s ease-in-out;
-    transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out; }
+    transition: transform 0.25s ease-in-out; }
   .filter-container .filter-toggle.collapsed .fa-chevron-circle-left {
-    -webkit-transform: rotate(-90deg);
-            transform: rotate(-90deg); }
+    transform: rotate(-90deg); }
 
 .filter-container .clear-filter {
   cursor: pointer;
@@ -30,12 +27,10 @@
       height: 50px;
       -webkit-filter: grayscale(100%);
               filter: grayscale(100%);
-      -webkit-transform: scale(0.6);
-              transform: scale(0.6);
+      transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-ars.active, .filter-container #search-team .badge .badge-ars:hover {
-        -webkit-transform: scale(0.75);
-                transform: scale(0.75);
+        transform: scale(0.75);
         -webkit-filter: grayscale(0%);
                 filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-avl {
@@ -46,12 +41,10 @@
       height: 50px;
       -webkit-filter: grayscale(100%);
               filter: grayscale(100%);
-      -webkit-transform: scale(0.6);
-              transform: scale(0.6);
+      transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-avl.active, .filter-container #search-team .badge .badge-avl:hover {
-        -webkit-transform: scale(0.75);
-                transform: scale(0.75);
+        transform: scale(0.75);
         -webkit-filter: grayscale(0%);
                 filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-bou {
@@ -62,12 +55,10 @@
       height: 50px;
       -webkit-filter: grayscale(100%);
               filter: grayscale(100%);
-      -webkit-transform: scale(0.6);
-              transform: scale(0.6);
+      transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-bou.active, .filter-container #search-team .badge .badge-bou:hover {
-        -webkit-transform: scale(0.75);
-                transform: scale(0.75);
+        transform: scale(0.75);
         -webkit-filter: grayscale(0%);
                 filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-bha {
@@ -78,12 +69,10 @@
       height: 50px;
       -webkit-filter: grayscale(100%);
               filter: grayscale(100%);
-      -webkit-transform: scale(0.6);
-              transform: scale(0.6);
+      transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-bha.active, .filter-container #search-team .badge .badge-bha:hover {
-        -webkit-transform: scale(0.75);
-                transform: scale(0.75);
+        transform: scale(0.75);
         -webkit-filter: grayscale(0%);
                 filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-bur {
@@ -94,12 +83,10 @@
       height: 50px;
       -webkit-filter: grayscale(100%);
               filter: grayscale(100%);
-      -webkit-transform: scale(0.6);
-              transform: scale(0.6);
+      transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-bur.active, .filter-container #search-team .badge .badge-bur:hover {
-        -webkit-transform: scale(0.75);
-                transform: scale(0.75);
+        transform: scale(0.75);
         -webkit-filter: grayscale(0%);
                 filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-che {
@@ -110,12 +97,10 @@
       height: 50px;
       -webkit-filter: grayscale(100%);
               filter: grayscale(100%);
-      -webkit-transform: scale(0.6);
-              transform: scale(0.6);
+      transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-che.active, .filter-container #search-team .badge .badge-che:hover {
-        -webkit-transform: scale(0.75);
-                transform: scale(0.75);
+        transform: scale(0.75);
         -webkit-filter: grayscale(0%);
                 filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-cry {
@@ -126,12 +111,10 @@
       height: 50px;
       -webkit-filter: grayscale(100%);
               filter: grayscale(100%);
-      -webkit-transform: scale(0.6);
-              transform: scale(0.6);
+      transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-cry.active, .filter-container #search-team .badge .badge-cry:hover {
-        -webkit-transform: scale(0.75);
-                transform: scale(0.75);
+        transform: scale(0.75);
         -webkit-filter: grayscale(0%);
                 filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-eve {
@@ -142,12 +125,10 @@
       height: 50px;
       -webkit-filter: grayscale(100%);
               filter: grayscale(100%);
-      -webkit-transform: scale(0.6);
-              transform: scale(0.6);
+      transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-eve.active, .filter-container #search-team .badge .badge-eve:hover {
-        -webkit-transform: scale(0.75);
-                transform: scale(0.75);
+        transform: scale(0.75);
         -webkit-filter: grayscale(0%);
                 filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-lei {
@@ -158,12 +139,10 @@
       height: 50px;
       -webkit-filter: grayscale(100%);
               filter: grayscale(100%);
-      -webkit-transform: scale(0.6);
-              transform: scale(0.6);
+      transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-lei.active, .filter-container #search-team .badge .badge-lei:hover {
-        -webkit-transform: scale(0.75);
-                transform: scale(0.75);
+        transform: scale(0.75);
         -webkit-filter: grayscale(0%);
                 filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-liv {
@@ -174,12 +153,10 @@
       height: 50px;
       -webkit-filter: grayscale(100%);
               filter: grayscale(100%);
-      -webkit-transform: scale(0.6);
-              transform: scale(0.6);
+      transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-liv.active, .filter-container #search-team .badge .badge-liv:hover {
-        -webkit-transform: scale(0.75);
-                transform: scale(0.75);
+        transform: scale(0.75);
         -webkit-filter: grayscale(0%);
                 filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-mci {
@@ -190,12 +167,10 @@
       height: 50px;
       -webkit-filter: grayscale(100%);
               filter: grayscale(100%);
-      -webkit-transform: scale(0.6);
-              transform: scale(0.6);
+      transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-mci.active, .filter-container #search-team .badge .badge-mci:hover {
-        -webkit-transform: scale(0.75);
-                transform: scale(0.75);
+        transform: scale(0.75);
         -webkit-filter: grayscale(0%);
                 filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-mun {
@@ -206,12 +181,10 @@
       height: 50px;
       -webkit-filter: grayscale(100%);
               filter: grayscale(100%);
-      -webkit-transform: scale(0.6);
-              transform: scale(0.6);
+      transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-mun.active, .filter-container #search-team .badge .badge-mun:hover {
-        -webkit-transform: scale(0.75);
-                transform: scale(0.75);
+        transform: scale(0.75);
         -webkit-filter: grayscale(0%);
                 filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-new {
@@ -222,12 +195,10 @@
       height: 50px;
       -webkit-filter: grayscale(100%);
               filter: grayscale(100%);
-      -webkit-transform: scale(0.6);
-              transform: scale(0.6);
+      transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-new.active, .filter-container #search-team .badge .badge-new:hover {
-        -webkit-transform: scale(0.75);
-                transform: scale(0.75);
+        transform: scale(0.75);
         -webkit-filter: grayscale(0%);
                 filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-nor {
@@ -238,12 +209,10 @@
       height: 50px;
       -webkit-filter: grayscale(100%);
               filter: grayscale(100%);
-      -webkit-transform: scale(0.6);
-              transform: scale(0.6);
+      transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-nor.active, .filter-container #search-team .badge .badge-nor:hover {
-        -webkit-transform: scale(0.75);
-                transform: scale(0.75);
+        transform: scale(0.75);
         -webkit-filter: grayscale(0%);
                 filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-shu {
@@ -254,12 +223,10 @@
       height: 50px;
       -webkit-filter: grayscale(100%);
               filter: grayscale(100%);
-      -webkit-transform: scale(0.6);
-              transform: scale(0.6);
+      transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-shu.active, .filter-container #search-team .badge .badge-shu:hover {
-        -webkit-transform: scale(0.75);
-                transform: scale(0.75);
+        transform: scale(0.75);
         -webkit-filter: grayscale(0%);
                 filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-sou {
@@ -270,12 +237,10 @@
       height: 50px;
       -webkit-filter: grayscale(100%);
               filter: grayscale(100%);
-      -webkit-transform: scale(0.6);
-              transform: scale(0.6);
+      transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-sou.active, .filter-container #search-team .badge .badge-sou:hover {
-        -webkit-transform: scale(0.75);
-                transform: scale(0.75);
+        transform: scale(0.75);
         -webkit-filter: grayscale(0%);
                 filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-tot {
@@ -286,12 +251,10 @@
       height: 50px;
       -webkit-filter: grayscale(100%);
               filter: grayscale(100%);
-      -webkit-transform: scale(0.6);
-              transform: scale(0.6);
+      transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-tot.active, .filter-container #search-team .badge .badge-tot:hover {
-        -webkit-transform: scale(0.75);
-                transform: scale(0.75);
+        transform: scale(0.75);
         -webkit-filter: grayscale(0%);
                 filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-wat {
@@ -302,12 +265,10 @@
       height: 50px;
       -webkit-filter: grayscale(100%);
               filter: grayscale(100%);
-      -webkit-transform: scale(0.6);
-              transform: scale(0.6);
+      transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-wat.active, .filter-container #search-team .badge .badge-wat:hover {
-        -webkit-transform: scale(0.75);
-                transform: scale(0.75);
+        transform: scale(0.75);
         -webkit-filter: grayscale(0%);
                 filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-whu {
@@ -318,12 +279,10 @@
       height: 50px;
       -webkit-filter: grayscale(100%);
               filter: grayscale(100%);
-      -webkit-transform: scale(0.6);
-              transform: scale(0.6);
+      transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-whu.active, .filter-container #search-team .badge .badge-whu:hover {
-        -webkit-transform: scale(0.75);
-                transform: scale(0.75);
+        transform: scale(0.75);
         -webkit-filter: grayscale(0%);
                 filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-wol {
@@ -334,12 +293,10 @@
       height: 50px;
       -webkit-filter: grayscale(100%);
               filter: grayscale(100%);
-      -webkit-transform: scale(0.6);
-              transform: scale(0.6);
+      transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-wol.active, .filter-container #search-team .badge .badge-wol:hover {
-        -webkit-transform: scale(0.75);
-                transform: scale(0.75);
+        transform: scale(0.75);
         -webkit-filter: grayscale(0%);
                 filter: grayscale(0%); }
 

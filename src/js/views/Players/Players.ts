@@ -7,7 +7,7 @@ import { GetStaticData } from '../../components/StaticData/GetStaticData';
 import { PlayerList } from '../../components/Players/PlayerList';
 import { PlayerPosition } from '../../components/Players/PlayerPosition';
 import { TeamList } from '../../components/Teams/TeamList';
-import { debounce } from 'lodash';
+import { debounce } from 'lodash-es';
 import { initPlayerFilters } from './Filters';
 
 /* tslint:disable-next-line:no-var-requires */

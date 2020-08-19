@@ -1,6 +1,7 @@
 import '../../../scss/table.scss';
 
-import { chain, maxBy } from 'lodash';
+import {  maxBy } from 'lodash-es';
+import { chain } from 'lodash';
 
 import swal from 'sweetalert2';
 

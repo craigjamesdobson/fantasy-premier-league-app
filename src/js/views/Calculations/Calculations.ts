@@ -91,7 +91,7 @@ function initTeamData(teamList: TeamList) {
   fixturesContainer.append(FixturesTemplate(teamList));
 }
 
-function togglePlayers(event: JQuery.Event) {
+function togglePlayers(event: any) {
   const positionHeader = $(event.currentTarget);
   const selectedFixture = `#${positionHeader.closest('.fixtures').attr('id')}`;
   const playerTableClass = `.${positionHeader.parents('div').attr('class')}`;
@@ -125,7 +125,7 @@ function disableSelectedTeams(event: JQuery.Event) {
   }
 }
 
-function populateFixture(event: JQuery.Event) {
+function populateFixture(event: any) {
   const fixture = $(event.currentTarget);
   const selectedTeam = fixture.find(':selected').val() as string;
   const playerTableClass = `.${fixture.parent().attr('class')}-players`;
@@ -430,7 +430,7 @@ function updatePointsTotal() {
   });
 }
 
-function resetFixture(event: JQuery.Event) {
+function resetFixture(event: any) {
   const $this = $(event.currentTarget);
   const fixtureText = $this
     .closest('.fixtures')
@@ -439,13 +439,13 @@ function resetFixture(event: JQuery.Event) {
   const selectedFixture = `#${$this.closest('.fixtures').attr('id')}`;
 
   swal({
-    title: 'Are you sure?',
-    html: `<h6>Would you like to reset <b>${fixtureText.toUpperCase()}</b><h4>`,
-    type: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#5cb85c',
     cancelButtonColor: '#d9534f',
-    confirmButtonText: 'Yes, reset it!'
+    confirmButtonColor: '#5cb85c',
+    confirmButtonText: 'Yes, reset it!',
+    html: `<h6>Would you like to reset <b>${fixtureText.toUpperCase()}</b><h4>`,
+    showCancelButton: true,
+    title: 'Are you sure?',
+    type: 'warning',
   }).then((result: any) => {
     if (result.value) {
       $(selectedFixture)
@@ -471,7 +471,7 @@ function resetAllFixtures() {
     .empty();
 }
 
-function applyTransfers(event: JQuery.Event) {
+function applyTransfers(event: any) {
   const weekID = +$(event.currentTarget).val();
 
   $('.player-total-data').each((i, player) => {
@@ -564,11 +564,11 @@ function exportWeekData() {
     localStorage.getItem(selectedWeekPlayers) === null
   ) {
     swal({
-      title: 'No week data to export',
-      type: 'error',
       showCancelButton: false,
       showConfirmButton: false,
-      timer: 1500
+      timer: 1500,
+      title: 'No week data to export',
+      type: 'error'
     });
     return;
   }

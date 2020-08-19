@@ -17,8 +17,7 @@
       position: absolute;
       left: 50px;
       top: 50%;
-      -webkit-transform: translateY(-50%);
-              transform: translateY(-50%); }
+      transform: translateY(-50%); }
     .league-table-container table .th-position .fa-circle,
     .league-table-container table .td-position .fa-circle {
       font-size: 6px;

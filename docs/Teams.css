@@ -63,8 +63,7 @@
           border-radius: 10px;
           padding: 2px; }
       .fixtures-container .fixtures .player-table .position-header.active th .heading-icon {
-        -webkit-transform: rotate(-90deg);
-                transform: rotate(-90deg); }
+        transform: rotate(-90deg); }
     .fixtures-container .fixtures .player-table .player-data {
       display: none;
       transition: all ease 2s; }
