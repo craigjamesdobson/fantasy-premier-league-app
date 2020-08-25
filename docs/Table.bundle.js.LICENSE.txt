@@ -1,0 +1,13 @@
+/*!
+ * handlebars-helper-repeat <https://github.com/helpers/handlebars-helper-repeat>
+ *
+ * Copyright (c) 2014-2018, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+/*!
+ * is-number <https://github.com/jonschlinkert/is-number>
+ *
+ * Copyright (c) 2014-2018, Jon Schlinkert.
+ * Released under the MIT License.
+ */

@@ -1,0 +1,55 @@
+{
+  "drafted_teams": [
+    {
+      "team_id": 1,
+      "team_name": "Test Team 1",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 12,
+          "transfers": []
+        },
+        {
+          "player_id": 259,
+          "transfers": []
+        },
+        {
+          "player_id": 238,
+          "transfers": []
+        },
+        {
+          "player_id": 328,
+          "transfers": []
+        },
+        {
+          "player_id": 155,
+          "transfers": []
+        },
+        {
+          "player_id": 254,
+          "transfers": []
+        },
+        {
+          "player_id": 272,
+          "transfers": []
+        },
+        {
+          "player_id": 302,
+          "transfers": []
+        },
+        {
+          "player_id": 224,
+          "transfers": []
+        },
+        {
+          "player_id": 460,
+          "transfers": []
+        },
+        {
+          "player_id": 366,
+          "transfers": []
+        }
+      ]
+    }
+  ]
+}
