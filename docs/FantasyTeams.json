@@ -1,4 +1,157 @@
 {
   "drafted_teams": [
+    {
+      "team_id": 1,
+      "team_name": "New Yid on the block",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 96,
+          "transfers": []
+        },
+        {
+          "player_id": 259,
+          "transfers": []
+        },
+        {
+          "player_id": 255,
+          "transfers": []
+        },
+        {
+          "player_id": 279,
+          "transfers": []
+        },
+        {
+          "player_id": 457,
+          "transfers": []
+        },
+        {
+          "player_id": 254,
+          "transfers": []
+        },
+        {
+          "player_id": 4,
+          "transfers": []
+        },
+        {
+          "player_id": 276,
+          "transfers": []
+        },
+        {
+          "player_id":6,
+          "transfers": []
+        },
+        {
+          "player_id": 460,
+          "transfers": []
+        },
+        {
+          "player_id": 388,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 2,
+      "team_name": "AC a Little Silhouette of Milan",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 278,
+          "transfers": []
+        },
+        {
+          "player_id": 110,
+          "transfers": []
+        },
+        {
+          "player_id": 17,
+          "transfers": []
+        },
+        {
+          "player_id": 259,
+          "transfers": []
+        },
+        {
+          "player_id": 457,
+          "transfers": []
+        },
+        {
+          "player_id": 4,
+          "transfers": []
+        },
+        {
+          "player_id": 272,
+          "transfers": []
+        },
+        {
+          "player_id": 254,
+          "transfers": []
+        },
+        {
+          "player_id": 224,
+          "transfers": []
+        },
+        {
+          "player_id": 303,
+          "transfers": []
+        },
+        {
+          "player_id": 388,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 3,
+      "team_name": "montychuka",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 217,
+          "transfers": []
+        },
+        {
+          "player_id": 250,
+          "transfers": []
+        },
+        {
+          "player_id": 255,
+          "transfers": []
+        },
+        {
+          "player_id": 313,
+          "transfers": []
+        },
+        {
+          "player_id": 459,
+          "transfers": []
+        },
+        {
+          "player_id": 4,
+          "transfers": []
+        },
+        {
+          "player_id": 272,
+          "transfers": []
+        },
+        {
+          "player_id": 302,
+          "transfers": []
+        },
+        {
+          "player_id": 224,
+          "transfers": []
+        },
+        {
+          "player_id": 268,
+          "transfers": []
+        },
+        {
+          "player_id": 388,
+          "transfers": []
+        }
+      ]
+    }
   ]
 }
