@@ -152,6 +152,159 @@
           "transfers": []
         }
       ]
+    },
+    {
+      "team_id": 4,
+      "team_name": "CORKY'S WARHORSES",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 252,
+          "transfers": []
+        },
+        {
+          "player_id": 162,
+          "transfers": []
+        },
+        {
+          "player_id": 197,
+          "transfers": []
+        },
+        {
+          "player_id": 250,
+          "transfers": []
+        },
+        {
+          "player_id": 255,
+          "transfers": []
+        },
+        {
+          "player_id": 251,
+          "transfers": []
+        },
+        {
+          "player_id": 254,
+          "transfers": []
+        },
+        {
+          "player_id": 276,
+          "transfers": []
+        },
+        {
+          "player_id": 117,
+          "transfers": []
+        },
+        {
+          "player_id": 224,
+          "transfers": []
+        },
+        {
+          "player_id": 388,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 5,
+      "team_name": "WE HAVE IT ALL",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 157,
+          "transfers": []
+        },
+        {
+          "player_id": 255,
+          "transfers": []
+        },
+        {
+          "player_id": 323,
+          "transfers": []
+        },
+        {
+          "player_id": 16,
+          "transfers": []
+        },
+        {
+          "player_id": 451,
+          "transfers": []
+        },
+        {
+          "player_id": 119,
+          "transfers": []
+        },
+        {
+          "player_id": 254,
+          "transfers": []
+        },
+        {
+          "player_id": 251,
+          "transfers": []
+        },
+        {
+          "player_id": 224,
+          "transfers": []
+        },
+        {
+          "player_id": 6,
+          "transfers": []
+        },
+        {
+          "player_id": 166,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 6,
+      "team_name": "A. F. C. BJ",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 252,
+          "transfers": []
+        },
+        {
+          "player_id": 259,
+          "transfers": []
+        },
+        {
+          "player_id": 255,
+          "transfers": []
+        },
+        {
+          "player_id": 250,
+          "transfers": []
+        },
+        {
+          "player_id": 232,
+          "transfers": []
+        },
+        {
+          "player_id": 254,
+          "transfers": []
+        },
+        {
+          "player_id": 272,
+          "transfers": []
+        },
+        {
+          "player_id": 119,
+          "transfers": []
+        },
+        {
+          "player_id": 388,
+          "transfers": []
+        },
+        {
+          "player_id": 224,
+          "transfers": []
+        },
+        {
+          "player_id": 117,
+          "transfers": []
+        }
+      ]
     }
   ]
 }
