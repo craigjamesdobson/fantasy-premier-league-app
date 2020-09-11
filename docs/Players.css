@@ -25,322 +25,276 @@
       background-position: 0px -100px;
       width: 50px;
       height: 50px;
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
+      filter: grayscale(100%);
       transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-ars.active, .filter-container #search-team .badge .badge-ars:hover {
         transform: scale(0.75);
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-avl {
       display: inline-block;
       background: url(/badges-sprite.png);
       background-position: -100px -150px;
       width: 50px;
       height: 50px;
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
+      filter: grayscale(100%);
       transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-avl.active, .filter-container #search-team .badge .badge-avl:hover {
         transform: scale(0.75);
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-bou {
       display: inline-block;
       background: url(/badges-sprite.png);
       background-position: -100px -250px;
       width: 50px;
       height: 50px;
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
+      filter: grayscale(100%);
       transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-bou.active, .filter-container #search-team .badge .badge-bou:hover {
         transform: scale(0.75);
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-bha {
       display: inline-block;
       background: url(/badges-sprite.png);
       background-position: -200px -200px;
       width: 50px;
       height: 50px;
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
+      filter: grayscale(100%);
       transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-bha.active, .filter-container #search-team .badge .badge-bha:hover {
         transform: scale(0.75);
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-bur {
       display: inline-block;
       background: url(/badges-sprite.png);
       background-position: -50px -300px;
       width: 50px;
       height: 50px;
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
+      filter: grayscale(100%);
       transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-bur.active, .filter-container #search-team .badge .badge-bur:hover {
         transform: scale(0.75);
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-che {
       display: inline-block;
       background: url(/badges-sprite.png);
       background-position: -300px -300px;
       width: 50px;
       height: 50px;
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
+      filter: grayscale(100%);
       transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-che.active, .filter-container #search-team .badge .badge-che:hover {
         transform: scale(0.75);
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-cry {
       display: inline-block;
       background: url(/badges-sprite.png);
       background-position: -100px -350px;
       width: 50px;
       height: 50px;
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
+      filter: grayscale(100%);
       transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-cry.active, .filter-container #search-team .badge .badge-cry:hover {
         transform: scale(0.75);
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-eve {
       display: inline-block;
       background: url(/badges-sprite.png);
       background-position: -50px -400px;
       width: 50px;
       height: 50px;
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
+      filter: grayscale(100%);
       transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-eve.active, .filter-container #search-team .badge .badge-eve:hover {
         transform: scale(0.75);
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-ful {
       display: inline-block;
       background: url(/badges-sprite.png);
       background-position: -200px 800px;
       width: 50px;
       height: 50px;
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
+      filter: grayscale(100%);
       transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-ful.active, .filter-container #search-team .badge .badge-ful:hover {
         transform: scale(0.75);
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-lee {
       display: inline-block;
       background: url(/badges-sprite.png);
       background-position: -100px 800px;
       width: 50px;
       height: 50px;
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
+      filter: grayscale(100%);
       transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-lee.active, .filter-container #search-team .badge .badge-lee:hover {
         transform: scale(0.75);
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-lei {
       display: inline-block;
       background: url(/badges-sprite.png);
       background-position: 0px 0px;
       width: 50px;
       height: 50px;
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
+      filter: grayscale(100%);
       transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-lei.active, .filter-container #search-team .badge .badge-lei:hover {
         transform: scale(0.75);
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-liv {
       display: inline-block;
       background: url(/badges-sprite.png);
       background-position: 0px -500px;
       width: 50px;
       height: 50px;
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
+      filter: grayscale(100%);
       transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-liv.active, .filter-container #search-team .badge .badge-liv:hover {
         transform: scale(0.75);
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-mci {
       display: inline-block;
       background: url(/badges-sprite.png);
       background-position: -550px 0px;
       width: 50px;
       height: 50px;
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
+      filter: grayscale(100%);
       transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-mci.active, .filter-container #search-team .badge .badge-mci:hover {
         transform: scale(0.75);
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-mun {
       display: inline-block;
       background: url(/badges-sprite.png);
       background-position: -550px -450px;
       width: 50px;
       height: 50px;
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
+      filter: grayscale(100%);
       transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-mun.active, .filter-container #search-team .badge .badge-mun:hover {
         transform: scale(0.75);
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-new {
       display: inline-block;
       background: url(/badges-sprite.png);
       background-position: 0px -550px;
       width: 50px;
       height: 50px;
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
+      filter: grayscale(100%);
       transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-new.active, .filter-container #search-team .badge .badge-new:hover {
         transform: scale(0.75);
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-nor {
       display: inline-block;
       background: url(/badges-sprite.png);
       background-position: -250px -550px;
       width: 50px;
       height: 50px;
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
+      filter: grayscale(100%);
       transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-nor.active, .filter-container #search-team .badge .badge-nor:hover {
         transform: scale(0.75);
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-shu {
       display: inline-block;
       background: url(/badges-sprite.png);
       background-position: -650px -350px;
       width: 50px;
       height: 50px;
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
+      filter: grayscale(100%);
       transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-shu.active, .filter-container #search-team .badge .badge-shu:hover {
         transform: scale(0.75);
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-sou {
       display: inline-block;
       background: url(/badges-sprite.png);
       background-position: -650px -550px;
       width: 50px;
       height: 50px;
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
+      filter: grayscale(100%);
       transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-sou.active, .filter-container #search-team .badge .badge-sou:hover {
         transform: scale(0.75);
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-tot {
       display: inline-block;
       background: url(/badges-sprite.png);
       background-position: -600px -650px;
       width: 50px;
       height: 50px;
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
+      filter: grayscale(100%);
       transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-tot.active, .filter-container #search-team .badge .badge-tot:hover {
         transform: scale(0.75);
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-wat {
       display: inline-block;
       background: url(/badges-sprite.png);
       background-position: -700px -150px;
       width: 50px;
       height: 50px;
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
+      filter: grayscale(100%);
       transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-wat.active, .filter-container #search-team .badge .badge-wat:hover {
         transform: scale(0.75);
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-wba {
       display: inline-block;
       background: url(/badges-sprite.png);
       background-position: -150px 800px;
       width: 50px;
       height: 50px;
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
+      filter: grayscale(100%);
       transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-wba.active, .filter-container #search-team .badge .badge-wba:hover {
         transform: scale(0.75);
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-whu {
       display: inline-block;
       background: url(/badges-sprite.png);
       background-position: -700px -250px;
       width: 50px;
       height: 50px;
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
+      filter: grayscale(100%);
       transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-whu.active, .filter-container #search-team .badge .badge-whu:hover {
         transform: scale(0.75);
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-wol {
       display: inline-block;
       background: url(/badges-sprite.png);
       background-position: -700px -500px;
       width: 50px;
       height: 50px;
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
+      filter: grayscale(100%);
       transform: scale(0.6);
       transition: all ease-in-out 0.2s; }
       .filter-container #search-team .badge .badge-wol.active, .filter-container #search-team .badge .badge-wol:hover {
         transform: scale(0.75);
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
+        filter: grayscale(0%); }
 
 .player-table {
   text-align: center; }
