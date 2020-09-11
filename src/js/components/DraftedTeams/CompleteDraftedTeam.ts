@@ -5,6 +5,7 @@ import { ICompleteDraftedPlayer } from './ICompleteDraftedPlayer';
 export class CompleteDraftedTeam {
   public readonly teamID: number;
   public readonly teamName: string;
+  public readonly ownerName: string;
   private readonly isInvalidTeam: boolean;
   private readonly invalidErrorMsg: string[];
   private readonly allowedTransfers: boolean;
@@ -15,6 +16,7 @@ export class CompleteDraftedTeam {
   constructor(draftedTeam: DraftedTeam, players: ICompleteDraftedPlayer[]) {
     this.teamID = draftedTeam.teamID;
     this.teamName = draftedTeam.teamName;
+    this.ownerName = draftedTeam.ownerName;
     this.invalidErrorMsg = [];
     this.isInvalidTeam = false;
     this.allowedTransfers = draftedTeam.allowedTransfers;
