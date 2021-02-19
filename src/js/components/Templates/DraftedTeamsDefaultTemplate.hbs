@@ -3,10 +3,11 @@
     <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
         <table class="table my-3">
             <tbody>
-                <tr class="header-row drafted-team-name {{#if isInvalidTeam}}invalid-team{{/if}}" data-id="{{teamID}}">
+                <tr class="header-row drafted-team-name {{#if isInvalidTeam}}invalid-team{{/if}}"
+                    data-id="{{teamID}}">
                     <th colspan="5">
                         {{teamName}} {{#if allowedTransfers}}<i class="fas fa-exchange-alt icon-transfer"
-                            title="Transfers allowed"></i>{{/if}}
+                           title="Transfers allowed"></i>{{/if}}
                         {{#if isInvalidTeam}}<span class="invalid-team-warning">{{teamName}} IS INVALID!</span>{{/if}}
                     </th>
                 </tr>
@@ -18,14 +19,22 @@
                     <th>Price</th>
                 </tr>
                 {{#each teamPlayers}}
-                <tr class="player-total-data {{playerStatus}}" data-player-price="{{playerPrice}}"
+                <tr class="player-total-data {{playerStatus}}"
+                    data-player-price="{{playerPrice}}"
                     data-player-id="{{playerId}}"
-                    {{#if transfers}}data-transfer="{{#each transfers}}{{transferWeek}}|{{transferId}}{{#if @last}}{{else}},{{/if}}{{/each}}"
+                    {{#if
+                    transfers}}
+                    data-transfer="{{#each transfers}}{{transferWeek}}|{{transferId}}{{#if @last}}{{else}},{{/if}}{{/each}}"
+                    data-current-transfer-date="{{#each transfers}}{{currentTransferDateExpiry}}{{/each}}"
                     {{/if}}>
-                    <td class="id" data-original-id="{{playerId}}">{{playerId}}</td>
-                    <td class="position" data-original-position="{{playerPosition}}">{{playerPosition}}</td>
-                    <td class="club" data-original-team="{{playerTeamShort}}">{{playerTeamShort}}</td>
-                    <td class="player" data-original-name="{{playerName}}">{{playerName}}</td>
+                    <td class="id"
+                        data-original-id="{{playerId}}">{{playerId}}</td>
+                    <td class="position"
+                        data-original-position="{{playerPosition}}">{{playerPosition}}</td>
+                    <td class="club"
+                        data-original-team="{{playerTeamShort}}">{{playerTeamShort}}</td>
+                    <td class="player"
+                        data-original-name="{{playerName}}">{{playerName}}</td>
                     <td class="price">{{playerPrice}}</td>
                 </tr>
                 {{/each}}
