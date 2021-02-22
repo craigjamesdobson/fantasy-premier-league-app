@@ -1326,7 +1326,8 @@
           "transfers": [
             {
               "transfer_id": 200,
-              "transfer_week": 25
+              "transfer_week": 25,
+              "currentTransferDateExpiry": "2021, 02, 26"
             }
           ]
         },
