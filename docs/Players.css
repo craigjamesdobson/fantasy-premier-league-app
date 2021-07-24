@@ -43,6 +43,18 @@
       .filter-container #search-team .badge .badge-avl.active, .filter-container #search-team .badge .badge-avl:hover {
         transform: scale(0.75);
         filter: grayscale(0%); }
+    .filter-container #search-team .badge .badge-bre {
+      display: inline-block;
+      background: url(/badges-sprite.png);
+      background-position: -250px 800px;
+      width: 50px;
+      height: 50px;
+      filter: grayscale(100%);
+      transform: scale(0.6);
+      transition: all ease-in-out 0.2s; }
+      .filter-container #search-team .badge .badge-bre.active, .filter-container #search-team .badge .badge-bre:hover {
+        transform: scale(0.75);
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-bou {
       display: inline-block;
       background: url(/badges-sprite.png);
@@ -329,8 +341,8 @@
         display: none;
         position: absolute;
         color: #fff;
-        right: 15px;
-        left: 15px;
+        right: 0;
+        left: 0;
         padding: 5px;
         margin-top: -5px;
         text-align: center;
@@ -345,15 +357,15 @@
     .player-table.table tr.unavailable-for-season {
       cursor: pointer; }
       .player-table.table tr.unavailable-for-season .fa-exclamation-triangle {
-        color: #DB0100; }
+        color: #db0100; }
       .player-table.table tr.unavailable-for-season .player-status {
-        background-color: #DB0100; }
+        background-color: #db0100; }
     .player-table.table tr.temporary-unavailable {
       cursor: pointer; }
       .player-table.table tr.temporary-unavailable .fa-exclamation-triangle {
-        color: #FFCC00; }
+        color: #ffcc00; }
       .player-table.table tr.temporary-unavailable .player-status {
-        background-color: #FFCC00;
+        background-color: #ffcc00;
         color: #333; }
 
 

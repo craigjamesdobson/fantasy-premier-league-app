@@ -21,13 +21,13 @@ let playerData: PlayerList;
 let teamData: TeamList;
 export let draftedTeams: CompleteDraftedTeam[] = [];
 
-GetStaticData.getstaticData().then(async (data) => {
-  playerData = CreatePlayerData.createPlayerData(data);
-  await initDraftedTeamData(playerData);
+// GetStaticData.getstaticData().then(async (data) => {
+//   playerData = CreatePlayerData.createPlayerData(data);
+//   await initDraftedTeamData(playerData);
 
-  teamData = CreateTeamData.createTeamData(data);
-  $('.loading').hide();
-});
+//   teamData = CreateTeamData.createTeamData(data);
+//   $('.loading').hide();
+// });
 
 async function initDraftedTeamData(playerList: PlayerList) {
   return new Promise<void>(async (resolve) => {

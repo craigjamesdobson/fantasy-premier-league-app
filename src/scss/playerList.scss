@@ -1,89 +1,89 @@
-@import "teams";
-@import "filters";
+@import 'teams';
+@import 'filters';
 
 .player-table {
-    text-align: center;
-    colgroup {
-        .id {
-            width: 10%;
-        }
-        .team {
-            width: 20%;
-        }
-        .name {
-            width: 40%;
-        }
-        .price {
-            width: 20%;
-        }
+  text-align: center;
+  colgroup {
+    .id {
+      width: 10%;
     }
-    &.table {
-        width: 100%;
-        td,
-        th {
-            padding: 5px 10px;
-            img {
-                height: 25px;
-                margin-right: 10px;
-            }
-            &:nth-child(4n) {
-                text-align: left;
-            }
-        }
-        tr {
-            position: relative;
-            .fa-exclamation-triangle {
-                position: relative;
-                float: right;
-                margin-top: 3px;
-                z-index: 100;
-            }
-            .player-status {
-                display: none;
-                position: absolute;
-                color: #fff;
-                right: 15px;
-                left: 15px;
-                padding: 5px;
-                margin-top: -5px;
-                text-align: center;
-                z-index: 99;
-            }
-            &:hover {
-                .player-status {
-                    display: inline;
-                    transition: all 3s ease;
-                }
-                &.unavailable-for-season {
-                    .fa-exclamation-triangle {
-                        color: #fff;
-                    }
-                }
-                &.temporary-unavailable {
-                    .fa-exclamation-triangle {
-                        color: #333;
-                    }
-                }
-            }
-        }
-        tr.unavailable-for-season {
-            cursor: pointer;
-            .fa-exclamation-triangle {
-                color: #DB0100;
-            }
-            .player-status {
-                background-color: #DB0100;
-            }
-        }
-        tr.temporary-unavailable {
-            cursor: pointer;
-            .fa-exclamation-triangle {
-                color: #FFCC00;
-            }
-            .player-status {
-                background-color: #FFCC00;
-                color: #333;
-            }
-        }
+    .team {
+      width: 20%;
     }
+    .name {
+      width: 40%;
+    }
+    .price {
+      width: 20%;
+    }
+  }
+  &.table {
+    width: 100%;
+    td,
+    th {
+      padding: 5px 10px;
+      img {
+        height: 25px;
+        margin-right: 10px;
+      }
+      &:nth-child(4n) {
+        text-align: left;
+      }
+    }
+    tr {
+      position: relative;
+      .fa-exclamation-triangle {
+        position: relative;
+        float: right;
+        margin-top: 3px;
+        z-index: 100;
+      }
+      .player-status {
+        display: none;
+        position: absolute;
+        color: #fff;
+        right: 0;
+        left: 0;
+        padding: 5px;
+        margin-top: -5px;
+        text-align: center;
+        z-index: 99;
+      }
+      &:hover {
+        .player-status {
+          display: inline;
+          transition: all 3s ease;
+        }
+        &.unavailable-for-season {
+          .fa-exclamation-triangle {
+            color: #fff;
+          }
+        }
+        &.temporary-unavailable {
+          .fa-exclamation-triangle {
+            color: #333;
+          }
+        }
+      }
+    }
+    tr.unavailable-for-season {
+      cursor: pointer;
+      .fa-exclamation-triangle {
+        color: #db0100;
+      }
+      .player-status {
+        background-color: #db0100;
+      }
+    }
+    tr.temporary-unavailable {
+      cursor: pointer;
+      .fa-exclamation-triangle {
+        color: #ffcc00;
+      }
+      .player-status {
+        background-color: #ffcc00;
+        color: #333;
+      }
+    }
+  }
 }

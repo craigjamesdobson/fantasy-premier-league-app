@@ -10,7 +10,7 @@ import {
   importWeekData,
   populateSelectedWeek,
   storeTableData,
-  storeWeeklyData
+  storeWeeklyData,
 } from '../../components/Database/WeeklyData';
 
 import { CompleteDraftedTeam } from '../../components/DraftedTeams/CompleteDraftedTeam';
@@ -38,7 +38,7 @@ let playerData: PlayerList;
 let teamData: TeamList;
 export let draftedTeams: CompleteDraftedTeam[] = [];
 
-GetStaticData.getstaticData().then(async data => {
+GetStaticData.getstaticData().then(async (data) => {
   playerData = CreatePlayerData.createPlayerData(data);
   await initDraftedTeamData(playerData);
 
@@ -49,20 +49,18 @@ GetStaticData.getstaticData().then(async data => {
 });
 
 async function initDraftedTeamData(playerList: PlayerList) {
-  return new Promise<void>(async resolve => {
+  return new Promise<void>(async (resolve) => {
     const draftedTeamList = await DraftedTeamData.getDraftedTeamData();
 
-    draftedTeams = draftedTeamList.map(draftedTeam => {
-      const players = draftedTeam.teamPlayers.map(player => ({
-        player: playerList.players.filter(p => p.id === player.playerID)[0],
-        transfers: player.transfers
+    draftedTeams = draftedTeamList.map((draftedTeam) => {
+      const players = draftedTeam.teamPlayers.map((player) => ({
+        player: playerList.players.filter((p) => p.id === player.playerID)[0],
+        transfers: player.transfers,
       }));
       return new CompleteDraftedTeam(draftedTeam, players);
     });
 
-    const sortedDraftTeams = chain(draftedTeams)
-    .orderBy('teamName')
-    .value();
+    const sortedDraftTeams = chain(draftedTeams).orderBy('teamName').value();
 
     teamsContainer.append(DraftedTeamTemplate(sortedDraftTeams));
 
@@ -80,7 +78,7 @@ function createDraftedTeamData() {
     (draftedTeamData = {
       teamID: draftedTeam.teamID,
       teamName: draftedTeam.teamName,
-      weeklyData: []
+      weeklyData: [],
     }),
       draftedTeamsData.push(draftedTeamData);
   }
@@ -132,7 +130,7 @@ function populateFixture(event: any) {
   const selectedFixture = `#${fixture.closest('.fixtures').attr('id')}`;
 
   const filteredPlayers = playerData.players.filter(
-    p => p.teamID === parseInt(selectedTeam, 10)
+    (p) => p.teamID === parseInt(selectedTeam, 10)
   );
 
   const filteredPositions = {
@@ -141,27 +139,27 @@ function populateFixture(event: any) {
         id: 1,
         name: 'Goalkeeper',
         nameShort: 'GK',
-        players: filteredPlayers.filter(g => g.playerType === 1)
+        players: filteredPlayers.filter((g) => g.playerType === 1),
       },
       {
         id: 2,
         name: 'Defender',
         nameShort: 'DEF',
-        players: filteredPlayers.filter(g => g.playerType === 2)
+        players: filteredPlayers.filter((g) => g.playerType === 2),
       },
       {
         id: 3,
         name: 'Midfielder',
         nameShort: 'MID',
-        players: filteredPlayers.filter(g => g.playerType === 3)
+        players: filteredPlayers.filter((g) => g.playerType === 3),
       },
       {
         id: 4,
         name: 'Forward',
         nameShort: 'FWD',
-        players: filteredPlayers.filter(g => g.playerType === 4)
-      }
-    ]
+        players: filteredPlayers.filter((g) => g.playerType === 4),
+      },
+    ],
   };
 
   $(selectedFixture)
@@ -173,9 +171,7 @@ function populateFixture(event: any) {
       $(player).attr('data-position') === '3' ||
       $(player).attr('data-position') === '4'
     ) {
-      $(player)
-        .find('.clean-sheet-checkbox')
-        .attr('disabled', 'disabled');
+      $(player).find('.clean-sheet-checkbox').attr('disabled', 'disabled');
     }
   });
 }
@@ -185,17 +181,11 @@ export function populateAllFixtures() {
   const retrievedPlayers = localStorage.getItem(selectedWeekPlayers);
 
   $('.teams-dropdown').each((i, teams) => {
-    const playerTableClass = `.${$(teams)
-      .parent()
-      .attr('class')}-players`;
-    const selectedFixture = `#${$(teams)
-      .closest('.fixtures')
-      .attr('id')}`;
-    const selectedTeam = $(teams)
-      .find(':selected')
-      .val() as string;
+    const playerTableClass = `.${$(teams).parent().attr('class')}-players`;
+    const selectedFixture = `#${$(teams).closest('.fixtures').attr('id')}`;
+    const selectedTeam = $(teams).find(':selected').val() as string;
     const filteredPlayers = playerData.players.filter(
-      p => p.teamID === parseInt(selectedTeam, 10)
+      (p) => p.teamID === parseInt(selectedTeam, 10)
     );
     const filteredPositions = {
       filteredPositions: [
@@ -203,34 +193,30 @@ export function populateAllFixtures() {
           id: 1,
           name: 'Goalkeeper',
           nameShort: 'GK',
-          players: filteredPlayers.filter(g => g.playerType === 1)
+          players: filteredPlayers.filter((g) => g.playerType === 1),
         },
         {
           id: 2,
           name: 'Defender',
           nameShort: 'DEF',
-          players: filteredPlayers.filter(g => g.playerType === 2)
+          players: filteredPlayers.filter((g) => g.playerType === 2),
         },
         {
           id: 3,
           name: 'Midfielder',
           nameShort: 'MID',
-          players: filteredPlayers.filter(g => g.playerType === 3)
+          players: filteredPlayers.filter((g) => g.playerType === 3),
         },
         {
           id: 4,
           name: 'Forward',
           nameShort: 'FWD',
-          players: filteredPlayers.filter(g => g.playerType === 4)
-        }
-      ]
+          players: filteredPlayers.filter((g) => g.playerType === 4),
+        },
+      ],
     };
 
-    if (
-      $(teams)
-        .find(':selected')
-        .val() !== '0'
-    ) {
+    if ($(teams).find(':selected').val() !== '0') {
       $(selectedFixture)
         .find(playerTableClass)
         .html(PopulateFixturesTemplate(filteredPositions));
@@ -240,9 +226,7 @@ export function populateAllFixtures() {
           $(player).attr('data-position') === '3' ||
           $(player).attr('data-position') === '4'
         ) {
-          $(player)
-            .find('.clean-sheet-checkbox')
-            .attr('disabled', 'disabled');
+          $(player).find('.clean-sheet-checkbox').attr('disabled', 'disabled');
         }
       });
     }
@@ -262,12 +246,8 @@ export function populateAllFixtures() {
             $(dataPlayer)
               .find('.clean-sheet-checkbox')
               .prop('checked', playerList[j].cleanSheet);
-            $(dataPlayer)
-              .find('.score-select')
-              .val(playerList[j].goalsScored);
-            $(dataPlayer)
-              .find('.assist-select')
-              .val(playerList[j].assistTotal);
+            $(dataPlayer).find('.score-select').val(playerList[j].goalsScored);
+            $(dataPlayer).find('.assist-select').val(playerList[j].assistTotal);
           }
         });
       });
@@ -283,24 +263,16 @@ function calculatePoints() {
     let redCardTotal = 0;
     let pointsTotal = 0;
     const goalsScored = parseInt(
-      $(player)
-        .find('.score-select')
-        .val() as string,
+      $(player).find('.score-select').val() as string,
       10
     );
     const assists = parseInt(
-      $(player)
-        .find('.assist-select')
-        .val() as string,
+      $(player).find('.assist-select').val() as string,
       10
     );
     const positionID = $(player).attr('data-position');
-    const cleanSheet = $(player)
-      .find('.clean-sheet-checkbox')
-      .is(':checked');
-    const sentOff = $(player)
-      .find('.red-card-checkbox')
-      .is(':checked');
+    const cleanSheet = $(player).find('.clean-sheet-checkbox').is(':checked');
+    const sentOff = $(player).find('.red-card-checkbox').is(':checked');
 
     let multiplier;
 
@@ -348,8 +320,7 @@ function calculatePoints() {
     }
 
     if (assists > 0) {
-      $(player)
-      .attr('data-assists', assists);
+      $(player).attr('data-assists', assists);
       assistTotal = 3 * assists;
     }
 
@@ -370,9 +341,7 @@ function calculatePoints() {
 
 function updatePointsTotal() {
   $('.player-total-data').each((i, player) => {
-    const playerID = $(player)
-      .find('.id')
-      .text();
+    const playerID = $(player).find('.id').text();
 
     const matchingPlayerID = $('.player-data').filter((j, matchingPlayer) => {
       return $(matchingPlayer).attr('data-id') === playerID;
@@ -383,12 +352,8 @@ function updatePointsTotal() {
     const matchingPlayerCleanSheets = matchingPlayerID.attr('data-cleansheets');
     const matchingPlayerAssists = matchingPlayerID.attr('data-assists');
 
-    $(player)
-      .find('.points')
-      .text('0');
-    $(player)
-      .find('.points')
-      .text(matchingPlayerPoints);
+    $(player).find('.points').text('0');
+    $(player).find('.points').text(matchingPlayerPoints);
 
     if ($(matchingPlayerID).attr('data-sentoff') === 'true') {
       $(player).addClass('sent-off');
@@ -424,18 +389,13 @@ function updatePointsTotal() {
         total += parseInt($(player).text(), 10);
       });
 
-    $(teams)
-      .find('.total-points')
-      .text(total);
+    $(teams).find('.total-points').text(total);
   });
 }
 
 function resetFixture(event: any) {
   const $this = $(event.currentTarget);
-  const fixtureText = $this
-    .closest('.fixtures')
-    .find('h3')
-    .text();
+  const fixtureText = $this.closest('.fixtures').find('h3').text();
   const selectedFixture = `#${$this.closest('.fixtures').attr('id')}`;
 
   swal({
@@ -448,12 +408,8 @@ function resetFixture(event: any) {
     type: 'warning',
   }).then((result: any) => {
     if (result.value) {
-      $(selectedFixture)
-        .find('select')
-        .val(0);
-      $(selectedFixture)
-        .find('.home-team-players, .away-team-players')
-        .empty();
+      $(selectedFixture).find('select').val(0);
+      $(selectedFixture).find('.home-team-players, .away-team-players').empty();
 
       calculatePoints();
       updatePointsTotal();
@@ -463,12 +419,8 @@ function resetFixture(event: any) {
 }
 
 function resetAllFixtures() {
-  $('.fixtures')
-    .find('select')
-    .val(0);
-  $('.fixtures')
-    .find('.home-team-players, .away-team-players')
-    .empty();
+  $('.fixtures').find('select').val(0);
+  $('.fixtures').find('.home-team-players, .away-team-players').empty();
 }
 
 function applyTransfers(event: any) {
@@ -476,15 +428,11 @@ function applyTransfers(event: any) {
 
   $('.player-total-data').each((i, player) => {
     const transferData = $(player).attr('data-transfer');
-    const cachedPlayerID = $(player)
-      .find('.id')
-      .attr('data-original-id');
+    const cachedPlayerID = $(player).find('.id').attr('data-original-id');
     const cachedPlayerPosition = $(player)
       .find('.position')
       .attr('data-original-position');
-    const cachedPlayerTeam = $(player)
-      .find('.club')
-      .attr('data-original-team');
+    const cachedPlayerTeam = $(player).find('.club').attr('data-original-team');
     const cachedPlayerName = $(player)
       .find('.player')
       .attr('data-original-name');
@@ -492,18 +440,10 @@ function applyTransfers(event: any) {
 
     if (transferData !== undefined) {
       $(player).removeClass('transfered current-week-transfer');
-      $(player)
-        .find('.id')
-        .text(cachedPlayerID);
-      $(player)
-        .find('.position')
-        .text(cachedPlayerPosition);
-      $(player)
-        .find('.club')
-        .text(cachedPlayerTeam);
-      $(player)
-        .find('.player')
-        .text(cachedPlayerName);
+      $(player).find('.id').text(cachedPlayerID);
+      $(player).find('.position').text(cachedPlayerPosition);
+      $(player).find('.club').text(cachedPlayerTeam);
+      $(player).find('.player').text(cachedPlayerName);
 
       const transfers = transferData.split(',');
 
@@ -529,18 +469,12 @@ function applyTransfers(event: any) {
                 $(player).addClass('current-week-transfer');
               }
               $(player).addClass('transfered');
-              $(player)
-                .find('.id')
-                .text(playerdata.id);
+              $(player).find('.id').text(playerdata.id);
               $(player)
                 .find('.position')
                 .text(PlayerPositionShort[playerdata.playerType]);
-              $(player)
-                .find('.club')
-                .text(playerdata.teamShort);
-              $(player)
-                .find('.player')
-                .text(playerdata.name);
+              $(player).find('.club').text(playerdata.teamShort);
+              $(player).find('.player').text(playerdata.name);
               transferSet = true;
               return;
             }
@@ -568,7 +502,7 @@ function exportWeekData() {
       showConfirmButton: false,
       timer: 1500,
       title: 'No week data to export',
-      type: 'error'
+      type: 'error',
     });
     return;
   }
@@ -590,10 +524,10 @@ function exportWeekData() {
   );
 
   const selectedWeekFixturesData = new Blob([formattedFixtureString], {
-    type: 'text/plain'
+    type: 'text/plain',
   });
   const selectedWeekPlayersData = new Blob([formattedPlayerString], {
-    type: 'text/plain'
+    type: 'text/plain',
   });
 
   // If we are replacing a previously generated file we need to
@@ -628,9 +562,9 @@ function exportWeekData() {
 
 $(document).on('click', '.position-header', togglePlayers);
 
-$(document).on('click', '.clear-fixture', event => resetFixture(event));
+$(document).on('click', '.clear-fixture', (event) => resetFixture(event));
 
-$(document).on('change', '.teams-dropdown', event => {
+$(document).on('change', '.teams-dropdown', (event) => {
   populateFixture(event);
   disableSelectedTeams(event);
   calculatePoints();
@@ -640,13 +574,13 @@ $(document).on('change', '.teams-dropdown', event => {
 $(document).on(
   'change',
   '.score-select, .assist-select, .clean-sheet-checkbox, .red-card-checkbox',
-  event => {
+  (event) => {
     calculatePoints();
     updatePointsTotal();
   }
 );
 
-$(document).on('change', '.week-dropdown', event => {
+$(document).on('change', '.week-dropdown', (event) => {
   resetAllFixtures();
   applyTransfers(event);
   populateSelectedWeek();
@@ -656,19 +590,19 @@ $(document).on('change', '.week-dropdown', event => {
   updatePointsTotal();
 });
 
-$(document).on('click', '.save-week', event => {
+$(document).on('click', '.save-week', (event) => {
   storeWeeklyData();
   storeTableData();
 });
 
-$(document).on('click', '.delete-week', event => {
+$(document).on('click', '.delete-week', (event) => {
   deleteWeeklyData();
 });
 
-$(document).on('click', '#import-week', event => {
+$(document).on('click', '#import-week', (event) => {
   importWeekData();
 });
 
-$(document).on('click', '#export-week', event => {
+$(document).on('click', '#export-week', (event) => {
   exportWeekData();
 });
