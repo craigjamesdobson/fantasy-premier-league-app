@@ -67,12 +67,12 @@ export class Player {
         this.teamShort = 'EVE';
         break;
       case 9:
-        this.teamName = 'Leeds';
-        this.teamShort = 'LEE';
-      case 10:
         this.teamName = 'Leicester';
         this.teamShort = 'LEI';
         break;
+      case 10:
+        this.teamName = 'Leeds';
+        this.teamShort = 'LEE';
         break;
       case 11:
         this.teamName = 'Liverpool';
