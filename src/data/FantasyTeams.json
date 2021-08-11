@@ -1,0 +1,216 @@
+{
+  "drafted_teams": [
+    {
+      "team_id": 1,
+      "team_name": "NOBBYS BOYS",
+      "team_owner": "Paul Noble",
+      "team_email": "PAUL.A.NOBLE61@GMAIL.COM",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 257,
+          "transfers": []
+        },
+        {
+          "player_id": 275,
+          "transfers": []
+        },
+        {
+          "player_id": 262,
+          "transfers": []
+        },
+        {
+          "player_id": 237,
+          "transfers": []
+        },
+        {
+          "player_id": 256,
+          "transfers": []
+        },
+        {
+          "player_id": 233,
+          "transfers": []
+        },
+        {
+          "player_id": 265,
+          "transfers": []
+        },
+        {
+          "player_id": 277,
+          "transfers": []
+        },
+        {
+          "player_id": 205,
+          "transfers": []
+        },
+        {
+          "player_id": 177,
+          "transfers": []
+        },
+        {
+          "player_id": 357,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 2,
+      "team_name": "Sonny side up",
+      "team_owner": "Robert Mottram",
+      "team_email": "Bobby.spurslad.mottram@gmail.com",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 143,
+          "transfers": []
+        },
+        {
+          "player_id": 135,
+          "transfers": []
+        },
+        {
+          "player_id": 16,
+          "transfers": []
+        },
+        {
+          "player_id": 370,
+          "transfers": []
+        },
+        {
+          "player_id": 326,
+          "transfers": []
+        },
+        {
+          "player_id": 33,
+          "transfers": []
+        },
+        {
+          "player_id": 233,
+          "transfers": []
+        },
+        {
+          "player_id": 359,
+          "transfers": []
+        },
+        {
+          "player_id": 40,
+          "transfers": []
+        },
+        {
+          "player_id": 189,
+          "transfers": []
+        },
+        {
+          "player_id": 357,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 3,
+      "team_name": "SARAHSCARERS",
+      "team_owner": "Sarah Cornish",
+      "team_email": "cornish07@googlemail.com",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 143,
+          "transfers": []
+        },
+        {
+          "player_id": 38,
+          "transfers": []
+        },
+        {
+          "player_id": 237,
+          "transfers": []
+        },
+        {
+          "player_id": 128,
+          "transfers": []
+        },
+        {
+          "player_id": 252,
+          "transfers": []
+        },
+        {
+          "player_id": 251,
+          "transfers": []
+        },
+        {
+          "player_id": 233,
+          "transfers": []
+        },
+        {
+          "player_id": 265,
+          "transfers": []
+        },
+        {
+          "player_id": 205,
+          "transfers": []
+        },
+        {
+          "player_id": 4,
+          "transfers": []
+        },
+        {
+          "player_id": 357,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 4,
+      "team_name": "A.F.C.  BJ",
+      "team_owner": "Shane Porter",
+      "team_email": "",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 257,
+          "transfers": []
+        },
+        {
+          "player_id": 229,
+          "transfers": []
+        },
+        {
+          "player_id": 237,
+          "transfers": []
+        },
+        {
+          "player_id": 119,
+          "transfers": []
+        },
+        {
+          "player_id": 275,
+          "transfers": []
+        },
+        {
+          "player_id": 233,
+          "transfers": []
+        },
+        {
+          "player_id": 251,
+          "transfers": []
+        },
+        {
+          "player_id": 277,
+          "transfers": []
+        },
+        {
+          "player_id": 357,
+          "transfers": []
+        },
+        {
+          "player_id": 189,
+          "transfers": []
+        },
+        {
+          "player_id": 315,
+          "transfers": []
+        }
+      ]
+    }
+  ]
+}
