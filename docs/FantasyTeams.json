@@ -1701,7 +1701,7 @@
       "team_name": "ELITE 11",
       "team_owner": "Simon Danes",
       "team_email": "",
-      "allowed_transfers": false,
+      "allowed_transfers": true,
       "team_players": [
         {
           "player_id": 270,
@@ -1732,7 +1732,7 @@
           "transfers": []
         },
         {
-          "player_id": 131,
+          "player_id": 272,
           "transfers": []
         },
         {
