@@ -361,3 +361,38 @@ export function importWeekData() {
     }
   });
 }
+
+export function deleteAllData() {
+      swal({
+      title: 'Are you sure?',
+      html: `<h4><b>You want to delete all data</b><h4>`,
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#5cb85c',
+      cancelButtonColor: '#d9534f',
+      confirmButtonText: 'Yes, reset it!'
+    }).then((result: any) => {
+      if (result.value) {
+      swal({
+      title: 'Really??',
+      html: `<h4><b>This is irreversible!</b><h4>`,
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#5cb85c',
+      cancelButtonColor: '#d9534f',
+      confirmButtonText: 'Yes, clear all of my data!'
+    }).then((result: any) => {
+      if (result.value) {
+        localStorage.clear();
+        miniSwal({
+          position: 'top-left',
+          type: 'success',
+          title: "All data has been deleted",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+    });
+      }
+    });
+}

@@ -7,6 +7,7 @@ import '../../components/Database/WeeklyData';
 
 import {
   deleteWeeklyData,
+  deleteAllData,
   importWeekData,
   populateSelectedWeek,
   storeTableData,
@@ -605,4 +606,8 @@ $(document).on('click', '#import-week', (event) => {
 
 $(document).on('click', '#export-week', (event) => {
   exportWeekData();
+});
+
+$(document).on('click', '#delete-all-data', (event) => {
+  deleteAllData();
 });
