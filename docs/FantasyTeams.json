@@ -822,7 +822,13 @@
       "team_players": [
         {
           "player_id": 280,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 231,
+              "transfer_week": 3,
+              "currentTransferDateExpiry": "2021, 08, 30"
+            }
+          ]
         },
         {
           "player_id": 275,
@@ -854,7 +860,13 @@
         },
         {
           "player_id": 357,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 529,
+              "transfer_week": 3,
+              "currentTransferDateExpiry": "2021, 08, 30"
+            }
+          ]
         },
         {
           "player_id": 189,
