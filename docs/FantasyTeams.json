@@ -93,6 +93,11 @@
               "transfer_id": 325,
               "transfer_week": 2,
               "currentTransferDateExpiry": "2021, 08, 23"
+            },
+            {
+              "transfer_id": 484,
+              "transfer_week": 4,
+              "currentTransferDateExpiry": "2021, 09, 14"
             }
           ]
         },
@@ -699,7 +704,13 @@
         },
         {
           "player_id": 228,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 413,
+              "transfer_week": 4,
+              "currentTransferDateExpiry": "2021, 09, 14"
+            }
+          ]
         },
         {
           "player_id": 177,
