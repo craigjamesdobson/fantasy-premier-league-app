@@ -1615,7 +1615,13 @@
         },
         {
           "player_id": 251,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 268,
+              "transfer_week": 4,
+              "currentTransferDateExpiry": "2021, 09, 14"
+            }
+          ]
         },
         {
           "player_id": 177,
@@ -1623,7 +1629,13 @@
         },
         {
           "player_id": 40,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 579,
+              "transfer_week": 4,
+              "currentTransferDateExpiry": "2021, 09, 14"
+            }
+          ]
         },
         {
           "player_id": 213,
