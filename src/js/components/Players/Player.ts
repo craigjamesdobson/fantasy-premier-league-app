@@ -118,12 +118,12 @@ export class Player {
 
     // Create availability objects
     switch (true) {
-      case this.availabilityType === 'i':
+      case this.availabilityType === 'i' || this.availabilityType === 'n' || this.availabilityType === 'd':
         this.availabilityType = 'temporary-unavailable';
         this.isUnavailable = true;
         this.availabilityNews = player.news;
         break;
-      case this.availabilityType === 'u' || this.availabilityType === 'n':
+      case this.availabilityType === 'u':
         this.availabilityType = 'unavailable-for-season';
         this.isUnavailable = true;
         this.unavailableForSeason = true;
