@@ -699,7 +699,13 @@
         },
         {
           "player_id": 228,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 413,
+              "transfer_week": 4,
+              "currentTransferDateExpiry": "2021, 09, 14"
+            }
+          ]
         },
         {
           "player_id": 177,
