@@ -1802,7 +1802,13 @@
         },
         {
           "player_id": 273,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 290,
+              "transfer_week": 5,
+              "currentTransferDateExpiry": "2021, 09, 21"
+            }
+          ]
         },
         {
           "player_id": 340,
@@ -1826,11 +1832,23 @@
         },
         {
           "player_id": 269,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 529,
+              "transfer_week": 5,
+              "currentTransferDateExpiry": "2021, 09, 21"
+            }
+          ]
         },
         {
           "player_id": 357,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 579,
+              "transfer_week": 5,
+              "currentTransferDateExpiry": "2021, 09, 21"
+            }
+          ]
         },
         {
           "player_id": 134,
