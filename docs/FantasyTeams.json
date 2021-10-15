@@ -488,7 +488,13 @@
         },
         {
           "player_id": 485,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 359,
+              "transfer_week": 8,
+              "currentTransferDateExpiry": "2021, 10, 18"
+            }
+          ]
         },
         {
           "player_id": 251,
@@ -500,7 +506,13 @@
         },
         {
           "player_id": 430,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 413,
+              "transfer_week": 8,
+              "currentTransferDateExpiry": "2021, 10, 18"
+            }
+          ]
         },
         {
           "player_id": 177,
@@ -508,7 +520,13 @@
         },
         {
           "player_id": 357,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 529,
+              "transfer_week": 8,
+              "currentTransferDateExpiry": "2021, 10, 18"
+            }
+          ]
         }
       ]
     },
@@ -1270,7 +1288,13 @@
         },
         {
           "player_id": 357,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 579,
+              "transfer_week": 8,
+              "currentTransferDateExpiry": "2021, 10, 18"
+            }
+          ]
         },
         {
           "player_id": 189,
