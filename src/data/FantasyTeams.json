@@ -70,7 +70,7 @@
             {
               "transfer_id": 219,
               "transfer_week": 2,
-              "currentTransferDateExpiry": "2021, 08, 23"
+              "currentTransferDateExpiry": "2021-08-23"
             }
           ]
         },
@@ -92,12 +92,12 @@
             {
               "transfer_id": 325,
               "transfer_week": 2,
-              "currentTransferDateExpiry": "2021, 08, 23"
+              "currentTransferDateExpiry": "2021-08-23"
             },
             {
               "transfer_id": 484,
               "transfer_week": 4,
-              "currentTransferDateExpiry": "2021, 09, 14"
+              "currentTransferDateExpiry": "2021-09-14"
             }
           ]
         },
@@ -115,7 +115,7 @@
             {
               "transfer_id": 529,
               "transfer_week": 2,
-              "currentTransferDateExpiry": "2021, 08, 24"
+              "currentTransferDateExpiry": "2021-08-24"
             }
           ]
         },
@@ -382,7 +382,7 @@
             {
               "transfer_id": 289,
               "transfer_week": 7,
-              "currentTransferDateExpiry": "2021, 10, 04"
+              "currentTransferDateExpiry": "2021-10-04"
             }
           ]
         },
@@ -425,7 +425,7 @@
             {
               "transfer_id": 142,
               "transfer_week": 13,
-              "currentTransferDateExpiry": "2021, 11, 29"
+              "currentTransferDateExpiry": "2021-11-29"
             }
           ]
         },
@@ -459,7 +459,7 @@
             {
               "transfer_id": 529,
               "transfer_week": 5,
-              "currentTransferDateExpiry": "2021, 09, 21"
+              "currentTransferDateExpiry": "2021-09-21"
             }
           ]
         }
@@ -498,7 +498,7 @@
             {
               "transfer_id": 359,
               "transfer_week": 8,
-              "currentTransferDateExpiry": "2021, 10, 18"
+              "currentTransferDateExpiry": "2021-10-18"
             }
           ]
         },
@@ -516,7 +516,7 @@
             {
               "transfer_id": 413,
               "transfer_week": 8,
-              "currentTransferDateExpiry": "2021, 10, 18"
+              "currentTransferDateExpiry": "2021-10-18"
             }
           ]
         },
@@ -530,7 +530,7 @@
             {
               "transfer_id": 529,
               "transfer_week": 8,
-              "currentTransferDateExpiry": "2021, 10, 18"
+              "currentTransferDateExpiry": "2021-10-18"
             }
           ]
         }
@@ -744,7 +744,7 @@
             {
               "transfer_id": 413,
               "transfer_week": 4,
-              "currentTransferDateExpiry": "2021, 09, 14"
+              "currentTransferDateExpiry": "2021-09-14"
             }
           ]
         },
@@ -856,7 +856,7 @@
             {
               "transfer_id": 413,
               "transfer_week": 7,
-              "currentTransferDateExpiry": "2021, 10, 04"
+              "currentTransferDateExpiry": "2021-10-04"
             }
           ]
         },
@@ -879,7 +879,7 @@
             {
               "transfer_id": 231,
               "transfer_week": 3,
-              "currentTransferDateExpiry": "2021, 08, 30"
+              "currentTransferDateExpiry": "2021-08-30"
             }
           ]
         },
@@ -917,7 +917,7 @@
             {
               "transfer_id": 529,
               "transfer_week": 3,
-              "currentTransferDateExpiry": "2021, 08, 30"
+              "currentTransferDateExpiry": "2021-08-30"
             }
           ]
         },
@@ -1298,7 +1298,7 @@
             {
               "transfer_id": 579,
               "transfer_week": 8,
-              "currentTransferDateExpiry": "2021, 10, 18"
+              "currentTransferDateExpiry": "2021-10-18"
             }
           ]
         },
@@ -1416,7 +1416,7 @@
     },
     {
       "team_id": 26,
-      "team_name": "No Kane, No Gain",
+      "team_name": "No Kane-No Gain",
       "team_owner": "Antony Norman",
       "team_email": "antonyw.norman.an@gmail.com",
       "allowed_transfers": true,
@@ -1451,7 +1451,7 @@
             {
               "transfer_id": 141,
               "transfer_week": 6,
-              "currentTransferDateExpiry": "2021, 09, 27"
+              "currentTransferDateExpiry": "2021-09-27"
             }
           ]
         },
@@ -1461,7 +1461,7 @@
             {
               "transfer_id": 70,
               "transfer_week": 6,
-              "currentTransferDateExpiry": "2021, 09, 27"
+              "currentTransferDateExpiry": "2021-09-27"
             }
           ]
         },
@@ -1471,7 +1471,7 @@
             {
               "transfer_id": 579,
               "transfer_week": 6,
-              "currentTransferDateExpiry": "2021, 09, 27"
+              "currentTransferDateExpiry": "2021-09-27"
             }
           ]
         },
@@ -1481,7 +1481,7 @@
             {
               "transfer_id": 529,
               "transfer_week": 6,
-              "currentTransferDateExpiry": "2021, 09, 27"
+              "currentTransferDateExpiry": "2021-09-27"
             }
           ]
         },
@@ -1528,7 +1528,7 @@
             {
               "transfer_id": 196,
               "transfer_week": 5,
-              "currentTransferDateExpiry": "2021, 09, 21"
+              "currentTransferDateExpiry": "2021-09-21"
             }
           ]
         },
@@ -1542,7 +1542,7 @@
             {
               "transfer_id": 579,
               "transfer_week": 5,
-              "currentTransferDateExpiry": "2021, 09, 21"
+              "currentTransferDateExpiry": "2021-09-21"
             }
           ]
         },
@@ -1556,7 +1556,7 @@
             {
               "transfer_id": 529,
               "transfer_week": 5,
-              "currentTransferDateExpiry": "2021, 09, 21"
+              "currentTransferDateExpiry": "2021-09-21"
             }
           ]
         }
@@ -1689,7 +1689,7 @@
             {
               "transfer_id": 208,
               "transfer_week": 5,
-              "currentTransferDateExpiry": "2021, 09, 21"
+              "currentTransferDateExpiry": "2021-09-21"
             }
           ]
         },
@@ -1715,7 +1715,7 @@
             {
               "transfer_id": 268,
               "transfer_week": 4,
-              "currentTransferDateExpiry": "2021, 09, 14"
+              "currentTransferDateExpiry": "2021-09-14"
             }
           ]
         },
@@ -1729,7 +1729,7 @@
             {
               "transfer_id": 579,
               "transfer_week": 4,
-              "currentTransferDateExpiry": "2021, 09, 14"
+              "currentTransferDateExpiry": "2021-09-14"
             }
           ]
         },
@@ -1739,7 +1739,7 @@
             {
               "transfer_id": 529,
               "transfer_week": 5,
-              "currentTransferDateExpiry": "2021, 09, 21"
+              "currentTransferDateExpiry": "2021-09-21"
             }
           ]
         }
@@ -1827,7 +1827,7 @@
             {
               "transfer_id": 56,
               "transfer_week": 7,
-              "currentTransferDateExpiry": "2021, 10, 04"
+              "currentTransferDateExpiry": "2021-10-04"
             }
           ]
         },
@@ -1878,7 +1878,7 @@
             {
               "transfer_id": 290,
               "transfer_week": 5,
-              "currentTransferDateExpiry": "2021, 09, 21"
+              "currentTransferDateExpiry": "2021-09-21"
             }
           ]
         },
@@ -1908,7 +1908,7 @@
             {
               "transfer_id": 529,
               "transfer_week": 5,
-              "currentTransferDateExpiry": "2021, 09, 21"
+              "currentTransferDateExpiry": "2021-09-21"
             }
           ]
         },
@@ -1918,7 +1918,7 @@
             {
               "transfer_id": 579,
               "transfer_week": 5,
-              "currentTransferDateExpiry": "2021, 09, 21"
+              "currentTransferDateExpiry": "2021-09-21"
             }
           ]
         },
