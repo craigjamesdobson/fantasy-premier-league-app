@@ -951,7 +951,13 @@
         },
         {
           "player_id": 177,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 40,
+              "transfer_week": 21,
+              "currentTransferDateExpiry": "2022-01-03"
+            }
+          ]
         }
       ]
     },
