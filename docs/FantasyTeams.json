@@ -350,7 +350,13 @@
       "team_players": [
         {
           "player_id": 200,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 257,
+              "transfer_week": 24,
+              "currentTransferDateExpiry": "2022-02-22"
+            }
+          ]
         },
         {
           "player_id": 275,
@@ -451,7 +457,13 @@
         },
         {
           "player_id": 4,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 6,
+              "transfer_week": 24,
+              "currentTransferDateExpiry": "2022-02-22"
+            }
+          ]
         },
         {
           "player_id": 269,
