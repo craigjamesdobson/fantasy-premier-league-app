@@ -354,7 +354,7 @@
             {
               "transfer_id": 257,
               "transfer_week": 24,
-              "currentTransferDateExpiry": "2022-02-22"
+              "currentTransferDateExpiry": "2022-02-10"
             }
           ]
         },
@@ -384,7 +384,7 @@
             {
               "transfer_id": 212,
               "transfer_week": 24,
-              "currentTransferDateExpiry": "2022-02-22"
+              "currentTransferDateExpiry": "2022-02-10"
             }
           ]
         },
@@ -399,7 +399,7 @@
             {
               "transfer_id": 240,
               "transfer_week": 24,
-              "currentTransferDateExpiry": "2022-02-22"
+              "currentTransferDateExpiry": "2022-02-10"
             }
           ]
         },
@@ -472,7 +472,7 @@
             {
               "transfer_id": 6,
               "transfer_week": 24,
-              "currentTransferDateExpiry": "2022-02-22"
+              "currentTransferDateExpiry": "2022-02-10"
             }
           ]
         },
@@ -1357,7 +1357,13 @@
         },
         {
           "player_id": 196,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 240,
+              "transfer_week": 25,
+              "currentTransferDateExpiry": "2022-02-15"
+            }
+          ]
         },
         {
           "player_id": 205,
@@ -1375,7 +1381,13 @@
         },
         {
           "player_id": 189,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 518,
+              "transfer_week": 25,
+              "currentTransferDateExpiry": "2022-02-15"
+            }
+          ]
         }
       ]
     },
