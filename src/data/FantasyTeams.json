@@ -1920,7 +1920,13 @@
         },
         {
           "player_id": 189,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 357,
+              "transfer_week": 25,
+              "currentTransferDateExpiry": "2022-02-15"
+            }
+          ]
         },
         {
           "player_id": 430,
