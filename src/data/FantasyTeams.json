@@ -1985,7 +1985,13 @@
         },
         {
           "player_id": 277,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 131,
+              "transfer_week": 26,
+              "currentTransferDateExpiry": "2021-02-21"
+            }
+          ]
         },
         {
           "player_id": 272,
