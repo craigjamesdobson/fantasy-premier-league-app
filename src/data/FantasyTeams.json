@@ -1981,10 +1981,6 @@
         },
         {
           "player_id": 289,
-          "transfers": []
-        },
-        {
-          "player_id": 277,
           "transfers": [
             {
               "transfer_id": 131,
@@ -1992,6 +1988,10 @@
               "currentTransferDateExpiry": "2022-02-21"
             }
           ]
+        },
+        {
+          "player_id": 277,
+          "transfers": []
         },
         {
           "player_id": 272,
