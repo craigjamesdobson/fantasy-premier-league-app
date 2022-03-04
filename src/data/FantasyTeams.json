@@ -1898,7 +1898,13 @@
         },
         {
           "player_id": 418,
-          "transfers": []
+          "transfers": [
+              {
+                "transfer_id": 224,
+                "transfer_week": 27,
+                "currentTransferDateExpiry": "2021-03-08"
+              }
+          ]
         },
         {
           "player_id": 169,
