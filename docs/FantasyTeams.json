@@ -1617,7 +1617,13 @@
         },
         {
           "player_id": 33,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 22,
+              "transfer_week": 27,
+              "currentTransferDateExpiry": "2021-03-08"
+            }
+          ]
         },
         {
           "player_id": 40,
