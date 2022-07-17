@@ -43,16 +43,16 @@ export class Player {
         this.teamShort = 'AST';
         break;
       case 3:
+        this.teamName = 'Bournemouth';
+        this.teamShort = 'BOU';
+        break;
+      case 4:
         this.teamName = 'Brentford';
         this.teamShort = 'BRE';
         break;
-      case 4:
-        this.teamName = 'Brighton and Hove Albion';
-        this.teamShort = 'BHA';
-        break;
       case 5:
-        this.teamName = 'Burnley';
-        this.teamShort = 'BUR';
+        this.teamName = 'Brighton';
+        this.teamShort = 'BHA';
         break;
       case 6:
         this.teamName = 'Chelsea';
@@ -67,44 +67,44 @@ export class Player {
         this.teamShort = 'EVE';
         break;
       case 9:
+        this.teamName = 'Fulham';
+        this.teamShort = 'FUL';
+        break;
+      case 10:
         this.teamName = 'Leicester';
         this.teamShort = 'LEI';
         break;
-      case 10:
+      case 11:
         this.teamName = 'Leeds';
         this.teamShort = 'LEE';
         break;
-      case 11:
+      case 12:
         this.teamName = 'Liverpool';
         this.teamShort = 'LIV';
         break;
-      case 12:
-        this.teamName = 'Manchester City';
-        this.teamShort = 'MNC';
-        break;
       case 13:
-        this.teamName = 'Manchester United';
-        this.teamShort = 'MNU';
+        this.teamName = 'Man City';
+        this.teamShort = 'MCI';
         break;
       case 14:
+        this.teamName = 'Man Utd';
+        this.teamShort = 'MUN';
+        break;
+      case 15:
         this.teamName = 'Newcastle';
         this.teamShort = 'NEW';
         break;
-      case 15:
-        this.teamName = 'Norwich';
-        this.teamShort = 'NOR';
-        break;
       case 16:
+        this.teamName = 'Nottingham Forest';
+        this.teamShort = 'NFO';
+        break;
+      case 17:
         this.teamName = 'Southampton';
         this.teamShort = 'SOU';
         break;
-      case 17:
-        this.teamName = 'Tottenham Hotspur';
-        this.teamShort = 'TOT';
-        break;
       case 18:
-        this.teamName = 'Watford';
-        this.teamShort = 'WAT';
+        this.teamName = 'Spurs';
+        this.teamShort = 'TOT';
         break;
       case 19:
         this.teamName = 'West Ham';
@@ -118,7 +118,9 @@ export class Player {
 
     // Create availability objects
     switch (true) {
-      case this.availabilityType === 'i' || this.availabilityType === 'n' || this.availabilityType === 'd':
+      case this.availabilityType === 'i' ||
+        this.availabilityType === 'n' ||
+        this.availabilityType === 'd':
         this.availabilityType = 'temporary-unavailable';
         this.isUnavailable = true;
         this.availabilityNews = player.news;
