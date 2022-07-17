@@ -199,6 +199,18 @@
       .filter-container #search-team .badge .badge-mun.active, .filter-container #search-team .badge .badge-mun:hover {
         transform: scale(0.75);
         filter: grayscale(0%); }
+    .filter-container #search-team .badge .badge-nfo {
+      display: inline-block;
+      background: url(/badges-sprite.png);
+      background-position: -50px -550px;
+      width: 50px;
+      height: 50px;
+      filter: grayscale(100%);
+      transform: scale(0.6);
+      transition: all ease-in-out 0.2s; }
+      .filter-container #search-team .badge .badge-nfo.active, .filter-container #search-team .badge .badge-nfo:hover {
+        transform: scale(0.75);
+        filter: grayscale(0%); }
     .filter-container #search-team .badge .badge-new {
       display: inline-block;
       background: url(/badges-sprite.png);
