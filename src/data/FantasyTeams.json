@@ -1165,6 +1165,854 @@
           "transfers": []
         }
       ]
+    },
+    {
+      "team_id": 23,
+      "team_name": "Deano’s Superstars",
+      "team_owner": "Dean Howe",
+      "team_email": "deano123_545@hotmail.com",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 281,
+          "transfers": []
+        },
+        {
+          "player_id": 280,
+          "transfers": []
+        },
+        {
+          "player_id": 285,
+          "transfers": []
+        },
+        {
+          "player_id": 306,
+          "transfers": []
+        },
+        {
+          "player_id": 10,
+          "transfers": []
+        },
+        {
+          "player_id": 283,
+          "transfers": []
+        },
+        {
+          "player_id": 293,
+          "transfers": []
+        },
+        {
+          "player_id": 428,
+          "transfers": []
+        },
+        {
+          "player_id": 28,
+          "transfers": []
+        },
+        {
+          "player_id": 318,
+          "transfers": []
+        },
+        {
+          "player_id": 427,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 24,
+      "team_name": "GARIBALDI RED",
+      "team_owner": "Mark Langford",
+      "team_email": "",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 81,
+          "transfers": []
+        },
+        {
+          "player_id": 285,
+          "transfers": []
+        },
+        {
+          "player_id": 306,
+          "transfers": []
+        },
+        {
+          "player_id": 313,
+          "transfers": []
+        },
+        {
+          "player_id": 295,
+          "transfers": []
+        },
+        {
+          "player_id": 428,
+          "transfers": []
+        },
+        {
+          "player_id": 283,
+          "transfers": []
+        },
+        {
+          "player_id": 486,
+          "transfers": []
+        },
+        {
+          "player_id": 28,
+          "transfers": []
+        },
+        {
+          "player_id": 318,
+          "transfers": []
+        },
+        {
+          "player_id": 80,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 25,
+      "team_name": "underscore.klopp",
+      "team_owner": "Pete Norman",
+      "team_email": "safetysnake@btinternet.com",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 281,
+          "transfers": []
+        },
+        {
+          "player_id": 284,
+          "transfers": []
+        },
+        {
+          "player_id": 285,
+          "transfers": []
+        },
+        {
+          "player_id": 78,
+          "transfers": []
+        },
+        {
+          "player_id": 39,
+          "transfers": []
+        },
+        {
+          "player_id": 283,
+          "transfers": []
+        },
+        {
+          "player_id": 428,
+          "transfers": []
+        },
+        {
+          "player_id": 486,
+          "transfers": []
+        },
+        {
+          "player_id": 80,
+          "transfers": []
+        },
+        {
+          "player_id": 427,
+          "transfers": []
+        },
+        {
+          "player_id": 210,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 26,
+      "team_name": "KNOBS AND KNOCKERS 2O22",
+      "team_owner": "lan Thresher",
+      "team_email": "Ian.thresher@btopenworld.com",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 281,
+          "transfers": []
+        },
+        {
+          "player_id": 285,
+          "transfers": []
+        },
+        {
+          "player_id": 146,
+          "transfers": []
+        },
+        {
+          "player_id": 306,
+          "transfers": []
+        },
+        {
+          "player_id": 284,
+          "transfers": []
+        },
+        {
+          "player_id": 283,
+          "transfers": []
+        },
+        {
+          "player_id": 428,
+          "transfers": []
+        },
+        {
+          "player_id": 142,
+          "transfers": []
+        },
+        {
+          "player_id": 28,
+          "transfers": []
+        },
+        {
+          "player_id": 297,
+          "transfers": []
+        },
+        {
+          "player_id": 427,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 27,
+      "team_name": "knobbys solano's",
+      "team_owner": "Rob Yard",
+      "team_email": "dirtybert@btinternet.com",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 425,
+          "transfers": []
+        },
+        {
+          "player_id": 280,
+          "transfers": []
+        },
+        {
+          "player_id": 302,
+          "transfers": []
+        },
+        {
+          "player_id": 138,
+          "transfers": []
+        },
+        {
+          "player_id": 16,
+          "transfers": []
+        },
+        {
+          "player_id": 283,
+          "transfers": []
+        },
+        {
+          "player_id": 304,
+          "transfers": []
+        },
+        {
+          "player_id": 428,
+          "transfers": []
+        },
+        {
+          "player_id": 255,
+          "transfers": []
+        },
+        {
+          "player_id": 427,
+          "transfers": []
+        },
+        {
+          "player_id": 318,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 28,
+      "team_name": "CORKY'S WARHORSES",
+      "team_owner": "Wayne Corrick",
+      "team_email": "WAYNECORRICK1960@GMAIL.COM",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 307,
+          "transfers": []
+        },
+        {
+          "player_id": 112,
+          "transfers": []
+        },
+        {
+          "player_id": 285,
+          "transfers": []
+        },
+        {
+          "player_id": 357,
+          "transfers": []
+        },
+        {
+          "player_id": 448,
+          "transfers": []
+        },
+        {
+          "player_id": 283,
+          "transfers": []
+        },
+        {
+          "player_id": 428,
+          "transfers": []
+        },
+        {
+          "player_id": 304,
+          "transfers": []
+        },
+        {
+          "player_id": 28,
+          "transfers": []
+        },
+        {
+          "player_id": 318,
+          "transfers": []
+        },
+        {
+          "player_id": 427,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 29,
+      "team_name": "NOT SHAW AT ALL",
+      "team_owner": "Simon Kawinski",
+      "team_email": "",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 307,
+          "transfers": []
+        },
+        {
+          "player_id": 146,
+          "transfers": []
+        },
+        {
+          "player_id": 280,
+          "transfers": []
+        },
+        {
+          "player_id": 443,
+          "transfers": []
+        },
+        {
+          "player_id": 463,
+          "transfers": []
+        },
+        {
+          "player_id": 19,
+          "transfers": []
+        },
+        {
+          "player_id": 283,
+          "transfers": []
+        },
+        {
+          "player_id": 428,
+          "transfers": []
+        },
+        {
+          "player_id": 28,
+          "transfers": []
+        },
+        {
+          "player_id": 210,
+          "transfers": []
+        },
+        {
+          "player_id": 318,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 30,
+      "team_name": "F.C  DIGGERS",
+      "team_owner": "Jim Dobson",
+      "team_email": "",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 307,
+          "transfers": []
+        },
+        {
+          "player_id": 448,
+          "transfers": []
+        },
+        {
+          "player_id": 284,
+          "transfers": []
+        },
+        {
+          "player_id": 306,
+          "transfers": []
+        },
+        {
+          "player_id": 285,
+          "transfers": []
+        },
+        {
+          "player_id": 314,
+          "transfers": []
+        },
+        {
+          "player_id": 283,
+          "transfers": []
+        },
+        {
+          "player_id": 428,
+          "transfers": []
+        },
+        {
+          "player_id": 28,
+          "transfers": []
+        },
+        {
+          "player_id": 297,
+          "transfers": []
+        },
+        {
+          "player_id": 318,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 31,
+      "team_name": "COTFORD KOP",
+      "team_owner": "Alex Yard",
+      "team_email": "",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 281,
+          "transfers": []
+        },
+        {
+          "player_id": 280,
+          "transfers": []
+        },
+        {
+          "player_id": 284,
+          "transfers": []
+        },
+        {
+          "player_id": 285,
+          "transfers": []
+        },
+        {
+          "player_id": 306,
+          "transfers": []
+        },
+        {
+          "player_id": 304,
+          "transfers": []
+        },
+        {
+          "player_id": 283,
+          "transfers": []
+        },
+        {
+          "player_id": 407,
+          "transfers": []
+        },
+        {
+          "player_id": 297,
+          "transfers": []
+        },
+        {
+          "player_id": 318,
+          "transfers": []
+        },
+        {
+          "player_id": 427,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 32,
+      "team_name": "HELLS BELLS BALL BOYS",
+      "team_owner": "Helen Yard",
+      "team_email": "",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 307,
+          "transfers": []
+        },
+        {
+          "player_id": 312,
+          "transfers": []
+        },
+        {
+          "player_id": 520,
+          "transfers": []
+        },
+        {
+          "player_id": 285,
+          "transfers": []
+        },
+        {
+          "player_id": 299,
+          "transfers": []
+        },
+        {
+          "player_id": 293,
+          "transfers": []
+        },
+        {
+          "player_id": 283,
+          "transfers": []
+        },
+        {
+          "player_id": 371,
+          "transfers": []
+        },
+        {
+          "player_id": 28,
+          "transfers": []
+        },
+        {
+          "player_id": 318,
+          "transfers": []
+        },
+        {
+          "player_id": 297,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 33,
+      "team_name": "Montychuka",
+      "team_owner": "Nigel Derrick",
+      "team_email": "nigel.derrick54@gmail.com",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 307,
+          "transfers": []
+        },
+        {
+          "player_id": 280,
+          "transfers": []
+        },
+        {
+          "player_id": 313,
+          "transfers": []
+        },
+        {
+          "player_id": 329,
+          "transfers": []
+        },
+        {
+          "player_id": 475,
+          "transfers": []
+        },
+        {
+          "player_id": 301,
+          "transfers": []
+        },
+        {
+          "player_id": 283,
+          "transfers": []
+        },
+        {
+          "player_id": 428,
+          "transfers": []
+        },
+        {
+          "player_id": 28,
+          "transfers": []
+        },
+        {
+          "player_id": 318,
+          "transfers": []
+        },
+        {
+          "player_id": 427,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 34,
+      "team_name": "LACKING CREATIVITY",
+      "team_owner": "Craig Dobson",
+      "team_email": "",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 307,
+          "transfers": []
+        },
+        {
+          "player_id": 285,
+          "transfers": []
+        },
+        {
+          "player_id": 295,
+          "transfers": []
+        },
+        {
+          "player_id": 357,
+          "transfers": []
+        },
+        {
+          "player_id": 112,
+          "transfers": []
+        },
+        {
+          "player_id": 283,
+          "transfers": []
+        },
+        {
+          "player_id": 301,
+          "transfers": []
+        },
+        {
+          "player_id": 407,
+          "transfers": []
+        },
+        {
+          "player_id": 28,
+          "transfers": []
+        },
+        {
+          "player_id": 80,
+          "transfers": []
+        },
+        {
+          "player_id": 427,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 35,
+      "team_name": "NOTTALOTTA KOPP",
+      "team_owner": "Trevor Garden",
+      "team_email": "",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 281,
+          "transfers": []
+        },
+        {
+          "player_id": 284,
+          "transfers": []
+        },
+        {
+          "player_id": 285,
+          "transfers": []
+        },
+        {
+          "player_id": 280,
+          "transfers": []
+        },
+        {
+          "player_id": 306,
+          "transfers": []
+        },
+        {
+          "player_id": 283,
+          "transfers": []
+        },
+        {
+          "player_id": 293,
+          "transfers": []
+        },
+        {
+          "player_id": 428,
+          "transfers": []
+        },
+        {
+          "player_id": 28,
+          "transfers": []
+        },
+        {
+          "player_id": 297,
+          "transfers": []
+        },
+        {
+          "player_id": 318,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 36,
+      "team_name": "ELITE 11",
+      "team_owner": "Simon Danes",
+      "team_email": "",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 307,
+          "transfers": []
+        },
+        {
+          "player_id": 504,
+          "transfers": []
+        },
+        {
+          "player_id": 448,
+          "transfers": []
+        },
+        {
+          "player_id": 290,
+          "transfers": []
+        },
+        {
+          "player_id": 146,
+          "transfers": []
+        },
+        {
+          "player_id": 340,
+          "transfers": []
+        },
+        {
+          "player_id": 142,
+          "transfers": []
+        },
+        {
+          "player_id": 314,
+          "transfers": []
+        },
+        {
+          "player_id": 318,
+          "transfers": []
+        },
+        {
+          "player_id": 427,
+          "transfers": []
+        },
+        {
+          "player_id": 345,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 37,
+      "team_name": "Kepa Clean Sheet",
+      "team_owner": "Antony Norman",
+      "team_email": "",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 147,
+          "transfers": []
+        },
+        {
+          "player_id": 146,
+          "transfers": []
+        },
+        {
+          "player_id": 284,
+          "transfers": []
+        },
+        {
+          "player_id": 285,
+          "transfers": []
+        },
+        {
+          "player_id": 448,
+          "transfers": []
+        },
+        {
+          "player_id": 304,
+          "transfers": []
+        },
+        {
+          "player_id": 283,
+          "transfers": []
+        },
+        {
+          "player_id": 428,
+          "transfers": []
+        },
+        {
+          "player_id": 28,
+          "transfers": []
+        },
+        {
+          "player_id": 297,
+          "transfers": []
+        },
+        {
+          "player_id": 318,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 38,
+      "team_name": "Finding Timo",
+      "team_owner": "Dan Toft",
+      "team_email": "dtoft@elitecameron.com",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 281,
+          "transfers": []
+        },
+        {
+          "player_id": 306,
+          "transfers": []
+        },
+        {
+          "player_id": 285,
+          "transfers": []
+        },
+        {
+          "player_id": 280,
+          "transfers": []
+        },
+        {
+          "player_id": 112,
+          "transfers": []
+        },
+        {
+          "player_id": 301,
+          "transfers": []
+        },
+        {
+          "player_id": 283,
+          "transfers": []
+        },
+        {
+          "player_id": 304,
+          "transfers": []
+        },
+        {
+          "player_id": 318,
+          "transfers": []
+        },
+        {
+          "player_id": 297,
+          "transfers": []
+        },
+        {
+          "player_id": 28,
+          "transfers": []
+        }
+      ]
     }
   ]
 }
