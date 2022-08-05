@@ -22,10 +22,14 @@ export class CompleteDraftedTeam {
     this.allowedTransfers = draftedTeam.allowedTransfers;
     this.teamValueAllowed = this.allowedTransfers ? 85 : 95;
     this.teamPlayers = players.map(
-      x => new CompleteDraftedPlayer(x.player, x.transfers)
+      (x) => new CompleteDraftedPlayer(x.player, x.transfers)
     );
 
-    this.totalTeamValue = this.teamPlayers.reduce((accumulator, current) => accumulator += parseFloat(current.playerPrice), 0);
+    this.totalTeamValue = this.teamPlayers.reduce(
+      (accumulator, current) =>
+        (accumulator += parseFloat(current.playerPrice)),
+      0
+    );
 
     let goalkeeperCount = 0;
     let defenderCount = 0;
@@ -49,7 +53,6 @@ export class CompleteDraftedTeam {
           forwardCount++;
           break;
       }
-
     }
 
     if (goalkeeperCount > 1) {
@@ -67,14 +70,16 @@ export class CompleteDraftedTeam {
       this.invalidErrorMsg.push('There are too many midfielders in the team');
     }
 
-    if (forwardCount > 4) {
+    if (forwardCount > 3) {
       this.isInvalidTeam = true;
       this.invalidErrorMsg.push('There are too many fowards in the team');
     }
 
     if (this.totalTeamValue > this.teamValueAllowed) {
       this.isInvalidTeam = true;
-      this.invalidErrorMsg.push(`The team value exceeds the ${this.teamValueAllowed} million limit`);
+      this.invalidErrorMsg.push(
+        `The team value exceeds the ${this.teamValueAllowed} million limit`
+      );
     }
   }
 }
