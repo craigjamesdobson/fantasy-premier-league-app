@@ -1782,7 +1782,13 @@
         },
         {
           "player_id": 301,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 160,
+              "transfer_week": 5,
+              "currentTransferDateExpiry": "2022-09-05"
+            }
+          ]
         },
         {
           "player_id": 407,
@@ -1794,7 +1800,13 @@
         },
         {
           "player_id": 80,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 318,
+              "transfer_week": 5,
+              "currentTransferDateExpiry": "2022-09-05"
+            }
+          ]
         },
         {
           "player_id": 427,
@@ -1864,7 +1876,8 @@
       "team_players": [
         {
           "player_id": 307,
-          "transfers": []
+          "transfers": [
+          ]
         },
         {
           "player_id": 504,
@@ -1876,7 +1889,13 @@
         },
         {
           "player_id": 290,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 342,
+              "transfer_week": 5,
+              "currentTransferDateExpiry": "2022-09-05"
+            }
+          ]
         },
         {
           "player_id": 146,
@@ -1888,7 +1907,13 @@
         },
         {
           "player_id": 142,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 304,
+              "transfer_week": 5,
+              "currentTransferDateExpiry": "2022-09-05"
+            }
+          ]
         },
         {
           "player_id": 314,
