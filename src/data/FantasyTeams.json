@@ -1785,7 +1785,7 @@
           "transfers": [
             {
               "transfer_id": 160,
-              "transfer_week": 5,
+              "transfer_week": 6,
               "currentTransferDateExpiry": "2022-09-05"
             }
           ]
@@ -1803,7 +1803,7 @@
           "transfers": [
             {
               "transfer_id": 318,
-              "transfer_week": 5,
+              "transfer_week": 6,
               "currentTransferDateExpiry": "2022-09-05"
             }
           ]
@@ -1892,7 +1892,7 @@
           "transfers": [
             {
               "transfer_id": 342,
-              "transfer_week": 5,
+              "transfer_week": 6,
               "currentTransferDateExpiry": "2022-09-05"
             }
           ]
@@ -1910,7 +1910,7 @@
           "transfers": [
             {
               "transfer_id": 304,
-              "transfer_week": 5,
+              "transfer_week": 6,
               "currentTransferDateExpiry": "2022-09-05"
             }
           ]
