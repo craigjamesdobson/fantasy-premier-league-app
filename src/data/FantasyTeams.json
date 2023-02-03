@@ -601,7 +601,13 @@
         },
         {
           "player_id": 283,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 335,
+              "transfer_week": 22,
+              "currentTransferDateExpiry": "2023-02-07"
+            }
+          ]
         },
         {
           "player_id": 301,
@@ -617,7 +623,13 @@
         },
         {
           "player_id": 28,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 318,
+              "transfer_week": 22,
+              "currentTransferDateExpiry": "2023-02-07"
+            }
+          ]
         },
         {
           "player_id": 427,
