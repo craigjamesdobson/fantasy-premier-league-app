@@ -1,7 +1,7 @@
 {
     "explorer.confirmDelete": false,
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "SynthWave '84",
+    "workbench.colorTheme": "Panda Syntax",
     "prettier.tabWidth": 2,
     "files.exclude": {
         "**/.git": true,
