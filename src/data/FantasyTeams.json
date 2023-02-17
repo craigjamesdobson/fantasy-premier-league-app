@@ -540,7 +540,13 @@
       "team_players": [
         {
           "player_id": 147,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 15,
+              "transfer_week": 24,
+              "currentTransferDateExpiry": "2023-02-21"
+            }
+          ]
         },
         {
           "player_id": 285,
@@ -548,7 +554,13 @@
         },
         {
           "player_id": 43,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 357,
+              "transfer_week": 24,
+              "currentTransferDateExpiry": "2023-02-21"
+            }
+          ]
         },
         {
           "player_id": 108,
