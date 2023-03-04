@@ -2089,7 +2089,13 @@
         },
         {
           "player_id": 345,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 690,
+              "transfer_week": 26,
+              "currentTransferDateExpiry": "2023-03-07"
+            }
+          ]
         }
       ]
     },
