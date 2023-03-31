@@ -278,6 +278,11 @@
               "transfer_id": 11,
               "transfer_week": 18,
               "currentTransferDateExpiry": "2023-01-02"
+            },
+            {
+              "transfer_id": 80,
+              "transfer_week": 29,
+              "currentTransferDateExpiry": "2023-04-04"
             }
           ]
         }
@@ -1401,7 +1406,13 @@
         },
         {
           "player_id": 78,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 586,
+              "transfer_week": 29,
+              "currentTransferDateExpiry": "2023-04-04"
+            }
+          ]
         },
         {
           "player_id": 39,
@@ -1435,7 +1446,13 @@
         },
         {
           "player_id": 210,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 594,
+              "transfer_week": 29,
+              "currentTransferDateExpiry": "2023-04-04"
+            }
+          ]
         }
       ]
     },
