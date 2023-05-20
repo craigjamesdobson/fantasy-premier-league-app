@@ -1455,7 +1455,13 @@
         },
         {
           "player_id": 80,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 319,
+              "transfer_week": 37,
+              "currentTransferDateExpiry": "2023-05-23"
+            }
+          ]
         },
         {
           "player_id": 427,
