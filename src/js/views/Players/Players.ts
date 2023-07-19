@@ -1,4 +1,4 @@
-import '../../../scss/Playerlist.scss';
+import '../../../scss/playerList.scss';
 import '../../../img/badges-sprite.png';
 
 import { CreatePlayerData } from '../../components/Players/CreatePlayerData';
