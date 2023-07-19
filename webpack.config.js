@@ -11,9 +11,6 @@ const CompressionPlugin = require("compression-webpack-plugin");
 
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
-  .BundleAnalyzerPlugin;
-
 const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = {
@@ -146,8 +143,6 @@ module.exports = {
       filename: "[name].css",
       chunkFilename: "[name].css",
     }),
-
-    new BundleAnalyzerPlugin(),
   ],
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
