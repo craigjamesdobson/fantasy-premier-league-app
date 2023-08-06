@@ -63,6 +63,6 @@
     "lz-string": "^1.4.4",
     "popper.js": "1.14.7",
     "sweetalert2": "^7.33.1",
-    "webpack-bundle-analyzer": "^3.8.0"
+    "webpack-bundle-analyzer": "^4.9.0"
   }
 }
