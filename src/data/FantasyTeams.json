@@ -207,7 +207,7 @@
           "transfers": []
         },
         {
-          "player_id": 212,
+          "player_id": 60,
           "transfers": []
         }
       ]
@@ -420,6 +420,324 @@
         },
         {
           "player_id": 293,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 9,
+      "team_name": "A.F.C   BJ",
+      "team_owner": "Shane Porter",
+      "team_email": "",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 17,
+          "transfers": []
+        },
+        {
+          "player_id": 313,
+          "transfers": []
+        },
+        {
+          "player_id": 290,
+          "transfers": []
+        },
+        {
+          "player_id": 195,
+          "transfers": []
+        },
+        {
+          "player_id": 51,
+          "transfers": []
+        },
+        {
+          "player_id": 249,
+          "transfers": []
+        },
+        {
+          "player_id": 373,
+          "transfers": []
+        },
+        {
+          "player_id": 308,
+          "transfers": []
+        },
+        {
+          "player_id": 433,
+          "transfers": []
+        },
+        {
+          "player_id": 355,
+          "transfers": []
+        },
+        {
+          "player_id": 293,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 10,
+      "team_name": "ANKLE TAPPERS",
+      "team_owner": "Eddie Dobson",
+      "team_email": "",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 49,
+          "transfers": []
+        },
+        {
+          "player_id": 217,
+          "transfers": []
+        },
+        {
+          "player_id": 307,
+          "transfers": []
+        },
+        {
+          "player_id": 398,
+          "transfers": []
+        },
+        {
+          "player_id": 206,
+          "transfers": []
+        },
+        {
+          "player_id": 19,
+          "transfers": []
+        },
+        {
+          "player_id": 353,
+          "transfers": []
+        },
+        {
+          "player_id": 308,
+          "transfers": []
+        },
+        {
+          "player_id": 211,
+          "transfers": []
+        },
+        {
+          "player_id": 355,
+          "transfers": []
+        },
+        {
+          "player_id": 60,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 11,
+      "team_name": "VAR PENDING",
+      "team_owner": "KEITH CORNISH",
+      "team_email": "keith.cornish@sky.com",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 291,
+          "transfers": []
+        },
+        {
+          "player_id": 290,
+          "transfers": []
+        },
+        {
+          "player_id": 430,
+          "transfers": []
+        },
+        {
+          "player_id": 206,
+          "transfers": []
+        },
+        {
+          "player_id": 31,
+          "transfers": []
+        },
+        {
+          "player_id": 12,
+          "transfers": []
+        },
+        {
+          "player_id": 353,
+          "transfers": []
+        },
+        {
+          "player_id": 396,
+          "transfers": []
+        },
+        {
+          "player_id": 8,
+          "transfers": []
+        },
+        {
+          "player_id": 343,
+          "transfers": []
+        },
+        {
+          "player_id": 617,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 12,
+      "team_name": "Onana That’s My Name!",
+      "team_owner": "Richard Foote",
+      "team_email": "foote_richard67@hotmail.com",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 597,
+          "transfers": []
+        },
+        {
+          "player_id": 616,
+          "transfers": []
+        },
+        {
+          "player_id": 350,
+          "transfers": []
+        },
+        {
+          "player_id": 391,
+          "transfers": []
+        },
+        {
+          "player_id": 290,
+          "transfers": []
+        },
+        {
+          "player_id": 396,
+          "transfers": []
+        },
+        {
+          "player_id": 19,
+          "transfers": []
+        },
+        {
+          "player_id": 373,
+          "transfers": []
+        },
+        {
+          "player_id": 355,
+          "transfers": []
+        },
+        {
+          "player_id": 617,
+          "transfers": []
+        },
+        {
+          "player_id": 500,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 13,
+      "team_name": "Samuri Frogs",
+      "team_owner": "Glenn Brooks",
+      "team_email": "glennbrooks796@gmail.com",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 49,
+          "transfers": []
+        },
+        {
+          "player_id": 31,
+          "transfers": []
+        },
+        {
+          "player_id": 366,
+          "transfers": []
+        },
+        {
+          "player_id": 368,
+          "transfers": []
+        },
+        {
+          "player_id": 139,
+          "transfers": []
+        },
+        {
+          "player_id": 349,
+          "transfers": []
+        },
+        {
+          "player_id": 19,
+          "transfers": []
+        },
+        {
+          "player_id": 12,
+          "transfers": []
+        },
+        {
+          "player_id": 433,
+          "transfers": []
+        },
+        {
+          "player_id": 500,
+          "transfers": []
+        },
+        {
+          "player_id": 355,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 14,
+      "team_name": "Delph and safety",
+      "team_owner": "Connor Noble",
+      "team_email": "c98noble@icloud.com",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 352,
+          "transfers": []
+        },
+        {
+          "player_id": 391,
+          "transfers": []
+        },
+        {
+          "player_id": 20,
+          "transfers": []
+        },
+        {
+          "player_id": 290,
+          "transfers": []
+        },
+        {
+          "player_id": 350,
+          "transfers": []
+        },
+        {
+          "player_id": 308,
+          "transfers": []
+        },
+        {
+          "player_id": 19,
+          "transfers": []
+        },
+        {
+          "player_id": 396,
+          "transfers": []
+        },
+        {
+          "player_id": 355,
+          "transfers": []
+        },
+        {
+          "player_id": 8,
+          "transfers": []
+        },
+        {
+          "player_id": 617,
           "transfers": []
         }
       ]
