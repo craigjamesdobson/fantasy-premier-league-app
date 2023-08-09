@@ -1259,7 +1259,7 @@
           "transfers": []
         },
         {
-          "player_id": 8,
+          "player_id": 293,
           "transfers": []
         },
         {
@@ -1692,6 +1692,59 @@
         },
         {
           "player_id": 60,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 33,
+      "team_name": "Knobs and Knockers 2024",
+      "team_owner": "IAN THRESHER",
+      "team_email": "ian.thresher@btopenworld.com",
+      "allowed_transfers": false,
+      "team_players": [
+        {
+          "player_id": 352,
+          "transfers": []
+        },
+        {
+          "player_id": 430,
+          "transfers": []
+        },
+        {
+          "player_id": 387,
+          "transfers": []
+        },
+        {
+          "player_id": 427,
+          "transfers": []
+        },
+        {
+          "player_id": 507,
+          "transfers": []
+        },
+        {
+          "player_id": 12,
+          "transfers": []
+        },
+        {
+          "player_id": 402,
+          "transfers": []
+        },
+        {
+          "player_id": 14,
+          "transfers": []
+        },
+        {
+          "player_id": 500,
+          "transfers": []
+        },
+        {
+          "player_id": 355,
+          "transfers": []
+        },
+        {
+          "player_id": 415,
           "transfers": []
         }
       ]
