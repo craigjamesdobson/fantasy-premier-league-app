@@ -1748,6 +1748,112 @@
           "transfers": []
         }
       ]
+    },
+    {
+      "team_id": 34,
+      "team_name": "DIGGERS ATHLETIC",
+      "team_owner": "Jim Dobson",
+      "team_email": "j-dobson3@sky.com",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 352,
+          "transfers": []
+        },
+        {
+          "player_id": 5,
+          "transfers": []
+        },
+        {
+          "player_id": 430,
+          "transfers": []
+        },
+        {
+          "player_id": 112,
+          "transfers": []
+        },
+        {
+          "player_id": 405,
+          "transfers": []
+        },
+        {
+          "player_id": 14,
+          "transfers": []
+        },
+        {
+          "player_id": 373,
+          "transfers": []
+        },
+        {
+          "player_id": 308,
+          "transfers": []
+        },
+        {
+          "player_id": 355,
+          "transfers": []
+        },
+        {
+          "player_id": 293,
+          "transfers": []
+        },
+        {
+          "player_id": 433,
+          "transfers": []
+        }
+      ]
+    },
+    {
+      "team_id": 35,
+      "team_name": "Lacking Creativity",
+      "team_owner": "Craig Dobson",
+      "team_email": "dobson.cj@gmail.com",
+      "allowed_transfers": true,
+      "team_players": [
+        {
+          "player_id": 352,
+          "transfers": []
+        },
+        {
+          "player_id": 405,
+          "transfers": []
+        },
+        {
+          "player_id": 131,
+          "transfers": []
+        },
+        {
+          "player_id": 195,
+          "transfers": []
+        },
+        {
+          "player_id": 5,
+          "transfers": []
+        },
+        {
+          "player_id": 308,
+          "transfers": []
+        },
+        {
+          "player_id": 19,
+          "transfers": []
+        },
+        {
+          "player_id": 373,
+          "transfers": []
+        },
+        {
+          "player_id": 355,
+          "transfers": []
+        },
+        {
+          "player_id": 211,
+          "transfers": []
+        },
+        {
+          "player_id": 60,
+          "transfers": []
+        }
+      ]
     }
   ]
 }
