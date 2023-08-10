@@ -270,7 +270,7 @@
       "team_name": "Nobbys boys",
       "team_owner": "Paul Noble",
       "team_email": "p2@sky.com",
-      "allowed_transfers": false,
+      "allowed_transfers": true,
       "team_players": [
         {
           "player_id": 352,
@@ -309,7 +309,7 @@
           "transfers": []
         },
         {
-          "player_id": 500,
+          "player_id": 293,
           "transfers": []
         },
         {
@@ -672,7 +672,7 @@
           "transfers": []
         },
         {
-          "player_id": 12,
+          "player_id": 308,
           "transfers": []
         },
         {
@@ -680,7 +680,7 @@
           "transfers": []
         },
         {
-          "player_id": 500,
+          "player_id": 343,
           "transfers": []
         },
         {
