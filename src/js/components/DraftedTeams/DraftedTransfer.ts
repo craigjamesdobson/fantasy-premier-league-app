@@ -8,6 +8,6 @@ export class DraftedTransfer {
   constructor(draftedTransfer: IDraftedTransferData) {
     this.transferId = draftedTransfer.transfer_id;
     this.transferWeek = draftedTransfer.transfer_week;
-    this.currentTransferDateExpiry = draftedTransfer.currentTransferDateExpiry;
+    this.currentTransferDateExpiry = draftedTransfer.current_transfer_date_expiry;
   }
 }

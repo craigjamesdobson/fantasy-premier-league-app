@@ -135,7 +135,13 @@
         },
         {
           "player_id": 349,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 396,
+              "transfer_week": 2,
+              "current_transfer_date_expiry": "2023-08-21"
+            }
+          ]
         },
         {
           "player_id": 19,
@@ -600,7 +606,13 @@
         },
         {
           "player_id": 206,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 398,
+              "transfer_week": 2,
+              "current_transfer_date_expiry": "2023-08-21"
+            }
+          ]
         },
         {
           "player_id": 391,
@@ -665,7 +677,13 @@
         },
         {
           "player_id": 349,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 396,
+              "transfer_week": 2,
+              "current_transfer_date_expiry": "2023-08-21"
+            }
+          ]
         },
         {
           "player_id": 19,
@@ -820,7 +838,13 @@
         },
         {
           "player_id": 585,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 20,
+              "transfer_week": 2,
+              "current_transfer_date_expiry": "2023-08-21"
+            }
+          ]
         },
         {
           "player_id": 19,
@@ -1199,7 +1223,13 @@
         },
         {
           "player_id": 349,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 516,
+              "transfer_week": 2,
+              "current_transfer_date_expiry": "2023-08-21"
+            }
+          ]
         },
         {
           "player_id": 396,
@@ -1350,7 +1380,13 @@
         },
         {
           "player_id": 51,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 405,
+              "transfer_week": 2,
+              "current_transfer_date_expiry": "2023-08-21"
+            }
+          ]
         },
         {
           "player_id": 308,
@@ -1501,7 +1537,13 @@
         },
         {
           "player_id": 51,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 391,
+              "transfer_week": 2,
+              "current_transfer_date_expiry": "2023-08-21"
+            }
+          ]
         },
         {
           "player_id": 430,
@@ -2047,7 +2089,13 @@
         },
         {
           "player_id": 349,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 504,
+              "transfer_week": 2,
+              "current_transfer_date_expiry": "2023-08-21"
+            }
+          ]
         },
         {
           "player_id": 396,
@@ -2112,7 +2160,13 @@
         },
         {
           "player_id": 500,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 119,
+              "transfer_week": 2,
+              "current_transfer_date_expiry": "2023-08-21"
+            }
+          ]
         },
         {
           "player_id": 246,
