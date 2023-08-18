@@ -832,7 +832,13 @@
         },
         {
           "player_id": 585,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 20,
+              "transfer_week": 2,
+              "current_transfer_date_expiry": "2023-08-21"
+            }
+          ]
         },
         {
           "player_id": 19,
