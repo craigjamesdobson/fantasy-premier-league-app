@@ -1981,7 +1981,13 @@
         },
         {
           "player_id": 398,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 20,
+              "transfer_week": 3,
+              "current_transfer_date_expiry": "2023-08-29"
+            }
+          ]
         },
         {
           "player_id": 131,
