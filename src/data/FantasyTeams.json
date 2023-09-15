@@ -369,11 +369,23 @@
         },
         {
           "player_id": 297,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 132,
+              "transfer_week": 5,
+              "current_transfer_date_expiry": "2023-09-19"
+            }
+          ]
         },
         {
           "player_id": 326,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 8,
+              "transfer_week": 5,
+              "current_transfer_date_expiry": "2023-09-19"
+            }
+          ]
         }
       ]
     },
