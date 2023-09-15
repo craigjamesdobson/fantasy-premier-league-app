@@ -1827,14 +1827,6 @@
         },
         {
           "player_id": 500,
-          "transfers": []
-        },
-        {
-          "player_id": 355,
-          "transfers": []
-        },
-        {
-          "player_id": 415,
           "transfers": [
             {
               "transfer_id": 132,
@@ -1842,6 +1834,14 @@
               "current_transfer_date_expiry": "2023-09-19"
             }
           ]
+        },
+        {
+          "player_id": 355,
+          "transfers": []
+        },
+        {
+          "player_id": 415,
+          "transfers": []
         }
       ]
     },
