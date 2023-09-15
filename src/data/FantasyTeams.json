@@ -1813,7 +1813,13 @@
         },
         {
           "player_id": 402,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 516,
+              "transfer_week": 5,
+              "current_transfer_date_expiry": "2023-09-19"
+            }
+          ]
         },
         {
           "player_id": 14,
@@ -1829,7 +1835,13 @@
         },
         {
           "player_id": 415,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 132,
+              "transfer_week": 5,
+              "current_transfer_date_expiry": "2023-09-19"
+            }
+          ]
         }
       ]
     },
