@@ -593,7 +593,7 @@
           "player_id": 396,
           "transfers": [
             {
-              "transfer_id": 355,
+              "transfer_id": 516,
               "transfer_week": 11,
               "current_transfer_date_expiry": "2023-11-07"
             }
@@ -603,7 +603,7 @@
           "player_id": 8,
           "transfers": [
             {
-              "transfer_id": 516,
+              "transfer_id": 355,
               "transfer_week": 11,
               "current_transfer_date_expiry": "2023-11-07"
             }
