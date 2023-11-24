@@ -1468,7 +1468,13 @@
         },
         {
           "player_id": 433,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 343,
+              "transfer_week": 13,
+              "current_transfer_date_expiry": "2023-11-28"
+            }
+          ]
         },
         {
           "player_id": 355,
