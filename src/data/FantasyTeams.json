@@ -115,7 +115,13 @@
       "team_players": [
         {
           "player_id": 17,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 113,
+              "transfer_week": 17,
+              "current_transfer_date_expiry": "2023-12-19"
+            }
+          ]
         },
         {
           "player_id": 313,
