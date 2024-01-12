@@ -587,7 +587,13 @@
         },
         {
           "player_id": 206,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 341,
+              "transfer_week": 21,
+              "current_transfer_date_expiry": "2024-01-16"
+            }
+          ]
         },
         {
           "player_id": 31,
@@ -666,7 +672,13 @@
         },
         {
           "player_id": 396,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 516,
+              "transfer_week": 21,
+              "current_transfer_date_expiry": "2024-01-16"
+            }
+          ]
         },
         {
           "player_id": 19,
@@ -674,7 +686,13 @@
         },
         {
           "player_id": 373,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 14,
+              "transfer_week": 21,
+              "current_transfer_date_expiry": "2024-01-16"
+            }
+          ]
         },
         {
           "player_id": 355,
@@ -847,7 +865,13 @@
         },
         {
           "player_id": 396,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 516,
+              "transfer_week": 21,
+              "current_transfer_date_expiry": "2024-01-16"
+            }
+          ]
         },
         {
           "player_id": 308,
@@ -869,7 +893,13 @@
         },
         {
           "player_id": 293,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 60,
+              "transfer_week": 21,
+              "current_transfer_date_expiry": "2024-01-16"
+            }
+          ]
         }
       ]
     },
@@ -2027,7 +2057,13 @@
         },
         {
           "player_id": 211,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 85,
+              "transfer_week": 21,
+              "current_transfer_date_expiry": "2024-01-16"
+            }
+          ]
         },
         {
           "player_id": 60,
