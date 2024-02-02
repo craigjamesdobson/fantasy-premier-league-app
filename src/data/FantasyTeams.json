@@ -146,6 +146,11 @@
               "transfer_id": 396,
               "transfer_week": 2,
               "current_transfer_date_expiry": "2023-08-21"
+            },
+            {
+              "transfer_id": 349,
+              "transfer_week": 22,
+              "current_transfer_date_expiry": "2024-02-02"
             }
           ]
         },
@@ -163,7 +168,13 @@
         },
         {
           "player_id": 211,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 293,
+              "transfer_week": 22,
+              "current_transfer_date_expiry": "2024-02-02"
+            }
+          ]
         },
         {
           "player_id": 60,
