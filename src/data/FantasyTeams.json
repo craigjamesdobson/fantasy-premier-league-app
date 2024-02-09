@@ -425,6 +425,11 @@
               "transfer_id": 8,
               "transfer_week": 5,
               "current_transfer_date_expiry": "2023-09-19"
+            },
+            {
+              "transfer_id": 617,
+              "transfer_week": 24,
+              "current_transfer_date_expiry": "2024-02-13"
             }
           ]
         }
