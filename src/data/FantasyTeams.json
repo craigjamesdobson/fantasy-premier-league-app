@@ -2033,8 +2033,8 @@
           "player_id": 373,
           "transfers": [
             {
-              "transfer_id": 353,
-              "transfer_week": 19,
+              "transfer_id": 19,
+              "transfer_week": 27,
               "current_transfer_date_expiry": "2024-03-05"
             }
           ]
