@@ -1216,6 +1216,11 @@
               "transfer_id": 678,
               "transfer_week": 20,
               "current_transfer_date_expiry": "2024-01-02"
+            },
+            {
+              "transfer_id": 362,
+              "transfer_week": 33,
+              "current_transfer_date_expiry": "2024-04-15"
             }
           ]
         },
@@ -1225,7 +1230,13 @@
         },
         {
           "player_id": 293,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 60,
+              "transfer_week": 33,
+              "current_transfer_date_expiry": "2024-04-15"
+            }
+          ]
         },
         {
           "player_id": 415,
@@ -2039,7 +2050,13 @@
         },
         {
           "player_id": 14,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 353,
+              "transfer_week": 33,
+              "current_transfer_date_expiry": "2024-04-15"
+            }
+          ]
         },
         {
           "player_id": 373,
