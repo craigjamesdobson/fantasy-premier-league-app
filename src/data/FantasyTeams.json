@@ -2050,7 +2050,13 @@
         },
         {
           "player_id": 14,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 353,
+              "transfer_week": 33,
+              "current_transfer_date_expiry": "2024-04-15"
+            }
+          ]
         },
         {
           "player_id": 373,
