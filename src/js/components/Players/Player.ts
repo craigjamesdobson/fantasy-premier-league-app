@@ -55,31 +55,31 @@ export class Player {
         this.teamShort = 'BHA';
         break;
       case 6:
-        this.teamName = 'Burnley';
-        this.teamShort = 'BUR';
-      case 7:
         this.teamName = 'Chelsea';
         this.teamShort = 'CHE';
-        break;
-      case 8:
+      case 7:
         this.teamName = 'Crystal Palace';
         this.teamShort = 'CRY';
         break;
-      case 9:
+      case 8:
         this.teamName = 'Everton';
         this.teamShort = 'EVE';
         break;
-      case 10:
+      case 9:
         this.teamName = 'Fulham';
         this.teamShort = 'FUL';
         break;
+      case 10:
+        this.teamName = 'IPSWICH';
+        this.teamShort = 'IPS';
+        break;
       case 11:
-        this.teamName = 'Liverpool';
-        this.teamShort = 'LIV';
+        this.teamName = 'Leicester';
+        this.teamShort = 'LEI';
         break;
       case 12:
-        this.teamName = 'Luton';
-        this.teamShort = 'LUT';
+        this.teamName = 'Liverpool';
+        this.teamShort = 'LIV';
         break;
       case 13:
         this.teamName = 'Man City';
@@ -98,8 +98,8 @@ export class Player {
         this.teamShort = 'NFO';
         break;
       case 17:
-        this.teamName = 'Sheffield Utd';
-        this.teamShort = 'SHE';
+        this.teamName = 'Southampton';
+        this.teamShort = 'SOU';
         break;
       case 18:
         this.teamName = 'Spurs';
