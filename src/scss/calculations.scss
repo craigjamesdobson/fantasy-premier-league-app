@@ -253,20 +253,20 @@
         opacity: 0.25;
       }
 
-      &.transfered {
-        background-color: #5cb85c;
+      &.transfered td {
+        background-color: #5cb85c !important;
         color: #fff;
         opacity: 1;
       }
 
-      &.current-week-transfer {
-        background-color: #eee82c;
+      &.current-week-transfer td {
+        background-color: #eee82c !important;
         color: #292f36;
         opacity: 1;
       }
 
-      &.sent-off {
-        background-color: #d9534f;
+      &.sent-off td {
+        background-color: #d9534f !important;
         color: #fff;
         opacity: 1;
       }

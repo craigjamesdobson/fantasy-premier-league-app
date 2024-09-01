@@ -1699,13 +1699,19 @@
     {
       "team_id": 139,
       "team_name": "Shawenuf",
-      "team_owner": "Simon Kawinski ",
+      "team_owner": "Simon Kawinski",
       "team_email": "spk36@hotmail.co.uk",
       "allowed_transfers": true,
       "team_players": [
         {
           "player_id": 235,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 15,
+              "transfer_week": 3,
+              "current_transfer_date_expiry": "2024-10-02"
+            }
+          ]
         },
         {
           "player_id": 3,
@@ -1725,7 +1731,13 @@
         },
         {
           "player_id": 348,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 182,
+              "transfer_week": 3,
+              "current_transfer_date_expiry": "2024-10-02"
+            }
+          ]
         },
         {
           "player_id": 366,
