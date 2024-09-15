@@ -1840,11 +1840,23 @@
         },
         {
           "player_id": 328,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 233,
+              "transfer_week": 4,
+              "current_transfer_date_expiry": "2024-09-17"
+            }
+          ]
         },
         {
           "player_id": 58,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 351,
+              "transfer_week": 4,
+              "current_transfer_date_expiry": "2024-09-17"
+            }
+          ]
         },
         {
           "player_id": 401,
