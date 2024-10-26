@@ -1992,11 +1992,23 @@
         },
         {
           "player_id": 418,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 350,
+              "transfer_week": 9,
+              "current_transfer_date_expiry": "2024-10-29"
+            }
+          ]
         },
         {
           "player_id": 387,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 326,
+              "transfer_week": 9,
+              "current_transfer_date_expiry": "2024-10-29"
+            }
+          ]
         },
         {
           "player_id": 533,
