@@ -829,6 +829,10 @@
         },
         {
           "player_id": 401,
+          "transfers": []
+        },
+        {
+          "player_id": 207,
           "transfers": [
             {
               "transfer_id": 129,
@@ -836,10 +840,6 @@
               "current_transfer_date_expiry": "2024-09-17"
             }
           ]
-        },
-        {
-          "player_id": 207,
-          "transfers": []
         }
       ]
     },
