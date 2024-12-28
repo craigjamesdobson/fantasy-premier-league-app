@@ -2188,6 +2188,11 @@
               "transfer_id": 326,
               "transfer_week": 12,
               "current_transfer_date_expiry": "2024-11-26"
+            },
+            {
+              "transfer_id": 88,
+              "transfer_week": 19,
+              "current_transfer_date_expiry": "2024-12-30"
             }
           ]
         },
