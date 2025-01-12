@@ -519,7 +519,13 @@
         },
         {
           "player_id": 58,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 401,
+              "transfer_week": 21,
+              "current_transfer_date_expiry": "2025-01-16"
+            }
+          ]
         },
         {
           "player_id": 351,
