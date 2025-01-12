@@ -1990,6 +1990,11 @@
               "transfer_id": 233,
               "transfer_week": 4,
               "current_transfer_date_expiry": "2024-09-17"
+            },
+            {
+              "transfer_id": 99,
+              "transfer_week": 21,
+              "current_transfer_date_expiry": "2025-01-16"
             }
           ]
         },
@@ -2013,7 +2018,13 @@
         },
         {
           "player_id": 82,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 129,
+              "transfer_week": 21,
+              "current_transfer_date_expiry": "2025-01-16"
+            }
+          ]
         }
       ]
     },
