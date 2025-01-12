@@ -2115,11 +2115,23 @@
         },
         {
           "player_id": 17,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 328,
+              "transfer_week": 21,
+              "current_transfer_date_expiry": "2025-01-16"
+            }
+          ]
         },
         {
           "player_id": 514,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 364,
+              "transfer_week": 21,
+              "current_transfer_date_expiry": "2025-01-16"
+            }
+          ]
         },
         {
           "player_id": 351,
