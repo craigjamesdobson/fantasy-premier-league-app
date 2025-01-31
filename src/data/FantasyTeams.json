@@ -893,7 +893,13 @@
         },
         {
           "player_id": 28,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 71,
+              "transfer_week": 24,
+              "current_transfer_date_expiry": "2025-02-06"
+            }
+          ]
         },
         {
           "player_id": 108,
@@ -916,6 +922,11 @@
               "transfer_id": 129,
               "transfer_week": 4,
               "current_transfer_date_expiry": "2024-09-17"
+            },
+            {
+              "transfer_id": 447,
+              "transfer_week": 24,
+              "current_transfer_date_expiry": "2025-02-06"
             }
           ]
         }
