@@ -2372,7 +2372,18 @@
         },
         {
           "player_id": 82,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 533,
+              "transfer_week": 24,
+              "current_transfer_date_expiry": "2025-02-06"
+            },
+            {
+              "transfer_id": 110,
+              "transfer_week": 24,
+              "current_transfer_date_expiry": "2025-02-06"
+            }
+          ]
         }
       ]
     },
