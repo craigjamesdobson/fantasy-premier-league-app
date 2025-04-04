@@ -649,7 +649,13 @@
         },
         {
           "player_id": 266,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 573,
+              "transfer_week": 31,
+              "current_transfer_date_expiry": "2025-04-10"
+            }
+          ]
         },
         {
           "player_id": 395,
@@ -666,6 +672,11 @@
               "transfer_id": 327,
               "transfer_week": 20,
               "current_transfer_date_expiry": "2025-01-07"
+            },
+            {
+              "transfer_id": 17,
+              "transfer_week": 31,
+              "current_transfer_date_expiry": "2025-04-10"
             }
           ]
         },
@@ -687,7 +698,13 @@
         },
         {
           "player_id": 351,
-          "transfers": []
+          "transfers": [
+            {
+              "transfer_id": 755,
+              "transfer_week": 31,
+              "current_transfer_date_expiry": "2025-04-10"
+            }
+          ]
         }
       ]
     },
