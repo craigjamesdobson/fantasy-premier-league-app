@@ -1,3 +1,3 @@
 # Fantasy Premier League App
 
-Legacy Fantasy Football Application that was decrecated and replaced with modern replacement
+The original version of League of Our Own, built with TypeScript, Webpack & Handlebars. Deprecated in favour of a full Nuxt.js rewrite (see league-of-our-own)
